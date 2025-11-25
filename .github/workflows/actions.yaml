@@ -9,8 +9,7 @@ on:
       - '**'
 
 permissions:
-  contents: read
-  pages: write
+  contents: write  # Required to push to gh-pages
   id-token: write
 
 jobs:
@@ -20,6 +19,11 @@ jobs:
   build-test-cov-docs:
     name: Build & Test & Coverage & Docs
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: /
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -36,7 +40,8 @@ jobs:
             gcovr \
             doxygen \
             clang-format \
-            clang-tidy
+            clang-tidy \
+            git
 
       - name: Clean previous build
         run: make clean
@@ -50,31 +55,44 @@ jobs:
       - name: Generate documentation
         run: make docs
 
+      - name: Fix Pages Folder
+        run: |
+          mv html/cov/coverage.html html/cov/index.html
+          rm -rf html/doc/latex
+          mv html/doc/html/* html/doc/
+          rmdir html/doc/html || true
+
       - name: Upload HTML artifact
         uses: actions/upload-artifact@v4
         with:
           name: html
-          path: c/example/html/
+          path: /html/
 
   # ===============================================================
-  #  2. Deploy GitHub Pages (only on main)
+  #  2. Deploy Docs to gh-pages (only on main)
   # ===============================================================
   deploy-pages:
-    name: Deploy Documentation to GitHub Pages
+    name: Deploy Documentation to gh-pages branch
     needs: build-test-cov-docs
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Download HTML artifact
         uses: actions/download-artifact@v4
         with:
           name: html
           path: html/
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: html
+          publish_branch: gh-pages
+          force_orphan: true
