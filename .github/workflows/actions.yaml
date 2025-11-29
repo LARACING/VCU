@@ -20,10 +20,6 @@ jobs:
     name: Build & Test & Coverage & Docs
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: /
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -66,7 +62,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: html
-          path: /html/
+          path: html/
 
   # ===============================================================
   #  2. Deploy Docs to gh-pages (only on main)
