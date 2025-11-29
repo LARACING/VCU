@@ -70,6 +70,7 @@ jobs:
   deploy-pages:
     name: Deploy Documentation to gh-pages branch
     needs: build-test-cov-docs
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
 
     steps:
