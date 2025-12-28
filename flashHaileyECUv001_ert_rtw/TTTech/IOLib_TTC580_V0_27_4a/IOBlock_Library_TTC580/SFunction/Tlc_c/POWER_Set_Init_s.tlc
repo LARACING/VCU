@@ -1,0 +1,114 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   POWER_Set_Init_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox POWER_Set_Init_s block
+%%
+%% Version: 0.19
+%%
+
+%implements "POWER_Set_Init_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+        %openfile buffer_include
+        %selectfile buffer_include
+/* entry from POWER_Set_Init_s begin */
+        %if !EXISTS(IO_POWER)
+	        #include "IO_POWER.h"
+    		%assign ::IO_POWER = "any"
+    	%endif
+/* entry from POWER_Set_Init_s end */
+        %closefile buffer_include
+        %<LibCacheIncludes(buffer_include)>
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+	%assign pin = rtw_param1  
+	%assign mode = rtw_param2  
+
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+  	%if dimout0 > 1
+	%assign yDyn_0_1 = LibBlockOutputSignal(0, "", "",1)  
+    %<yDyn_0_1> = (%<ErrorCode_type>)%<rtw_param1>;  // additionally dimension of 1st port assigned to mask parameter
+    %endif 
+
+	/* init_function call POWER_Set_Init */
+
+    %%check, if init is necessary, and ASSERT on different SensorSupply_2 - settings
+    %if pin == "IO_SENSOR_SUPPLY_0"
+        %if !EXISTS(IO_SENSOR_SUPPLY_0_INIT) 
+{
+%<ErrorCode> = IO_POWER_Set( %<pin> , %<mode> );
+}
+            %assign ::IO_SENSOR_SUPPLY_0_INIT = "any"   %%TAG for possible clash with SensorSupply block
+        %endif
+    %elseif pin == "IO_SENSOR_SUPPLY_1"
+        %if !EXISTS(IO_SENSOR_SUPPLY_1_INIT) 
+{
+%<ErrorCode> = IO_POWER_Set( %<pin> , %<mode> );
+}
+            %assign ::IO_SENSOR_SUPPLY_1_INIT = "any"   %%TAG for possible clash with SensorSupply block
+        %endif
+    %elseif pin == "IO_SENSOR_SUPPLY_2"
+        %if !EXISTS(IO_SENSOR_SUPPLY_2_INIT) 
+{
+%<ErrorCode> = IO_POWER_Set( %<pin> , %<mode> );
+}
+            %assign ::IO_SENSOR_SUPPLY_2_INIT = mode    %%TAG for possible clash with SensorSupply block or different Sensor-Volt settings within one model
+        %else
+            %if IO_SENSOR_SUPPLY_2_INIT != mode
+                %%START_ASSERT
+                %assign errTxt = "The IO-LibTTC580 has detected an inconsistency in your model and aborted the code generateion procedure: " ...
+                    "Different settings for the parameter 'volt_sensor_supply' of 'ADC_Ratiometric_10V' blocks detected. " ... 
+                    "Please check all 'ADC_Ratiometric_10V' blocks in your model and set an unique value for 'volt_sensor_supply'."
+            	%<LibBlockReportError(block,errTxt)>
+                %%END_ASSERT
+            %endif
+        %endif
+    %endif
+
+
+
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+	%assign pin = rtw_param1  
+	%assign mode = rtw_param2  
+
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+  	%if dimout0 > 1
+	%assign yDyn_0_1 = LibBlockOutputSignal(0, "", "",1)  
+    %<yDyn_0_1> = (%<ErrorCode_type>)%<rtw_param1>;  // additionally dimension of 1st port assigned to mask parameter
+    %endif 
+
+	/* function call of POWER_Set_Init */
+
+
+
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

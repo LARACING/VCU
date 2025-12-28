@@ -1,0 +1,74 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   IO_EEPROM_Write_raw_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox IO_EEPROM_Write_raw_s block
+%%
+%% Version: 0.24
+%%
+
+%implements "IO_EEPROM_Write_raw_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+   		%assign ::IO_EEPROM = "any"
+        %<LibAddToCommonIncludes("IO_EEPROM.h")>
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+	%assign offset = rtw_param1  
+	%assign length = rtw_param2  
+
+
+	%assign data = LibBlockInputSignalAddr(0, "", "",0)
+    %assign data_type = LibBlockInputSignalDataTypeName(0,"")
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+   
+
+	/* init_function call IO_EEPROM_Write_raw */
+
+
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+	%assign offset = rtw_param1  
+	%assign length = rtw_param2  
+
+
+	%assign data = LibBlockInputSignalAddr(0, "", "",0)
+    %assign data_type = LibBlockInputSignalDataTypeName(0,"")
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+   
+
+	/* function call of IO_EEPROM_Write_raw */
+
+{
+
+
+%<ErrorCode> = IO_EEPROM_Write( %<offset> , %<length> ,(ubyte1*) %<data> );
+
+}
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

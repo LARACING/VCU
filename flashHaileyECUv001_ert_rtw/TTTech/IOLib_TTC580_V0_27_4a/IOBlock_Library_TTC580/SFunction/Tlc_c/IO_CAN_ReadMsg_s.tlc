@@ -1,0 +1,107 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   IO_CAN_ReadMsg_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox IO_CAN_ReadMsg_s block
+%%
+%% Version: 0.19
+%%
+
+%implements "IO_CAN_ReadMsg_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+   		%assign ::IO_CAN = "any"
+        %<LibAddToCommonIncludes("IO_CAN.h")>
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+
+	%assign handle = LibBlockInputSignal(0, "", "",0)
+    %assign handle_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+  	%assign buffer_length = LibBlockOutputSignal(2, "", "",0)  
+    %assign buffer_length_type = LibBlockOutputSignalDataTypeName(2,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout2 = LibBlockOutputSignalWidth(2)
+  	%assign buffer_id_format = LibBlockOutputSignal(3, "", "",0)  
+    %assign buffer_id_format_type = LibBlockOutputSignalDataTypeName(3,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout3 = LibBlockOutputSignalWidth(3)
+  	%assign buffer_id = LibBlockOutputSignal(4, "", "",0)  
+    %assign buffer_id_type = LibBlockOutputSignalDataTypeName(4,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout4 = LibBlockOutputSignalWidth(4)
+   
+	%assign buffer_data = LibBlockOutputSignalAddr(1, "", "",0)
+    %assign buffer_data_type = LibBlockOutputSignalDataTypeName(1,"")
+
+	/* init_function call IO_CAN_ReadMsg */
+
+
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+
+	%assign handle = LibBlockInputSignal(0, "", "",0)
+    %assign handle_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+  	%assign buffer_length = LibBlockOutputSignal(2, "", "",0)  
+    %assign buffer_length_type = LibBlockOutputSignalDataTypeName(2,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout2 = LibBlockOutputSignalWidth(2)
+  	%assign buffer_id_format = LibBlockOutputSignal(3, "", "",0)  
+    %assign buffer_id_format_type = LibBlockOutputSignalDataTypeName(3,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout3 = LibBlockOutputSignalWidth(3)
+  	%assign buffer_id = LibBlockOutputSignal(4, "", "",0)  
+    %assign buffer_id_type = LibBlockOutputSignalDataTypeName(4,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout4 = LibBlockOutputSignalWidth(4)
+   
+	%assign buffer_data = LibBlockOutputSignalAddr(1, "", "",0)
+    %assign buffer_data_type = LibBlockOutputSignalDataTypeName(1,"")
+
+	/* function call of IO_CAN_ReadMsg */
+
+{
+IO_CAN_DATA_FRAME tmp_struct_1={0};
+
+
+%<ErrorCode> = IO_CAN_ReadMsg( %<handle> ,&tmp_struct_1);
+memcpy(%<buffer_data>,tmp_struct_1.data,2*sizeof(uint32_T));
+%<buffer_length> = tmp_struct_1.length;
+%<buffer_id_format> = tmp_struct_1.id_format;
+%<buffer_id> = tmp_struct_1.id;
+
+}
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

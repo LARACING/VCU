@@ -1,0 +1,88 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   IO_UART_Read_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox IO_UART_Read_s block
+%%
+%% Version: 0.25
+%%
+
+%implements "IO_UART_Read_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+   		%assign ::IO_UART = "any"
+        %<LibAddToCommonIncludes("IO_UART.h")>
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+
+	%assign len = LibBlockInputSignal(0, "", "",0)
+    %assign len_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+  	%if dimout0 > 1
+	%assign yDyn_0_1 = LibBlockOutputSignal(0, "", "",1)  
+    %<yDyn_0_1> = (%<ErrorCode_type>)%<rtw_param1>;  // additionally dimension of 1st port assigned to mask parameter
+    %endif 
+	%assign data = LibBlockOutputSignalAddr(1, "", "",0)
+    %assign data_type = LibBlockOutputSignalDataTypeName(1,"")
+	%assign rx_len = LibBlockOutputSignalAddr(2, "", "",0)
+    %assign rx_len_type = LibBlockOutputSignalDataTypeName(2,"")
+
+	/* init_function call IO_UART_Read */
+
+
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+
+	%assign len = LibBlockInputSignal(0, "", "",0)
+    %assign len_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+  	%if dimout0 > 1
+	%assign yDyn_0_1 = LibBlockOutputSignal(0, "", "",1)  
+    %<yDyn_0_1> = (%<ErrorCode_type>)%<rtw_param1>;  // additionally dimension of 1st port assigned to mask parameter
+    %endif 
+	%assign data = LibBlockOutputSignalAddr(1, "", "",0)
+    %assign data_type = LibBlockOutputSignalDataTypeName(1,"")
+	%assign rx_len = LibBlockOutputSignalAddr(2, "", "",0)
+    %assign rx_len_type = LibBlockOutputSignalDataTypeName(2,"")
+
+	/* function call of IO_UART_Read */
+
+{
+
+
+%<ErrorCode> = IO_UART_Read( %<data> , %<len> , %<rx_len> );
+
+}
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

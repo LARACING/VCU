@@ -1,0 +1,134 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   DIAG_Status_internal_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox DIAG_Status_internal_s block
+%%
+%% Version: 0.19
+%%
+
+%implements "DIAG_Status_internal_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+   		%assign ::DIAG_Functions = "any"
+        %<LibAddToCommonIncludes("DIAG_Functions.h")>
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+  	%assign diag_error_error_code = LibBlockOutputSignal(3, "", "",0)  
+    %assign diag_error_error_code_type = LibBlockOutputSignalDataTypeName(3,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout3 = LibBlockOutputSignalWidth(3)
+  	%assign diag_error_device_num = LibBlockOutputSignal(4, "", "",0)  
+    %assign diag_error_device_num_type = LibBlockOutputSignalDataTypeName(4,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout4 = LibBlockOutputSignalWidth(4)
+  	%assign diag_error_faulty_value = LibBlockOutputSignal(5, "", "",0)  
+    %assign diag_error_faulty_value_type = LibBlockOutputSignalDataTypeName(5,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout5 = LibBlockOutputSignalWidth(5)
+  	%assign watchdog_error_error_code = LibBlockOutputSignal(6, "", "",0)  
+    %assign watchdog_error_error_code_type = LibBlockOutputSignalDataTypeName(6,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout6 = LibBlockOutputSignalWidth(6)
+  	%assign watchdog_error_device_num = LibBlockOutputSignal(7, "", "",0)  
+    %assign watchdog_error_device_num_type = LibBlockOutputSignalDataTypeName(7,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout7 = LibBlockOutputSignalWidth(7)
+  	%assign watchdog_error_faulty_value = LibBlockOutputSignal(8, "", "",0)  
+    %assign watchdog_error_faulty_value_type = LibBlockOutputSignalDataTypeName(8,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout8 = LibBlockOutputSignalWidth(8)
+   
+	%assign diag_state = LibBlockOutputSignalAddr(1, "", "",0)
+    %assign diag_state_type = LibBlockOutputSignalDataTypeName(1,"")
+	%assign watchdog_state = LibBlockOutputSignalAddr(2, "", "",0)
+    %assign watchdog_state_type = LibBlockOutputSignalDataTypeName(2,"")
+	%assign error_count = LibBlockOutputSignalAddr(9, "", "",0)
+    %assign error_count_type = LibBlockOutputSignalDataTypeName(9,"")
+
+	/* init_function call DIAG_Status_internal */
+
+
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+  	%assign diag_error_error_code = LibBlockOutputSignal(3, "", "",0)  
+    %assign diag_error_error_code_type = LibBlockOutputSignalDataTypeName(3,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout3 = LibBlockOutputSignalWidth(3)
+  	%assign diag_error_device_num = LibBlockOutputSignal(4, "", "",0)  
+    %assign diag_error_device_num_type = LibBlockOutputSignalDataTypeName(4,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout4 = LibBlockOutputSignalWidth(4)
+  	%assign diag_error_faulty_value = LibBlockOutputSignal(5, "", "",0)  
+    %assign diag_error_faulty_value_type = LibBlockOutputSignalDataTypeName(5,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout5 = LibBlockOutputSignalWidth(5)
+  	%assign watchdog_error_error_code = LibBlockOutputSignal(6, "", "",0)  
+    %assign watchdog_error_error_code_type = LibBlockOutputSignalDataTypeName(6,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout6 = LibBlockOutputSignalWidth(6)
+  	%assign watchdog_error_device_num = LibBlockOutputSignal(7, "", "",0)  
+    %assign watchdog_error_device_num_type = LibBlockOutputSignalDataTypeName(7,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout7 = LibBlockOutputSignalWidth(7)
+  	%assign watchdog_error_faulty_value = LibBlockOutputSignal(8, "", "",0)  
+    %assign watchdog_error_faulty_value_type = LibBlockOutputSignalDataTypeName(8,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout8 = LibBlockOutputSignalWidth(8)
+   
+	%assign diag_state = LibBlockOutputSignalAddr(1, "", "",0)
+    %assign diag_state_type = LibBlockOutputSignalDataTypeName(1,"")
+	%assign watchdog_state = LibBlockOutputSignalAddr(2, "", "",0)
+    %assign watchdog_state_type = LibBlockOutputSignalDataTypeName(2,"")
+	%assign error_count = LibBlockOutputSignalAddr(9, "", "",0)
+    %assign error_count_type = LibBlockOutputSignalDataTypeName(9,"")
+
+	/* function call of DIAG_Status_internal */
+
+{
+DIAG_ERRORCODE tmp_struct_1={0};
+DIAG_ERRORCODE tmp_struct_2={0};
+
+
+%<ErrorCode> = DIAG_Status( %<diag_state> , %<watchdog_state> ,&tmp_struct_1,&tmp_struct_2, %<error_count> );
+%<diag_error_error_code> = tmp_struct_1.error_code;
+%<diag_error_device_num> = tmp_struct_1.device_num;
+%<diag_error_faulty_value> = tmp_struct_1.faulty_value;
+%<watchdog_error_error_code> = tmp_struct_2.error_code;
+%<watchdog_error_device_num> = tmp_struct_2.device_num;
+%<watchdog_error_faulty_value> = tmp_struct_2.faulty_value;
+
+}
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

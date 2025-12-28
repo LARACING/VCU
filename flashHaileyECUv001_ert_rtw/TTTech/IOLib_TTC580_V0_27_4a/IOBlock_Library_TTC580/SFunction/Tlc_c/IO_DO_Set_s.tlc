@@ -1,0 +1,82 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   IO_DO_Set_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox IO_DO_Set_s block
+%%
+%% Version: 0.19
+%%
+
+%implements "IO_DO_Set_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+   		%assign ::IO_DIO = "any"
+        %<LibAddToCommonIncludes("IO_DIO.h")>
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+	%assign do_channel = rtw_param1  
+
+	%assign do_value = LibBlockInputSignal(0, "", "",0)
+    %assign do_value_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+  	%if dimout0 > 1
+	%assign yDyn_0_1 = LibBlockOutputSignal(0, "", "",1)  
+    %<yDyn_0_1> = (%<ErrorCode_type>)%<rtw_param1>;  // additionally dimension of 1st port assigned to mask parameter
+    %endif 
+
+	/* init_function call IO_DO_Set */
+
+
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+	%assign do_channel = rtw_param1  
+
+	%assign do_value = LibBlockInputSignal(0, "", "",0)
+    %assign do_value_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+  	%if dimout0 > 1
+	%assign yDyn_0_1 = LibBlockOutputSignal(0, "", "",1)  
+    %<yDyn_0_1> = (%<ErrorCode_type>)%<rtw_param1>;  // additionally dimension of 1st port assigned to mask parameter
+    %endif 
+
+	/* function call of IO_DO_Set */
+
+{
+
+
+%<ErrorCode> = IO_DO_Set( %<do_channel> , %<do_value> );
+
+}
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

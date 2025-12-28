@@ -1,0 +1,2538 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <link rel = "icon" type = "image/png" href = "https://www.ttcontrol.com/wp-content/themes/ttcontrol/assets/images/favicons/ttcontrol_32x32.png">
+  <title>User Manual</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Arial;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 2em;
+      margin-bottom: -1em;
+    }
+    h3{
+      color: #0093d0;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 2em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    tr:nth-child(even){background-color: #E1EDF5;}    tr:hover {background-color: #9ccbea;}
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <img src="https://www.ttcontrol.com/wp-content/themes/ttcontrol/assets/images/ttcontrol.svg" style="float:right;" alt="TTControl Logo" width="240" height="60">
+<h1 id="library-blocks">Library Blocks</h1>
+<h2 id="sec:supported services">System Blocks</h2>
+<h3 id="maindlg">MainDlg</h3>
+<p>Block representing main environment-settings of the applications to be run on a TTC580<br /><br />
+<span>Input:</span> -<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16): represents the return value of IO_Driver_Init (further details in driver manual)<br />
+<strong>Execution</strong> (uint32): Time needed to execute the application. Time output in us.<br /><br />
+<span>Parameters:</span><br />
+<strong>baudrate_CANX</strong> (CAN channel [0..2]): specify the baudrate of the CAN channel no. 0..2<br />
+In case the baudrate was chosen to be <em>I_CAN_BIT_USER</em> for a specific CAN channel out of [0..2] an user defined baudrate may be chosen by defining the following quantities:<br />
+<strong>tseg1</strong> (range [3 ... 16]): Time segment before sample point<br />
+<strong>tseg2</strong> (range [2 ... 8]): Time segment after sample point<br />
+<strong>brp</strong> (range [1 ... 64]): Baud rate prescaler<br />
+Note: Read the documentation of the function <em>IO_CAN_Init()</em> to obtain further information how to set the parameters <em>tseg1, tseg2, sjw, brp</em> in order define a specific baudrate.<br />
+<strong>baudrate_CANY</strong> (CAN channel no.[3..6]): specify the baudrate of the CAN channel no. 3..6<br />
+<strong>Duration_ms</strong>: specify in ms the cycle time of your application running on the TTC500.<br />
+Note: Duration_ms is only relevant for the code generation and is not linked to the fundamental sample time given in the Solver plane of the model configuration.<br />
+<strong>Show additional information</strong>: Check this box to make some additional settings concerning the APDB visible (further details in the driver manual of the TTC580)<br />
+<strong>Major, Minor, Revision Number</strong>: Versioning of the application, which will be visible in the APDB.<br />
+<strong>Node Number</strong>: This number is crusial for the TTC Downloader, in order to address a distict TTC500 on a CAN channel with multiple ECUs.<br />
+If there is oly one ECU on a CAN channel you may leave the default value.<br />
+<strong>Reset by TTC-Downloader</strong>: Check the box if you do not want to make a manual power cycle within the TTC-Downloader for flashing an updated program onto the TTC500<br />
+Note: For this purpose the standard CAN-ID 0x600 + Node-Number will be used. Make sure that you do not use this CAN-ID within your application, if you checked the ’Reset by TTC-Download’ box.<br />
+Example: Supose your Node-Number is 15, then you may not use the CAN-ID 0x60F in your application.<br />
+<strong>Enable ethernet download requests</strong>: Activate alternative possibility for download<br />
+Note: This is only visible in case "Reset by TTC-Downloader" is not checked<br />
+Note further: Download over ethernet is only possible if the actual SW on the ECU has this option already activated.<br />
+<strong>Enable dedicated actions for error callback</strong>: Check the box if you want to define a dedicated action to take when a non-fatal error occurs. The checkboxes define which shut-off group(s) should be disabled upon non-fatal errors. If none of the boxes "Shut-off group 0-2" are checked, the ECU will enter safe state upon non-fatal errors, switching of all outputs.<br />
+Note: A list of non-fatal errors can be found in the IO-Driver manual chapter "Diagnostic state machine error"<br />
+Note further: If "Enable dedicated actions for error callback" is not checked, non-fatal errors will be ignored.<br />
+There are more parameters for the MainDlg block in the AddOn Libraries "<a href="#sec:MainDlg_CCP">CCP</a>" and "<a href="#sec:MainDlg_J1939DMx">J1939DMx</a>" available.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="power_enable">Power_Enable</h3>
+<p>Enables all power outputs<br /><br />
+<span>Input:</span><br />
+<strong>enable</strong> (boolean):<br />
+TRUE = activates IO_INT_POWERSTAGE_ENABLE and IO_INT_SAFETY_SW_0..2 in order to drive DO and PWM outputs<br />
+FALSE = all powered outputs (DO and PWM) are set to low state<br /><br />
+<span>Output:</span> -<br /><br />
+<span>Parameters:</span> -<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="postrun_enable">Postrun_Enable</h3>
+<p>Enables postrun of the ECU<br /><br />
+<span>Input:</span><br />
+<strong>enable</strong> (boolean):<br />
+TRUE = independently from the state of KL15 the application keeps running<br />
+FALSE = if KL15 is low the ECU powers down<br /><br />
+<span>Output:</span> -<br /><br />
+<span>Parameters:</span> -<br />
+The ECU does not power down automatically when K15 is low. When K15 becomes low, the postrun is still active, and a power down can be now initiated by the application SW. Turning down the ECU is done by setting "enable" to FALSE.<br />
+<br />
+Further information of the mechanisms related to the behaviour and control of the Power IC of the ECU may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="entersafestate">EnterSafestate</h3>
+<p>Allows an application-driven safe state<br /><br />
+<span>Input:</span><br />
+<strong>enable</strong> (boolean): on setting TRUE, ECU activates the safe state. In this way, the ECU can be brought into the safe state from application conditions.<br /><br />
+<span>Output:</span> -<br /><br />
+<span>Parameters:</span> -<br />
+When this function is called the safe state is entered latest after 10ms or on the next call of <em>IO_ Driver_TaskEnd()</em><br />
+<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="fpu_handler">FPU_Handler</h3>
+<p>This Block checks for exception reasons (listed below). The corresponding FPU exceptions lead to entering safe state<br /><br />
+<span>Input:</span> -<br /><br />
+<span>Output:</span> -<br /><br />
+<span>Parameters:</span><br />
+<strong>division_by_zero</strong> (checkbox): is caused if a divide operation has a zero divisor and a dividend that is not zero, an infinity or a NaN<br />
+<strong>input_denormal</strong> (checkbox): is caused if a denormalized input operand is replaced in the computation by a zero<br />
+<strong>invalid_operation</strong> (checkbox): is caused if the result of an operation has no mathematical value or cannot be represented<br />
+<strong>overflow</strong> (checkbox): is caused if the absolute value of the result of an operation, produced after rounding, is greater than the maximum positive normalized number for the destination precision.<br />
+<strong>underflow</strong> (checkbox): is caused if the absolute value of the result of an operation, produced before rounding, is less than the minimum positive normalized number for the destination precision and the rounded result is inexact.<br />
+Note: This block may only occur once per model. No code generated if placed in referenced models.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="setdateandtime">SetDateAndTime</h3>
+<p>Sets the date and time of the real time clock<br /><br />
+<span>Input:</span><br />
+<strong>trigger</strong> (boolean): on rising edge of trigger input the following entities may be set to the real time clock<br />
+<strong>seconds</strong> (uint8): seconds (range [0..59])<br />
+<strong>minutes</strong> (uint8): minutes (range [0..59])<br />
+<strong>hours</strong> (uint8): hours (range [0..23])<br />
+<strong>days</strong> (uint8): days (range [1..31])<br />
+<strong>months</strong>(uint8): months (range [1..12])<br />
+<strong>years</strong> (uint8): years (range [0..99])<br /><br />
+<span>Output:</span><br />
+<strong>status</strong> (uint16): status of the external RTC device<br /><br />
+<span>Parameters:</span> -<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="getdateandtime">GetDateAndTime</h3>
+<p>Returns the date and time of the real time clock<br /><br />
+<span>Input:</span><br />
+<strong>trigger</strong> (boolean): date and time of the real time clock is returned on rising edge of trigger<br /><br />
+<span>Output:</span><br />
+<strong>Status</strong> (uint): corresponds to the result of IO_RTC_GetDateAndTimeStatus() in order to capture busy states or integrity faults of the RTC.<br />
+<strong>seconds</strong> (uint8): seconds (range [0..59])<br />
+<strong>minutes</strong> (uint8): minutes (range [0..59])<br />
+<strong>hours</strong> (uint8): hours (range [0..23])<br />
+<strong>days</strong> (uint8): days (range [1..31])<br />
+<strong>months</strong>(uint8): months (range [1..12])<br />
+<strong>years</strong> (uint8): years (range [0..99])<br /><br />
+<span>Parameters:</span> -<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="diag_status">DIAG_Status</h3>
+<p>Status function for diagnostic state machine and watchdog states<br />
+<br /><br />
+<span>Input:</span> -<br />
+</p>
+<div class="tabbing">
+<p><span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16): return value of internal driver function <em>DIAG_Status()</em><br />
+<strong>diag_state</strong> (uint8): current state of the diagnostic state machine<br />
+<strong>watchdog_state</strong> (uint8): current state of the watchdog CPU<br />
+<strong>diag_error_code</strong> (uint8): error codes of the diagnostic state machine<br />
+<strong>diag_device_num</strong> (uint8): The device number which caused the error<br />
+<strong>diag_faulty_value</strong> (uint32): The value which caused the error<br />
+<strong>watchdog_error_code</strong> (uint8): error codes of the watchdog CPU<br />
+<strong>watchdog_device_num</strong> (uint8): device number which caused the error (of the watchdog CPU)<br />
+<strong>watchdog_faulty_value</strong> (uint32): value which caused the error (of the watchdog CPU)<br />
+<strong>error_count</strong> (uint8): watchdog CPU device error counter<br />
+<strong>b_FPGA_version_OK</strong> (boolean):<br />
+TRUE = the version number of the FPGA IP corresponds to the given values in the mask<br />
+FALSE = version conflict, please check the FPGA version of your ECU<br />
+<strong>b_IODrv_version_OK</strong> (boolean):<br />
+TRUE = the version number of the IO driver corresponds to the given values in the mask<br />
+FALSE = version conflict, please update the IO_Driver stack of your ECU</p>
+</div>
+<p><span>Parameters:</span><br />
+<strong>FPGA_Major</strong> (uint8): major version number of the FPGA<br />
+<strong>FPGA_Minor</strong> (uint8): minor version number of the FPGA<br />
+<strong>IODriver_Major</strong> (uint8): major version number of the IO_Driver<br />
+<strong>IODriver_Minor</strong> (uint8): minor version number of the IO_Driver<br />
+Example: when the IO_Driver version 3.1.17 please enter IODriver_Major 3 IODriver_Minor 1 and ignore the patch number (17)<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="compare2error">compare2error</h3>
+<p>The ErrorCode that is output from an I/O-Block is compared against the given constant in mask (define)<br /><br />
+<span>Input:</span><br />
+<strong>ErrorCode</strong> (uint16): value coming from the ErrorCode output of another block from the IO block library<br /><br />
+<span>Output:</span><br />
+<strong>b_compare</strong> (boolean):<br />
+TRUE: value given in Mask and the input Errorcode are identical<br />
+FALSE: values are not identical<br /><br />
+<span>Parameters:</span><br />
+<strong>define</strong> (drop-down): define type of ErrorCode<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="io_driver_getserialnumber">IO_Driver_GetSerialNumber</h3>
+<p>Returns the ECU’s serial number<br /><br />
+<span>Input:</span> -<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16): possible Errorcodes from underlying driver function <em>IO_Driver_GetSerialNumber()</em><br />
+<strong>seriealnumber</strong> (uint8): ASCII-Code of the serial number that may be found on the label of the ECU<br /><br />
+<span>Parameters:</span> -<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h2 id="can-blocks">CAN Blocks</h2>
+<h3 id="readmsg_can">ReadMsg_CAN</h3>
+<p>Reads a message from a given message object.<br /><br />
+<span>Input:</span> -<br />
+</p>
+<div class="tabbing">
+<p><span>Output:</span><br />
+<strong>Read_Error</strong> (uint16): indication whether the message is new or not. Specifically:<br />
+<em>IO_E_OK</em> (= 0): everything is fine<br />
+<em>IO_E_CAN_OVERFLOW</em> (= 40): two or more messages received in the actual cycle<br />
+<em>IO_E_CAN_OLD_DATA</em> (= 45): no new data has been received in the actual cycle<br />
+Further ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+description of Driverfunction <em>IO_CAN_WriteMsg()</em><br />
+<strong>data</strong> (uint32[2]): received data - 8 bytes stored in a two dimensional array of uint32<br />
+</p>
+</div>
+<p><span>Parameters:</span><br />
+<strong>channel</strong> (drop-down) : CAN channel<br />
+<strong>id format</strong> (drop-down) : format of message identifier (standard / extended)<br />
+<strong>id</strong> (uint32): CAN message identifier<br />
+<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="writemsg_can">WriteMsg_CAN</h3>
+<p>Transmits a CAN message, using the given channel and message object.<br /><br />
+<span>Input:</span><br />
+<strong>data</strong> (uint32 [2]): 8 bytes, stored in a two dimensional array of uint32, which will be transmitted<br />
+</p>
+<div class="tabbing">
+<p><span>Output:</span><br />
+<strong>Write_Error</strong> (uint16): indication whether the transmission has been started successfully or not. Specifically:<br />
+IO_E_OK (= 0): everything is fine<br />
+IO_E_BUSY (= 2) : no data has been transmitted. There is a problem with the CAN line<br />
+(eg: no acknowledge from any receiving node)<br />
+Further ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+description of Driverfunction <em>IO_CAN_WriteMsg()</em><br />
+</p>
+</div>
+<p><span>Parameters:</span><br />
+<strong>channel</strong> (drop-down) : CAN channel<br />
+<strong>id format</strong> (drop-down) : format of message identifier (standard / extended)<br />
+<strong>id</strong> (uint32): CAN message identifier<br />
+<strong>length</strong> (range[0..8]): length of data to be transmitted<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="readmsg_can_derated">ReadMsg_CAN_derated</h3>
+<p>Representation of the ReadMsg_CAN function call, with derate functionality. This can be used for CAN Tx-messages with message cycle times larger than the application cycle time which can be defined in the mask of the MainDlg block.<br /><br />
+<span>Input:</span> -<br />
+</p>
+<div class="tabbing">
+<p><span>Output:</span><br />
+<strong>Read_Error_debcd</strong> (uint16): Passes the debounced ErrorCode of the CAN-driver to the application.<br />
+When the driver ErrorCode are different from zero (IO_E_OK) twice or more times consecutively,<br />
+the last ErrorCode is output to the application.<br />
+(eg: the ErrorCodes from IO_CAN_ReadMsg have the sequence <span>0, 45, 0</span><br />
+the output <strong>Read_Error_debcd</strong> is <span>0, 0, 0</span>.<br />
+In case the sequence is <span>0, 45, 45, 0</span> the output <strong>Read_Error_debcd</strong> is <span>0, 0, 45, 0</span>)<br />
+Some specific ErrorCodes:<br />
+IO_E_OK (= 0): everything is fine<br />
+IO_E_CAN_OVERFLOW (= 40) : two or more messages have been received<br />
+in the actual message cycle time<br />
+IO_E_CAN_OLD_DATA (= 45) : no new data has been received<br />
+in the actual message cycle time<br />
+Further ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+description of Driverfunction <em>IO_CAN_WriteMsg()</em><br />
+<strong>data</strong> (uint32 [2]): received data, 8 bytes stored in a two dimensional array of uint32<br />
+</p>
+</div>
+<p><span>Parameters:</span><br />
+<strong>channel</strong> (drop-down) : CAN channel<br />
+<strong>id format</strong> (drop-down) : format of message identifier (standard / extended)<br />
+<strong>id</strong> (uint32): CAN message identifier<br />
+<strong>derate</strong> (uint16) : The message buffer is only read out every n-th cycle, where n is given by this parameter. (Message cycle time) = derate * (application cycle time)<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="writemsg_can_derated">WriteMsg_CAN_derated</h3>
+<p>Representation of the WriteMsg_CAN function call with derate functionality. This can be used for CAN Rx-messages with message cycle times larger than the application cycle time which can be defined in the mask of the MainDlg block.<br /><br />
+<span>Input:</span><br />
+<strong>data</strong> (uint32 [2]): 8 bytes stored in a two dimensional array of uint32 each which will be transmitted<br />
+</p>
+<div class="tabbing">
+<p><span>Output:</span><br />
+<strong>Write_Error</strong> (uint16): indication whether the transmission has been started successfully or not.<br />
+Specifically:<br />
+IO_E_OK (= 0): everything is fine<br />
+IO_E_BUSY (= 2) : no data has been transmitted. There is a problem on the CAN line<br />
+(eg: no acknowledge from any receiving node)<br />
+Further ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+description of Driverfunction <em>IO_CAN_WriteMsg()</em><br />
+</p>
+</div>
+<p><span>Parameters:</span><br />
+<strong>channel</strong> (drop-down) : CAN channel<br />
+<strong>id format</strong> (drop-down) : format of message identifier (standard / extended)<br />
+<strong>id</strong> (uint32): CAN message identifier<br />
+<strong>length</strong> (range[0..8]): length of input data<br />
+<strong>derate</strong> (uint16) : The message buffer is only sent out every n-th cycle, where n is given by this parameter. (Message cycle time) = derate * (application cycle time)<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="bit_packing">bit_packing</h3>
+<p>Prepares CAN-transmition of a signal at a specified position within the CAN buffer.<br /><br />
+<span>Input:</span><br />
+<strong>Data_in</strong> (any native datatype): <em><strong>Physical value</strong></em> of the signal to be transmitted on the CAN bus<br /><br />
+<span>Output:</span><br />
+<strong>Data_out</strong> (uint32 [2]): CAN buffer filled with zeros except for the placeholder containing raw value<br /><br />
+<span>Parameters:</span><br />
+<strong>Endianness</strong> (drop-down): edianness of the signal within the CAN buffer<br />
+<strong>Format</strong> (drop-down): format of the signal within the CAN buffer<br />
+<strong>Startbit</strong> (range [0..63]): posititon of the placeholder for the signal in the CAN buffer<br />
+<strong>Width_bits</strong> (range [1..32]): size of the placeholder for the signal in the CAN buffer.<br />
+Needs to be big enough to hold the given datatype of <strong>Data_in</strong><br />
+<strong>Factor</strong>: Parameter of the formula to calculate physical value<br />
+<strong>Offset</strong>: Parameter of the formula to calculate physical value<br />
+The following definition applies:<br />
+(Raw value) = ((<em><strong>Physical value</strong></em>) - (<strong>Offset</strong>) ) / (<strong>Factor</strong>)<br />
+Raw value … the value of the signal as it is transmitted on the CAN-network.<br />
+Note: multiple bit_packing outputs may be merged using the bitwise operator OR_Tx<br />
+</p>
+<h3 id="bit_unpacking">bit_unpacking</h3>
+<p>reads in CAN signal from a specified position within the CAN Buffer<br /><br />
+<span>Input:</span><br />
+<strong>Data_in</strong> (uint32 [2]): CAN buffer with the placeholder containing raw value<br /><br />
+<span>Output:</span><br />
+<strong>Data_out</strong> (double): <em><strong>Physical value</strong></em> of the signal to be transmitted on the CAN bus<br /><br />
+<span>Parameters:</span><br />
+<strong>Format</strong> (drop-down): format of the signal within the CAN buffer<br />
+<strong>Startbit</strong> (range [0..63]): posititon of the placeholder for the signal in the CAN buffer<br />
+<strong>Width_bits</strong> (range [1..32]): size of the placeholder for the signal in the CAN buffer.<br />
+Needs to be big enough to hold the given datatype of <strong>Data_in</strong><br />
+<strong>Factor</strong>: Parameter of the formula to calculate physical value<br />
+<strong>Offset</strong>: Parameter of the formula to calculate physical value<br />
+The following definition applies:<br />
+(<em><strong>Physical value</strong></em>) = ( (Raw value) * (<strong>Factor</strong>) ) + (<strong>Offset</strong>)<br />
+Raw value … the value of the signal as it is transmitted on the CAN-network.´<br />
+Verification capabilities are supported.<br />
+</p>
+<h2 id="adc-blocks">ADC Blocks</h2>
+<h3 id="adc_absolute_5v">ADC_Absolute_5V</h3>
+<p>Returns the value of the given ADC channel: 0V..5V<br /><br />
+<span>Input:</span> -<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16) : Indication whether the ADC measurement is correct (=0).<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_ADC_Get()</em><br />
+<strong>adc_value</strong> (uint32) : value of given ADC channel in mV (range [0..5000])<br /><br />
+<span>Parameters:</span><br />
+<strong>adc_channel</strong> (drop-down): ADC channel<br />
+The PIN numbers may be found in <a href="#sec:adc_pins">table below</a><br />
+Note: Pull resistor is fixed to pull-down<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="adc_absolute_10v">ADC_Absolute_10V</h3>
+<p>Returns the value of the given ADC channel: 0V..10V<br /><br />
+<span>Input:</span> -<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16): Indication whether the ADC measurement is correct (=0).<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_ADC_Get()</em><br />
+<strong>adc_value</strong> (uint32) : value of given ADC channel in mV (range [0..10000])<br /><br />
+<span>Parameters:</span><br />
+<strong>adc_channel</strong> (drop-down): ADC channel<br />
+The PIN numbers may be found in <a href="#sec:adc_pins">table below</a><br />
+Note: Pull resistor is fixed to pull-down<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="adc_absolute_32v">ADC_Absolute_32V</h3>
+<p>Returns the value of the given ADC channel: 0V..32V<br /><br />
+<span>Input:</span> -<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16): Indication whether the ADC measurement is correct (=0).<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_ADC_Get()</em><br />
+<strong>adc_value</strong> (uint32): value of given ADC channel in mV (range [0..32000])<br /><br />
+<span>Parameters:</span><br />
+<strong>adc_channel</strong> (drop-down): ADC channel The PIN numbers may be found in <a href="#sec:adc_pins">table below</a><br />
+Note: Pull resistor is fixed to pull-down<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="adc_current">ADC_Current</h3>
+<p>Returns the value of the given ADC channel: 0mA..25mA<br /><br />
+<span>Input:</span> -<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16): Indication whether the ADC measurement is correct (=0).<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_ADC_Get()</em><br />
+<strong>adc_value</strong> (uint32): value of given ADC channel in uA (range [0..25000])<br /><br />
+<span>Parameters:</span><br />
+<strong>adc_channel</strong> (drop-down): ADC channel<br />
+The PIN numbers may be found in <a href="#sec:adc_pins">table below</a><br />
+Note: An internal switch (FET) protects the ADC channel from damage. Reset of the FET protection after a certain time is performed automatically. The protection can be reset 10 times, afterwards the input will remain permanently protected, which is indicated by the ErrorCode.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="adc_ubat">ADC_UBAT</h3>
+<p>Returns the value of the battery ADC channel: 0V..55 V<br /><br />
+<span>Input:</span> -<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16) : Indication whether the ADC measurement is correct (=0).<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_ADC_Get()</em><br />
+<strong>adc_value</strong> (uint32) : value of given ADC channel in mV (range [0..55000])<br /><br />
+<span>Parameters:</span> -<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="adc_ratiometric_5v">ADC_Ratiometric_5V</h3>
+<p>Returns the value of the given ADC channel: 0V..5V<br />
+Use this configuration if the connected sensor is supplied by one of the sensor supplies<br /><br />
+<span>Input:</span> -<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16) : Indication whether the ADC measurement is correct (=0).<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_ADC_Get()</em><br />
+<strong>adc_value</strong> (uint32) : value of given ADC channel in mV (range [0..5000])<br /><br />
+<span>Parameters:</span><br />
+<strong>adc_channel</strong> (drop-down) : ADC channel<br />
+The PIN numbers may be found in <a href="#sec:adc_pins">table below</a><br />
+<strong>sensor_supply</strong> (drop-down) : sensor supply channel<br />
+Note: For ratiometric ADC measurements the sensor supply is switched on automatically, you don’t need to insert the corresponding SensorSupply_5V block explicitly or configure the <em>SensorSupply_Modif</em> block<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="adc_ratiometric_10v">ADC_Ratiometric_10V</h3>
+<p>Returns the value of the given ADC channel: 0V..10V Use this configuration if the connected sensor is supplied by the variable sensor supply which can be configured in the range from 5V to 10V.<br /><br />
+<span>Input:</span> -<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16) : Indication whether the ADC measurement is correct (=0).<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_ADC_Get()</em><br />
+<strong>adc_value</strong> (uint32) : value of given ADC channel in mV (range [0..10000])<br /><br />
+<span>Parameters:</span><br />
+<strong>adc_channel</strong> (drop-down) : ADC channel<br />
+The PIN numbers may be found in <a href="#sec:adc_pins">table below</a><br />
+<strong>volt_sensor_supply</strong> (drop-down) : configuration of the variable sensor supply<br />
+Note: The sensor has to be supplied by IO_ADC_SENSOR_SUPPLY_2. For ratiometric ADC measurements the sensor supply is switched on automatically, you don’t need to insert the corresponding SensorSupply_Var block explicitly.<br />
+Restriction: All ADC_Ratiometric_10V blocks in the application must use the same voltage level for SensorSupply_10V within their masks otherwise a code generation error is issued.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="adc_resistive">ADC_Resistive</h3>
+<p>Returns the value of the given ADC channel: 0Ohm..100000Ohm<br />
+use this configuration to measure an resistive signal.<br /><br />
+<span>Input:</span> -<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16) : Indication whether the ADC measurement is correct (=0).<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_ADC_Get()</em><br />
+<strong>adc_value</strong> (uint32) : value of given ADC channel in Ohm (range [0..100000])<br /><br />
+<span>Parameters:</span><br />
+<strong>adc_channel</strong> (drop-down) : ADC channel<br />
+The PIN numbers may be found in <a href="#sec:adc_pins">table below</a><br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="adc_sensorsupply">ADC_SensorSupply</h3>
+<p>Returns the value of the associated sensor supply ADC channel: 0V..10.560V<br /><br />
+<span>Input:</span> -<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16) : Indication whether the ADC sensor supply measurement is correct (=0).<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_ADC_Get()</em><br />
+<strong>adc_value</strong> (uint32) : value of given sensor supply ADC channel in mV (range [0..10560])<br /><br />
+<span>Parameters:</span><br />
+<strong>adc_channel</strong> (drop-down) : sensor supply channel<br />
+The PIN numbers may be found in <a href="#sec:adc_pins">table below</a><br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="adc_boardtemp">ADC_BoardTemp</h3>
+<p>Returns the value of the board temperature: -63°C .. 152°C<br /><br />
+<span>Input:</span> -<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16) : Indication whether the ADC temperature measurement is correct (=0).<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_ADC_Get()</em><br />
+<strong>Temperature</strong> (uint32) : bord temperature in degree Celsius (range [-63..152])<br /><br />
+<span>Parameters:</span> -<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="adc_k15_">ADC_K15_</h3>
+<p>Returns the value of the Terminal 15 Input channel: 0V..55V<br /><br />
+<span>Input:</span> -<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16) : Indication whether the ADC measurement is correct (=0).<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_ADC_Get()</em><br />
+<strong>adc_value</strong> (uint32) : value of Terminal 15 input channel in mV (range [0..55000])<br /><br />
+<span>Parameters:</span> -<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="sec:adc_pins">ADC PINs</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Connector PIN</td>
+<td style="text-align: left;">Pin aliases</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_103</td>
+<td style="text-align: left;">IO_ADC_00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_127</td>
+<td style="text-align: left;">IO_ADC_01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_104</td>
+<td style="text-align: left;">IO_ADC_02</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_128</td>
+<td style="text-align: left;">IO_ADC_03</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_105</td>
+<td style="text-align: left;">IO_ADC_04</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_129</td>
+<td style="text-align: left;">IO_ADC_05</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_106</td>
+<td style="text-align: left;">IO_ADC_06</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_130</td>
+<td style="text-align: left;">IO_ADC_07</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_107</td>
+<td style="text-align: left;">IO_ADC_08</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_131</td>
+<td style="text-align: left;">IO_ADC_09</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_108</td>
+<td style="text-align: left;">IO_ADC_10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_132</td>
+<td style="text-align: left;">IO_ADC_11</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_109</td>
+<td style="text-align: left;">IO_ADC_12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_133</td>
+<td style="text-align: left;">IO_ADC_13</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_110</td>
+<td style="text-align: left;">IO_ADC_14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_134</td>
+<td style="text-align: left;">IO_ADC_15</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_111</td>
+<td style="text-align: left;">IO_ADC_16</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_135</td>
+<td style="text-align: left;">IO_ADC_17</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_112</td>
+<td style="text-align: left;">IO_ADC_18</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_136</td>
+<td style="text-align: left;">IO_ADC_19</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_113</td>
+<td style="text-align: left;">IO_ADC_20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_137</td>
+<td style="text-align: left;">IO_ADC_21</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_114</td>
+<td style="text-align: left;">IO_ADC_22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_138</td>
+<td style="text-align: left;">IO_ADC_23</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_115</td>
+<td style="text-align: left;">IO_ADC_24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_139</td>
+<td style="text-align: left;">IO_ADC_25</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_116</td>
+<td style="text-align: left;">IO_ADC_26</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_140</td>
+<td style="text-align: left;">IO_ADC_27</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_117</td>
+<td style="text-align: left;">IO_ADC_28</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_141</td>
+<td style="text-align: left;">IO_ADC_29</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_122</td>
+<td style="text-align: left;">IO_ADC_30</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_146</td>
+<td style="text-align: left;">IO_ADC_31</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_123</td>
+<td style="text-align: left;">IO_ADC_32</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_147</td>
+<td style="text-align: left;">IO_ADC_33</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_124</td>
+<td style="text-align: left;">IO_ADC_34</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_148</td>
+<td style="text-align: left;">IO_ADC_35</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_149</td>
+<td style="text-align: left;">IO_ADC_36</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_173</td>
+<td style="text-align: left;">IO_ADC_37</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_152</td>
+<td style="text-align: left;">IO_ADC_38</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_176</td>
+<td style="text-align: left;">IO_ADC_39</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_155</td>
+<td style="text-align: left;">IO_ADC_40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_179</td>
+<td style="text-align: left;">IO_ADC_41</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_158</td>
+<td style="text-align: left;">IO_ADC_42</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_182</td>
+<td style="text-align: left;">IO_ADC_43</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_251</td>
+<td style="text-align: left;">IO_ADC_44</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_238</td>
+<td style="text-align: left;">IO_ADC_45</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_252</td>
+<td style="text-align: left;">IO_ADC_46</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_239</td>
+<td style="text-align: left;">IO_ADC_47</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_253</td>
+<td style="text-align: left;">IO_ADC_48</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_240</td>
+<td style="text-align: left;">IO_ADC_49</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_254</td>
+<td style="text-align: left;">IO_ADC_50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_241</td>
+<td style="text-align: left;">IO_ADC_51</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_161</td>
+<td style="text-align: left;">IO_ADC_52</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_185</td>
+<td style="text-align: left;">IO_ADC_53</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_188</td>
+<td style="text-align: left;">IO_ADC_54</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_164</td>
+<td style="text-align: left;">IO_ADC_55</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_191</td>
+<td style="text-align: left;">IO_ADC_56</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_167</td>
+<td style="text-align: left;">IO_ADC_57</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_194</td>
+<td style="text-align: left;">IO_ADC_58</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_170</td>
+<td style="text-align: left;">IO_ADC_59</td>
+</tr>
+</tbody>
+</table>
+<p>Note: this table is valid for HY-TTC580, other variants of the HY-TTC500 family may have fewer PINs.</p>
+<h2 id="dio-blocks">DIO Blocks</h2>
+<h3 id="get_di">Get_DI</h3>
+<p>Gets the value of a digital input.<br /><br />
+<span>Input:</span> -<br />
+</p>
+<div class="tabbing">
+<p><span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16) : Indication whether the DI measurement is correct (=0).<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+description of Driverfunction <em>IO_DI_Get()</em><br />
+<strong>di_value</strong> (boolean): Input value<br />
+TRUE: High level<br />
+FALSE: Low level<br />
+</p>
+</div>
+<p><span>Parameters:</span><br />
+<strong>di_channel</strong> (drop-down) : digital input channel<br />
+The PIN numbers may be found in <a href="#sec:dio_pins">table below</a><br />
+<strong>pupd</strong> (drop-down) : pull up/down configuration<br />
+</p>
+<div class="tabbing">
+<p>Note: The threshold between high and low is at 2.5V<br />
+Note: Only pull-up (IO_DI_PU_10K) option for<br />
+IO_DI_00.. 35,<br />
+IO_DI_48.. 55,<br />
+IO_DI_80.. 87<br />
+<br />
+Note: Only pull-down (IO_DI_PD_10K) option for<br />
+IO_DI_56.. 71<br />
+</p>
+</div>
+<p>Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="get_di_varthreshold">Get_DI_VarThreshold</h3>
+<p>Gets the value of a digital input with an user definable voltage threshold.<br /><br />
+<span>Input:</span> -<br />
+</p>
+<div class="tabbing">
+<p><span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16) : Indication whether the DI measurement is correct (=0).<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+description of Driverfunction <em>IO_DI_Get()</em><br />
+<strong>di_value</strong> (boolean) : Input value<br />
+TRUE: High level<br />
+FALSE: Low level<br />
+</p>
+</div>
+<p><span>Parameters:</span><br />
+<strong>di_channel</strong> (drop-down) : digital input channel<br />
+The PIN numbers may be found in <a href="#sec:dio_pins">table below</a><br />
+<strong>pupd</strong> (drop-down) : pull up/down configuration<br />
+<strong>low_thresh1_mV</strong>: Defines the lower voltage limit of valid low signal (0 .. 32000mV)<br />
+<strong>low_thresh2_mV</strong>: Defines the upper voltage limit of valid low signal (0 .. 32000mV)<br />
+<strong>high_thresh1_mV</strong>: Defines the lower voltage limit of valid high signal(1 .. 32000mV)<br />
+<strong>high_thresh2_mV</strong>: Defines the upper voltage limit of valid high signal (1 .. 32000mV)<br />
+<br />
+</p>
+<div class="tabbing">
+<p>Note: Only pull-up option for<br />
+IO_DI_80..87<br />
+Note: Only pull-down option for<br />
+IO_DI_56..71<br />
+</p>
+</div>
+<p>Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="get_k15_">Get_K15_</h3>
+<p>Returns the state of K15<br /><br />
+<span>Input:</span> -<br />
+</p>
+<div class="tabbing">
+<p><span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16) : Indication whether the underlying measurement is correct (=0).<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+description of Driverfunction <em>IO_POWER_Get()</em><br />
+<strong>state</strong> (uint8): state of K15:<br />
+OFF = 0<br />
+ON = 1<br />
+</p>
+</div>
+<p><span>Parameters:</span> -<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="get_wakeup">Get_WakeUp</h3>
+<p>Returns the state of WakeUp<br /><br />
+<span>Input:</span> -<br />
+</p>
+<div class="tabbing">
+<p><span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16) : Indication whether the underlying measurement measurement is correct (=0).<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+description of Driverfunction <em>IO_POWER_Get()</em><br />
+<strong>state</strong> (uint8) : state of WakeUp<br />
+OFF = 0<br />
+ON = 1<br />
+</p>
+</div>
+<p><span>Parameters:</span> -<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="set_do_highside">Set_DO_HighSide</h3>
+<p>Sets the value of a digital output.<br />
+</p>
+<div class="tabbing">
+<p><span>Input:</span><br />
+<strong>do_value</strong> (boolean) : value to be output on the PIN (given by channel <em>do_channel</em>)<br />
+TRUE: High level<br />
+FALSE: Low level<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16): ErrorCode returned by the driver function <em>IO_DO_Set ()</em> used for<br />
+setting the digital output.<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+description of Driverfunction <em>IO_DO_Set()</em><br /><br />
+<span>Parameters:</span><br />
+<strong>do_channel</strong> (drop-down) : digital output channel<br />
+The PIN numbers may be found in <a href="#sec:dio_pins">table below</a><br />
+<strong>diagnostic</strong> (checkbox):Output configuration:<br />
+checked: diagnostic pull-up enabled<br />
+unchecked: diagnostic pull-up disabled<br />
+Note: Diagnostic capabilities only for<br />
+IO_DO_00..07,<br />
+IO_DO_52..59<br />
+</p>
+</div>
+<p>Note: The output is protected from overcurrent. In case the protection is activated, a reset is triggered automatically after a defined timespan (details in driver manual). The protection can be reset 10 times, afterwards the output will remain permanently protected, which is indicated by the ErrorCode.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="set_do_highside_fullfb">Set_DO_HighSide_Fullfb</h3>
+<p>Sets the value of a digital output.<br /><br />
+<span>Input:</span><br />
+<strong>do_value</strong> (boolean) : value to be output on the PIN (given by channel <em>do_channel</em>)</p>
+<p><span>Output:</span><br />
+<strong>DO_ErrorCode</strong> (uint16): ErrorCode returned by the driver function <em>IO_DO_Set()</em> used for setting the digital output.<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_DO_Set()</em><br />
+<strong>Volt_fb</strong> (uint16): measured voltage of the digital output in mV (range [0..32000]) <strong>Current_fb</strong> (uint16): measured current of the digital output in mA (range [0..7500])<br />
+</p>
+<div class="tabbing">
+<p><span>Parameters:</span><br />
+<strong>do_channel</strong> (drop-down) : digital output channel<br />
+The PIN numbers may be found in <a href="#sec:dio_pins">table below</a><br />
+<strong>diagnostic</strong> (checkbox):Output configuration:<br />
+checked: diagnostic pull-up enabled<br />
+unchecked: diagnostic pull-up disabled<br />
+</p>
+</div>
+<p>Note: The output is protected from overcurrent. In case the protection is activated, a reset is triggered automatically after a defined timespan (details in driver manual). The protection can be reset 10 times, afterwards the output will remain permanently protected, which is indicated by the ErrorCode.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="set_do_lowside">Set_DO_LowSide</h3>
+<p>Sets the value of a digital output.<br /><br />
+<span>Input:</span><br />
+<strong>do_value</strong> (boolean): value to be output on the PIN (given by channel do_channel)<br /><br />
+<span>Output:</span><br />
+<strong>DO_ErrorCode</strong> (uint16): ErrorCode returned by the driver function <em>IO_DO_Set()</em> used for setting the digital output.<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_DO_Set()</em><br /><br />
+<span>Parameters:</span><br />
+<strong>do_channel</strong> (drop-down) : digital output channel<br />
+The PIN numbers may be found in <a href="#sec:dio_pins">table below</a><br />
+Note: No diagnostic capabilities<br />
+Note: The output is protected from overcurrent. In case the protection is activated, a reset is triggered automatically after a defined timespan (details in driver manual). The protection can be reset 10 times, afterwards the output will remain permanently protected, which is indicated by the ErrorCode.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="sec:dio_pins">DIO PINs</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Connector PINs</td>
+<td style="text-align: left;">Pin alias</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_103</td>
+<td style="text-align: left;">IO_DI_48</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_127</td>
+<td style="text-align: left;">IO_DI_49</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_104</td>
+<td style="text-align: left;">IO_DI_50</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_128</td>
+<td style="text-align: left;">IO_DI_51</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_105</td>
+<td style="text-align: left;">IO_DI_52</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_129</td>
+<td style="text-align: left;">IO_DI_53</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_106</td>
+<td style="text-align: left;">IO_DI_54</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_130</td>
+<td style="text-align: left;">IO_DI_55</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_107</td>
+<td style="text-align: left;">IO_DI_56</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_131</td>
+<td style="text-align: left;">IO_DI_57</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_108</td>
+<td style="text-align: left;">IO_DI_58</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_132</td>
+<td style="text-align: left;">IO_DI_59</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_109</td>
+<td style="text-align: left;">IO_DI_60</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_133</td>
+<td style="text-align: left;">IO_DI_61</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_110</td>
+<td style="text-align: left;">IO_DI_62</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_134</td>
+<td style="text-align: left;">IO_DI_63</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_111</td>
+<td style="text-align: left;">IO_DI_64</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_135</td>
+<td style="text-align: left;">IO_DI_65</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_112</td>
+<td style="text-align: left;">IO_DI_66</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_136</td>
+<td style="text-align: left;">IO_DI_67</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_113</td>
+<td style="text-align: left;">IO_DI_68</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_137</td>
+<td style="text-align: left;">IO_DI_69</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_114</td>
+<td style="text-align: left;">IO_DI_70</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_138</td>
+<td style="text-align: left;">IO_DI_71</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_115</td>
+<td style="text-align: left;">IO_DI_36</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_139</td>
+<td style="text-align: left;">IO_DI_37</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_116</td>
+<td style="text-align: left;">IO_DI_38</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_140</td>
+<td style="text-align: left;">IO_DI_39</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_117</td>
+<td style="text-align: left;">IO_DI_40</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_141</td>
+<td style="text-align: left;">IO_DI_41</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_122</td>
+<td style="text-align: left;">IO_DI_42</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_146</td>
+<td style="text-align: left;">IO_DI_43</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_123</td>
+<td style="text-align: left;">IO_DI_44</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_147</td>
+<td style="text-align: left;">IO_DI_45</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_124</td>
+<td style="text-align: left;">IO_DI_46</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_148</td>
+<td style="text-align: left;">IO_DI_47</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_149</td>
+<td style="text-align: left;">IO_DO_00</td>
+<td style="text-align: left;">IO_DI_72</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_173</td>
+<td style="text-align: left;">IO_DO_01</td>
+<td style="text-align: left;">IO_DI_73</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_152</td>
+<td style="text-align: left;">IO_DO_02</td>
+<td style="text-align: left;">IO_DI_74</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_176</td>
+<td style="text-align: left;">IO_DO_03</td>
+<td style="text-align: left;">IO_DI_75</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_155</td>
+<td style="text-align: left;">IO_DO_04</td>
+<td style="text-align: left;">IO_DI_76</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_179</td>
+<td style="text-align: left;">IO_DO_05</td>
+<td style="text-align: left;">IO_DI_77</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_158</td>
+<td style="text-align: left;">IO_DO_06</td>
+<td style="text-align: left;">IO_DI_78</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_182</td>
+<td style="text-align: left;">IO_DO_07</td>
+<td style="text-align: left;">IO_DI_79</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_251</td>
+<td style="text-align: left;">IO_DO_08</td>
+<td style="text-align: left;">IO_DI_80</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_238</td>
+<td style="text-align: left;">IO_DO_09</td>
+<td style="text-align: left;">IO_DI_81</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_252</td>
+<td style="text-align: left;">IO_DO_10</td>
+<td style="text-align: left;">IO_DI_82</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_239</td>
+<td style="text-align: left;">IO_DO_11</td>
+<td style="text-align: left;">IO_DI_83</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_253</td>
+<td style="text-align: left;">IO_DO_12</td>
+<td style="text-align: left;">IO_DI_84</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_240</td>
+<td style="text-align: left;">IO_DO_13</td>
+<td style="text-align: left;">IO_DI_85</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_254</td>
+<td style="text-align: left;">IO_DO_14</td>
+<td style="text-align: left;">IO_DI_86</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_241</td>
+<td style="text-align: left;">IO_DO_15</td>
+<td style="text-align: left;">IO_DI_87</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_153</td>
+<td style="text-align: left;">IO_DO_16</td>
+<td style="text-align: left;">IO_DI_00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_177</td>
+<td style="text-align: left;">IO_DO_17</td>
+<td style="text-align: left;">IO_DI_01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_156</td>
+<td style="text-align: left;">IO_DO_18</td>
+<td style="text-align: left;">IO_DI_02</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_180</td>
+<td style="text-align: left;">IO_DO_19</td>
+<td style="text-align: left;">IO_DI_03</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_159</td>
+<td style="text-align: left;">IO_DO_20</td>
+<td style="text-align: left;">IO_DI_04</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_183</td>
+<td style="text-align: left;">IO_DO_21</td>
+<td style="text-align: left;">IO_DI_05</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_186</td>
+<td style="text-align: left;">IO_DO_22</td>
+<td style="text-align: left;">IO_DI_06</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_162</td>
+<td style="text-align: left;">IO_DO_23</td>
+<td style="text-align: left;">IO_DI_07</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_189</td>
+<td style="text-align: left;">IO_DO_24</td>
+<td style="text-align: left;">IO_DI_08</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_165</td>
+<td style="text-align: left;">IO_DO_25</td>
+<td style="text-align: left;">IO_DI_09</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_192</td>
+<td style="text-align: left;">IO_DO_26</td>
+<td style="text-align: left;">IO_DI_10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_168</td>
+<td style="text-align: left;">IO_DO_27</td>
+<td style="text-align: left;">IO_DI_11</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_195</td>
+<td style="text-align: left;">IO_DO_28</td>
+<td style="text-align: left;">IO_DI_12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_171</td>
+<td style="text-align: left;">IO_DO_29</td>
+<td style="text-align: left;">IO_DI_13</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_154</td>
+<td style="text-align: left;">IO_DO_30</td>
+<td style="text-align: left;">IO_DI_14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_178</td>
+<td style="text-align: left;">IO_DO_31</td>
+<td style="text-align: left;">IO_DI_15</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_157</td>
+<td style="text-align: left;">IO_DO_32</td>
+<td style="text-align: left;">IO_DI_16</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_181</td>
+<td style="text-align: left;">IO_DO_33</td>
+<td style="text-align: left;">IO_DI_17</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_160</td>
+<td style="text-align: left;">IO_DO_34</td>
+<td style="text-align: left;">IO_DI_18</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_184</td>
+<td style="text-align: left;">IO_DO_35</td>
+<td style="text-align: left;">IO_DI_19</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_187</td>
+<td style="text-align: left;">IO_DO_36</td>
+<td style="text-align: left;">IO_DI_20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_163</td>
+<td style="text-align: left;">IO_DO_37</td>
+<td style="text-align: left;">IO_DI_21</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_190</td>
+<td style="text-align: left;">IO_DO_38</td>
+<td style="text-align: left;">IO_DI_22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_166</td>
+<td style="text-align: left;">IO_DO_39</td>
+<td style="text-align: left;">IO_DI_23</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_193</td>
+<td style="text-align: left;">IO_DO_40</td>
+<td style="text-align: left;">IO_DI_24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_169</td>
+<td style="text-align: left;">IO_DO_41</td>
+<td style="text-align: left;">IO_DI_25</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_196</td>
+<td style="text-align: left;">IO_DO_42</td>
+<td style="text-align: left;">IO_DI_26</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_172</td>
+<td style="text-align: left;">IO_DO_43</td>
+<td style="text-align: left;">IO_DI_27</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_101</td>
+<td style="text-align: left;">IO_DO_44</td>
+<td style="text-align: left;">IO_DI_28</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_125</td>
+<td style="text-align: left;">IO_DO_45</td>
+<td style="text-align: left;">IO_DI_29</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_150</td>
+<td style="text-align: left;">IO_DO_46</td>
+<td style="text-align: left;">IO_DI_30</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_174</td>
+<td style="text-align: left;">IO_DO_47</td>
+<td style="text-align: left;">IO_DI_31</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_102</td>
+<td style="text-align: left;">IO_DO_48</td>
+<td style="text-align: left;">IO_DI_32</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_126</td>
+<td style="text-align: left;">IO_DO_49</td>
+<td style="text-align: left;">IO_DI_33</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_151</td>
+<td style="text-align: left;">IO_DO_50</td>
+<td style="text-align: left;">IO_DI_34</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_175</td>
+<td style="text-align: left;">IO_DO_51</td>
+<td style="text-align: left;">IO_DI_35</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_161</td>
+<td style="text-align: left;">IO_DO_52</td>
+<td style="text-align: left;">IO_DI_88</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_185</td>
+<td style="text-align: left;">IO_DO_53</td>
+<td style="text-align: left;">IO_DI_89</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_188</td>
+<td style="text-align: left;">IO_DO_54</td>
+<td style="text-align: left;">IO_DI_90</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_164</td>
+<td style="text-align: left;">IO_DO_55</td>
+<td style="text-align: left;">IO_DI_91</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_191</td>
+<td style="text-align: left;">IO_DO_56</td>
+<td style="text-align: left;">IO_DI_92</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_167</td>
+<td style="text-align: left;">IO_DO_57</td>
+<td style="text-align: left;">IO_DI_93</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_194</td>
+<td style="text-align: left;">IO_DO_58</td>
+<td style="text-align: left;">IO_DI_94</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_170</td>
+<td style="text-align: left;">IO_DO_59</td>
+<td style="text-align: left;">IO_DI_95</td>
+</tr>
+</tbody>
+</table>
+<p>Note: this table is valid for HY-TTC580, other variants of the HY-TTC500 family may have fewer PINs.</p>
+<h2 id="pwm-blocks">PWM Blocks</h2>
+<h3 id="set_pwm_simple">Set_PWM_Simple</h3>
+<p>Set the duty cycle for a PWM channel without diagnostic margin and with the high output signal set variable<br />
+<br /><br />
+<span>Input:</span><br />
+<strong>duty_cycle</strong> (uint16) : Duty cycle for the channel (range [0..65535] corresponding to [0%..100%])<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16) : Indication whether the PWM is correctly set (=0).<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_PWM_SetDuty()</em><br /><br />
+<span>Parameters:</span><br />
+<strong>pwm_channel</strong> (drop-down) : PWM channel<br />
+The PIN numbers may be found in <a href="#sec:pwm_pins">table below</a><br />
+<strong>frequency</strong> (drop-down) : PWM frequency in Hz (range [50 .. 1000], only predefined frequencies with a period of an integral multiple of 1ms, 0.5ms or 0.25ms are possible)<br />
+Note: The output is protected from overcurrent. In case the protection is activated, a reset is triggered automatically after a defined timespan (details in driver manual). The protection can be reset 10 times, afterwards the output will remain permanently protected, which is indicated by the ErrorCode.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="set_pwm_currfb">Set_PWM_CurrFb</h3>
+<p>Set the duty cycle for a PWM channel with the high output signal set variable and returning the measured current.<br /><br />
+<span>Input:</span><br />
+<strong>duty_cycle</strong> (uint16): Duty cycle for the channel. Range: 0..65535 corresponding to (0%..100%)<br />
+<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16): ErrorCode returned by the driver function IO_PWM_SetDuty () used for setting the PWM output.<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_PWM_SetDuty()</em><br />
+<strong>current</strong> (uint16): Measured current of the given channel in mA Range (range [0..7500])<br /><br />
+<span>Parameters:</span><br />
+<strong>pwm_channel</strong> (drop-down) : PWM channel<br />
+The PIN numbers may be found in <a href="#sec:pwm_pins">table below</a><br />
+<strong>frequency</strong> (drop-down) : PWM frequency in Hz (range [50 .. 1000], only predefined frequencies with a period of an integral multiple of 1ms, 0.5ms or 0.25ms are possible)<br />
+<strong>diag_margin</strong> (checkbox): application of a diagnostic margin to the PWM output. If the checkbox is ticked, the PWM output can be checked upon short circuit and open load as a minimum high and low time of the PWM signal is guaranteed.<br />
+Note: The output is protected from overcurrent. In case the protection is activated, a reset is triggered automatically after a defined timespan (details in driver manual). The protection can be reset 10 times, afterwards the output will remain permanently protected, which is indicated by the ErrorCode.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="set_pwm_fullfb">Set_PWM_FullFb</h3>
+<p>Set the duty cycle for a PWM channel.<br /><br />
+<span>Input:</span><br />
+<strong>duty_cycle</strong> (uint16): Duty cycle for the channel (range [0..65535] corresponding to [0%..100%])<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16): ErrorCode returned by the driver function IO_PWM_SetDuty () used for setting the PWM output.<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_PWM_SetDuty()</em><br />
+<strong>current</strong> (uint16): Measured current of the given channel in mA Range (range [0..7500])<br />
+<strong>h_time_fb</strong> (uint16): High time feedback for the channels. Returns high-time in us<br />
+<strong>period_fb</strong> (uint16): Period feedback for the channels. Returns period in us<br />
+</p>
+<div class="tabbing">
+<p><span>Parameters:</span><br />
+<strong>pwm_channel</strong> (drop-down) : PWM channel<br />
+The PIN numbers may be found in <a href="#sec:pwm_pins">table below</a><br />
+<strong>frequency</strong> (drop-down) : PWM frequency in Hz (range [50 .. 1000],<br />
+only predefined frequencies with a period of an integral multiple of 1ms, 0.5ms or 0.25ms are possible)<br />
+<strong>polarity_high</strong> (checkbox): Polarity of output signal<br />
+not checked (FALSE): Low output signal is variable<br />
+checked (TRUE): High output signal is variable<br />
+<strong>diag_margin</strong> (checkbox): application of a diagnostic margin to the PWM output.<br />
+If the checkbox is ticked, the PWM output can be checked upon short circuit and open load<br />
+as a minimum high and low time of the PWM signal is guaranteed.</p>
+</div>
+<p>Note: The output is protected from overcurrent. In case the protection is activated, a reset is triggered automatically after a defined timespan (details in driver manual). The protection can be reset 10 times, afterwards the output will remain permanently protected, which is indicated by the ErrorCode.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="sec:pwm_pins">PWM PINs</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Connector PIN</td>
+<td style="text-align: left;">Pin aliases</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_153</td>
+<td style="text-align: left;">IO_PWM_00</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_177</td>
+<td style="text-align: left;">IO_PWM_01</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_156</td>
+<td style="text-align: left;">IO_PWM_02</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_180</td>
+<td style="text-align: left;">IO_PWM_03</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_159</td>
+<td style="text-align: left;">IO_PWM_04</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_183</td>
+<td style="text-align: left;">IO_PWM_05</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_186</td>
+<td style="text-align: left;">IO_PWM_06</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_162</td>
+<td style="text-align: left;">IO_PWM_07</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_189</td>
+<td style="text-align: left;">IO_PWM_08</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_165</td>
+<td style="text-align: left;">IO_PWM_09</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_192</td>
+<td style="text-align: left;">IO_PWM_10</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_168</td>
+<td style="text-align: left;">IO_PWM_11</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_195</td>
+<td style="text-align: left;">IO_PWM_12</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_171</td>
+<td style="text-align: left;">IO_PWM_13</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_154</td>
+<td style="text-align: left;">IO_PWM_14</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_178</td>
+<td style="text-align: left;">IO_PWM_15</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_157</td>
+<td style="text-align: left;">IO_PWM_16</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_181</td>
+<td style="text-align: left;">IO_PWM_17</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_160</td>
+<td style="text-align: left;">IO_PWM_18</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_184</td>
+<td style="text-align: left;">IO_PWM_19</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_187</td>
+<td style="text-align: left;">IO_PWM_20</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_163</td>
+<td style="text-align: left;">IO_PWM_21</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_190</td>
+<td style="text-align: left;">IO_PWM_22</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_166</td>
+<td style="text-align: left;">IO_PWM_23</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_193</td>
+<td style="text-align: left;">IO_PWM_24</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_169</td>
+<td style="text-align: left;">IO_PWM_25</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_196</td>
+<td style="text-align: left;">IO_PWM_26</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_172</td>
+<td style="text-align: left;">IO_PWM_27</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_101</td>
+<td style="text-align: left;">IO_PWM_28</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_125</td>
+<td style="text-align: left;">IO_PWM_29</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_150</td>
+<td style="text-align: left;">IO_PWM_30</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_174</td>
+<td style="text-align: left;">IO_PWM_31</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_102</td>
+<td style="text-align: left;">IO_PWM_32</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_126</td>
+<td style="text-align: left;">IO_PWM_33</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_151</td>
+<td style="text-align: left;">IO_PWM_34</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_175</td>
+<td style="text-align: left;">IO_PWM_35</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>Note: this table is valid for HY-TTC580, other variants of the HY-TTC500 family may have fewer PINs.</p>
+<h2 id="pwd-blocks">PWD Blocks</h2>
+<h3 id="pwd_inc">PWD_Inc</h3>
+<p>Setup a single incremental interface and get the counter value.Two PWD channels are needed for one incremental interface.<br /><br />
+<span>Input:</span> -<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16): Indication whether the PWD measurement is correct (=0).<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_PWD_IncGet ()</em><br />
+<strong>count</strong> (uint16): Value of the incremental counter (0..65535)<br />
+</p>
+<div class="tabbing">
+<p><span>Parameters:</span><br />
+<strong>inc_channe</strong> (drop-down) : Channel of the incremental interface<br />
+The PIN numbers may be found in <a href="#sec:pwd_pins">table below</a><br />
+<strong>secondary_channel</strong> (drop-down) : greyed out, corresponding secondary channel<br />
+<strong>mode</strong> (drop-down) : Defines the counter behavior<br />
+IO_PWD_INC_2_COUNT: Counts up/down on any edge of the two input channels<br />
+IO_PWD_INC_1_COUNT: Counts up/down on any edge of the 1st input channel only<br />
+<strong>pupd</strong> (drop-down) : Pull up/down interface:<br />
+IO_PWD_PU_10K: Pull up 10 kOhm<br />
+IO_PWD_PD_10K: Pull down 10 kOhm</p>
+</div>
+<p>Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="pwd_increset">PWD_IncReset</h3>
+<p>Set the counter value of an incremental interface<br /><br />
+<span>Input:</span><br />
+<strong>b_triggger</strong> (boolean): counter is taken over on rising edge of trigger<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16): Indication whether the reset of the incremental value is successful (=0).<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_PWD_IncSet ()</em><br /><br />
+<span>Parameters:</span><br />
+<strong>inc_channel</strong> (drop-down) : Channel of the incremental interface<br />
+The PIN numbers may be found in <a href="#sec:pwd_pins">table below</a><br />
+<strong>count</strong> (uint16): Value of the incremental counter (0..65535) to be set<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="get_pulse_freq_curr">Get_Pulse_Freq_Curr</h3>
+<p>Get the frequency and the pulse-width from the specified timer channel connected to a current sensor (7mA/14mA)<br /><br />
+<span>Input:</span> -<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16): Indication whether the PWD measurement is correct (=0).<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_PWD_IncSet ()</em><br />
+<strong>frequency</strong> (uint32): Accumulated frequency in mHz (1/1000 Hz)<br />
+<strong>pulse_width</strong> (uint32): Accumulated pulse-width in us<br />
+</p>
+<div class="tabbing">
+<p><span>Parameters:</span><br />
+<strong>timer_channel</strong> (drop-down): timer channel<br />
+The PIN numbers may be found in <a href="#sec:pwd_pins">table below</a><br />
+<strong>pulse_mode</strong> (drop-down): Specifies the pulse mode<br />
+IO_PWD_HIGH_TIME: measure pulse-hightime<br />
+IO_PWD_LOW_TIME: measure pulse-low-time<br />
+IO_PWD_PERIOD_TIME: measure pulse-high and low-time (Period)<br />
+<strong>freq_mode</strong> (drop-down): Specifies the variable edge<br />
+IO_PWD_RISING_VAR: frequency is measured on falling edges<br />
+IO_PWD_FALLING_VAR: frequency is measured on rising edges</p>
+</div>
+<p>Note: The output is protected from overcurrent. In case the protection is activated, a reset is triggered automatically after a defined timespan (details in driver manual). When re-enabling the channel after it has been in protection state, it will do a transition to the startup state. This is reflected by the ErrorCode.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="get_pulse_freq_volt">Get_Pulse_Freq_Volt</h3>
+<p>Get the frequency and the pulse-width from the specified timer channel driven by a voltage signal.<br /><br />
+<span>Input:</span> -<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16) : Indication whether the PWD measurement is correct (=0).<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_PWD_IncSet ()</em><br />
+<strong>frequency</strong> (uint32): Accumulated frequency in mHz (1/1000 Hz)<br />
+<strong>pulse_width</strong> (uint32): Accumulated pulse-width in us<br />
+</p>
+<div class="tabbing">
+<p><span>Parameters:</span><br />
+<strong>timer_channel</strong> (drop-down) : timer channel<br />
+The PIN numbers may be found in <a href="#sec:pwd_pins">table below</a><br />
+<strong>pulse_mode</strong> (drop-down) : Specifies the pulse mode<br />
+IO_PWD_HIGH_TIME: measure pulse-hightime<br />
+IO_PWD_LOW_TIME: measure pulse-low-time<br />
+IO_PWD_PERIOD_TIME: measure pulse-high and low-time (Period)<br />
+<strong>freq_mode</strong> (drop-down) : Specifies the variable edge<br />
+IO_PWD_RISING_VAR: frequency is measured on falling edges<br />
+IO_PWD_FALLING_VAR: frequency is measured on rising edges<br />
+<strong>pupd</strong> (drop-down) : Pull up/down interface:<br />
+IO_PWD_NO_PULL: fixed pull resistor<br />
+IO_PWD_PU_10K: Pull up 10 kOhm<br />
+IO_PWD_PD_10K: Pull down 10 kOhm<br />
+IO_PWD_PD_90: Pull down 90 Ohm (for 7mA/14mA sensors)</p>
+</div>
+<p>Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="sec:pwd_pins">PWD PINs</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Connector PIN</td>
+<td style="text-align: left;">Pin aliases</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_115</td>
+<td style="text-align: left;">IO_PWD_00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_139</td>
+<td style="text-align: left;">IO_PWD_01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_116</td>
+<td style="text-align: left;">IO_PWD_02</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_140</td>
+<td style="text-align: left;">IO_PWD_03</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_117</td>
+<td style="text-align: left;">IO_PWD_04</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_141</td>
+<td style="text-align: left;">IO_PWD_05</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_122</td>
+<td style="text-align: left;">IO_PWD_06</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_146</td>
+<td style="text-align: left;">IO_PWD_07</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_123</td>
+<td style="text-align: left;">IO_PWD_08</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_147</td>
+<td style="text-align: left;">IO_PWD_09</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_124</td>
+<td style="text-align: left;">IO_PWD_10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_148</td>
+<td style="text-align: left;">IO_PWD_11</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_101</td>
+<td style="text-align: left;">IO_PWD_12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_125</td>
+<td style="text-align: left;">IO_PWD_13</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_150</td>
+<td style="text-align: left;">IO_PWD_14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_174</td>
+<td style="text-align: left;">IO_PWD_15</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_102</td>
+<td style="text-align: left;">IO_PWD_16</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_126</td>
+<td style="text-align: left;">IO_PWD_17</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_151</td>
+<td style="text-align: left;">IO_PWD_18</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_175</td>
+<td style="text-align: left;">IO_PWD_19</td>
+</tr>
+</tbody>
+</table>
+<p>Note: this table is valid for HY-TTC580, other variants of the HY-TTC500 family may have fewer PINs.</p>
+<h2 id="sensor-supply-blocks">Sensor Supply Blocks</h2>
+<h3 id="sensorsupply_5v">SensorSupply_5V</h3>
+<p>Switch on sensor supply 0 or sensor supply 1 with fixed 5 volts.<br /><br />
+<span>Input:</span><br />
+<strong>enable</strong> (boolean): sensor supply is switched on if enable = 1<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16) : ErrorCode returned by the driver function <em>IO_POWER_Set ()</em> used for setting the sensor supply output.<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_POWER_Set ()</em><br /><br />
+<span>Parameters:</span><br />
+<strong>sensor_supply</strong> (drop-down) : sensor supply (0 or 1)<br />
+Note: For ratiometric ADC measurements the sensor supply is switched on automatically (no need to insert this block explicitely)<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="sensorsupply_modif">SensorSupply_Modif</h3>
+<p>Operate sensor supply 2 for configurable voltage<br /><br />
+<span>Input:</span><br />
+<strong>Volt</strong> (uint8): specifies the output voltage: possible values [0,5,6,7,8,9,10] volts<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16) : ErrorCode returned by the driver function <em>IO_POWER_Set ()</em> used for setting the sensor supply output.<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_POWER_Set ()</em><br /><br />
+<span>Parameters:</span> -<br />
+Note: For ratiometric ADC measurements the sensor supply is switched on automatically (no need to insert this block explicitely)<br />
+Note: in case the input does not match to possible values the sensor supply is off. Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h2 id="pvg-and-vout-blocks">PVG and VOUT Blocks</h2>
+<h3 id="set_pvg_simple">Set_PVG_Simple</h3>
+<p>Sets the output value of one PVG channel in percent<br /><br />
+<span>Input:</span><br />
+<strong>percent00</strong> (uint): Output value in percent * 100 (range [1000..9000])<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16): ErrorCode returned by the driver function <em>IO_PVG_Set ()</em> used for setting the PVG output.<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_POWER_Set ()</em><br /><br />
+<span>Parameters:</span><br />
+<strong>pvg_channel</strong> (drop-down) : PVG channel<br />
+The PIN numbers may be found in <a href="#sec:pvg_vout_pins">table below</a><br />
+Note: Initial value of output set to 50<br />
+Note: The output is protected from overcurrent. In case the protection is activated, a reset is triggered automatically after a defined timespan (details in driver manual). The protection can be reset 10 times, afterwards the output will remain permanently protected, which is indicated by the ErrorCode.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="set_pvg_voltfb">Set_PVG_VoltFb</h3>
+<p>Sets the output value of one PVG channel in percent<br />
+<br /><br />
+<span>Input:</span><br />
+<strong>percent00</strong> (uint16): Output value in percent * 100 (range [1000..9000])<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16): ErrorCode returned by the driver function <em>IO_PVG_Set ()</em> used for setting the PVG output.<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_POWER_Set ()</em><br />
+<strong>voltage_fb</strong> (uint8): measured voltage in mV (range [0..32000])<br /><br />
+<span>Parameters:</span><br />
+<strong>pvg_channel</strong> (drop-down) : PVG channel<br />
+The PIN numbers may be found in <a href="#sec:pvg_vout_pins">table below</a><br />
+<strong>output_value_init</strong> (drop-down) : output value with which the PVG channel will be initialized<br />
+in percent * 100 (range [1000..9000])<br />
+Note: The output is protected from overcurrent. In case the protection is activated, a reset is triggered automatically after a defined timespan (details in driver manual). The protection can be reset 10 times, afterwards the output will remain permanently protected, which is indicated by the ErrorCode.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="set_vout_simple">Set_VOUT_Simple</h3>
+<p>Sets the output voltage of one voltage output channel<br /><br />
+<span>Input:</span><br />
+<strong>voltage</strong> (uint16): Output voltage in mV (range [0..32000])<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16): ): ErrorCode returned by the driver function <em>IO_VOUT_Set ()</em> used for setting the VOUT output.<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_VOUT_SetVoltage ()</em><br /><br />
+<span>Parameters:</span><br />
+<strong>vout_channel</strong> (drop-down) : VOUT channel<br />
+The PIN numbers may be found in <a href="#sec:pvg_vout_pins">table below</a><br />
+Note: The output is protected from overcurrent. In case the protection is activated, a reset is triggered automatically after a defined timespan (details in driver manual). The protection can be reset 10 times, afterwards the output will remain permanently protected, which is indicated by the ErrorCode.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="set_vout_voltfb">Set_VOUT_VoltFb</h3>
+<p>Sets the output voltage of one voltage output channel, returning the measured voltage in mV<br /><br />
+<span>Input:</span><br />
+<strong>voltage</strong> (uint16): Output voltage in mV (range [0..32000])<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16): ErrorCode returned by the driver function <em>IO_VOUT_Set ()</em> used for setting the VOUT output.<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_VOUT_SetVoltage ()</em><br />
+<strong>voltage_fb</strong> (uint16) : measured voltage in mV (range [0..32000])<br /><br />
+<span>Parameters:</span><br />
+<strong>vout_channel</strong> (drop-down) : VOUT channel<br />
+The PIN numbers may be found in <a href="#sec:pvg_vout_pins">table below</a><br />
+Note: The output is protected from overcurrent. In case the protection is activated, a reset is triggered automatically after a defined timespan (details in driver manual). The protection can be reset 10 times, afterwards the output will remain permanently protected, which is indicated by the ErrorCode.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="sec:pvg_vout_pins">PVG and VOUT PINs</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Connector PIN</td>
+<td style="text-align: left;">Pin aliases</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_161</td>
+<td style="text-align: left;">IO_PVG_00</td>
+<td style="text-align: left;">IO_VOUT_00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_185</td>
+<td style="text-align: left;">IO_PVG_01</td>
+<td style="text-align: left;">IO_VOUT_01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_188</td>
+<td style="text-align: left;">IO_PVG_02</td>
+<td style="text-align: left;">IO_VOUT_02</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_164</td>
+<td style="text-align: left;">IO_PVG_03</td>
+<td style="text-align: left;">IO_VOUT_03</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_191</td>
+<td style="text-align: left;">IO_PVG_04</td>
+<td style="text-align: left;">IO_VOUT_04</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_167</td>
+<td style="text-align: left;">IO_PVG_05</td>
+<td style="text-align: left;">IO_VOUT_05</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIN_194</td>
+<td style="text-align: left;">IO_PVG_06</td>
+<td style="text-align: left;">IO_VOUT_06</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIN_170</td>
+<td style="text-align: left;">IO_PVG_07</td>
+<td style="text-align: left;">IO_VOUT_07</td>
+</tr>
+</tbody>
+</table>
+<p>Note: this table is valid for HY-TTC580, other variants of the HY-TTC500 family may have fewer PINs.</p>
+<h2 id="uart-blocks">UART Blocks</h2>
+<h3 id="write_rs232_">Write_RS232_</h3>
+<p>Writes a value with a comment to UART interface.<br /><br />
+<span>Input:</span><br />
+<strong>value</strong> (any native datatype): value to be displayed<br /><br />
+<span>Output:</span> -<br /><br />
+<span>Parameters:</span><br />
+<strong>Comment (String)</strong>: used as description of the value to be displayed. The length of the string together with the length of the value to be displayed may not exceed 80 characters.<br />
+Used settings are: 115.200 baud, 8 databits, 1 stopbit, no parity<br />
+The buffer is only sent out every n-th cycle, where n is 100 by default. In order to change this default, define a variable DERATE_PRINTF in the MATLAB command window with a different value.<br />
+If the model contains reference models with Write_RS232 blocks, it is necessary to add at least one <em>Write_RS232</em> block to the root model. If not, the cursor wouldn’t get reset to the top-left position.<br />
+Note: Do not use any escape sequences nor format characters in the comment string.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+in chapter <em>IO_UART_Write ()</em><br />
+</p>
+<h3 id="write_rs232_green">Write_RS232_green</h3>
+<p>Triggers writing of a non zero value with green font to UART interface.<br /><br />
+<span>Input:</span><br />
+<strong>value</strong> (any native datatype) : value to be displayed<br /><br />
+<span>Output:</span> –<br /><br />
+<span>Parameters:</span><br />
+<strong>comment</strong> (String): used as description of the value to be displayed in green font. The length of the string together with the length of the value to be displayed may not exceed 80 characters.<br />
+Used settings are: 115.200 baud, 8 databits, 1 stopbit, no parity<br />
+The buffer is only sent out if value is not zero. This happens every n-th cycle, where n is 100 by default. In order to change this default, define a variable DERATE_PRINTF in the MATLAB command window with a different value.<br />
+If the model contains reference models with Write_RS232 blocks, it is necessary to add at least one <em>Write_RS232</em> block to the root model. If not, the cursor wouldn’t get reset to the top-left position.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="write_rs232_red">Write_RS232_red</h3>
+<p>Triggers writing of a non zero value with red comment to UART interface.<br /><br />
+<span>Input:</span><br />
+<strong>value</strong> (any native datatype) : value to be displayed<br /><br />
+<span>Output:</span> -<br /><br />
+<span>Parameters:</span><br />
+<strong>comment</strong> (String): used as description of the value to be displayed. The length of the string together with the length of the value to be displayed may not exceed 80 characters.<br />
+Used settings are: 115.200 baud, 8 databits, 1 stopbit, no parity<br />
+The buffer is only sent out if value is not zero. This happens every n-th cycle, where n is 100 by default. In order to change this default, define a variable DERATE_PRINTF in the MATLAB command window with a different value.<br />
+If the model contains reference models with Write_RS232 blocks, it is necessary to add at least one <em>Write_RS232</em> block to the root model. If not, the cursor wouldn’t get reset to the top-left position.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="uart_write">UART_Write</h3>
+<p>Writes multiple values with a comment to UART interface.<br /><br />
+<span>Input:</span><br />
+<strong>value</strong> (array): This quantity is the output via serial interface for every single item, if the parameter <strong>Comment</strong> contains the corresponding type qualifier (%d for integers and %f for floats, can be added multiple times.)<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16): Return value of the IO-driver <em>IO_UART_Write()</em><br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_UART_Write ()</em><br /><br />
+<span>Parameters:</span><br />
+<strong>Comment</strong> (String): used as a description of the value to be displayed.<br />
+(length of the string + length of the values) may not exceed 80 characters.<br />
+Used settings are: 115.200 baud, 8 databits, 1 stopbit, no parity<br />
+In order to display the values you need to use type specifiers (e.g. %d or %f ). It is not checked whether these specifiers are correct. You may use multiple type specifiers if you have a multidimensional input signal.<br />
+For example:<br />
+<em>pressure: %f , temperature: %5.2f</em><br />
+terminal Output: pressure: 0.358703 , temperature: 32.04<br />
+The buffer is only sent out every n-th cycle, where n is 100 by default. In order to change this default define a variable DERATE_PRINTF in the MATLAB command window with a different value.<br />
+Note: Differently to the behaviour of Write_RS232, the cursor will not get reset to the top-left position and it is possible to use special characters.<br />
+Note: LF is added automatically at the end of the string which means you do not need to add <em>\<span>r</span>\<span>n</span></em> at the end.<br />
+Note: mixing UART_Write with Write_RS232 blocks within the same mode is not advisable, as Write_RS232 blocks perform a reset of the cursor within the terminal. Depending on the code placement by the EmbeddedCoder this might wipe some outputs from the terminal.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="uart_read">UART_Read</h3>
+<p>Read data from serial interface into an array of uint8 with a user defined length.<br /><br />
+<span>Input:</span> -<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16): Output of the IO-driver function <em>IO_UART_Read()</em><br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_UART_Read ()</em><br />
+<strong>data</strong> (uint 8 [user defined length]) : array of uint8 with user defined length given by the parameter <em>Size of data array</em><br />
+<strong>rx_len</strong> (uint16): Actually read bytes<br />
+</p>
+<div class="tabbing">
+<p><span>Parameters:</span><br />
+<strong>Size of data array</strong> (range[1..512]): defines the width of the output data.<br />
+<strong>Show additional information</strong> (checkbox): further configure:<br />
+<strong>Baud rate</strong>: Baud rate in baud/s (range [1200 .. 115200])<br />
+default: 115.200 baud<br />
+<strong>Bits per frame</strong> (drop-down):number of data bits per frame<br />
+default: 8 databits<br />
+<strong>Parity configuration</strong> (drop-down) : possible parity configuration<br />
+default: no parity<br />
+<strong>Stop bits</strong> (drop-down) : for number of stop bits per frame<br />
+default: 1 stopbit</p>
+</div>
+<p>Note: mixing UART_Read blocks with any UART_Write or Write_RS232 blocks within the same mode is not advisable, as UART_Read blocks may initialize or require a different setting for baudrate, databits, parity or stopbits, unless default settings are kept.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h2 id="eeprom-blocks">EEPROM Blocks</h2>
+<h3 id="eeprom_read">EEPROM_Read</h3>
+<p>Read data from the EEPROM.<br /><br />
+<span>Input:</span> -<br /><br />
+<span>Output:</span><br />
+<strong>b_ready</strong> (boolean): when reading from EEPROM is not accomplished the output is FALSE.<br />
+<strong>data</strong> (uint32): Actual value that was retrieved from EEPROM.<br /><br />
+<span>Parameters:</span><br />
+<strong>offset</strong> (uint16): place in the EEPROM where data will be retieved from.</p>
+<p>[0..65535] for TTC580 and [0..32767] for TTC590<br />
+<strong>EEPROM_type</strong> (drop-down): defines the length of data to be read from EEPROM.<br />
+Possible values: uint8 (=1byte), uint16 (=2bytes), uint32 (=4bytes)<br />
+Note: When the expression <em>(offset + length)</em> of Bytes exceed the limit of 65535 no reading from EEPROM takes place and a constant zero is output as <em>data</em> and <em>b_ready</em> is FALSE.<br />
+When <em>b_ready</em> is not TRUE do not trust data as reading of EEPROM is not finished at startup of the ECU.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="eeprom_read_raw">EEPROM_Read_Raw</h3>
+<p>Read data from the EEPROM (raw)<br /><br />
+<span>Input:</span> -<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong>(uint16): Output of EEPROM read driver function.<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_EEPROM_Read ()</em><br />
+<strong>data</strong> (corresponding to <em>EEPROM_type</em>): Value read from EEPROM.<br /><br />
+<span>Parameters:</span><br />
+<strong>offset</strong> (uint16): place in the EEPROM where data will be retieved from.</p>
+<p>[0..65535] for TTC580 and [0..32767] for TTC590<br />
+<strong>EEPROM_type</strong> (drop-down): defines the length of data to be read from EEPROM.<br />
+Possible values: uint8 (=1byte), uint16 (=2bytes), uint32 (=4bytes)<br />
+Note: a semaphore for avoiding concurrent EEPROM access needs to be implemented in the application<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="eeprom_read_offsetin">EEPROM_Read_OffsetIn</h3>
+<p>Read data from the EEPROM.<br /><br />
+<span>Input:</span><br />
+<strong>offset</strong> (uint16): place in the EEPROM where data will be retieved from.</p>
+<p>[0..65535] for TTC580 and [0..32767] for TTC590<br /><br />
+<span>Output:</span><br />
+<strong>b_ready</strong> (boolean): when reading from EEPROM is not accomplished the output is FALSE.<br />
+<strong>data</strong> (corresponding to <em>EEPROM_type</em>): Actual value that was retrieved from EEPROM.<br /><br />
+<span>Parameter:</span><br />
+<strong>EEPROM_type</strong> (drop-down): defines the length of data to be read from EEPROM.<br />
+Possible values: uint8 (=1byte), uint16 (=2bytes), uint32 (=4bytes)<br />
+Note: When the expression <em>(offset + length)</em> of Bytes exceed the EEPROM-limit no reading from EEPROM takes place and a constant zero is output as data and <em>b_ready</em> is FALSE. When <em>b_ready</em> is not TRUE do not trust data as reading of EEPROM is not finished at startup of the ECU.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="crc32_eeprom_read">CRC32_EEPROM_Read</h3>
+<p>Calculate and compare the crc32 (data integrity check) for a given section<br /><br />
+<span>Input:</span> -<br /><br />
+<span>Output:</span><br />
+<strong>b_ready</strong> (boolean):<br />
+TRUE = read operation accomplished<br />
+FALSE = read operation still processing<br />
+<strong>CRC_OK</strong> (int8): may hold three possible values:<br />
+-1 =&gt; after EEPROM section was read, CRC check failed (terminal state)<br />
+0 =&gt; reading of EEPROM section not completed yet, CRC check is pending<br />
++1 =&gt; after EEPROM section was read, CRC check was successful (terminal state)<br /><br />
+<span>Parameters:</span><br />
+<strong>BasicAddr</strong> (uint16): starting-address of the section for which crc32 is calculated<br />
+<strong>EndAddr</strong> (uint16): end-address of the section for which crc32 is calculated<br />
+<strong>offset</strong>(uint16): EEPROM/FRAM memory offset (0..65535 for EEPROM, 0..32767 for FRAM)<br />
+Note: the crc32 is calculated for the given section [BasicAddr .. EndAddr] out of the EEPROM and compares the result to the content of a given address in EEPROM.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="io_eeprom_getstatus">IO_EEPROM_GetStatus</h3>
+<p>Returns the status of the EEPROM driver.<br /><br />
+<span>Input:</span> -<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16): status of the EEPROM driver. If the ErrorCode returns <em>IO_E_OK</em>, the EEPROM is free to be accessed.<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_EEPROM_GetStatus ()</em><br /><br />
+<span>Parameters:</span> -<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="eeprom_write">EEPROM_Write</h3>
+<p>Writes data to the EEPROM.<br /><br />
+<span>Input:</span><br />
+<strong>trigger</strong> (boolean): Data is written to EEPROM on the risinge edge of the trigger input.<br />
+<strong>data</strong> (uint32): Actual value that needs to be written to EEPROM.<br /><br />
+<span>Output:</span><br />
+<strong>b_ready</strong> (boolean): when writing to EEPROM is not accomplished <em>b_ready</em> is FALSE<br /><br />
+<span>Parameters:</span><br />
+<strong>offset</strong> (uint16): index in of the EEPROM-dataspace where data will be placed.</p>
+<p>[0..65535] for TTC580 and [0..32767] for TTC590<br />
+<strong>EEPROM_type</strong> (drop-down): defines the length of data to be written to EEPROM.<br />
+Possible values: uint8 (=1byte), uint16 (=2bytes), uint32 (=4bytes)<br />
+Note: When the expression <em>(offset + length)</em> of Bytes exceed the limit of <em>65535</em> no writing to EEPROM takes place, and <em>b_ready</em> is FALSE.<br />
+On a positive edge of the input <em>trigger</em> data is captured and stored internally into a mirror. Actual writing is performed when EEPROM is accessable. This mechanism is handled internally therefore the output <em>b_ready</em> doesn’t need to be fed back to the tigger.<br />
+Output <em>b_ready</em> may be used for subsequent actions like switch-off logic for the ECU, in order to make sure that no EEPROM write activity is pending while shutdown.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="eeprom_write_raw">EEPROM_Write_Raw</h3>
+<p>Writes data to the EEPROM (raw)<br /><br />
+<span>Input:</span><br />
+<strong>data</strong> (uint32): Actual value that needs to be written to EEPROM.<br /><br />
+<span>Output:</span> <strong>ErrorCode</strong> (uint16): Output of EEPROM write driver function.<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_EEPROM_Write ()</em><br /><br />
+<span>Parameters:</span><br />
+<strong>offset</strong> (uint16): index of the EEPROM-dataspace where data shall be placed.</p>
+<p>[0..65535] for TTC580 and [0..32767] for TTC590<br />
+<strong>EEPROM_type</strong> (drop-down): defines the length of data to be written to EEPROM.<br />
+Possible values: uint8 (=1byte), uint16 (=2bytes), uint32 (=4bytes)<br />
+Note: a semaphore for avoiding concurrent EEPROM access needs to be implemented in the application.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="eeprom_write_offsetin">EEPROM_Write_OffsetIn</h3>
+<p>Writes data to the EEPROM.<br /><br />
+<span>Input:</span><br />
+<strong>trigger</strong> (boolean): Data is written to EEPROM on the risinge edge of the trigger input.<br />
+<strong>data</strong> (uint32): Actual value that needs to be written to EEPROM.<br />
+<strong>offset</strong> (uint16): index of the EEPROM-dataspace where data will be placed.</p>
+<p>[0..65535] for TTC580 and [0..32767]for TTC590<br /><br />
+<span>Output:</span><br />
+<strong>b_ready</strong> (boolean): when writing to EEPROM is not accomplished <em>b_ready</em> is FALSE.<br /><br />
+<span>Parameters:</span><br />
+<strong>EEPROM_type</strong> (drop-down): defines the length of data to be written to EEPROM.<br />
+Possible values: uint8 (=1byte), uint16 (=2bytes), uint32 (=4bytes).<br />
+Note: When the expression <em>(offset + length)</em> of Bytes exceed the EEPROM-limit, no writing to EEPROM takes place, and <em>b_ready</em> is FALSE.<br />
+On a positive edge of the input <em>trigger</em> data is captured and stored internally into a mirror.<br />
+Actual writing is performed when EEPROM is accessable. This mechanism is handled internally, therefore the output <em>b_ready</em> doesn’t need to be fed back to the tigger.<br />
+Output <em>b_ready</em> may be used for subsequent actions like switch-off logic for the ECU, in order to make sure that no EEPROM write activity is pending.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="crc32_eeprom_write">CRC32_EEPROM_Write</h3>
+<p>Calculate and write the crc32 (data integrity check) for a given section<br /><br />
+<span>Input:</span><br />
+<strong>trigger</strong> (boolean): triggers calculation of crc32<br /><br />
+<span>Output:</span><br />
+<strong>b_ready</strong> (boolean): is TRUE when crc32 is completed and written to EEPROM at given address (Parameter <em>offset</em>)<br /><br />
+<span>Parameters:</span><br />
+<strong>BasicAddr</strong> (uint16): starting-point/address of the section for which crc32 is calculated<br />
+<strong>EndAddr</strong> (uint16): ending-point/address of the section for which crc32 is calculated<br />
+<strong>offset</strong> (uint16): EEPROM/FRAM memory offset (0..65535 for EEPROM, 0..32767 for FRAM) to which the crc32 is written. 4 bytes are used for the crc32 value.<br />
+Note: the crc32 is calculated out of the EEPROM for the given section [BasicAddr..EndAddr]. The resulting crc32 is written to the given address in EEPROM.<br />
+Note: The input <em>trigger</em> has to be connected to the same trigger as for all EEPROM_Write blocks accessing the interval [BasicAddr .. EndAddr]; otherwise data inconsistencies may occur.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h2 id="lin-blocks">LIN Blocks</h2>
+<h3 id="io_lin_init">IO_LIN_Init</h3>
+<p>Initialization of the LIN communication driver.<br /><br />
+<span>Input:</span> -<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16): Indication whether the Initialization of the communication driver has been successful<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_LIN_Init ()</em><br /><br />
+<span>Parameters:</span><br />
+<strong>baudrate</strong> (uint16): Baud rate in bit/s (range [1000..20000])<br />
+<strong>checksum_type</strong> (drop-down): Checksum type<br />
+Note: This block may only occur once in the application.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="lin_read">LIN_Read</h3>
+<p>Reads a LIN frame with the given <em>id</em> and of the given <em>length</em>.<br /><br />
+<span>Input:</span><br />
+<strong>b_request</strong> (boolean): If true, sends a reading request to a LIN-slave with given <em>id</em> and <em>length</em>.<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16): indication whether data of the last retrieve request were successfully read from the LIN bus.<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_LIN_Read ()</em><br />
+<strong>data</strong> (uint8): LIN frame array. Parameters <em>Id</em> and <em>length</em> must be set before. The received frame will be stored in the data part.<br /><br />
+<span>Parameters:</span><br />
+<strong>id</strong> (drop-down): Corresponds to the LIN subscription ID.<br />
+<strong>length</strong> (drop-down): Data read from LIN have the width given statically by length.<br />
+Note: Read request is processed only if the LIN-Bus is not blocked by a previous uncomplete action.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="lin_write">LIN_Write</h3>
+<p>Transmit a LIN frame with the given id and of the given length.<br /><br />
+<span>Input:</span><br />
+<strong>b_send</strong> (boolean): if true, writes data on LIN bus with given <em>ID</em> and <em>length</em><br />
+<strong>data</strong> (uint8): LIN frame array. <em>ID</em> and <em>length</em> and data parts must be provided<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16): indication whether the request has been submitted.<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_LIN_Write ()</em><br /><br />
+<span>Parameters:</span><br />
+<strong>id</strong> (drop-down): Corresponds to the LIN subscription ID.<br />
+<strong>length</strong> (drop-down): Data written on LIN have the width given statically by length.<br />
+Note: Send command is only processed if the LIN-Bus is not blocked by a previous uncomplete action.<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h3 id="io_lin_getstatus">IO_LIN_GetStatus</h3>
+<p>Returns the status of the LIN channel.<br /><br />
+<span>Input:</span> -<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16): status of the LIN channel<br />
+ErrorCodes can be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em> description of Driverfunction <em>IO_LIN_GetStatus ()</em><br /><br />
+<span>Parameters:</span> -<br /><br />
+Further information may be obtained from <em>HY-TTC_500_IO_Driver_Manual_&lt;ver&gt;.pdf</em><br />
+</p>
+<h1 id="add-on-libraries">Add on Libraries</h1>
+<h2 id="sec:MainDlg_J1939DMx">AddOn_Lib_TTC580_J1939DMx</h2>
+<h3 id="maindlg_j1939dmx">MainDlg_J1939DMx</h3>
+<p>Block representing main environment-settings of the applications to be run on a TTC580 enableing the J1939 functionality additionally.<br /><br />
+<span>Parameters:</span> (additionally to the Parameters of "<a href="#sec:supported services">MainDlg</a>")<br />
+<strong>Enable DMx services (J1939)</strong> (checkbox): activates sending DM1 and DM2/DM3 services out of J1939 standard<br />
+<strong>J1939 channel</strong> (drop-down): use the dedicated CAN channel for sending DM1 messages and receiving DM2/DM3 request messages. Note: The chosen J1939 CAN channel has to be run with 250kbit/s according to J1939 standard <strong>J1939SorceAddress</strong> (uint8): define source address to be sent in J1939 DM1 messages and retreiving from by DM2/DM3 services<br />
+<strong>Basis Address DM2</strong> (range [0..63488]): Definition of the basis address in EEPROM to be used for DM2 storage. The amount of storage space is 2048 bytes. Note: In this storage space no other data than DM2 should be stored in. That needs to be considered when using blocks out of the EEPROM block family out of the IOLib-Blockset. Note: Default is 63488 which places the persistant DM2 data right at the end of the EEPROM storage space.<br />
+</p>
+<h3 id="dmx_io_block">DMx_IO_Block</h3>
+<p>Sending J1939 DM1 messages according to the input <em>ErrorCodeIn</em>.<br /><br />
+<span>Input:</span><br />
+<strong>ErrorCodeIn</strong> (uint16[2]): has to be connected to the ErrorCode output of an IO-Block<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16): feed-through ErrorCode of the preceding IO-Block<br /><br />
+<span>Parameters:</span><br />
+<strong>J1939 SPN_Offset</strong> (range [0..524032]): <em>J1939_SPN_Offset</em> + <em>PIN-define</em> (see IO_Pin.h); if chosen beyond pssible limits, no DTC will be sent.<br />
+DM1.FMI: Desired class of faults may be enabled by the check boxes:<br />
+<strong>Enable FMI: "DATA ERRATIC INTERMITTENT OR INCORRECT"</strong> (checkbox):<br />
+<strong>Enable FMI: "VOLTAGE ABOVE NORMAL OR SHORTED TO HIGH SOURCE"</strong> (checkbox):<br />
+<strong>Enable FMI: "VOLTAGE BELOW NORMAL OR SHORTED TO LOW SOURCE"</strong> (checkbox):<br />
+<strong>Enable FMI: "CURRENT BELOW NORMAL OR OPEN CIRCUIT"</strong> (checkbox):<br />
+<strong>Enable FMI: "CURRENT ABOVE NORMAL OR GROUNDED CIRCUIT"</strong> (checkbox):<br />
+<strong>Enable FMI: "ROOT CAUSE NOT KNOWN"</strong> (checkbox):<br />
+<strong>Enable FMI: "BAD INTELLIGENT DEVICE OR COMPONENT"</strong> (checkbox):<br />
+Note: DM1 messages are sent over the channel defined in the MainDlg-block.<br />
+Example: Example_DMx_IO_Block_For_User_Manual.txt</p>
+<h3 id="dmx_custom_block">DMx_Custom_Block</h3>
+<p>Sending J1939 DM1 messages according to the input <em>ErrorCodeIn</em>.<br /><br />
+<span>Input:</span><br />
+<strong>ErrorCodeIn</strong> (uint16): J1939 DM1 messages are sent according to this input<br /><br />
+<span>Output:</span><br />
+<strong>ErrorCode</strong> (uint16): The output ErrorCode is the feed-through ErrorCode of the preceding Block<br /><br />
+<span>Parameters:</span><br />
+<strong>J1939 SPN</strong> (range [0..524287]): If <em>J1939 SPN</em> is chosen beyond possible limits, no DTC will be sent<br />
+DM1.FMI: According to the mapping given in <em>"IOLib500_FMI_map.c"</em>. This file may be adapted by the user in the labeled section of <em>"IOLib580_Environment/src/IOLib500_FMI_map.c"</em>.<br />
+Note: If the input ErrorCode is not found in <em>"IOLib500_FMI_map.c"</em> then DM1.FMI = 0x12 is output which stand for <em>"BAD INTELLIGENT DEVICE OR COMPONENT"</em>. The same holds if the FMI defined by the user is outside the interval [0..31].<br />
+Note: DM1 messages are sent over the channel defined in the MainDlg-block.<br />
+Note: A DTC will be transmitted over DM1 as long as it is not set inactive (ErrorCode = 0). This have to be taken into account if this block is used within ported subsystems (e.g.: enabled, triggered, switched).<br />
+Please check the example "Example_IOBlock_Library_DMx_Appl.mdl" out of the examples collection for further information.</p>
+<h3 id="dmx_application_mask">DMx_Application_Mask</h3>
+<p>Process DM1 and DM2 according to mask entries. <span>Input:</span><br />
+<strong>error_active</strong> (boolean): J1939 DM1 messages are sent when the <em>error_active</em> is <em>TRUE</em>.<br /><br />
+<span>Output:</span> -<br />
+</p>
+<div class="tabbing">
+<p><span>Parameters:</span><br />
+<strong>J1939 SPN</strong> (range [0..524287]): If J1939 SPN is chosen beyond possible limits, no DTC will be sent.<br />
+<strong>J1939_FMI</strong> (range [0..31]): the following assignment holds:<br />
+FMI=2 DATA ERRATIC, INTERMITTENT OR INCORRECT<br />
+FMI=3 VOLTAGE ABOVE NORMAL, OR SHORTED TO HIGH SOURCE<br />
+FMI=4 VOLTAGE BELOW NORMAL, OR SHORTED TO LOW SOURCE<br />
+FMI=5 CURRENT BELOW NORMAL OR OPEN CIRCUIT<br />
+FMI=6 CURRENT ABOVE NORMAL OR GROUNDED CIRCUIT<br />
+FMI=11 ROOT CAUSE NOT KNOWN<br />
+FMI=12 BAD INTELLIGENT DEVICE OR COMPONENT</p>
+</div>
+<p>DM1 messages are sent over the channel defined in the MainDlg-block.<br />
+DM2 are stored in EEPROM at the location defined in the MainDlg-block and are serviced upon reception of DM2-Request message and deleted by DM3-Request message.<br />
+Note: If the FMI defined by the user is outside the interval [0..31] then <em>DM1.FMI</em> = 0x12 is output which stand for <em>"BAD INTELLIGENT DEVICE OR COMPONENT"</em>.<br />
+Note: A DTC will be transmitted over DM1 as long as it is not set inactive (<em>error_active</em> = FALSE). This have to be taken into account if this block is used within ported subsystems (e.g.: enabled, triggered, switched)<br />
+Please check the example "Example_IOBlock_Library_DMx_Appl.mdl" out of the examples collection for further information.</p>
+<h3 id="dmx_application_input">DMx_Application_Input</h3>
+<p>Process DM1 and DM2 according to mask entries to given input.</p>
+<div class="tabbing">
+<p><span>Input:</span><br />
+<strong>error_active</strong> (boolean): J1939 DM1 messages are sent when the <em>error_active</em> input is <em>TRUE</em>.<br />
+<strong>J1939_FMI</strong> (range [0..31): If the FMI defined by the user is beyond possible limits then <em>DM1.FMI</em> = 0x12<br />
+is output which stand for <em>"BAD INTELLIGENT DEVICE OR COMPONENT"</em><br />
+the following assignment holds:<br />
+FMI=2 DATA ERRATIC, INTERMITTENT OR INCORRECT<br />
+FMI=3 VOLTAGE ABOVE NORMAL, OR SHORTED TO HIGH SOURCE<br />
+FMI=4 VOLTAGE BELOW NORMAL, OR SHORTED TO LOW SOURCE<br />
+FMI=5 CURRENT BELOW NORMAL OR OPEN CIRCUIT<br />
+FMI=6 CURRENT ABOVE NORMAL OR GROUNDED CIRCUIT<br />
+FMI=11 ROOT CAUSE NOT KNOWN<br />
+FMI=12 BAD INTELLIGENT DEVICE OR COMPONENT</p>
+</div>
+<p><span>Output:</span> -<br /><br />
+<span>Parameters:</span><br />
+<strong>J1939 SPN</strong> (range [0..524287]): If J1939 SPN is chosen beyond possible limits, no DTC will be sent.<br />
+DM1 messages are sent over the channel defined in the MainDlg-block.<br />
+DM2 are stored in EEPROM at the location defined in the MainDlg-block and are serviced upon reception of DM2-Request message and deleted by DM3-Request message.<br />
+Note: This block is kept in the library for legacy reasons. For new applications please use "DMx_Application_AllInput" instead.<br />
+Note: A DTC will be transmitted over DM1 as long as it is not set inactive (<em>error_active</em> = FALSE). This have to be taken into account if this block is used within ported subsystems (e.g.: enabled, triggered, switched)</p>
+<h3 id="dmx_application_allinput">DMx_Application_AllInput</h3>
+<p>Process DM1 and DM2 according to mask entries to given input.</p>
+<div class="tabbing">
+<p><span>Input:</span><br />
+<strong>error_active</strong> (boolean): when TRUE = J1939 DM1 messages are sent<br />
+<strong>J1939_SPN</strong> (range [0..524287]): If J1939 SPN is chosen beyond possible limits, no DTC will be sent.<br />
+<strong>J1939_FMI</strong> (range [0..31): If the FMI defined by the user is beyond possible limits then <em>DM1.FMI</em> = 0x12<br />
+is output which stand for <em>"BAD INTELLIGENT DEVICE OR COMPONENT"</em><br />
+the following assignment holds:<br />
+FMI=2 DATA ERRATIC, INTERMITTENT OR INCORRECT<br />
+FMI=3 VOLTAGE ABOVE NORMAL, OR SHORTED TO HIGH SOURCE<br />
+FMI=4 VOLTAGE BELOW NORMAL, OR SHORTED TO LOW SOURCE<br />
+FMI=5 CURRENT BELOW NORMAL OR OPEN CIRCUIT<br />
+FMI=6 CURRENT ABOVE NORMAL OR GROUNDED CIRCUIT<br />
+FMI=11 ROOT CAUSE NOT KNOWN<br />
+FMI=12 BAD INTELLIGENT DEVICE OR COMPONENT</p>
+</div>
+<p><span>Output:</span> -<br /><br />
+<span>Parameters:</span> -<br />
+DM1 messages are sent over the channel defined in the MainDlg-block.<br />
+DM2 are stored in EEPROM at the location defined in the MainDlg-block and are serviced upon reception of DM2-Request message and deleted by DM3-Request message.<br />
+Note: A DTC will be transmitted over DM1 as long as it is not set inactive (<em>error_active</em> = FALSE). This have to be taken into account if this block is used within ported subsystems (e.g.: enabled, triggered, switched)<br />
+Please check the example "Example_IOBlock_Library_DMx_Appl.mdl" out of the examples collection for further information.</p>
+<h3 id="dm2_kl15shutdown">DM2_KL15shutdown</h3>
+<p>Holds output high for DM2 synchronization<br /><br />
+<span>Input:</span><br />
+<strong>bKL15</strong> (boolean): can be connected to <em>Get_K15</em>, in order to detect power down request<br /><br />
+<span>Output:</span><br />
+<strong>bPowerSelfHold</strong> (boolean): By default FALSE. As soon as <em>bKL15</em> goes low, <em>bPowerSelhold</em> becomes high (TRUE) as long as synchronization of DM2 is active. After sychronization is done the output <em>bPowerSelfhold</em> goes to FALSE again and the ECU may be switched off safely<br /><br />
+<span>Parameters:</span> -<br />
+Purpose of use is to synchronize and store DM2 persistently before shutdown of the ECU.<br />
+Note: the block <em>DM2_KL15shutdown</em> may be placed in parallel (combined by OR) to any other afterrun block like e.g. <em>IO_EEPROM_GetStatus()</em></p>
+<h2 id="sec:MainDlg_CCP">AddOn_Lib_TTC580_CCP</h2>
+<h3 id="maindlg_ccp">MainDlg_CCP</h3>
+<p>Block representing main environment-settings of the applications to be run on a TTC580 enableing the J1939 functionality additionally.<br /><br />
+<span>Parameters:</span> (additionally to the Parameters of "<a href="#sec:supported services">MainDlg</a>")<br />
+<strong>Enable CCP</strong> (checkbox): By checking this box you activate the CCP driver on the TTC500 and you may define the following quantities:<br />
+<strong>CRO ID</strong> (): Standard CAN identifier for CROs (Host -&gt; ECU)<br />
+<strong>DTO ID</strong> (): Standard CAN identifier for DTOs (ECU -&gt; Host)<br />
+<strong>CCP Station Address</strong> (): Logical station address in little-endian byte order<br />
+<strong>CCP Station ID</strong> (): String containing the station ID (Maximum length 8 characters)<br />
+<strong>CCP channel</strong> (drop-down): select the channel for CCP. This channel needs to run a minimum baudrate of 250kBaud.<br />
+<strong>CRO DTO Id format</strong> (drop-down): Select if Ids of CRO and DTO shall be in standard or extended format.<br />
+<strong>Enable DAQ sync</strong> (checkbox): The CCP-Driver on the TTC500 shall exhibit synchronous functionallity based on application cycle time (event No.0)<br />
+<strong>Enable DAQ alternate</strong> (checkbox): The CCP-Driver on the TTC500 shall exhibit synchronous functionallity based on double application cycle time with alternating events (event No.1 and 2)<br />
+<strong>Total ODTs for DAQ lists</strong> (range [1..254]): The given amount of ODTs are equally distributed among the DAQ lists.<br />
+Note: the left over time is used to transmit DAQ-lists for synchronous mode in CCP<br />
+Note: if total amount of ODTs are chosen too high, the ECU may not process all DAQ lists<br />
+Note: if the amount of ODTs is chosen higher than 126, overrun indication for the CCP master is turned off</p>
+<h1 id="tools">Tools</h1>
+<h2 id="eeprom-importer">EEPROM Importer</h2>
+<p><strong>function [ <em>ErrorCode</em> ] = EEPROM_Import( <em>sXls_File</em>)</strong><br />
+<strong>Name</strong><br />
+<em>EEPROM_Import.m</em><br />
+<strong>In</strong><br />
+sXls_File : [Path\<span>]</span><em>Filename.xls</em><br />
+</p>
+<div class="tabbing">
+<p><strong>Purpose</strong><br />
+Import EEPROM configuration data and generate a library containing blocks for all EEPROM access<br />
+Every block has the parameters defined in <em>Filename.xls</em> as ports.<br />
+Every block has a busy output indicating that the EEPROM access is ongoing<br />
+Generated EEPROM-Read blocks have an output <em>CRC_OK</em><br />
+which may hold three possible values:<br />
+-1 =&gt; after EEPROM section was read, CRC check failed (terminal state)<br />
+0 =&gt; reading of EEPROM section not completed yet, CRC check is pending<br />
++1 =&gt; after EEPROM section was read, CRC check was successful (terminal state)<br />
+Generated EEPROM-Write blocks have a input trigger, on a rising edge parameters<br />
+are written physically to EEPROM</p>
+</div>
+<p><strong>Example</strong><br />
+Open the xls-File <em>"eeprom_example.xls"</em> and generate the corresponding EEPROM blocks within the library <em>LibEEPROM_eeprom_example.mdl</em> by calling the command<br />
+"ErrorCode = EEPROM_Import(’<em>eeprom_example.xls</em>’)" in the command window of MATLAB<br />
+<strong>function [ ErrorCode ] = hex_read( <em>sXls_File</em>, <em>sIhex_File</em>)</strong><br />
+<strong>Name</strong><br />
+<em>hex_read.m</em><br />
+<strong>In</strong><br />
+sXls_File : [Path\<span>]</span><em>ExcelFilename.xls</em><br />
+sIhex_File : [Path\<span>]</span><em>IhexFilename.ihex</em><br />
+</p>
+<div class="tabbing">
+<p><strong>Out</strong><br />
+ErrorCode : 0 ... at least one paramter group stored successfully<br />
+1 ... no parameter group processed successfully</p>
+</div>
+<p><strong>Purpose</strong><br />
+Store EEPROM data into an Excel file.<br />
+<strong>Prerequisite</strong><br />
+EEPROM data have to be already stored into an ihex-file.<br />
+This action is accomplished by the TTC-Downloader.<br />
+The ihex-file has to cover at least all addresses for data defined in the Excel-file<br />
+<strong>Example</strong><br />
+The following needs to be placed in the MATLAB command window:<br />
+ErrorCode = hex_read(’<em>eeprom_example.xls</em>’,’<em>eeprom_example.ihex</em>’)</p>
+<h2 id="dbc-importer">DBC Importer</h2>
+<p><strong>function [ ErrorCode ] = DBC_Import( <em>sDBC_File</em>, sNetworkNodeName [, CAN_Channel [,<br />
+CycleTime [,bDebounce ] )</strong><br />
+<strong>Name</strong><br />
+<em>DBC_Import.m</em><br />
+</p>
+<div class="tabbing">
+<p><strong>In</strong><br />
+sDBC_File : [Path\<span>]</span><em>Filename.dbc</em><br />
+sNetworkNodeName : Name of the Network Node that is defined in the DBC-File.<br />
+In case sNetworkNodeName is a empty string, libraries for every Network Node are generated.<br />
+CAN_Channel: out of [0..6].<br />
+Default is 0 (meaning CAN_0)<br />
+CycleTime: Application runs on this CycleTime [ms]. Default is 10[ms]<br />
+This value is taken for derate parameter of CAN-TX and CAN-RX messages.<br />
+bDebounce: out of [0..1].<br />
+Default is 0 (meaning <em>"no debounce"</em>)<br />
+Debouncing holds only for cyclic RX-messages, for other messages no effect.<br />
+Switching on means that an Rx-error is only passed to the application if the CAN-driver<br />
+issues a <em>Not_OK</em> on two consecutive cycles.</p>
+</div>
+<p><strong>Purpose</strong><br />
+Import CAN-DBC and generate a library containing blocks for all rx/tx messages<br />
+<strong>Example</strong><br />
+Open the DBC-File <em>"hermes_mini_codings.dbc"</em> and generate the corresponding network node <em>"measure"</em> mapped onto the CAN0 of the ECU assuming a cycle time of the application being 10ms and debouncing is switched on.<br />
+The following needs to be placed in the MATLAB command window:<br />
+ErrorCode = DBC_Import(’<em>hermes_mini_codings.dbc</em>’,’<em>measure</em>’, 0, 10, 1)<br />
+</p>
+</body>
+</html>

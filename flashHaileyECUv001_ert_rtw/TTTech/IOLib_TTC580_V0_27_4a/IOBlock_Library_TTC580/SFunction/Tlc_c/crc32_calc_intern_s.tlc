@@ -1,0 +1,76 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   crc32_calc_intern_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox crc32_calc_intern_s block
+%%
+%% Version: 0.19
+%%
+
+%implements "crc32_calc_intern_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+   		%assign ::IOLib500_utils = "any"
+        %<LibAddToCommonIncludes("IOLib500_utils.h")>
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+	%assign EEPROM_mirror = rtw_param1  
+	%assign iBasicAddr_intern = rtw_param2  
+	%assign iEndAddr_intern = rtw_param3  
+
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+   
+	%assign crc32 = LibBlockOutputSignalAddr(1, "", "",0)
+    %assign crc32_type = LibBlockOutputSignalDataTypeName(1,"")
+
+	/* init_function call crc32_calc_intern */
+
+
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+	%assign EEPROM_mirror = rtw_param1  
+	%assign iBasicAddr_intern = rtw_param2  
+	%assign iEndAddr_intern = rtw_param3  
+
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+   
+	%assign crc32 = LibBlockOutputSignalAddr(1, "", "",0)
+    %assign crc32_type = LibBlockOutputSignalDataTypeName(1,"")
+
+	/* function call of crc32_calc_intern */
+
+{
+
+
+%<ErrorCode> = crc32( %<EEPROM_mirror> ,(uint32_T*) %<crc32> , %<iBasicAddr_intern> , %<iEndAddr_intern> );
+
+}
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

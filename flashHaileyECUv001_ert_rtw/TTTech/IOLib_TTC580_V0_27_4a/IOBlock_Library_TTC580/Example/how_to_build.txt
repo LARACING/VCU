@@ -1,0 +1,139 @@
+1) Preparation 
+---------------
+*) Make sure that the Folder of the Blocklibrary "IOBlock_Library_TTC580" is on the MATLABPATH,
+   If not, add "IOBlock_Library_TTC580" to the MATLABPATH by using the command "addpath" in the command window of MATLAB.
+*) The Configuaration Parameters are recommended to be set on the following values:
+   Open in the your mdl-file the menu "Simulation/Configuration Paramters". and set the following options:
+   Select the tab "Solver"
+        Type:"Fixed-step"
+   Select the tab 'Code Generation/Optimization'
+   	Select Default parameter behavior "Tunable"
+   Select the tab "Diagnostics/Sample Time"
+   	Source block specifies -1 sample time:"none" (otherwise IO-Blocks would issue a warning, as these have no intrinsic sample time)
+   Select the tab "Hardware Implementation"
+   	Device vendor: "Texas Instruments"
+        Device type: "TMS570" (note: there is a bug in Simulink 9.0 for TMS570, you need to use "TTControl Hy-TTC580" as device type)
+        Byte ordering: "Big Endian" (check if set)
+        Native size: 32 (check if set)
+   Select the tab "Code Generation"
+        System taget file: "ert.tlc"  (this is the plain Embedded Coder with no auto configuration capabilities)
+        Checkbox "Generate code only": checked
+   Select the tab "Code Generation/Interface"
+   	Checkbox "floating-point numbers": checked
+	Checkbox "absolute time": NOT checked
+	Checkbox "Single output/update function": checked
+   Select the sub-tab "Code Generation/Templates"
+        Checkbox "Generate an example main programm": NOT checked
+*) Note, the proposed Configuration Parameters above are not exhaustive. Possibly code generation may work with
+        different Parameter Configuration as well.
+*) The blocks of the IOLib_TTC580 output typically the ErrorCode of the set- resp. get-function of the corresponding C-driver and do not output
+   the ErrorCode of the initialization function. The rationale behind this is, that if the initialization fails the set- resp. get-function would
+   output a meaningful output as well. Nevertheless, in some cases the application might need to process the ErrorCode of the initialization and
+   supplementary functions hidden below IO-block. In this case the user of the IOLib needs to unlock the IOLib_TTC580 and place additional
+   outputs below the masked IO-blocks.
+
+
+2) Code Generation
+-------------------
+*) Build the code in the directory where your model is located, then you will not experience problems with the path.
+*) Select from the menu of your mdl-file "Tools/Code Generation/Build Model ..."
+   Alternativly you may Type "Ctrl-B"
+*) This action results in code that is generated into a folder "<your_model_name>_ert_rtw"
+
+3) Build Process
+-----------------
+*) If you run the build process the first time open the file "Makefile" within the folder "C:\TTTech\IOBlock_Library_TTC580\Make_Utilities\Makefile"
+   The following lines within "Makefile" may have to be customized, depending on your directory setup:
+   	In the command window of MATLAB type the command "matlabroot" and copy the answer into the appropriate definition within "Makefile"
+            e.g. MATLABROOT = C:\Program Files\MATLAB\R2018a
+	If you have to include/link external code, please modifify the "Makefile" in the sections:
+	    For *.h-files:
+	    #INCDIRS += -I"C:\what_ever_you_want_to_include"
+	    For *.obj-files
+	    #IOLIB580_OBJ += $"C:\where_ever_your_obj_are"
+*) Use the command "make" within the Matlab command window in order to build your application.
+   The call would look for the given example: make('Example_IOBlock_Library_CAN')
+   Note, that make has to be lanched from the directory where the corresponding model file (*.mdl) is located.
+*  In case you want to generate code for a ECU other than TTC580 edit & change the TARGET given in the files make.m make_all.m and make_all_parallel.m
+   which are located in C:\TTTech\IOBlock_Library_TTC580\Make_Utilities\ and save the files.
+*) In case you have chosen to generate a make file using the TemplateMakefile 'ert_TTC580.tmf' you may also invoke make by
+   calling make_all(<model_name>). This will parse all subdirectories for source files, compiling these and linking them with the
+   main file of <model_name>.
+   Note:
+   1) All sources to build have to be in the same directory level or deeper than the directory where make_all() is called from (="make_root")
+   2) For compilation all make-files with the extention *.mk are take into account. Therefor make sure to have no external make files
+      on the level of make_root or deeper.
+   3) In case you need to add custom code to your application, copy the sources into a directory within the make_root.
+      Then copy the file MakeManually_obj.mk from IOBlock_Library_TTC580\Make_Utilities into this directory in order to enable compilation
+      during the make procedure for all sources found in this directory.
+   4) Linking of objects is done for all objects that are found at the direcotry level or deeper than make_root, therefore make sure
+      not to have object-files within this search tree that do not belong to your project.
+
+4) Download
+------------
+*) Connect the PEAK device to the CAN0
+*) Use the TTC-Downloader (you find it separately from the IOBlock_library in your TTControl menu) in order to download the
+   generated hex-file <your_model_name>.hex into your TTC580.
+*) For further information how to use the TTC-Downloader please take a look at the help.
+*) After a concluding power cycle you succeeded in having your application running on the TTC580!
+*) In case you have checked the box "Reset by TTC-Downloader" in the mask of MainDlg you may flash futher updates
+   by simply pressing the "Connect to Target via CAN"-button within the TTC-Downloader without power cycle.
+   Note: You need to uncheck in the Preferences-menu of the TTC-Downloader the option "Enable Quick Identify for CAN"
+
+5) Using smaller variants of the TTC500 family
+----------------------------------------------
+*) In case you are using the TTC510, TTC520 or TTC540 you need to confine the used IO-Pins to the given set according to pinout description of the ECU.
+   Note, that the masks of the IO-Lib will always show the full rank according to the superset given by the TTC580
+*) If you want to use a pin-function that is not available on the TTC500 variant you will get the ErrorCode IO_E_INVALID_CHANNEL_ID (=34) during runtime.
+*) Call the make skripts with the target as an additional parameter which defines which target you are using. If you do not define the target, TTC580 is taken as default
+   For more information type
+    >> help make
+   or
+    >> help make_all
+   or
+    >> help make_all_parallel.
+
+6) Definition of CCP (support only possible for activated CCP support license)
+------------------------------------------------------------------------------
+*) Parameters that need to be tuned have to be defined in the Model Workspace within the Model Explorer with the storage class "ExportedGlobal".
+   The "Model Workspace" may be opened as sub menu of "View" within the Simulink model.
+*) Signals that need to be monitored as measurements have to be defined in the Signal Properties with the signal object class "Simulink.Signal"
+   and storage class "Exported Global". Signal properties may be defined by right click on the corresponding signal within the Simulink model.
+*) In the command window of MATLAB type the command "pathtool" and add the following directories to the matlab path:
+   <MATLAB_ROOT>\toolbox\CANape and
+   <MATLAB_ROOT>\toolbox\rtw\targets\asap2\asap2\CANape_user
+   <MATLAB_ROOT>\toolbox\rtw\targets\asap2\asap2\CANape_user\templates
+   Make sure that both latter directories are placed above <MATLAB_ROOT>\toolbox\rtw\targets\asap2\asap2\user in the list of th matlab path.
+   This is necessary to obtain a compatible version of the generated *.a2l - file for the installed CANape.
+   Note, if you do not find the above mentioned directories, please resume installation of CANape with activated option "MATLAB Simulink MC Add on 64Bit"
+   Note, that for some Measurements like _gRTTarget_ModelExecutionCounter no corresponding variables are generated for the ERT-target and therefor
+   not resolvable. Ignore the corresponding warning in CANape.
+   Note, the generation a2l-file is not a feature of the IOLib_TTC580 but a feature of the Embedded Coder of Mathworks. Questions about the generation
+   of the a2l-file need to be addressed to Mathworks.
+*) Import the *.a2l file into Vector's ASAP2 Editor and define with "Tools/Settings database" the byte order as "Motorola"
+   Alternatively you may edit the file <MATLAB_ROOT>\toolbox\rtw\targets\asap2\asap2\CANape_user\asap2setup.tlc and change the MSB-setting to be:
+   %assign ASAP2BYTE_ORDER = "MSB_FIRST". By doing so the byte order is set by default to "Motorola" in the generated *.a2l file.
+*) The file C:\TTTech\Environment_TTC580\env\settings.mk needs to be adapted to generate source-level debugging information during the build-procedure
+   into app.out . To do so, identify in the file settings.mk the snippet:
+   ...
+    ifeq ($(OPT_STR), RELEASE)
+        # optimize for release
+        OPT_SYMDEBUG   := none
+        OPT_LEVEL      := 2
+        OPT_ADDITIONAL := -dRELEASE
+    endif
+   ...
+   and change this into:
+    ifeq ($(OPT_STR), RELEASE)
+        # optimize for release
+        OPT_SYMDEBUG   := dwarf
+        OPT_LEVEL      := 2
+        OPT_ADDITIONAL := -dRELEASE
+    endif
+   Note, that the same executable code is generated regardless of whether generation of debug information is turned on or off.
+*) For the MAP file definition within Vectors CANape use app.out which is generated by the linker during the make process. The format of the
+   MAP file needs to be defined as "ELF/DWARF 32/64 Bit". Assignment of the addresses to the identifier in the a2l-file needs to be performed
+   by an appropriate tool (e.g. A2L-Editor from Vector)
+*) In the Device Configuration within Vector's CANape set the ECU format to byte order "Motorola" and for the Transport layer use the settings
+   you defined in the Mask of MainDlg within your Simulink model.
+*) Activate CCP within the MainDlg block only for development purposes and deactivate it again for the final version of the SW.

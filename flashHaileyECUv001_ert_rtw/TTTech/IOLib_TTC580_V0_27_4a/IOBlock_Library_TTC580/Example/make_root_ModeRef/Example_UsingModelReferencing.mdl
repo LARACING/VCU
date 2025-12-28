@@ -1,0 +1,2102 @@
+Model {
+  Name			  "Example_UsingModelReferencing"
+  Version		  10.3
+  SavedCharacterEncoding  "windows-1252"
+  ModelUUID		  "37850838-2f72-47c2-9fea-9e6d30f4e9b0"
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "7.5"
+    NumModelReferences	    1
+    ModelReference {
+      ModelRefBlockPath	      "Example_UsingModelReferencing/Model|ModelRef"
+    }
+    NumTestPointedSignals   0
+    NumProvidedFunctions    0
+    NumRequiredFunctions    0
+    NumResetEvents	    0
+    HasInitializeEvent	    0
+    HasTerminateEvent	    0
+    PreCompExecutionDomainType "Unset"
+    IsExportFunctionModel   0
+    SimulinkSubDomainType   "Simulink"
+    NumParameterArguments   0
+    NumExternalFileReferences 12
+    ExternalFileReference {
+      Reference		      "IOBlock_Library_TTC580/System  Blocks\nTTC580 IOlib/DIAG_Status"
+      Path		      "Example_UsingModelReferencing/DIAG_Status"
+      SID		      "1"
+      Type		      "LIBRARY_BLOCK"
+    }
+    ExternalFileReference {
+      Reference		      "IOBlock_Library_TTC580/Examples/Info"
+      Path		      "Example_UsingModelReferencing/Info1"
+      SID		      "26"
+      Type		      "LIBRARY_BLOCK"
+    }
+    ExternalFileReference {
+      Reference		      "IOBlock_Library_TTC580/System  Blocks\nTTC580 IOlib/MainDlg"
+      Path		      "Example_UsingModelReferencing/MainDlg"
+      SID		      "3"
+      Type		      "LIBRARY_BLOCK"
+    }
+    ExternalFileReference {
+      Reference		      "ModelRef"
+      Path		      "Example_UsingModelReferencing/Model"
+      SID		      "4"
+      Type		      "MODEL_BLOCK"
+    }
+    ExternalFileReference {
+      Reference		      "IOBlock_Library_TTC580/UART\nTTC580 IOlib/Write_RS232_"
+      Path		      "Example_UsingModelReferencing/Write_RS232_1"
+      SID		      "15"
+      Type		      "LIBRARY_BLOCK"
+    }
+    ExternalFileReference {
+      Reference		      "IOBlock_Library_TTC580/UART\nTTC580 IOlib/Write_RS232_"
+      Path		      "Example_UsingModelReferencing/Write_RS232_16"
+      SID		      "16"
+      Type		      "LIBRARY_BLOCK"
+    }
+    ExternalFileReference {
+      Reference		      "IOBlock_Library_TTC580/UART\nTTC580 IOlib/Write_RS232_"
+      Path		      "Example_UsingModelReferencing/Write_RS232_17"
+      SID		      "17"
+      Type		      "LIBRARY_BLOCK"
+    }
+    ExternalFileReference {
+      Reference		      "IOBlock_Library_TTC580/UART\nTTC580 IOlib/Write_RS232_"
+      Path		      "Example_UsingModelReferencing/Write_RS232_18"
+      SID		      "18"
+      Type		      "LIBRARY_BLOCK"
+    }
+    ExternalFileReference {
+      Reference		      "IOBlock_Library_TTC580/UART\nTTC580 IOlib/Write_RS232_"
+      Path		      "Example_UsingModelReferencing/Write_RS232_21"
+      SID		      "19"
+      Type		      "LIBRARY_BLOCK"
+    }
+    ExternalFileReference {
+      Reference		      "IOBlock_Library_TTC580/UART\nTTC580 IOlib/Write_RS232_"
+      Path		      "Example_UsingModelReferencing/Write_RS232_3"
+      SID		      "20"
+      Type		      "LIBRARY_BLOCK"
+    }
+    ExternalFileReference {
+      Reference		      "IOBlock_Library_TTC580/UART\nTTC580 IOlib/Write_RS232_"
+      Path		      "Example_UsingModelReferencing/Write_RS232_4"
+      SID		      "21"
+      Type		      "LIBRARY_BLOCK"
+    }
+    ExternalFileReference {
+      Reference		      "IOBlock_Library_TTC580/UART\nTTC580 IOlib/Write_RS232_"
+      Path		      "Example_UsingModelReferencing/Write_RS232_5"
+      SID		      "22"
+      Type		      "LIBRARY_BLOCK"
+    }
+    OrderedModelArguments   1
+  }
+  LogicAnalyzerPlugin	  "on"
+  WebScopes_FoundationPlugin "on"
+  SLCCPlugin		  "on"
+  slcheck_filter_plugin	  "on"
+  DiagnosticSuppressor	  "on"
+  SuppressorTable	  "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\" ?>\n<!DOCTYPE boost_serialization>\n<"
+  "boost_serialization signature=\"serialization::archive\" version=\"17\">\n<DiagnosticSuppressor class_id=\"0\" track"
+  "ing_level=\"0\" version=\"7\">\n	<Table class_id=\"1\" tracking_level=\"0\" version=\"0\">\n		<count>8</count>\n		<b"
+  "ucket_count>8</bucket_count>\n		<item_version>0</item_version>\n		<item class_id=\"2\" tracking_level=\"0\" version="
+  "\"0\">\n			<first class_id=\"3\" tracking_level=\"0\" version=\"7\">\n				<Source class_id=\"4\" tracking_level=\"0\""
+  " version=\"0\">\n					<count>1</count>\n					<item_version>0</item_version>\n					<item>20:2245</item>\n				</Source"
+  ">\n			</first>\n			<second class_id=\"5\" tracking_level=\"0\" version=\"7\">\n				<SuppressedData class_id=\"6\" tr"
+  "acking_level=\"0\" version=\"0\">\n					<count>2</count>\n					<bucket_count>8</bucket_count>\n					<item_version>0<"
+  "/item_version>\n					<item class_id=\"7\" tracking_level=\"0\" version=\"0\">\n						<first class_id=\"8\" tracking_"
+  "level=\"0\" version=\"7\">\n							<ID>SimulinkFixedPoint:util:Overflowoccurred</ID>\n							<Cause>\n								<Sourc"
+  "e>\n									<count>0</count>\n									<item_version>0</item_version>\n								</Source>\n							</Cause>\n						</"
+  "first>\n						<second class_id=\"9\" tracking_level=\"0\" version=\"7\">\n							<Comment></Comment>\n							<User><"
+  "/User>\n							<LastModified class_id=\"10\" tracking_level=\"0\" version=\"0\">\n								<ptime_date class_id=\"11\""
+  " tracking_level=\"0\" version=\"0\">\n									<date>20160608</date>\n								</ptime_date>\n								<ptime_time_dur"
+  "ation class_id=\"12\" tracking_level=\"0\" version=\"1\">\n									<is_special>0</is_special>\n									<time_durat"
+  "ion_hours>15</time_duration_hours>\n									<time_duration_minutes>23</time_duration_minutes>\n									<time_durat"
+  "ion_seconds>17</time_duration_seconds>\n									<time_duration_fractional_seconds>0</time_duration_fractional_secon"
+  "ds>\n								</ptime_time_duration>\n							</LastModified>\n							<SuppressionType>1</SuppressionType>\n						</se"
+  "cond>\n					</item>\n					<item>\n						<first>\n							<ID>Simulink:DataType:WarningOverFlowDetected</ID>\n							<"
+  "Cause>\n								<Source>\n									<count>0</count>\n									<item_version>0</item_version>\n								</Source>\n			"
+  "				</Cause>\n						</first>\n						<second>\n							<Comment></Comment>\n							<User></User>\n							<LastModified"
+  ">\n								<ptime_date>\n									<date>20160608</date>\n								</ptime_date>\n								<ptime_time_duration>\n					"
+  "				<is_special>0</is_special>\n									<time_duration_hours>15</time_duration_hours>\n									<time_duration_minu"
+  "tes>23</time_duration_minutes>\n									<time_duration_seconds>17</time_duration_seconds>\n									<time_duration_"
+  "fractional_seconds>0</time_duration_fractional_seconds>\n								</ptime_time_duration>\n							</LastModified>\n			"
+  "				<SuppressionType>1</SuppressionType>\n						</second>\n					</item>\n				</SuppressedData>\n			</second>\n		</it"
+  "em>\n		<item>\n			<first>\n				<Source>\n					<count>1</count>\n					<item_version>0</item_version>\n					<item>18:2"
+  "245</item>\n				</Source>\n			</first>\n			<second>\n				<SuppressedData>\n					<count>2</count>\n					<bucket_count"
+  ">8</bucket_count>\n					<item_version>0</item_version>\n					<item>\n						<first>\n							<ID>SimulinkFixedPoint:ut"
+  "il:Overflowoccurred</ID>\n							<Cause>\n								<Source>\n									<count>0</count>\n									<item_version>0</ite"
+  "m_version>\n								</Source>\n							</Cause>\n						</first>\n						<second>\n							<Comment></Comment>\n							<"
+  "User></User>\n							<LastModified>\n								<ptime_date>\n									<date>20160608</date>\n								</ptime_date>\n		"
+  "						<ptime_time_duration>\n									<is_special>0</is_special>\n									<time_duration_hours>15</time_duration_ho"
+  "urs>\n									<time_duration_minutes>23</time_duration_minutes>\n									<time_duration_seconds>17</time_duration_"
+  "seconds>\n									<time_duration_fractional_seconds>0</time_duration_fractional_seconds>\n								</ptime_time_dura"
+  "tion>\n							</LastModified>\n							<SuppressionType>1</SuppressionType>\n						</second>\n					</item>\n					<ite"
+  "m>\n						<first>\n							<ID>Simulink:DataType:WarningOverFlowDetected</ID>\n							<Cause>\n								<Source>\n				"
+  "					<count>0</count>\n									<item_version>0</item_version>\n								</Source>\n							</Cause>\n						</first>\n"
+  "						<second>\n							<Comment></Comment>\n							<User></User>\n							<LastModified>\n								<ptime_date>\n					"
+  "				<date>20160608</date>\n								</ptime_date>\n								<ptime_time_duration>\n									<is_special>0</is_special>"
+  "\n									<time_duration_hours>15</time_duration_hours>\n									<time_duration_minutes>23</time_duration_minutes>"
+  "\n									<time_duration_seconds>17</time_duration_seconds>\n									<time_duration_fractional_seconds>0</time_dur"
+  "ation_fractional_seconds>\n								</ptime_time_duration>\n							</LastModified>\n							<SuppressionType>1</Suppre"
+  "ssionType>\n						</second>\n					</item>\n				</SuppressedData>\n			</second>\n		</item>\n		<item>\n			<first>\n			"
+  "	<Source>\n					<count>1</count>\n					<item_version>0</item_version>\n					<item>16:2245</item>\n				</Source>\n			"
+  "</first>\n			<second>\n				<SuppressedData>\n					<count>2</count>\n					<bucket_count>8</bucket_count>\n					<item_"
+  "version>0</item_version>\n					<item>\n						<first>\n							<ID>SimulinkFixedPoint:util:Overflowoccurred</ID>\n				"
+  "			<Cause>\n								<Source>\n									<count>0</count>\n									<item_version>0</item_version>\n								</Source>\n"
+  "							</Cause>\n						</first>\n						<second>\n							<Comment></Comment>\n							<User></User>\n							<LastModif"
+  "ied>\n								<ptime_date>\n									<date>20160608</date>\n								</ptime_date>\n								<ptime_time_duration>\n		"
+  "							<is_special>0</is_special>\n									<time_duration_hours>15</time_duration_hours>\n									<time_duration_m"
+  "inutes>23</time_duration_minutes>\n									<time_duration_seconds>17</time_duration_seconds>\n									<time_durati"
+  "on_fractional_seconds>0</time_duration_fractional_seconds>\n								</ptime_time_duration>\n							</LastModified>\n"
+  "							<SuppressionType>1</SuppressionType>\n						</second>\n					</item>\n					<item>\n						<first>\n							<ID>S"
+  "imulink:DataType:WarningOverFlowDetected</ID>\n							<Cause>\n								<Source>\n									<count>0</count>\n								"
+  "	<item_version>0</item_version>\n								</Source>\n							</Cause>\n						</first>\n						<second>\n							<Comment"
+  "></Comment>\n							<User></User>\n							<LastModified>\n								<ptime_date>\n									<date>20160608</date>\n				"
+  "				</ptime_date>\n								<ptime_time_duration>\n									<is_special>0</is_special>\n									<time_duration_hours"
+  ">15</time_duration_hours>\n									<time_duration_minutes>23</time_duration_minutes>\n									<time_duration_secon"
+  "ds>17</time_duration_seconds>\n									<time_duration_fractional_seconds>0</time_duration_fractional_seconds>\n				"
+  "				</ptime_time_duration>\n							</LastModified>\n							<SuppressionType>1</SuppressionType>\n						</second>\n		"
+  "			</item>\n				</SuppressedData>\n			</second>\n		</item>\n		<item>\n			<first>\n				<Source>\n					<count>1</count"
+  ">\n					<item_version>0</item_version>\n					<item>21:2245</item>\n				</Source>\n			</first>\n			<second>\n				<Sup"
+  "pressedData>\n					<count>2</count>\n					<bucket_count>8</bucket_count>\n					<item_version>0</item_version>\n					"
+  "<item>\n						<first>\n							<ID>SimulinkFixedPoint:util:Overflowoccurred</ID>\n							<Cause>\n								<Source>\n	"
+  "								<count>0</count>\n									<item_version>0</item_version>\n								</Source>\n							</Cause>\n						</first"
+  ">\n						<second>\n							<Comment></Comment>\n							<User></User>\n							<LastModified>\n								<ptime_date>\n		"
+  "							<date>20160608</date>\n								</ptime_date>\n								<ptime_time_duration>\n									<is_special>0</is_speci"
+  "al>\n									<time_duration_hours>15</time_duration_hours>\n									<time_duration_minutes>23</time_duration_minut"
+  "es>\n									<time_duration_seconds>17</time_duration_seconds>\n									<time_duration_fractional_seconds>0</time_"
+  "duration_fractional_seconds>\n								</ptime_time_duration>\n							</LastModified>\n							<SuppressionType>1</Sup"
+  "pressionType>\n						</second>\n					</item>\n					<item>\n						<first>\n							<ID>Simulink:DataType:WarningOverFl"
+  "owDetected</ID>\n							<Cause>\n								<Source>\n									<count>0</count>\n									<item_version>0</item_version"
+  ">\n								</Source>\n							</Cause>\n						</first>\n						<second>\n							<Comment></Comment>\n							<User></Us"
+  "er>\n							<LastModified>\n								<ptime_date>\n									<date>20160608</date>\n								</ptime_date>\n								<pt"
+  "ime_time_duration>\n									<is_special>0</is_special>\n									<time_duration_hours>15</time_duration_hours>\n			"
+  "						<time_duration_minutes>23</time_duration_minutes>\n									<time_duration_seconds>17</time_duration_seconds>\n"
+  "									<time_duration_fractional_seconds>0</time_duration_fractional_seconds>\n								</ptime_time_duration>\n			"
+  "				</LastModified>\n							<SuppressionType>1</SuppressionType>\n						</second>\n					</item>\n				</SuppressedDat"
+  "a>\n			</second>\n		</item>\n		<item>\n			<first>\n				<Source>\n					<count>1</count>\n					<item_version>0</item_v"
+  "ersion>\n					<item>22:2245</item>\n				</Source>\n			</first>\n			<second>\n				<SuppressedData>\n					<count>2</co"
+  "unt>\n					<bucket_count>8</bucket_count>\n					<item_version>0</item_version>\n					<item>\n						<first>\n							<"
+  "ID>SimulinkFixedPoint:util:Overflowoccurred</ID>\n							<Cause>\n								<Source>\n									<count>0</count>\n					"
+  "				<item_version>0</item_version>\n								</Source>\n							</Cause>\n						</first>\n						<second>\n							<Comm"
+  "ent></Comment>\n							<User></User>\n							<LastModified>\n								<ptime_date>\n									<date>20160608</date>\n	"
+  "							</ptime_date>\n								<ptime_time_duration>\n									<is_special>0</is_special>\n									<time_duration_ho"
+  "urs>15</time_duration_hours>\n									<time_duration_minutes>23</time_duration_minutes>\n									<time_duration_se"
+  "conds>17</time_duration_seconds>\n									<time_duration_fractional_seconds>0</time_duration_fractional_seconds>\n	"
+  "							</ptime_time_duration>\n							</LastModified>\n							<SuppressionType>1</SuppressionType>\n						</second>\n"
+  "					</item>\n					<item>\n						<first>\n							<ID>Simulink:DataType:WarningOverFlowDetected</ID>\n							<Cause>\n"
+  "								<Source>\n									<count>0</count>\n									<item_version>0</item_version>\n								</Source>\n							</Ca"
+  "use>\n						</first>\n						<second>\n							<Comment></Comment>\n							<User></User>\n							<LastModified>\n					"
+  "			<ptime_date>\n									<date>20160608</date>\n								</ptime_date>\n								<ptime_time_duration>\n									<is_"
+  "special>0</is_special>\n									<time_duration_hours>15</time_duration_hours>\n									<time_duration_minutes>23</"
+  "time_duration_minutes>\n									<time_duration_seconds>17</time_duration_seconds>\n									<time_duration_fraction"
+  "al_seconds>0</time_duration_fractional_seconds>\n								</ptime_time_duration>\n							</LastModified>\n							<Sup"
+  "pressionType>1</SuppressionType>\n						</second>\n					</item>\n				</SuppressedData>\n			</second>\n		</item>\n		<"
+  "item>\n			<first>\n				<Source>\n					<count>1</count>\n					<item_version>0</item_version>\n					<item>19:2245</ite"
+  "m>\n				</Source>\n			</first>\n			<second>\n				<SuppressedData>\n					<count>2</count>\n					<bucket_count>8</buck"
+  "et_count>\n					<item_version>0</item_version>\n					<item>\n						<first>\n							<ID>SimulinkFixedPoint:util:Overf"
+  "lowoccurred</ID>\n							<Cause>\n								<Source>\n									<count>0</count>\n									<item_version>0</item_versio"
+  "n>\n								</Source>\n							</Cause>\n						</first>\n						<second>\n							<Comment></Comment>\n							<User></U"
+  "ser>\n							<LastModified>\n								<ptime_date>\n									<date>20160608</date>\n								</ptime_date>\n								<p"
+  "time_time_duration>\n									<is_special>0</is_special>\n									<time_duration_hours>15</time_duration_hours>\n		"
+  "							<time_duration_minutes>23</time_duration_minutes>\n									<time_duration_seconds>17</time_duration_seconds>"
+  "\n									<time_duration_fractional_seconds>0</time_duration_fractional_seconds>\n								</ptime_time_duration>\n	"
+  "						</LastModified>\n							<SuppressionType>1</SuppressionType>\n						</second>\n					</item>\n					<item>\n				"
+  "		<first>\n							<ID>Simulink:DataType:WarningOverFlowDetected</ID>\n							<Cause>\n								<Source>\n									<co"
+  "unt>0</count>\n									<item_version>0</item_version>\n								</Source>\n							</Cause>\n						</first>\n						<s"
+  "econd>\n							<Comment></Comment>\n							<User></User>\n							<LastModified>\n								<ptime_date>\n									<dat"
+  "e>20160608</date>\n								</ptime_date>\n								<ptime_time_duration>\n									<is_special>0</is_special>\n						"
+  "			<time_duration_hours>15</time_duration_hours>\n									<time_duration_minutes>23</time_duration_minutes>\n						"
+  "			<time_duration_seconds>17</time_duration_seconds>\n									<time_duration_fractional_seconds>0</time_duration_fr"
+  "actional_seconds>\n								</ptime_time_duration>\n							</LastModified>\n							<SuppressionType>1</SuppressionTyp"
+  "e>\n						</second>\n					</item>\n				</SuppressedData>\n			</second>\n		</item>\n		<item>\n			<first>\n				<Source"
+  ">\n					<count>1</count>\n					<item_version>0</item_version>\n					<item>15:2245</item>\n				</Source>\n			</first>"
+  "\n			<second>\n				<SuppressedData>\n					<count>2</count>\n					<bucket_count>8</bucket_count>\n					<item_version>"
+  "0</item_version>\n					<item>\n						<first>\n							<ID>SimulinkFixedPoint:util:Overflowoccurred</ID>\n							<Caus"
+  "e>\n								<Source>\n									<count>0</count>\n									<item_version>0</item_version>\n								</Source>\n							"
+  "</Cause>\n						</first>\n						<second>\n							<Comment></Comment>\n							<User></User>\n							<LastModified>\n	"
+  "							<ptime_date>\n									<date>20160608</date>\n								</ptime_date>\n								<ptime_time_duration>\n									"
+  "<is_special>0</is_special>\n									<time_duration_hours>15</time_duration_hours>\n									<time_duration_minutes>"
+  "23</time_duration_minutes>\n									<time_duration_seconds>17</time_duration_seconds>\n									<time_duration_frac"
+  "tional_seconds>0</time_duration_fractional_seconds>\n								</ptime_time_duration>\n							</LastModified>\n							"
+  "<SuppressionType>1</SuppressionType>\n						</second>\n					</item>\n					<item>\n						<first>\n							<ID>Simulink"
+  ":DataType:WarningOverFlowDetected</ID>\n							<Cause>\n								<Source>\n									<count>0</count>\n									<item_"
+  "version>0</item_version>\n								</Source>\n							</Cause>\n						</first>\n						<second>\n							<Comment></Comm"
+  "ent>\n							<User></User>\n							<LastModified>\n								<ptime_date>\n									<date>20160608</date>\n								</p"
+  "time_date>\n								<ptime_time_duration>\n									<is_special>0</is_special>\n									<time_duration_hours>15</ti"
+  "me_duration_hours>\n									<time_duration_minutes>23</time_duration_minutes>\n									<time_duration_seconds>17</"
+  "time_duration_seconds>\n									<time_duration_fractional_seconds>0</time_duration_fractional_seconds>\n								</p"
+  "time_time_duration>\n							</LastModified>\n							<SuppressionType>1</SuppressionType>\n						</second>\n					</it"
+  "em>\n				</SuppressedData>\n			</second>\n		</item>\n		<item>\n			<first>\n				<Source>\n					<count>1</count>\n				"
+  "	<item_version>0</item_version>\n					<item>17:2245</item>\n				</Source>\n			</first>\n			<second>\n				<Suppressed"
+  "Data>\n					<count>2</count>\n					<bucket_count>8</bucket_count>\n					<item_version>0</item_version>\n					<item>\n"
+  "						<first>\n							<ID>SimulinkFixedPoint:util:Overflowoccurred</ID>\n							<Cause>\n								<Source>\n									"
+  "<count>0</count>\n									<item_version>0</item_version>\n								</Source>\n							</Cause>\n						</first>\n					"
+  "	<second>\n							<Comment></Comment>\n							<User></User>\n							<LastModified>\n								<ptime_date>\n									<"
+  "date>20160608</date>\n								</ptime_date>\n								<ptime_time_duration>\n									<is_special>0</is_special>\n			"
+  "						<time_duration_hours>15</time_duration_hours>\n									<time_duration_minutes>23</time_duration_minutes>\n			"
+  "						<time_duration_seconds>17</time_duration_seconds>\n									<time_duration_fractional_seconds>0</time_duration"
+  "_fractional_seconds>\n								</ptime_time_duration>\n							</LastModified>\n							<SuppressionType>1</Suppression"
+  "Type>\n						</second>\n					</item>\n					<item>\n						<first>\n							<ID>Simulink:DataType:WarningOverFlowDetect"
+  "ed</ID>\n							<Cause>\n								<Source>\n									<count>0</count>\n									<item_version>0</item_version>\n					"
+  "			</Source>\n							</Cause>\n						</first>\n						<second>\n							<Comment></Comment>\n							<User></User>\n			"
+  "				<LastModified>\n								<ptime_date>\n									<date>20160608</date>\n								</ptime_date>\n								<ptime_time"
+  "_duration>\n									<is_special>0</is_special>\n									<time_duration_hours>15</time_duration_hours>\n									<t"
+  "ime_duration_minutes>23</time_duration_minutes>\n									<time_duration_seconds>17</time_duration_seconds>\n							"
+  "		<time_duration_fractional_seconds>0</time_duration_fractional_seconds>\n								</ptime_time_duration>\n							</L"
+  "astModified>\n							<SuppressionType>1</SuppressionType>\n						</second>\n					</item>\n				</SuppressedData>\n			"
+  "</second>\n		</item>\n	</Table>\n</DiagnosticSuppressor>\n\n</boost_serialization>\n\n</boost_serialization>\n\n"
+  AnimationPlugin	  "on"
+  NotesPlugin		  "on"
+  EnableAccessToBaseWorkspace on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  DataTypeOverrideAppliesTo "AllNumericTypes"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  FPTRunName		  "Run 1"
+  MaxMDLFileLineLength	  120
+  LastSavedArchitecture	  "win64"
+  Object {
+    $PropName		    "BdWindowsInfo"
+    $ObjectID		    1
+    $ClassName		    "Simulink.BDWindowsInfo"
+    Object {
+      $PropName		      "WindowsInfo"
+      $ObjectID		      2
+      $ClassName	      "Simulink.WindowInfo"
+      IsActive		      [1]
+      Location		      [-1940.0, 20.0, 1936.0, 1056.0]
+      Object {
+	$PropName		"ModelBrowserInfo"
+	$ObjectID		3
+	$ClassName		"Simulink.ModelBrowserInfo"
+	Visible			[0]
+	DockPosition		"Left"
+	Width			[50]
+	Height			[50]
+	Filter			[9]
+	Minimized		"Unset"
+      }
+      Object {
+	$PropName		"ExplorerBarInfo"
+	$ObjectID		4
+	$ClassName		"Simulink.ExplorerBarInfo"
+	Visible			[0]
+      }
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	IsTabbed		[1]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[1882.0, 844.0]
+	ZoomFactor		[1.5]
+	Offset			[-13.633496649393919, -24.048811482814358]
+	SceneRectInView		[-13.633496649393919, -24.048811482814358, 1254.6666666666667, 562.66666666666663]
+      }
+      Array {
+	Type			"Simulink.DockComponentInfo"
+	Dimension		2
+	Object {
+	  $ObjectID		  6
+	  Type			  "GLUE2:PropertyInspector"
+	  ID			  "Property Inspector"
+	  Visible		  [0]
+	  CreateCallback	  ""
+	  UserData		  ""
+	  Floating		  [0]
+	  DockPosition		  "Right"
+	  Width			  [640]
+	  Height		  [480]
+	  Minimized		  "Unset"
+	}
+	Object {
+	  $ObjectID		  7
+	  Type			  "Simulink:Editor:ReferencedFiles"
+	  ID			  "Referenced Files"
+	  Visible		  [0]
+	  CreateCallback	  ""
+	  UserData		  "{\"filterShowRefModels\":\"true\",\"filterShowRefSubs\":\"true\",\"filterShowOnlyDirtyFiles\":\"false\"}\n"
+	  Floating		  [0]
+	  DockPosition		  "Left"
+	  Width			  [640]
+	  Height		  [480]
+	  Minimized		  "Unset"
+	}
+	PropName		"DockComponentsInfo"
+      }
+      WindowState	      "AAAA/wAAAAD9AAAAAgAAAAAAAAC9AAAB+PwCAAAABPsAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAA"
+      "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
+      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABjAP////sAAABgAFMAaQBtAHUAb"
+      "ABpAG4AawA6AEUAZABpAHQAbwByADoAUgBlAGYAZQByAGUAbgBjAGUAZABGAGkAbABlAHMALwBSAGUAZgBlAHIAZQBuAGMAZQBkACAARgBpAGwAZ"
+      "QBzAAAAAAD/////AAAAjAD///8AAAABAAAAAAAAAAD8AgAAAAH7AAAAVABHAEwAVQBFADIAOgBQAHIAbwBwAGUAcgB0AHkASQBuAHMAcABlAGMAd"
+      "ABvAHIALwBQAHIAbwBwAGUAcgB0AHkAIABJAG4AcwBwAGUAYwB0AG8AcgAAAAAA/////wAAAawA////AAAHgAAAA2sAAAABAAAAAgAAAAEAAAAC/"
+      "AAAAAEAAAACAAAAAA=="
+      Array {
+	Type			"Cell"
+	Dimension		0
+	PropName		"PersistedApps"
+      }
+      WindowUuid	      "605750d6-75f9-45b3-a2ae-983094f12b18"
+    }
+    BDUuid		    "d150b19e-16ca-4e6a-af75-8d5501a860b7"
+  }
+  HideAutomaticNames	  on
+  SequenceViewerTimePrecision 3
+  SequenceViewerHistory	  1000
+  Created		  "Tue Feb 18 09:46:05 2014"
+  Creator		  "hokka"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "knovakovic"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Tue Sep 07 13:35:57 2021"
+  RTWModifiedTimeStamp	  552922553
+  ModelVersionFormat	  "%<AutoIncrement:7.5>"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "all"
+  WideLines		  off
+  ShowLineDimensions	  on
+  ShowPortDataTypes	  on
+  ShowAllPropagatedSignalLabels	off
+  PortDataTypeDisplayFormat "AliasTypeOnly"
+  ShowEditTimeErrors	  on
+  ShowEditTimeWarnings	  on
+  ShowEditTimeAdvisorChecks off
+  ShowPortUnits		  off
+  ShowDesignRanges	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  VariantCondition	  off
+  ShowLinearizationAnnotations on
+  ShowVisualizeInsertedRTB on
+  ShowMarkup		  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  BlockVariantConditionDataTip off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  FunctionConnectors	  off
+  ScheduleConnectors	  off
+  BrowserLookUnderMasks	  off
+  MultithreadedSim	  "on"
+  SimulationMode	  "normal"
+  SILPILModeSetting	  "automated"
+  SILPILSystemUnderTest	  "topmodel"
+  SILPILSimulationModeTopModel "normal"
+  SILPILSimulationModeModelRef "normal"
+  SimTabSimulationMode	  "normal"
+  CodeVerificationMode	  "software-in-the-loop (sil)"
+  PauseTimes		  "5"
+  NumberOfSteps		  1
+  SnapshotBufferSize	  10
+  SnapshotInterval	  10
+  NumberOfLastSnapshots	  0
+  EnablePacing		  off
+  PacingRate		  1
+  RTW.FcnDefault {
+    $PropName		    "RTWFcnClass"
+    $ObjectID		    8
+    Name		    "Auto"
+    FunctionName	    "test_model_1_step"
+    InitFunctionName	    "DefaultBlockDiagram_initialize"
+  }
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  Object {
+    $PropName		    "DataLoggingOverride"
+    $ObjectID		    9
+    $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
+    model_		    "Example_UsingModelReferencing"
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      "Example_UsingModelReferencing"
+      PropName		      "logAsSpecifiedByModels_"
+    }
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      ""
+      PropName		      "logAsSpecifiedByModelsSSIDs_"
+    }
+  }
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigSignalOutputPortIndex 0
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  VariantFading		  on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  OrderedModelArguments	  on
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      10
+      Version		      "21.0.0"
+      DisabledProps	      []
+      Description	      ""
+      Array {
+	Type			"Handle"
+	Dimension		9
+	Simulink.SolverCC {
+	  $ObjectID		  11
+	  Version		  "21.0.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  AutoScaleAbsTol	  on
+	  FixedStep		  "0.01"
+	  InitialStep		  "auto"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  EnableMultiTasking	  off
+	  ConcurrentTasks	  off
+	  SolverName		  "FixedStepDiscrete"
+	  SolverJacobianMethodControl "auto"
+	  DaesscMode		  "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverInfoToggleStatus  off
+	  IsAutoAppliedInSIP	  off
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	  SampleTimeProperty	  []
+	  DecoupledContinuousIntegration off
+	  MinimalZcImpactIntegration off
+	  ODENIntegrationMethod	  "ode3"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  12
+	  Version		  "21.0.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveOperatingPoint	  off
+	  SaveFormat		  "Array"
+	  SignalLoggingSaveFormat "ModelDataLogs"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  VisualizeSimOutput	  on
+	  StreamToWorkspace	  off
+	  StreamVariableName	  "streamout"
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	  LoggingToFile		  off
+	  DatasetSignalFormat	  "timeseries"
+	  LoggingFileName	  "out.mat"
+	  LoggingIntervals	  "[-inf, inf]"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  13
+	  Version		  "21.0.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  DefaultParameterBehavior "Tunable"
+	  UseDivisionForNetSlopeComputation "off"
+	  GainParamInheritBuiltInType off
+	  UseFloatMulNetSlope	  off
+	  InheritOutputTypeSmallerThanSingle off
+	  DefaultUnderspecifiedDataType	"double"
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  CachingGlobalReferences off
+	  GlobalBufferReuse	  on
+	  StrengthReduction	  off
+	  AdvancedOptControl	  ""
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  BitwiseOrLogicalOp	  "Same as modeled"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  PassReuseOutputArgsThreshold 12
+	  ExpressionDepthLimit	  2147483647
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  ActiveStateOutputEnumStorageType "Native Integer"
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  LifeSpan		  "1"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "off"
+	  AccelVerboseBuild	  off
+	  OptimizeBlockOrder	  "off"
+	  OptimizeDataStoreBuffers on
+	  BusAssignmentInplaceUpdate on
+	  DifferentSizesBufferReuse off
+	  UseRowMajorAlgorithm	  off
+	  OptimizationLevel	  "level2"
+	  OptimizationPriority	  "Balanced"
+	  OptimizationCustomize	  on
+	  LabelGuidedReuse	  off
+	  MultiThreadedLoops	  off
+	  DenormalBehavior	  "GradualUnderflow"
+	  EfficientTunableParamExpr on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  14
+	  Version		  "21.0.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  StringTruncationChecking "error"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "none"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  ExportedTasksRateTransMsg "none"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  FcnCallInpInsideContextMsg "warning"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  UseOnlyExistingSharedCode "error"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "error"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  AllowSymbolicDim	  on
+	  RowMajorDimensionSupport off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceNoExplicitFinalValueMsg	"none"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  OperatingPointInterfaceChecksumMismatchMsg "warning"
+	  NonCurrentReleaseOperatingPointMsg "error"
+	  ChecksumConsistencyForSSReuse	"none"
+	  PregeneratedLibrarySubsystemCodeDiagnostic "warning"
+	  MatchCodeGenerationContextForUpdateDiagram "none"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "ErrorLevel1"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  SymbolicDimMinMaxWarning "warning"
+	  LossOfSymbolicDimsSimulationWarning "warning"
+	  LossOfSymbolicDimsCodeGenerationWarning "error"
+	  SymbolicDimsDataTypeCodeGenerationDiagnostic "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnreachableExecutionPathDiag "warning"
+	  SFUndirectedBroadcastEventsDiag "warning"
+	  SFTransitionActionBeforeConditionDiag	"warning"
+	  SFOutputUsedAsStateInMooreChartDiag "error"
+	  SFTemporalDelaySmallerThanSampleTimeDiag "warning"
+	  SFSelfTransitionDiag	  "warning"
+	  SFExecutionAtInitializationDiag "none"
+	  SFMachineParentedDataDiag "warning"
+	  IntegerSaturationMsg	  "warning"
+	  AllowedUnitSystems	  "all"
+	  UnitsInconsistencyMsg	  "warning"
+	  AllowAutomaticUnitConversions	on
+	  RCSCRenamedMsg	  "warning"
+	  RCSCObservableMsg	  "warning"
+	  ForceCombineOutputUpdateInSim	off
+	  UnitDatabase		  ""
+	  UnderSpecifiedDimensionMsg "none"
+	  DebugExecutionForFMUViaOutOfProcess off
+	  ArithmeticOperatorsInVariantConditions "warning"
+	  VariantConditionMismatch "none"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  15
+	  Version		  "21.0.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerLongLong	  64
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdBitPerSizeT	  32
+	  ProdBitPerPtrDiffT	  32
+	  ProdLargestAtomicInteger "Long"
+	  ProdLargestAtomicFloat  "Double"
+	  ProdIntDivRoundTo	  "Zero"
+	  ProdEndianess		  "BigEndian"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdLongLongMode	  off
+	  ProdHWDeviceType	  "Texas Instruments->TMS570 Cortex-R4"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerLongLong	  64
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetBitPerSizeT	  32
+	  TargetBitPerPtrDiffT	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetLongLongMode	  off
+	  TargetIntDivRoundTo	  "Zero"
+	  TargetEndianess	  "BigEndian"
+	  TargetWordSize	  32
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Generic->32-bit Embedded Processor"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	  UseEmbeddedCoderFeatures on
+	  UseSimulinkCoderFeatures on
+	  HardwareBoardFeatureSet "EmbeddedCoderHSP"
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  16
+	  Version		  "21.0.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  EnableRefExpFcnMdlSchedulingChecks on
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelDependencies	  ""
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  17
+	  Version		  "21.0.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  SimCustomSourceCode	  ""
+	  SimCustomHeaderCode	  ""
+	  SimCustomInitializer	  ""
+	  SimCustomTerminator	  ""
+	  SimReservedNameArray	  []
+	  SimUserSources	  ""
+	  SimUserIncludeDirs	  ""
+	  SimUserLibraries	  ""
+	  SimUserDefines	  ""
+	  SimCustomCompilerFlags  ""
+	  SimCustomLinkerFlags	  ""
+	  SFSimEcho		  on
+	  SimCtrlC		  on
+	  SimIntegrity		  "on"
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimAnalyzeCustomCode	  off
+	  SimDebugExecutionForCustomCode off
+	  SimGenImportedTypeDefs  off
+	  ModelFunctionsGlobalVisibility "on"
+	  CompileTimeRecursionLimit 50
+	  EnableRuntimeRecursion  on
+	  MATLABDynamicMemAlloc	  off
+	  MATLABDynamicMemAllocThreshold 65536
+	  LegacyBehaviorForPersistentVarInContinuousTime off
+	  CustomCodeFunctionArrayLayout	[]
+	  DefaultCustomCodeFunctionArrayLayout "NotSpecified"
+	  CustomCodeUndefinedFunction "UseInterfaceOnly"
+	  CustomCodeGlobalsAsFunctionIO	off
+	  DefaultCustomCodeDeterministicFunctions "None"
+	  CustomCodeDeterministicFunctions ""
+	  SimHardwareAcceleration "generic"
+	  SimTargetLang		  "C"
+	  GPUAcceleration	  off
+	  SimGPUMallocThreshold	  200
+	  SimGPUStackLimitPerThread 1024
+	  SimGPUErrorChecks	  off
+	  SimGPUCustomComputeCapability	""
+	  SimGPUCompilerFlags	  ""
+	  SimDLTargetLibrary	  "mkl-dnn"
+	  SimDLAutoTuning	  on
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  18
+	  Version		  "21.0.0"
+	  DisabledProps		  []
+	  Description		  "Real-Time Workshop Embedded Coder (no auto configuration)"
+	  SystemTargetFile	  "ert.tlc"
+	  HardwareBoard		  "None"
+	  ShowCustomHardwareApp	  off
+	  ShowEmbeddedHardwareApp off
+	  TLCOptions		  ""
+	  GenCodeOnly		  on
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  PackageGeneratedCodeAndArtifacts off
+	  PackageName		  ""
+	  TemplateMakefile	  "ert_TTC580.tmf"
+	  PostCodeGenCommand	  ""
+	  GenerateReport	  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  RTWBuildHooks		  []
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  CustomSourceCode	  ""
+	  CustomHeaderCode	  ""
+	  CustomInclude		  ""
+	  CustomSource		  ""
+	  CustomLibrary		  ""
+	  CustomDefine		  ""
+	  CustomBLASCallback	  ""
+	  CustomLAPACKCallback	  ""
+	  CustomFFTCallback	  ""
+	  CustomInitializer	  ""
+	  CustomTerminator	  ""
+	  Toolchain		  "Automatically locate an installed toolchain"
+	  BuildConfiguration	  "Faster Builds"
+	  CustomToolchainOptions  []
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  PortableWordSizes	  off
+	  CreateSILPILBlock	  "None"
+	  CodeExecutionProfiling  off
+	  CodeExecutionProfileVariable "executionProfile"
+	  CodeProfilingSaveOptions "SummaryOnly"
+	  CodeProfilingInstrumentation "off"
+	  SILDebugging		  off
+	  TargetLang		  "C"
+	  GenerateGPUCode	  "None"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateWebview	  off
+	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
+	  GenerateMissedCodeReplacementReport off
+	  RTWCompilerOptimization "off"
+	  ObjectivePriorities	  []
+	  RTWCustomCompilerOptimizations ""
+	  CheckMdlBeforeBuild	  "Off"
+	  SharedConstantsCachingThreshold 1024
+	  GPUKernelNamePrefix	  ""
+	  GPUDeviceID		  -1
+	  GPUMallocMode		  "discrete"
+	  GPUMallocThreshold	  200
+	  GPUStackLimitPerThread  1024
+	  GPUcuBLAS		  on
+	  GPUcuSOLVER		  on
+	  GPUcuFFT		  on
+	  GPUErrorChecks	  off
+	  GPUComputeCapability	  "3.5"
+	  GPUCustomComputeCapability ""
+	  GPUCompilerFlags	  ""
+	  GPUMaximumBlocksPerKernel 0
+	  DLTargetLibrary	  "none"
+	  DLAutoTuning		  on
+	  DLArmComputeVersion	  "19.05"
+	  DLArmComputeArch	  "unspecified"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      19
+	      Version		      "21.0.0"
+	      DisabledProps	      []
+	      Description	      ""
+	      Components	      []
+	      Comment		      ""
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      CommentStyle	      "Auto"
+	      IgnoreCustomStorageClasses off
+	      IgnoreTestpoints	      off
+	      MaxIdLength	      63
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      OperatorAnnotations     off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      MangleLength	      1
+	      SharedChecksumLength    8
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrModelFcn "$R$N"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      CustomSymbolStrUtil     "$N$C"
+	      CustomSymbolStrEmxType  "emxArray_$M$N"
+	      CustomSymbolStrEmxFcn   "emx$M$N"
+	      CustomUserTokenString   ""
+	      CustomCommentsFcn	      ""
+	      DefineNamingRule	      "None"
+	      DefineNamingFcn	      ""
+	      ParamNamingRule	      "None"
+	      ParamNamingFcn	      ""
+	      SignalNamingRule	      "None"
+	      SignalNamingFcn	      ""
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      BlockCommentType	      "BlockPathComment"
+	      StateflowObjectComments on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InternalIdentifierFile  ""
+	      InternalIdentifier      "Classic"
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	      ReservedNameArray	      []
+	      EnumMemberNameClash     "error"
+	    }
+	    Simulink.ERTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      20
+	      Version		      "21.0.0"
+	      DisabledProps	      []
+	      Description	      ""
+	      Components	      []
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "NOT IN USE"
+	      TargetLangStandard      "C89/C90 (ANSI)"
+	      CodeReplacementLibrary  "None"
+	      UtilityFuncGeneration   "Auto"
+	      MultiwordTypeDef	      "System defined"
+	      MultiwordLength	      2048
+	      DynamicStringBufferSize 256
+	      GenerateFullHeader      on
+	      InferredTypesCompatibility off
+	      ExistingSharedCode      ""
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns on
+	      CombineSignalStateStructs	off
+	      GroupInternalDataByFunction off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    on
+	      SupportAbsoluteTime     off
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      off
+	      CodeInterfacePackaging  "Nonreusable function"
+	      PurelyIntegerCode	      off
+	      SupportNonFinite	      off
+	      SupportComplex	      on
+	      SupportContinuousTime   off
+	      SupportNonInlinedSFcns  off
+	      RemoveDisableFunc	      off
+	      RemoveResetFunc	      on
+	      SupportVariableSizeSignals off
+	      ParenthesesLevel	      "Nominal"
+	      CastingMode	      "Nominal"
+	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.ERTCustomization"
+	      ModelStepFunctionPrototypeControlCompliant on
+	      CPPClassGenCompliant    on
+	      AutosarCompliant	      off
+	      MDXCompliant	      off
+	      GRTInterface	      off
+	      GenerateAllocFcn	      off
+	      UseToolchainInfoCompliant	on
+	      GenerateSharedConstants on
+	      CoderGroups	      []
+	      AccessMethods	      []
+	      LookupTableObjectStructAxisOrder "1,2,3,4,..."
+	      LUTObjectStructOrderExplicitValues "Size,Breakpoints,Table"
+	      LUTObjectStructOrderEvenSpacing "Size,Breakpoints,Table"
+	      ArrayLayout	      "Column-major"
+	      UnsupportedSFcnMsg      "error"
+	      ERTHeaderFileRootName   "$R$E"
+	      ERTSourceFileRootName   "$R$E"
+	      ERTDataFileRootName     "$R_data"
+	      GenerateASAP2	      off
+	      DSAsUniqueAccess	      off
+	      ExtMode		      off
+	      ExtModeTransport	      0
+	      ExtModeStaticAlloc      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTesting	      off
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeMexArgs	      ""
+	      ExtModeIntrfLevel	      "Level1"
+	      InlinedParameterPlacement	"Hierarchical"
+	      TargetOS		      "BareBoardExample"
+	      MultiInstanceErrorCode  "Error"
+	      RootIOFormat	      "Individual arguments"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      ERTSrcFileBannerTemplate "ert_code_template.cgt"
+	      ERTHdrFileBannerTemplate "ert_code_template.cgt"
+	      ERTDataSrcFileTemplate  "ert_code_template.cgt"
+	      ERTDataHdrFileTemplate  "ert_code_template.cgt"
+	      ERTCustomFileTemplate   "example_file_process.tlc"
+	      EnableDataOwnership     off
+	      SignalDisplayLevel      10
+	      ParamTuneLevel	      10
+	      GlobalDataDefinition    "Auto"
+	      DataDefinitionFile      "global.c"
+	      GlobalDataReference     "Auto"
+	      ERTFilePackagingFormat  "Modular"
+	      RateTransitionBlockCode "Inline"
+	      DataReferenceFile	      "global.h"
+	      PreserveExpressionOrder off
+	      PreserveIfCondition     off
+	      ConvertIfToSwitch	      off
+	      PreserveExternInFcnDecls on
+	      PreserveStaticInFcnDecls on
+	      SuppressUnreachableDefaultCases off
+	      EnableSignedLeftShifts  on
+	      EnableSignedRightShifts on
+	      IndentStyle	      "K&R"
+	      IndentSize	      "2"
+	      NewlineStyle	      "Default"
+	      MaxLineWidth	      80
+	      EnableUserReplacementTypes off
+	      Array {
+		Type			"Struct"
+		Dimension		1
+		MATStruct {
+		  double		  ""
+		  single		  ""
+		  int32			  ""
+		  int16			  ""
+		  int8			  ""
+		  uint32		  ""
+		  uint16		  ""
+		  uint8			  ""
+		  boolean		  ""
+		  int			  ""
+		  uint			  ""
+		  char			  ""
+		  uint64		  ""
+		  int64			  ""
+		}
+		PropName		"ReplacementTypes"
+	      }
+	      MaxIdInt64	      "MAX_int64_T"
+	      MinIdInt64	      "MIN_int64_T"
+	      MaxIdUint64	      "MAX_uint64_T"
+	      MaxIdInt32	      "MAX_int32_T"
+	      MinIdInt32	      "MIN_int32_T"
+	      MaxIdUint32	      "MAX_uint32_T"
+	      MaxIdInt16	      "MAX_int16_T"
+	      MinIdInt16	      "MIN_int16_T"
+	      MaxIdUint16	      "MAX_uint16_T"
+	      MaxIdInt8		      "MAX_int8_T"
+	      MinIdInt8		      "MIN_int8_T"
+	      MaxIdUint8	      "MAX_uint8_T"
+	      BooleanTrueId	      "true"
+	      BooleanFalseId	      "false"
+	      TypeLimitIdReplacementHeaderFile ""
+	      MemSecPackage	      "--- None ---"
+	      MemSecDataConstants     "Default"
+	      MemSecDataIO	      "Default"
+	      MemSecDataInternal      "Default"
+	      MemSecDataParameters    "Default"
+	      MemSecFuncInitTerm      "Default"
+	      MemSecFuncExecute	      "Default"
+	      MemSecFuncSharedUtil    "Default"
+	      GroupConstants	      "Default"
+	      GroupRootInputs	      "Default"
+	      GroupRootOutputs	      "Default"
+	      GroupInternal	      "Default"
+	      GroupParameters	      "Default"
+	      GroupDataTransfer	      "Default"
+	      GroupSharedLocalDataStores "Default"
+	      GroupInstanceSpecificParameters "Default"
+	      GroupModelData	      "Default"
+	      ArrayContainerType      "C-style array"
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	SlCovCC.ConfigComp {
+	  $ObjectID		  21
+	  Version		  "21.0.0"
+	  DisabledProps		  []
+	  Description		  "Simulink Coverage Configuration Component"
+	  Components		  []
+	  Name			  "Simulink Coverage"
+	  CovEnable		  off
+	  CovScope		  "EntireSystem"
+	  CovIncludeTopModel	  on
+	  RecordCoverage	  off
+	  CovPath		  "/"
+	  CovSaveName		  "covdata"
+	  CovCompData		  ""
+	  CovMetricSettings	  "dw"
+	  CovFilter		  ""
+	  CovHTMLOptions	  ""
+	  CovNameIncrementing	  off
+	  CovForceBlockReductionOff on
+	  CovEnableCumulative	  on
+	  CovSaveCumulativeToWorkspaceVar on
+	  CovSaveSingleToWorkspaceVar on
+	  CovCumulativeVarName	  "covCumulativeData"
+	  CovCumulativeReport	  off
+	  CovSaveOutputData	  on
+	  CovOutputDir		  "slcov_output/$ModelName$"
+	  CovDataFileName	  "$ModelName$_cvdata"
+	  CovReportOnPause	  on
+	  CovModelRefEnable	  "off"
+	  CovModelRefExcluded	  ""
+	  CovExternalEMLEnable	  off
+	  CovSFcnEnable		  off
+	  CovBoundaryAbsTol	  1e-05
+	  CovBoundaryRelTol	  0.01
+	  CovUseTimeInterval	  off
+	  CovStartTime		  0
+	  CovStopTime		  0
+	  CovMcdcMode		  "Masking"
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Code Generation/Symbols"
+      ConfigPrmDlgPosition    [ 71, 71, 1023, 545 ]
+      ExtraOptions	      "-aBlockCommentType=\"BlockPathComment\" -aIgnoreTestpoints=0 "
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    10
+  }
+  Object {
+    $PropName		    "DataTransfer"
+    $ObjectID		    22
+    $ClassName		    "Simulink.GlobalDataTransfer"
+    DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
+    DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
+    DefaultTransitionBetweenContTasks "Ensure deterministic transfer (minimum delay)"
+    DefaultExtrapolationMethodBetweenContTasks "None"
+  }
+  ExplicitPartitioning	  off
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NameLocation	    "bottom"
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    HideAutomaticName	    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    MarkupType		    "model"
+    UseDisplayTextAsClickCallback off
+    AnnotationType	    "note_annotation"
+    FixedHeight		    off
+    FixedWidth		    off
+    Interpreter		    "off"
+  }
+  LineDefaults {
+    FontName		    "Arial"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  MaskDefaults {
+    SelfModifiable	    "off"
+    IconFrame		    "on"
+    IconOpaque		    "opaque"
+    RunInitForIconRedraw    "analyze"
+    IconRotate		    "none"
+    PortRotate		    "default"
+    IconUnits		    "autoscale"
+  }
+  MaskParameterDefaults {
+    Evaluate		    "on"
+    Tunable		    "on"
+    NeverSave		    "off"
+    Internal		    "off"
+    ReadOnly		    "off"
+    Enabled		    "on"
+    Visible		    "on"
+    ToolTip		    "on"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      ModelReference
+      ModelNameDialog	      "<Enter Model Name>"
+      SimulationMode	      "Accelerator"
+      ShowModelInitializePort off
+      ShowModelResetPorts     off
+      ShowModelTerminatePort  off
+      ScheduleRates	      off
+      ScheduleRatesWith	      "Ports"
+      CachedPortDiscreteRates "[-2]"
+      AutoFillPortDiscreteRates	on
+      HasExplicitPartitions   off
+      HasEvents		      off
+      CodeInterface	      "Model reference"
+      Variant		      off
+      GeneratePreprocessorConditionals off
+      ContentPreviewEnabled   off
+      CopyOfModelProtected    off
+      MultithreadedSim	      "auto"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+  }
+  System {
+    Name		    "Example_UsingModelReferencing"
+    Location		    [-1940, 20, -4, 1076]
+    SystemRect		    [0.000000, 0.000000, 0.000000, 0.000000]
+    Open		    on
+    PortBlocksUseCompactNotation off
+    SetExecutionDomain	    off
+    ExecutionDomainType	    "Deduce"
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "150"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "30"
+    SimulinkSubDomain	    "Simulink"
+    Block {
+      BlockType		      Reference
+      Name		      "DIAG_Status"
+      SID		      "1"
+      Ports		      [0, 12]
+      Position		      [785, 220, 885, 460]
+      ZOrder		      -1
+      ForegroundColor	      "[0.149020, 0.364706, 0.545098]"
+      BackgroundColor	      "[0.921569, 0.921569, 0.921569]"
+      HideAutomaticName	      off
+      Priority		      "-10"
+      LibraryVersion	      "4.23"
+      SourceBlock	      "IOBlock_Library_TTC580/System  Blocks\nTTC580 IOlib/DIAG_Status"
+      SourceType	      "DIAG_Status_Code"
+      SourceProductName	      "I/O Blocklibrary for TTC580"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      ContentPreviewEnabled   off
+      SampleTime	      "-1"
+      ttlib		      "IO_Blk_Lib_TTC500"
+      ttDescription	      "DIAG_Status"
+      tt_iolib_version	      "0.16"
+      FPGA_Major	      "16"
+      FPGA_Minor	      "5"
+      IODriver_Major	      "2"
+      IODriver_Minor	      "14"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Info1"
+      SID		      "26"
+      Ports		      []
+      Position		      [942, 29, 1003, 89]
+      ZOrder		      232
+      BackgroundColor	      "[0.874510, 0.976471, 0.909804]"
+      ShowName		      off
+      LibraryVersion	      "4.23"
+      FontSize		      16
+      SourceBlock	      "IOBlock_Library_TTC580/Examples/Info"
+      SourceType	      ""
+      SourceProductName	      "I/O Blocklibrary for TTC580"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      ContentPreviewEnabled   off
+      bla		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "MainDlg"
+      SID		      "3"
+      Ports		      [0, 2]
+      Position		      [785, 128, 885, 192]
+      ZOrder		      -3
+      ForegroundColor	      "[0.149020, 0.364706, 0.545098]"
+      BackgroundColor	      "orange"
+      HideAutomaticName	      off
+      Priority		      "-2147483646"
+      LibraryVersion	      "4.23"
+      SourceBlock	      "IOBlock_Library_TTC580/System  Blocks\nTTC580 IOlib/MainDlg"
+      SourceType	      "MainDlg_CCP_J1939__Code"
+      SourceProductName	      "I/O Blocklibrary for TTC580"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      ContentPreviewEnabled   off
+      SampleTime	      "-1"
+      ttlib		      "IO_Blk_Lib_TTC500"
+      ttDescription	      "MainDlg"
+      tt_iolib_version	      "0.25"
+      baudrate_CAN0	      "500"
+      tseg1_CAN0	      "6"
+      tseg2_CAN0	      "2"
+      sjw_CAN0		      "1"
+      brp_CAN0		      "1"
+      baudrate_CAN1	      "250"
+      tseg1_CAN1	      "6"
+      tseg2_CAN1	      "2"
+      sjw_CAN1		      "1"
+      brp_CAN1		      "1"
+      baudrate_CAN2	      "250"
+      tseg1_CAN2	      "6"
+      tseg2_CAN2	      "2"
+      sjw_CAN2		      "1"
+      brp_CAN2		      "1"
+      baudrate_CAN3	      "500"
+      baudrate_CAN4	      "500"
+      baudrate_CAN5	      "500"
+      baudrate_CAN6	      "500"
+      tseg1		      "6"
+      tseg2		      "2"
+      sjw		      "1"
+      Duration_ms	      "10"
+      glitch_filter_time      "180"
+      watchdog_window_size    "SAFETY_CONF_WINDOW_SIZE_100_PERCENT"
+      watchdog_reset_behavior "SAFETY_CONF_RESETS_DISABLED"
+      brp		      "0"
+      Enable_sending_DM1_of_J1939 off
+      DM1_Channel	      "IO_CAN_CHANNEL_0 "
+      J1939SorceAddress	      "0"
+      DM2_Basis_Address	      "63488"
+      Show_version_information on
+      Major_Number	      "0"
+      Minor_Number	      "7"
+      Revison_Number	      "1"
+      Node_Number	      "1"
+      Enable_Reset_by_TTCDownloader on
+      bFlashOverEthernet      off
+      Enable_CCP	      off
+      CRO_ID		      "hex2dec('101')"
+      DTO_ID		      "hex2dec('102')"
+      CCP_Station_Addr_raw    "1"
+      CCP_Station_ID	      "ECU00001"
+      CPP_channel	      "IO_CAN_CHANNEL_0 "
+      CPP_id_format	      "IO_CAN_STD_FRAME"
+      bEnable_DAQ0	      off
+      bEnable_DAQ1_2	      off
+      ODT_total		      "10"
+      bEnable_ErrorCBAction   off
+      bDIAG_ERR_DISABLE_SSW0  off
+      bDIAG_ERR_DISABLE_SSW1  off
+      bDIAG_ERR_DISABLE_SSW2  off
+    }
+    Block {
+      BlockType		      ModelReference
+      Name		      "Model"
+      SID		      "4"
+      Ports		      [0, 4]
+      Position		      [385, 281, 520, 454]
+      ZOrder		      -4
+      ModelNameDialog	      "ModelRef"
+      SimulationMode	      "Normal"
+      ModelReferenceVersion   "1.291"
+      List {
+	ListType		OutputPortNames
+	port0			"ADC_01_ErrC"
+	port1			"ADC_01_Val"
+	port2			"ADC_09_ErrC"
+	port3			"ADC_09_Val"
+      }
+      List {
+	ListType		OutputPortOutputBusAsStructs
+	port0			"off"
+	port1			"off"
+	port2			"off"
+	port3			"off"
+      }
+      List {
+	ListType		OutputPortUnitExprs
+	port0			"inherit"
+	port1			"inherit"
+	port2			"inherit"
+	port3			"inherit"
+      }
+      List {
+	ListType		InputPortUnitExprs
+      }
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator1"
+      SID		      "5"
+      Position		      [930, 303, 945, 317]
+      ZOrder		      -5
+      ForegroundColor	      "[0.149020, 0.364706, 0.545098]"
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator10"
+      SID		      "6"
+      Position		      [930, 263, 945, 277]
+      ZOrder		      -6
+      ForegroundColor	      "[0.149020, 0.364706, 0.545098]"
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator2"
+      SID		      "7"
+      Position		      [930, 223, 945, 237]
+      ZOrder		      -7
+      ForegroundColor	      "[0.149020, 0.364706, 0.545098]"
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator3"
+      SID		      "8"
+      Position		      [930, 323, 945, 337]
+      ZOrder		      -8
+      ForegroundColor	      "[0.149020, 0.364706, 0.545098]"
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator4"
+      SID		      "9"
+      Position		      [930, 363, 945, 377]
+      ZOrder		      -9
+      ForegroundColor	      "[0.149020, 0.364706, 0.545098]"
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator5"
+      SID		      "10"
+      Position		      [930, 383, 945, 397]
+      ZOrder		      -10
+      ForegroundColor	      "[0.149020, 0.364706, 0.545098]"
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator6"
+      SID		      "11"
+      Position		      [930, 283, 945, 297]
+      ZOrder		      -11
+      ForegroundColor	      "[0.149020, 0.364706, 0.545098]"
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator7"
+      SID		      "12"
+      Position		      [930, 343, 945, 357]
+      ZOrder		      -12
+      ForegroundColor	      "[0.149020, 0.364706, 0.545098]"
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator8"
+      SID		      "13"
+      Position		      [930, 403, 945, 417]
+      ZOrder		      -13
+      ForegroundColor	      "[0.149020, 0.364706, 0.545098]"
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator9"
+      SID		      "14"
+      Position		      [930, 168, 945, 182]
+      ZOrder		      -14
+      ForegroundColor	      "[0.149020, 0.364706, 0.545098]"
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Write_RS232_1"
+      SID		      "15"
+      Ports		      [1]
+      Position		      [930, 244, 1025, 256]
+      ZOrder		      -15
+      ForegroundColor	      "[0.149020, 0.364706, 0.545098]"
+      BackgroundColor	      "[1.000000, 1.000000, 0.792157]"
+      ShowName		      off
+      Priority		      "1"
+      LibraryVersion	      "4.23"
+      SourceBlock	      "IOBlock_Library_TTC580/UART\nTTC580 IOlib/Write_RS232_"
+      SourceType	      "Write_RS232__Code"
+      SourceProductName	      "I/O Blocklibrary for TTC580"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      ContentPreviewEnabled   off
+      SampleTime	      "-1"
+      ttlib		      "IO_Blk_Lib_TTC500"
+      ttDescription	      "Write_RS232_"
+      tt_iolib_version	      "0.25"
+      Comment		      "diag_state ="
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Write_RS232_16"
+      SID		      "16"
+      Ports		      [1]
+      Position		      [595, 339, 690, 351]
+      ZOrder		      -16
+      ForegroundColor	      "[0.196078, 0.466667, 0.701961]"
+      BackgroundColor	      "[1.000000, 1.000000, 0.792157]"
+      ShowName		      off
+      Priority		      "10"
+      LibraryVersion	      "4.23"
+      SourceBlock	      "IOBlock_Library_TTC580/UART\nTTC580 IOlib/Write_RS232_"
+      SourceType	      "Write_RS232__Code"
+      SourceProductName	      "I/O Blocklibrary for TTC580"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      ContentPreviewEnabled   off
+      SampleTime	      "-1"
+      ttlib		      "IO_Blk_Lib_TTC500"
+      ttDescription	      "Write_RS232_"
+      tt_iolib_version	      "0.25"
+      Comment		      "Value ADC_01 (mV)="
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Write_RS232_17"
+      SID		      "17"
+      Ports		      [1]
+      Position		      [595, 294, 690, 306]
+      ZOrder		      -17
+      ForegroundColor	      "[0.196078, 0.466667, 0.701961]"
+      BackgroundColor	      "[1.000000, 1.000000, 0.792157]"
+      ShowName		      off
+      Priority		      "10"
+      LibraryVersion	      "4.23"
+      SourceBlock	      "IOBlock_Library_TTC580/UART\nTTC580 IOlib/Write_RS232_"
+      SourceType	      "Write_RS232__Code"
+      SourceProductName	      "I/O Blocklibrary for TTC580"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      ContentPreviewEnabled   off
+      SampleTime	      "-1"
+      ttlib		      "IO_Blk_Lib_TTC500"
+      ttDescription	      "Write_RS232_"
+      tt_iolib_version	      "0.25"
+      Comment		      "ErrorCode ADC_01 ="
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Write_RS232_18"
+      SID		      "18"
+      Ports		      [1]
+      Position		      [595, 429, 690, 441]
+      ZOrder		      -18
+      ForegroundColor	      "[0.196078, 0.466667, 0.701961]"
+      BackgroundColor	      "[1.000000, 1.000000, 0.792157]"
+      ShowName		      off
+      Priority		      "11"
+      LibraryVersion	      "4.23"
+      SourceBlock	      "IOBlock_Library_TTC580/UART\nTTC580 IOlib/Write_RS232_"
+      SourceType	      "Write_RS232__Code"
+      SourceProductName	      "I/O Blocklibrary for TTC580"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      ContentPreviewEnabled   off
+      SampleTime	      "-1"
+      ttlib		      "IO_Blk_Lib_TTC500"
+      ttDescription	      "Write_RS232_"
+      tt_iolib_version	      "0.25"
+      Comment		      "Value ADC_09 (mV)="
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Write_RS232_21"
+      SID		      "19"
+      Ports		      [1]
+      Position		      [595, 384, 690, 396]
+      ZOrder		      -19
+      ForegroundColor	      "[0.196078, 0.466667, 0.701961]"
+      BackgroundColor	      "[1.000000, 1.000000, 0.792157]"
+      ShowName		      off
+      Priority		      "11"
+      LibraryVersion	      "4.23"
+      SourceBlock	      "IOBlock_Library_TTC580/UART\nTTC580 IOlib/Write_RS232_"
+      SourceType	      "Write_RS232__Code"
+      SourceProductName	      "I/O Blocklibrary for TTC580"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      ContentPreviewEnabled   off
+      SampleTime	      "-1"
+      ttlib		      "IO_Blk_Lib_TTC500"
+      ttDescription	      "Write_RS232_"
+      tt_iolib_version	      "0.25"
+      Comment		      "ErrorCode ADC_09 ="
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Write_RS232_3"
+      SID		      "20"
+      Ports		      [1]
+      Position		      [930, 424, 1025, 436]
+      ZOrder		      -20
+      ForegroundColor	      "[0.149020, 0.364706, 0.545098]"
+      BackgroundColor	      "[1.000000, 1.000000, 0.792157]"
+      ShowName		      off
+      Priority		      "9"
+      LibraryVersion	      "4.23"
+      SourceBlock	      "IOBlock_Library_TTC580/UART\nTTC580 IOlib/Write_RS232_"
+      SourceType	      "Write_RS232__Code"
+      SourceProductName	      "I/O Blocklibrary for TTC580"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      ContentPreviewEnabled   off
+      SampleTime	      "-1"
+      ttlib		      "IO_Blk_Lib_TTC500"
+      ttDescription	      "Write_RS232_"
+      tt_iolib_version	      "0.25"
+      Comment		      "b_FPGA_version_OK ="
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Write_RS232_4"
+      SID		      "21"
+      Ports		      [1]
+      Position		      [930, 444, 1025, 456]
+      ZOrder		      -21
+      ForegroundColor	      "[0.149020, 0.364706, 0.545098]"
+      BackgroundColor	      "[1.000000, 1.000000, 0.792157]"
+      ShowName		      off
+      Priority		      "9"
+      LibraryVersion	      "4.23"
+      SourceBlock	      "IOBlock_Library_TTC580/UART\nTTC580 IOlib/Write_RS232_"
+      SourceType	      "Write_RS232__Code"
+      SourceProductName	      "I/O Blocklibrary for TTC580"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      ContentPreviewEnabled   off
+      SampleTime	      "-1"
+      ttlib		      "IO_Blk_Lib_TTC500"
+      ttDescription	      "Write_RS232_"
+      tt_iolib_version	      "0.25"
+      Comment		      "b_IODrv_version_OK ="
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Write_RS232_5"
+      SID		      "22"
+      Ports		      [1]
+      Position		      [930, 139, 1025, 151]
+      ZOrder		      -22
+      ForegroundColor	      "[0.149020, 0.364706, 0.545098]"
+      BackgroundColor	      "[1.000000, 1.000000, 0.792157]"
+      ShowName		      off
+      Priority		      "0"
+      LibraryVersion	      "4.23"
+      SourceBlock	      "IOBlock_Library_TTC580/UART\nTTC580 IOlib/Write_RS232_"
+      SourceType	      "Write_RS232__Code"
+      SourceProductName	      "I/O Blocklibrary for TTC580"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      ContentPreviewEnabled   off
+      SampleTime	      "-1"
+      ttlib		      "IO_Blk_Lib_TTC500"
+      ttDescription	      "Write_RS232_"
+      tt_iolib_version	      "0.25"
+      Comment		      "ErrorCode MainDlg ="
+    }
+    Line {
+      ZOrder		      1
+      SrcBlock		      "DIAG_Status"
+      SrcPort		      2
+      DstBlock		      "Write_RS232_1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      2
+      SrcBlock		      "DIAG_Status"
+      SrcPort		      3
+      DstBlock		      "Terminator10"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      3
+      SrcBlock		      "DIAG_Status"
+      SrcPort		      4
+      DstBlock		      "Terminator6"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      4
+      SrcBlock		      "DIAG_Status"
+      SrcPort		      5
+      DstBlock		      "Terminator1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      5
+      SrcBlock		      "DIAG_Status"
+      SrcPort		      6
+      DstBlock		      "Terminator3"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      6
+      SrcBlock		      "DIAG_Status"
+      SrcPort		      7
+      DstBlock		      "Terminator7"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      7
+      SrcBlock		      "DIAG_Status"
+      SrcPort		      8
+      DstBlock		      "Terminator4"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      8
+      SrcBlock		      "DIAG_Status"
+      SrcPort		      9
+      DstBlock		      "Terminator5"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      9
+      SrcBlock		      "DIAG_Status"
+      SrcPort		      10
+      DstBlock		      "Terminator8"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      10
+      SrcBlock		      "DIAG_Status"
+      SrcPort		      1
+      DstBlock		      "Terminator2"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      11
+      SrcBlock		      "Model"
+      SrcPort		      1
+      DstBlock		      "Write_RS232_17"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      12
+      SrcBlock		      "Model"
+      SrcPort		      2
+      DstBlock		      "Write_RS232_16"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      13
+      SrcBlock		      "Model"
+      SrcPort		      4
+      DstBlock		      "Write_RS232_18"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      14
+      SrcBlock		      "Model"
+      SrcPort		      3
+      DstBlock		      "Write_RS232_21"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      15
+      SrcBlock		      "DIAG_Status"
+      SrcPort		      11
+      DstBlock		      "Write_RS232_3"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      16
+      SrcBlock		      "DIAG_Status"
+      SrcPort		      12
+      DstBlock		      "Write_RS232_4"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      17
+      SrcBlock		      "MainDlg"
+      SrcPort		      2
+      DstBlock		      "Terminator9"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      18
+      SrcBlock		      "MainDlg"
+      SrcPort		      1
+      DstBlock		      "Write_RS232_5"
+      DstPort		      1
+    }
+    Annotation {
+      SID		      "30"
+      Position		      [96, 263, 757, 488]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      on
+      FixedWidth	      on
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ForegroundColor	      "[0.901961, 0.956863, 0.976471]"
+      BackgroundColor	      "[0.901961, 0.956863, 0.976471]"
+      AnnotationType	      "area_annotation"
+      ZOrder		      61
+      FontSize		      12
+    }
+    Annotation {
+      SID		      "23"
+      Name		      "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+      "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }"
+      "\n</style></head><body align=\"left\" style=\" font-family:'Arial'; font-size:10px; font-weight:400; font-style:"
+      "normal;\">\n<p align=\"left\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt"
+      "-block-indent:0; text-indent:0px;\"><span style=\" font-size:10px; font-style:italic;\">PIN247</span><span style"
+      "=\" font-size:10px;\"> (= Sensor_Supply_0) is set to 5V</span></p>\n<p align=\"left\" style=\" margin-top:0px; m"
+      "argin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+      "size:10px;\">Connect to </span><span style=\" font-size:10px; font-style:italic;\">PIN127</span><span style=\" f"
+      "ont-size:10px;\"> (= ADC_01) in order to </span></p>\n<p align=\"left\" style=\" margin-top:0px; margin-bottom:0"
+      "px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10px;\">r"
+      "ead out approx. 5000mV</span></p></body></html>"
+      Position		      [138, 287, 349, 345]
+      InternalMargins	      [10, 10, 10, 10]
+      HorizontalAlignment     "left"
+      BackgroundColor	      "[0.741176, 0.890196, 0.941176]"
+      Interpreter	      "rich"
+      ZOrder		      -1
+    }
+    Annotation {
+      SID		      "24"
+      Name		      "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+      "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }"
+      "\n</style></head><body align=\"left\" style=\" font-family:'Arial'; font-size:10px; font-weight:400; font-style:"
+      "normal;\">\n<p align=\"left\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt"
+      "-block-indent:0; text-indent:0px;\"><span style=\" font-size:10px; font-style:italic;\">PIN221</span><span style"
+      "=\" font-size:10px;\"> (= Sensor_Supply_2) is set to 10V</span></p>\n<p align=\"left\" style=\" margin-top:0px; "
+      "margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font"
+      "-size:10px;\">Connect to </span><span style=\" font-size:10px; font-style:italic;\">PIN131</span><span style=\" "
+      "font-size:10px;\"> (= ADC_09) in order to </span></p>\n<p align=\"left\" style=\" margin-top:0px; margin-bottom:"
+      "0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10px;\">"
+      "read out approx. 10000mV</span></p></body></html>"
+      Position		      [138, 373, 349, 431]
+      InternalMargins	      [10, 10, 10, 10]
+      HorizontalAlignment     "left"
+      BackgroundColor	      "[0.741176, 0.890196, 0.941176]"
+      Interpreter	      "rich"
+      ZOrder		      -2
+    }
+    Annotation {
+      SID		      "25"
+      Name		      "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+      "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }"
+      "\n</style></head><body align=\"left\" style=\" font-family:'Arial'; font-size:10px; font-weight:400; font-style:"
+      "normal;\">\n<p align=\"left\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt"
+      "-block-indent:0; text-indent:0px;\"><span style=\" font-size:10px;\">Using ModelReferencing requires to use </sp"
+      "an><span style=\" font-size:10px; font-style:italic;\">make_all()</span><span style=\" font-size:10px;\"> in ord"
+      "er to compile and link all required objects.</span></p>\n<p align=\"left\" style=\" margin-top:0px; margin-botto"
+      "m:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10px;\""
+      ">After having generated the code with Ctrl-B, change to that point in the directory tree, where &quot;</span><sp"
+      "an style=\" font-size:10px; font-style:italic;\">slprj </span><span style=\" font-size:10px;\">&quot; and</span>"
+      "</p>\n<p align=\"left\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block"
+      "-indent:0; text-indent:0px;\"><span style=\" font-size:10px;\">&quot;</span><span style=\" font-size:10px; font-"
+      "style:italic;\">Example_UsingModelReferencing_ert_rtw </span><span style=\" font-size:10px;\">&quot; lies in. </"
+      "span></p>\n<p align=\"left\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-"
+      "block-indent:0; text-indent:0px;\"><span style=\" font-size:10px;\">In the present Example this is the dirctory "
+      "&quot;</span><span style=\" font-size:10px; font-style:italic;\">make_root_ModeRef </span><span style=\" font-si"
+      "ze:10px;\">&quot; From this so called </span><span style=\" font-size:10px; font-style:italic;\">make_root</span"
+      "><span style=\" font-size:10px;\"> invoke the command:</span></p>\n<p align=\"left\" style=\"-qt-paragraph-type:"
+      "empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px"
+      ";\"><br /></p>\n<p align=\"left\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-le"
+      "ft:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n<p align=\"left\" style=\"-qt-parag"
+      "raph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+      "indent:0px;\"><br /></p>\n<p align=\"left\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+      "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10px;\">After successful compilation "
+      "and linking you will obtain the</span></p>\n<p align=\"left\" style=\" margin-top:0px; margin-bottom:0px; margin"
+      "-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10px;\">hex_file in"
+      ":</span></p>\n<p align=\"left\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -"
+      "qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10px; font-weight:600; font-style:italic;\">.\\Ex"
+      "ample_UsingModelReferencing_ert_rtw\\build\\app.hex</span></p>\n<p align=\"left\" style=\"-qt-paragraph-type:emp"
+      "ty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\""
+      "><br /></p>\n<p align=\"left\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -q"
+      "t-block-indent:0; text-indent:0px;\"><span style=\" font-size:10px; font-weight:600;\">Note</span><span style=\""
+      " font-size:10px;\">: In case you use multiple reference models compilation time will substentially increase. </s"
+      "pan></p>\n<p align=\"left\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-b"
+      "lock-indent:0; text-indent:0px;\"><span style=\" font-size:10px;\">In order to reduce this time you may use:</sp"
+      "an></p>\n<p align=\"left\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px;"
+      " margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n<p align=\"left\" style=\"-qt-paragraph-ty"
+      "pe:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:"
+      "0px;\"><br /></p>\n<p align=\"left\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin"
+      "-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n<p align=\"left\" style=\" margi"
+      "n-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span st"
+      "yle=\" font-size:10px;\">This command does </span><span style=\" font-size:10px; font-weight:600; text-decoratio"
+      "n: underline;\">not</span><span style=\" font-size:10px;\"> need the parallel computing toolbox, instead it acti"
+      "vates one compilation thread </span></p>\n<p align=\"left\" style=\" margin-top:0px; margin-bottom:0px; margin-l"
+      "eft:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10px;\">on each core "
+      "of your PC, which significantly saves time for the make procedure.</span></p></body></html>"
+      Position		      [96, 7, 644, 247]
+      InternalMargins	      [10, 10, 10, 10]
+      FixedHeight	      on
+      FixedWidth	      on
+      HorizontalAlignment     "left"
+      BackgroundColor	      "[0.901961, 0.956863, 0.976471]"
+      Interpreter	      "rich"
+      ZOrder		      -3
+    }
+    Annotation {
+      SID		      "27"
+      Position		      [916, 12, 1025, 110]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      on
+      FixedWidth	      on
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ForegroundColor	      "[0.670588, 0.819608, 0.749020]"
+      BackgroundColor	      "[0.670588, 0.819608, 0.749020]"
+      AnnotationType	      "area_annotation"
+      ZOrder		      60
+      FontSize		      12
+    }
+    Annotation {
+      SID		      "28"
+      Name		      "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+      "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }"
+      "\n</style></head><body align=\"left\" style=\" font-family:'Arial'; font-size:10px; font-weight:400; font-style:"
+      "normal;\">\n<p align=\"left\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt"
+      "-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Courier New'; font-size:10px;\">&gt;&gt; make_al"
+      "l_parallel(</span><span style=\" font-family:'Courier New'; font-size:10px; color:#cc00ff;\">'Example_UsingModel"
+      "Referencing'</span><span style=\" font-family:'Courier New'; font-size:10px;\">)</span></p></body></html>"
+      Position		      [113, 179, 456, 204]
+      InternalMargins	      [10, 5, 10, 5]
+      FixedHeight	      on
+      FixedWidth	      on
+      HorizontalAlignment     "left"
+      Interpreter	      "rich"
+      ZOrder		      4
+    }
+    Annotation {
+      SID		      "29"
+      Name		      "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+      "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }"
+      "\n</style></head><body align=\"left\" style=\" font-family:'Arial'; font-size:10px; font-weight:400; font-style:"
+      "normal;\">\n<p align=\"left\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt"
+      "-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Courier New'; font-size:10px;\">&gt;&gt; make_al"
+      "l(</span><span style=\" font-family:'Courier New'; font-size:10px; color:#cc00ff;\">'Example_UsingModelReferenci"
+      "ng'</span><span style=\" font-family:'Courier New'; font-size:10px;\">)</span></p></body></html>"
+      Position		      [115, 70, 403, 95]
+      InternalMargins	      [10, 5, 10, 5]
+      FixedHeight	      on
+      FixedWidth	      on
+      HorizontalAlignment     "left"
+      Interpreter	      "rich"
+      ZOrder		      6
+    }
+  }
+}

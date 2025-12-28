@@ -1,0 +1,77 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   compare2error_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox compare2error_s block
+%%
+%% Version: 0.19
+%%
+
+%implements "compare2error_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+        %openfile buffer_include
+        %selectfile buffer_include
+/* entry from compare2error_s begin */
+        %if !EXISTS(IO_Error)
+	        #include "IO_Error.h"
+    		%assign ::IO_Error = "any"
+    	%endif
+/* entry from compare2error_s end */
+        %closefile buffer_include
+        %<LibCacheIncludes(buffer_include)>
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+	%assign define = rtw_param1  
+
+	%assign Errorcode = LibBlockInputSignal(0, "", "",0)
+    %assign Errorcode_type = LibBlockInputSignalDataTypeName(0,"")
+
+
+	%assign b_compare = LibBlockOutputSignal(0, "", "",0)  
+    %assign b_compare_type = LibBlockOutputSignalDataTypeName(0,"")
+ 
+
+	/* init_function call compare2error */
+
+
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+	%assign define = rtw_param1  
+
+	%assign Errorcode = LibBlockInputSignal(0, "", "",0)
+    %assign Errorcode_type = LibBlockInputSignalDataTypeName(0,"")
+
+
+	%assign b_compare = LibBlockOutputSignal(0, "", "",0)  
+    %assign b_compare_type = LibBlockOutputSignalDataTypeName(0,"")
+ 
+
+	/* function call of compare2error */
+
+{
+
+
+%<b_compare> = (%<Errorcode> == %<define>) ;
+
+}
+
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

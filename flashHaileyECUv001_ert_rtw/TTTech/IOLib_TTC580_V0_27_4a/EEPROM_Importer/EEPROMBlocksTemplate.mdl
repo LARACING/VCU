@@ -1,0 +1,3343 @@
+Model {
+  Name			  "EEPROMBlocksTemplate"
+  Version		  10.0
+  SavedCharacterEncoding  "windows-1252"
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.92"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+    NumProvidedFunctions    0
+    NumRequiredFunctions    0
+    NumResetEvents	    0
+    HasInitializeEvent	    0
+    HasTerminateEvent	    0
+    PreCompExecutionDomainType "Unset"
+    IsExportFunctionModel   0
+    IsArchitectureModel	    0
+    IsAUTOSARArchitectureModel 0
+    NumParameterArguments   0
+    NumExternalFileReferences 7
+    ExternalFileReference {
+      Reference		      "IOBlock_Library_TTC580/EEPROM Blocks\nTTC580 IOlib/CRC32_EEPROM_Read"
+      Path		      "EEPROMBlocksTemplate/EEPROM_Read/CRC32_EEPROM_Read"
+      SID		      "2"
+      Type		      "LIBRARY_BLOCK"
+    }
+    ExternalFileReference {
+      Reference		      "IOBlock_Library_TTC580/EEPROM Blocks\nTTC580 IOlib/EEPROM_Read"
+      Path		      "EEPROMBlocksTemplate/EEPROM_Read/EEPROM_Read"
+      SID		      "3"
+      Type		      "LIBRARY_BLOCK"
+    }
+    ExternalFileReference {
+      Reference		      "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
+      Path		      "EEPROMBlocksTemplate/EEPROM_Write/CRC32_calc_and_EEPROM_Write_ALL/Compare To Zero"
+      SID		      "14"
+      Type		      "LIBRARY_BLOCK"
+    }
+    ExternalFileReference {
+      Reference		      "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
+      Path		      "EEPROMBlocksTemplate/EEPROM_Write/CRC32_calc_and_EEPROM_Write_ALL/Compare To Zero1"
+      SID		      "15"
+      Type		      "LIBRARY_BLOCK"
+    }
+    ExternalFileReference {
+      Reference		      "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
+      Path		      "EEPROMBlocksTemplate/EEPROM_Write/CRC32_calc_and_EEPROM_Write_ALL/Compare To Zero2"
+      SID		      "16"
+      Type		      "LIBRARY_BLOCK"
+    }
+    ExternalFileReference {
+      Reference		      "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
+      Path		      "EEPROMBlocksTemplate/EEPROM_Write/Write_Mirror_prepare_EEPROM/Compare To Zero"
+      SID		      "50"
+      Type		      "LIBRARY_BLOCK"
+    }
+    ExternalFileReference {
+      Reference		      "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
+      Path		      "EEPROMBlocksTemplate/EEPROM_Write/Write_Mirror_prepare_EEPROM/Compare To Zero1"
+      SID		      "51"
+      Type		      "LIBRARY_BLOCK"
+    }
+    OrderedModelArguments   1
+  }
+  DiagnosticSuppressor	  "on"
+  LogicAnalyzerPlugin	  "on"
+  SLCCPlugin		  "on"
+  AnimationPlugin	  "on"
+  WebScopes_FoundationPlugin "on"
+  NotesPlugin		  "on"
+  EnableAccessToBaseWorkspace on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  DataTypeOverrideAppliesTo "AllNumericTypes"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  FPTRunName		  "Run 1"
+  MaxMDLFileLineLength	  120
+  LastSavedArchitecture	  "win64"
+  Object {
+    $PropName		    "BdWindowsInfo"
+    $ObjectID		    1
+    $ClassName		    "Simulink.BDWindowsInfo"
+    Object {
+      $PropName		      "WindowsInfo"
+      $ObjectID		      2
+      $ClassName	      "Simulink.WindowInfo"
+      IsActive		      [1]
+      Location		      [108.0, 208.0, 1550.0, 936.0]
+      Object {
+	$PropName		"ModelBrowserInfo"
+	$ObjectID		3
+	$ClassName		"Simulink.ModelBrowserInfo"
+	Visible			[0]
+	DockPosition		"Left"
+	Width			[50]
+	Height			[50]
+	Filter			[9]
+	Minimized		"Unset"
+      }
+      Object {
+	$PropName		"ExplorerBarInfo"
+	$ObjectID		4
+	$ClassName		"Simulink.ExplorerBarInfo"
+	Visible			[1]
+      }
+      Array {
+	Type			"Simulink.EditorInfo"
+	Dimension		2
+	Object {
+	  $ObjectID		  5
+	  IsActive		  [1]
+	  IsTabbed		  [1]
+	  ViewObjType		  "SimulinkTopLevel"
+	  LoadSaveID		  "0"
+	  Extents		  [1496.0, 694.0]
+	  ZoomFactor		  [1.0]
+	  Offset		  [-461.87890625, -127.40000000000003]
+	  SceneRectInView	  [-461.87890625, -127.40000000000003, 1496.0, 694.0]
+	}
+	Object {
+	  $ObjectID		  6
+	  IsActive		  [0]
+	  IsTabbed		  [0]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "9"
+	  Extents		  [1496.0, 694.0]
+	  ZoomFactor		  [1.0]
+	  Offset		  [-432.5078125, -152.0]
+	  SceneRectInView	  [-432.5078125, -152.0, 1496.0, 694.0]
+	}
+	PropName		"EditorsInfo"
+      }
+      Object {
+	$PropName		"DockComponentsInfo"
+	$ObjectID		7
+	$ClassName		"Simulink.DockComponentInfo"
+	Type			"GLUE2:PropertyInspector"
+	ID			"Property Inspector"
+	Visible			[0]
+	CreateCallback		""
+	UserData		""
+	Floating		[0]
+	DockPosition		"Right"
+	Width			[640]
+	Height			[480]
+	Minimized		"Unset"
+      }
+      WindowState	      "AAAA/wAAAAD9AAAAAgAAAAAAAAC9AAAB+PwCAAAAA/sAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAA"
+      "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
+      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABjAP///wAAAAEAAAAAAAAAAPwCA"
+      "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
+      "QBjAHQAbwByAAAAAAD/////AAAAOQD///8AAAX+AAAC8wAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAA"
+      Array {
+	Type			"Cell"
+	Dimension		0
+	PropName		"PersistedApps"
+      }
+      WindowUuid	      "f76213f4-462a-451c-8e9a-1c2ed09b86d9"
+    }
+    BDUuid		    "35d068f9-b01e-46a7-8e60-634af41506bf"
+  }
+  HideAutomaticNames	  on
+  Created		  "Thu Sep 06 09:57:02 2012"
+  Creator		  "hokka"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "hokka"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Tue May 25 09:52:56 2021"
+  RTWModifiedTimeStamp	  543837174
+  ModelVersionFormat	  "1.%<AutoIncrement:92>"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "all"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  on
+  ShowAllPropagatedSignalLabels	off
+  PortDataTypeDisplayFormat "AliasTypeOnly"
+  ShowEditTimeErrors	  on
+  ShowEditTimeWarnings	  on
+  ShowEditTimeAdvisorChecks off
+  ShowPortUnits		  off
+  ShowDesignRanges	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  VariantCondition	  off
+  ShowSubsystemDomainSpec off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ShowVisualizeInsertedRTB on
+  ShowMarkup		  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  BlockVariantConditionDataTip off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  FunctionConnectors	  off
+  BrowserLookUnderMasks	  off
+  MultiThreadCoSim	  on
+  SimulationMode	  "normal"
+  SILPILModeSetting	  "automated"
+  SILPILSystemUnderTest	  "topmodel"
+  SILPILSimulationModeTopModel "normal"
+  SILPILSimulationModeModelRef "normal"
+  SimTabSimulationMode	  "normal"
+  CodeVerificationMode	  "software-in-the-loop (sil)"
+  PauseTimes		  "5"
+  NumberOfSteps		  1
+  SnapshotBufferSize	  10
+  SnapshotInterval	  10
+  NumberOfLastSnapshots	  0
+  EnablePacing		  off
+  PacingRate		  1
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  Object {
+    $PropName		    "DataLoggingOverride"
+    $ObjectID		    8
+    $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
+    model_		    "EEPROMBlocksTemplate"
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      "EEPROMBlocksTemplate"
+      PropName		      "logAsSpecifiedByModels_"
+    }
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      ""
+      PropName		      "logAsSpecifiedByModelsSSIDs_"
+    }
+  }
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  OrderedModelArguments	  on
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      9
+      Version		      "19.1.1"
+      DisabledProps	      []
+      Description	      ""
+      Array {
+	Type			"Handle"
+	Dimension		9
+	Simulink.SolverCC {
+	  $ObjectID		  10
+	  Version		  "19.1.1"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  AutoScaleAbsTol	  on
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  EnableMultiTasking	  on
+	  ConcurrentTasks	  off
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverInfoToggleStatus  off
+	  IsAutoAppliedInSIP	  off
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	  SampleTimeProperty	  []
+	  DecoupledContinuousIntegration off
+	  MinimalZcImpactIntegration off
+	  SolverOrder		  3
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  11
+	  Version		  "19.1.1"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveOperatingPoint	  off
+	  SaveFormat		  "Array"
+	  SignalLoggingSaveFormat "ModelDataLogs"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  VisualizeSimOutput	  on
+	  StreamToWorkspace	  off
+	  StreamVariableName	  "streamout"
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	  LoggingToFile		  off
+	  DatasetSignalFormat	  "timeseries"
+	  LoggingFileName	  "out.mat"
+	  LoggingIntervals	  "[-inf, inf]"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  12
+	  Version		  "19.1.1"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    9
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "UseSpecifiedMinMax"
+	    Cell		    "EfficientTunableParamExpr"
+	    PropName		    "DisabledProps"
+	  }
+	  Description		  ""
+	  Components		  []
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  DefaultParameterBehavior "Tunable"
+	  UseDivisionForNetSlopeComputation "off"
+	  GainParamInheritBuiltInType off
+	  UseFloatMulNetSlope	  off
+	  DefaultUnderspecifiedDataType	"double"
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  CachingGlobalReferences off
+	  GlobalBufferReuse	  on
+	  StrengthReduction	  off
+	  AdvancedOptControl	  ""
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  PassReuseOutputArgsThreshold 12
+	  ExpressionDepthLimit	  2147483647
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  ActiveStateOutputEnumStorageType "Native Integer"
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "off"
+	  AccelVerboseBuild	  off
+	  OptimizeBlockOrder	  "off"
+	  OptimizeDataStoreBuffers on
+	  BusAssignmentInplaceUpdate on
+	  DifferentSizesBufferReuse off
+	  UseRowMajorAlgorithm	  off
+	  OptimizationLevel	  "level2"
+	  OptimizationPriority	  "Balanced"
+	  OptimizationCustomize	  on
+	  LabelGuidedReuse	  off
+	  MultiThreadedLoops	  off
+	  DenormalBehavior	  "GradualUnderflow"
+	  EfficientTunableParamExpr off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  13
+	  Version		  "19.1.1"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "UseOnlyExistingSharedCode"
+	    PropName		    "DisabledProps"
+	  }
+	  Description		  ""
+	  Components		  []
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  StringTruncationChecking "error"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  ExportedTasksRateTransMsg "none"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "warning"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  UseOnlyExistingSharedCode "error"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "error"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  AllowSymbolicDim	  on
+	  RowMajorDimensionSupport off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  OperatingPointInterfaceChecksumMismatchMsg "warning"
+	  NonCurrentReleaseOperatingPointMsg "error"
+	  ChecksumConsistencyForSSReuse	"none"
+	  PregeneratedLibrarySubsystemCodeDiagnostic "warning"
+	  MatchCodeGenerationContextForUpdateDiagram "none"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "ErrorLevel1"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  SymbolicDimMinMaxWarning "warning"
+	  LossOfSymbolicDimsSimulationWarning "warning"
+	  LossOfSymbolicDimsCodeGenerationWarning "error"
+	  SymbolicDimsDataTypeCodeGenerationDiagnostic "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnreachableExecutionPathDiag "warning"
+	  SFUndirectedBroadcastEventsDiag "warning"
+	  SFTransitionActionBeforeConditionDiag	"warning"
+	  SFOutputUsedAsStateInMooreChartDiag "error"
+	  SFTemporalDelaySmallerThanSampleTimeDiag "warning"
+	  SFSelfTransitionDiag	  "warning"
+	  SFExecutionAtInitializationDiag "none"
+	  SFMachineParentedDataDiag "warning"
+	  IntegerSaturationMsg	  "warning"
+	  AllowedUnitSystems	  "all"
+	  UnitsInconsistencyMsg	  "warning"
+	  AllowAutomaticUnitConversions	on
+	  RCSCRenamedMsg	  "warning"
+	  RCSCObservableMsg	  "warning"
+	  ForceCombineOutputUpdateInSim	off
+	  UnitDatabase		  ""
+	  UnderSpecifiedDimensionMsg "none"
+	  DebugExecutionForFMUViaOutOfProcess off
+	  ArithmeticOperatorsInVariantConditions "warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  14
+	  Version		  "19.1.1"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerLongLong	  64
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdBitPerSizeT	  32
+	  ProdBitPerPtrDiffT	  32
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdLongLongMode	  off
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerLongLong	  64
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetBitPerSizeT	  32
+	  TargetBitPerPtrDiffT	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetLongLongMode	  off
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	  UseEmbeddedCoderFeatures on
+	  UseSimulinkCoderFeatures on
+	  HardwareBoardFeatureSet "EmbeddedCoderHSP"
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  15
+	  Version		  "19.1.1"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  EnableRefExpFcnMdlSchedulingChecks on
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelDependencies	  ""
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  16
+	  Version		  "19.1.1"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  SimCustomSourceCode	  ""
+	  SimCustomHeaderCode	  ""
+	  SimCustomInitializer	  ""
+	  SimCustomTerminator	  ""
+	  SimReservedNameArray	  []
+	  SimUserSources	  ""
+	  SimUserIncludeDirs	  ""
+	  SimUserLibraries	  ""
+	  SimUserDefines	  ""
+	  SimCustomCompilerFlags  ""
+	  SimCustomLinkerFlags	  ""
+	  SFSimEcho		  on
+	  SimCtrlC		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimAnalyzeCustomCode	  off
+	  SimBuildMode		  "sf_incremental_build"
+	  SimGenImportedTypeDefs  off
+	  ModelFunctionsGlobalVisibility "on"
+	  CompileTimeRecursionLimit 50
+	  EnableRuntimeRecursion  on
+	  MATLABDynamicMemAlloc	  on
+	  MATLABDynamicMemAllocThreshold 65536
+	  CustomCodeFunctionArrayLayout	[]
+	  DefaultCustomCodeFunctionArrayLayout "NotSpecified"
+	  CustomCodeUndefinedFunction "UseInterfaceOnly"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  17
+	  Version		  "19.1.1"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    16
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    Cell		    "PortableWordSizes"
+	    Cell		    "GenerateWebview"
+	    Cell		    "GenerateCodeMetricsReport"
+	    Cell		    "GenerateCodeReplacementReport"
+	    Cell		    "GenerateMissedCodeReplacementReport"
+	    Cell		    "GenerateErtSFunction"
+	    Cell		    "CreateSILPILBlock"
+	    Cell		    "CodeExecutionProfiling"
+	    Cell		    "CodeProfilingSaveOptions"
+	    Cell		    "CodeProfilingInstrumentation"
+	    PropName		    "DisabledProps"
+	  }
+	  Description		  ""
+	  SystemTargetFile	  "grt.tlc"
+	  HardwareBoard		  "None"
+	  ShowCustomHardwareApp	  off
+	  ShowEmbeddedHardwareApp off
+	  TLCOptions		  ""
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  PackageGeneratedCodeAndArtifacts off
+	  PackageName		  ""
+	  TemplateMakefile	  "grt_default_tmf"
+	  PostCodeGenCommand	  ""
+	  GenerateReport	  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  RTWBuildHooks		  []
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  CustomSourceCode	  ""
+	  CustomHeaderCode	  ""
+	  CustomInclude		  ""
+	  CustomSource		  ""
+	  CustomLibrary		  ""
+	  CustomDefine		  ""
+	  CustomBLASCallback	  ""
+	  CustomLAPACKCallback	  ""
+	  CustomFFTCallback	  ""
+	  CustomInitializer	  ""
+	  CustomTerminator	  ""
+	  Toolchain		  "Automatically locate an installed toolchain"
+	  BuildConfiguration	  "Faster Builds"
+	  CustomToolchainOptions  []
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  PortableWordSizes	  off
+	  CreateSILPILBlock	  "None"
+	  CodeExecutionProfiling  off
+	  CodeExecutionProfileVariable "executionProfile"
+	  CodeProfilingSaveOptions "SummaryOnly"
+	  CodeProfilingInstrumentation "off"
+	  SILDebugging		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateWebview	  off
+	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
+	  GenerateMissedCodeReplacementReport off
+	  RTWCompilerOptimization "off"
+	  ObjectivePriorities	  []
+	  RTWCustomCompilerOptimizations ""
+	  CheckMdlBeforeBuild	  "Off"
+	  SharedConstantsCachingThreshold 1024
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      18
+	      Version		      "19.1.1"
+	      Array {
+		Type			"Cell"
+		Dimension		28
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"InsertPolySpaceComments"
+		Cell			"SFDataObjDesc"
+		Cell			"MATLABFcnDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"ReqsInCode"
+		Cell			"InternalIdentifier"
+		Cell			"CustomSymbolStrModelFcn"
+		Cell			"CustomSymbolStrUtil"
+		Cell			"CustomSymbolStrEmxType"
+		Cell			"CustomSymbolStrEmxFcn"
+		Cell			"CustomUserTokenString"
+		Cell			"BlockCommentType"
+		PropName		"DisabledProps"
+	      }
+	      Description	      ""
+	      Components	      []
+	      Comment		      ""
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      CommentStyle	      "Auto"
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      OperatorAnnotations     off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      MangleLength	      1
+	      SharedChecksumLength    8
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M_T"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrModelFcn "$R$N"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      CustomSymbolStrUtil     "$N$C"
+	      CustomSymbolStrEmxType  "emxArray_$M$N"
+	      CustomSymbolStrEmxFcn   "emx$M$N"
+	      CustomUserTokenString   ""
+	      CustomCommentsFcn	      ""
+	      DefineNamingRule	      "None"
+	      DefineNamingFcn	      ""
+	      ParamNamingRule	      "None"
+	      ParamNamingFcn	      ""
+	      SignalNamingRule	      "None"
+	      SignalNamingFcn	      ""
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      BlockCommentType	      "BlockPathComment"
+	      StateflowObjectComments on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InternalIdentifierFile  ""
+	      InternalIdentifier      "Shortened"
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	      ReservedNameArray	      []
+	      EnumMemberNameClash     "error"
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      19
+	      Version		      "19.1.1"
+	      Array {
+		Type			"Cell"
+		Dimension		19
+		Cell			"GeneratePreprocessorConditionals"
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"RemoveResetFunc"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"CPPClassGenCompliant"
+		Cell			"PortableWordSizes"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"GenerateAllocFcn"
+		Cell			"ExistingSharedCode"
+		Cell			"RemoveDisableFunc"
+		Cell			"PreserveStateflowLocalDataDimensions"
+		PropName		"DisabledProps"
+	      }
+	      Description	      ""
+	      Components	      []
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "NOT IN USE"
+	      TargetLangStandard      "C89/C90 (ANSI)"
+	      CodeReplacementLibrary  "None"
+	      UtilityFuncGeneration   "Auto"
+	      MultiwordTypeDef	      "System defined"
+	      MultiwordLength	      2048
+	      DynamicStringBufferSize 256
+	      GenerateFullHeader      on
+	      InferredTypesCompatibility off
+	      ExistingSharedCode      ""
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      CombineSignalStateStructs	off
+	      GroupInternalDataByFunction off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      CodeInterfacePackaging  "Nonreusable function"
+	      PurelyIntegerCode	      off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      RemoveDisableFunc	      off
+	      RemoveResetFunc	      off
+	      SupportVariableSizeSignals off
+	      ParenthesesLevel	      "Nominal"
+	      CastingMode	      "Nominal"
+	      PreserveStateflowLocalDataDimensions off
+	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    on
+	      AutosarCompliant	      off
+	      MDXCompliant	      off
+	      GRTInterface	      on
+	      GenerateAllocFcn	      off
+	      UseToolchainInfoCompliant	on
+	      GenerateSharedConstants on
+	      CoderGroups	      []
+	      AccessMethods	      []
+	      LookupTableObjectStructAxisOrder "1,2,3,4,..."
+	      LUTObjectStructOrderExplicitValues "Size,Breakpoints,Table"
+	      LUTObjectStructOrderEvenSpacing "Size,Breakpoints,Table"
+	      ArrayLayout	      "Column-major"
+	      UnsupportedSFcnMsg      "error"
+	      ERTHeaderFileRootName   "$R$E"
+	      ERTSourceFileRootName   "$R$E"
+	      ERTDataFileRootName     "$R_data"
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeMexArgs	      ""
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      GenerateASAP2	      off
+	      MultiInstanceErrorCode  "Error"
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	SlCovCC.ConfigComp {
+	  $ObjectID		  20
+	  Version		  "19.1.1"
+	  DisabledProps		  []
+	  Description		  "Simulink Coverage Configuration Component"
+	  Components		  []
+	  Name			  "Simulink Coverage"
+	  CovEnable		  off
+	  CovScope		  "EntireSystem"
+	  CovIncludeTopModel	  on
+	  RecordCoverage	  off
+	  CovPath		  "/"
+	  CovSaveName		  "covdata"
+	  CovCompData		  ""
+	  CovMetricSettings	  "dw"
+	  CovFilter		  ""
+	  CovHTMLOptions	  ""
+	  CovNameIncrementing	  off
+	  CovHtmlReporting	  on
+	  CovForceBlockReductionOff on
+	  CovEnableCumulative	  on
+	  CovSaveCumulativeToWorkspaceVar on
+	  CovSaveSingleToWorkspaceVar on
+	  CovCumulativeVarName	  "covCumulativeData"
+	  CovCumulativeReport	  off
+	  CovSaveOutputData	  on
+	  CovOutputDir		  "slcov_output/$ModelName$"
+	  CovDataFileName	  "$ModelName$_cvdata"
+	  CovShowResultsExplorer  on
+	  CovReportOnPause	  on
+	  CovModelRefEnable	  "off"
+	  CovModelRefExcluded	  ""
+	  CovExternalEMLEnable	  off
+	  CovSFcnEnable		  off
+	  CovBoundaryAbsTol	  1e-05
+	  CovBoundaryRelTol	  0.01
+	  CovUseTimeInterval	  off
+	  CovStartTime		  0
+	  CovStopTime		  0
+	  CovMcdcMode		  "Masking"
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition    [ 100, 192, 1180, 832 ]
+      ExtraOptions	      ""
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    9
+  }
+  Object {
+    $PropName		    "DataTransfer"
+    $ObjectID		    21
+    $ClassName		    "Simulink.GlobalDataTransfer"
+    DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
+    DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
+    DefaultTransitionBetweenContTasks "Ensure deterministic transfer (minimum delay)"
+    DefaultExtrapolationMethodBetweenContTasks "None"
+  }
+  ExplicitPartitioning	  off
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    HideAutomaticName	    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    MarkupType		    "model"
+    UseDisplayTextAsClickCallback off
+    AnnotationType	    "note_annotation"
+    FixedHeight		    off
+    FixedWidth		    off
+    Interpreter		    "off"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  MaskDefaults {
+    SelfModifiable	    "off"
+    IconFrame		    "on"
+    IconOpaque		    "opaque"
+    RunInitForIconRedraw    "analyze"
+    IconRotate		    "none"
+    PortRotate		    "default"
+    IconUnits		    "autoscale"
+  }
+  MaskParameterDefaults {
+    Evaluate		    "on"
+    Tunable		    "on"
+    NeverSave		    "off"
+    Internal		    "off"
+    ReadOnly		    "off"
+    Enabled		    "on"
+    Visible		    "on"
+    ToolTip		    "on"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutputFunctionCall      off
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      Unit		      "inherit"
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Logic
+      Operator		      "AND"
+      Inputs		      "2"
+      IconShape		      "rectangular"
+      AllPortsSameDT	      on
+      OutDataTypeStr	      "Inherit: Logical (see Configuration Parameters: Optimization)"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Memory
+      InitialCondition	      "0"
+      InheritSampleTime	      off
+      LinearizeMemory	      off
+      LinearizeAsDelay	      off
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      Unit		      "inherit"
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      EnsureOutportIsVirtual  off
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+      MustResolveToSignalObject	off
+      OutputWhenUnConnected   off
+      OutputWhenUnconnectedValue "0"
+      VectorParamsAs1DForOutWhenUnconnected on
+    }
+    Block {
+      BlockType		      S-Function
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+      MultiThreadCoSim	      "auto"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      ScheduleAs	      "Sample time"
+      SystemSampleTime	      "-1"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      FunctionInterfaceSpec   "void_void"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      Opaque		      off
+      MaskHideContents	      off
+      SFBlockType	      "NONE"
+      VariantControlMode      "Expression"
+      Variant		      off
+      GeneratePreprocessorConditionals off
+      AllowZeroVariantControls off
+      PropagateVariantConditions off
+      TreatAsGroupedWhenPropagatingVariantConditions on
+      ContentPreviewEnabled   off
+      IsWebBlock	      off
+      IsObserver	      off
+      Latency		      "0"
+      AutoFrameSizeCalculation off
+      IsWebBlockPanel	      off
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      TriggerPort
+      TriggerType	      "rising"
+      IsSimulinkFunction      off
+      FunctionVisibility      "global"
+      Variant		      off
+      GeneratePreprocessorConditionals off
+      StatesWhenEnabling      "inherit"
+      PropagateVarSize	      "During execution"
+      ShowOutputPort	      off
+      OutputDataType	      "auto"
+      SampleTimeType	      "triggered"
+      SampleTime	      "1"
+      ZeroCross		      on
+      DisallowConstTsAndPrmTs off
+      InitialTriggerSignalState	"compatibility (no trigger on first evaluation)"
+      PortDimensions	      "-1"
+      TriggerSignalSampleTime "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      Interpolate	      on
+    }
+  }
+  System {
+    Name		    "EEPROMBlocksTemplate"
+    Location		    [108, 208, 1658, 1144]
+    Open		    on
+    PortBlocksUseCompactNotation off
+    SetExecutionDomain	    off
+    ExecutionDomainType	    "Deduce"
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "75"
+    SimulinkSubDomain	    "Simulink"
+    Block {
+      BlockType		      SubSystem
+      Name		      "EEPROM_Read"
+      SID		      "1"
+      Ports		      [0, 2]
+      Position		      [65, 125, 160, 200]
+      ZOrder		      -1
+      ForegroundColor	      "blue"
+      Priority		      "0"
+      RequestExecContextInheritance off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		22
+	$ClassName		"Simulink.Mask"
+	Type			"Generated EEPROM_Read"
+	Description		"This Block was generated by the EEPROM Importer"
+	Help			"Read out the EEPROM for all given parameters and provide these values on the outports.\nReading is done at st"
+	"artup. As long as reading form EEPROM is not terminated for all parameters the busy flag will stay 'true'. \nCRC_OK w"
+	"ill be 0 as long as reading of EEPROM is not completed. Upon success the result is +1. If CRC check fails the result "
+	"will be -1."
+	RunInitForIconRedraw	"off"
+      }
+      System {
+	Name			"EEPROM_Read"
+	Location		[-7, -7, 1543, 929]
+	Open			off
+	PortBlocksUseCompactNotation off
+	SetExecutionDomain	off
+	ExecutionDomainType	"Deduce"
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SimulinkSubDomain	"Simulink"
+	Block {
+	  BlockType		  Reference
+	  Name			  "CRC32_EEPROM_Read"
+	  SID			  "2"
+	  Ports			  [0, 2]
+	  Position		  [220, 257, 315, 328]
+	  ZOrder		  -1
+	  ForegroundColor	  "blue"
+	  HideAutomaticName	  off
+	  LibraryVersion	  "1.882"
+	  SourceBlock		  "IOBlock_Library_TTC580/EEPROM Blocks\nTTC580 IOlib/CRC32_EEPROM_Read"
+	  SourceType		  "CRC32_EEPROM_Read_Code"
+	  SourceProductName	  "I/O Blocklibrary for TTC580"
+	  ContentPreviewEnabled	  off
+	  SampleTime		  "-1"
+	  ttlib			  "IO_Blk_Lib_TTC500"
+	  ttDescription		  "CRC32_EEPROM_Read"
+	  tt_iolib_version	  "0.26"
+	  BasicAddr		  "0"
+	  EndAddr		  "hex2dec('100')"
+	  offset		  "hex2dec('101')"
+	  length		  "4"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "EEPROM_Read"
+	  SID			  "3"
+	  Ports			  [0, 2]
+	  Position		  [220, 143, 315, 207]
+	  ZOrder		  -2
+	  ForegroundColor	  "blue"
+	  HideAutomaticName	  off
+	  LibraryVersion	  "1.882"
+	  SourceBlock		  "IOBlock_Library_TTC580/EEPROM Blocks\nTTC580 IOlib/EEPROM_Read"
+	  SourceType		  "EEPROM_Read_Code"
+	  SourceProductName	  "I/O Blocklibrary for TTC580"
+	  ContentPreviewEnabled	  off
+	  SampleTime		  "-1"
+	  ttlib			  "IO_Blk_Lib_TTC500"
+	  ttDescription		  "EEPROM_Read"
+	  tt_iolib_version	  "0.26"
+	  offset		  "0"
+	  EEPROM_type		  "uint8"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "all_b_ready"
+	  SID			  "4"
+	  Ports			  [1, 1]
+	  Position		  [455, 108, 485, 142]
+	  ZOrder		  -3
+	  Inputs		  "1"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "not"
+	  SID			  "5"
+	  Ports			  [1, 1]
+	  Position		  [510, 109, 540, 141]
+	  ZOrder		  -4
+	  Operator		  "NOT"
+	  Inputs		  "1"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "busy"
+	  SID			  "6"
+	  Position		  [560, 118, 590, 132]
+	  ZOrder		  -5
+	  IconDisplay		  "Port number"
+	  VectorParamsAs1DForOutWhenUnconnected	off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out_READ"
+	  SID			  "7"
+	  Position		  [560, 183, 590, 197]
+	  ZOrder		  -6
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  VectorParamsAs1DForOutWhenUnconnected	off
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "all_b_ready"
+	  SrcPort		  1
+	  DstBlock		  "not"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  "not"
+	  SrcPort		  1
+	  DstBlock		  "busy"
+	  DstPort		  1
+	}
+	Annotation {
+	  SID			  "8"
+	  Name			  "Don't change the Names of the Blocks"
+	  Position		  [41, 32, 265, 52]
+	  InternalMargins	  [0, 0, 0, 0]
+	  ZOrder		  -1
+	  FontName		  "Arial Narrow"
+	  FontSize		  16
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "EEPROM_Write"
+      SID		      "9"
+      Ports		      [2, 1]
+      Position		      [65, 230, 160, 310]
+      ZOrder		      -2
+      ForegroundColor	      "blue"
+      Priority		      "0"
+      RequestExecContextInheritance off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		23
+	$ClassName		"Simulink.Mask"
+	Type			"Generated EEPROM_Write"
+	Description		"This Block was generated by the EEPROM Importer"
+	Help			"Aufter receiving the positive edge of a trigger signal the EEPROM_Write - Block will store the parameters int"
+	"o the EEPROM together with the updated CRC32. \nThe busy flag will be 'true' as long as writing to EEPROM is not acco"
+	"mplished or any other EEPROM access is ongoing.\nThe busy flag needs not to be fed back as the trigger rise an intern"
+	"al pending activity as long as EEPROM is not accessible in order to accomplishe the actual writing as soon as the EEP"
+	"ROM is accessible again."
+	RunInitForIconRedraw	"off"
+      }
+      System {
+	Name			"EEPROM_Write"
+	Location		[108, 208, 1658, 1144]
+	Open			off
+	PortBlocksUseCompactNotation off
+	SetExecutionDomain	off
+	ExecutionDomainType	"Deduce"
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SimulinkSubDomain	"Simulink"
+	Block {
+	  BlockType		  Inport
+	  Name			  "trigger"
+	  SID			  "10"
+	  Position		  [45, 168, 75, 182]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In_WRITE"
+	  SID			  "11"
+	  Position		  [45, 198, 75, 212]
+	  ZOrder		  -2
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "CRC32_calc_and_EEPROM_Write_ALL"
+	  SID			  "12"
+	  Ports			  [1, 1]
+	  Position		  [225, 263, 320, 327]
+	  ZOrder		  -3
+	  ForegroundColor	  "blue"
+	  HideAutomaticName	  off
+	  CopyFcn		  "%deleted"
+	  LoadFcn		  "try\n%\n%Upgrade Information - standard BEGIN\nnew_color = 'blue';\nnew_ver = '0.16';\nact_ver = get_pa"
+	  "ram(gcb,'tt_iolib_version');\nif not(strcmp(act_ver,new_ver))\n    disp(['Upgrade block: ',gcb,char(10),'       Ver"
+	  "sion: ',act_ver,' -> ',new_ver]);\n    %switch - case for specific upgrade information e.g. additional parameter re"
+	  "quired \n    %Change appearance and version information\n    set_param(gcb,'ForegroundColor',new_color);\n    set_p"
+	  "aram(gcb,'tt_iolib_version',new_ver);\nend\n%Upgrade Information - standard END\ncatch\n%Standard catch section BEG"
+	  "IN \ndisp(' ');\ndisp('------------------------------------------------------------');\ndisp('An error occurred in "
+	  "a callback of the TTC580-BlockLib.');\ndisp(['Please check the parameters in the mask of ',gcb]);\ndisp('If you do "
+	  "not encounter any violations, then please '); \ndisp('copy the following lines and report this to support@ttcontrol"
+	  ".com ');\ndisp('<< begin of error message dump >>');\ndisp(['Version of TTC580-BlockLib: ', get_param(gcb,'tt_iolib"
+	  "_version')]);\ndisp(get_param(gcb,'ttDescription'));\ndisp(gcb);\nx=lasterror;disp(x.message);\ndisp(get_param(gcb,"
+	  "'MaskValues'));\ndisp(version);\ndisp(computer);\ndisp('<< end of error message dump >>');\ndisp('-----------------"
+	  "-------------------------------------------');\ndisp(' ');\n%Standard catch section END\nend"
+	  RequestExecContextInheritance	off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    24
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "CRC32_calc_and_EEPROM_Write_ALL_Code"
+	    Description		    "Calculate crc32 for the section [BasicAddr .. EndAddr] out of the EEPROM and write this to a gi"
+	    "ven address (=offset) in EEPROM together with all data in section [BasisAddr .. EndAddr]. This block is supposed "
+	    "to be used within the EEPROM_Importer() only.\nNote: The trigger input has to be connected to the same trigger as"
+	    " for all EEPROM_Write blocks accessing the interval [BasicAddr .. EndAddr] otherwise data inconsitency may occur."
+	    Help		    "web(which('~.h'))"
+	    Initialization	    "%\n"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      8
+	      Object {
+		$ObjectID		25
+		Type			"edit"
+		Name			"SampleTime"
+		Prompt			"SampleTime"
+		Value			"-1"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		26
+		Type			"edit"
+		Name			"ttlib"
+		Prompt			"ttlib"
+		Value			"IO_Blk_Lib_TTC500"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		27
+		Type			"edit"
+		Name			"ttDescription"
+		Prompt			"ttDescription"
+		Value			"CRC32_calc_and_EEPROM_Write_ALL"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		28
+		Type			"edit"
+		Name			"tt_iolib_version"
+		Prompt			"tt_iolib_version"
+		Value			"0.16"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		29
+		Type			"edit"
+		Name			"BasicAddr"
+		Prompt			"BasicAddr"
+		Value			"0"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		30
+		Type			"edit"
+		Name			"EndAddr"
+		Prompt			"EndAddr"
+		Value			"hex2dec('100')"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		31
+		Type			"edit"
+		Name			"offset"
+		Prompt			"offset"
+		Value			"hex2dec('101')"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		32
+		Type			"edit"
+		Name			"length"
+		Prompt			"length"
+		Value			"4"
+		Visible			"off"
+		Callback		"%"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "CRC32_calc_and_EEPROM_Write_ALL"
+	    Location		    [-7, -7, 1543, 929]
+	    Open		    off
+	    PortBlocksUseCompactNotation off
+	    SetExecutionDomain	    off
+	    ExecutionDomainType	    "Deduce"
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SimulinkSubDomain	    "Simulink"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "trigger"
+	      SID		      "13"
+	      Position		      [60, 223, 90, 237]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Compare\nTo Zero"
+	      SID		      "14"
+	      Ports		      [1, 1]
+	      Position		      [745, 335, 775, 365]
+	      ZOrder		      -2
+	      ShowName		      off
+	      LibraryVersion	      "1.441"
+	      SourceBlock	      "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
+	      SourceType	      "Compare To Zero"
+	      SourceProductName	      "Simulink"
+	      SourceProductBaseCode   "SL"
+	      ContentPreviewEnabled   off
+	      relop		      "=="
+	      OutDataTypeStr	      "boolean"
+	      ZeroCross		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Compare\nTo Zero1"
+	      SID		      "15"
+	      Ports		      [1, 1]
+	      Position		      [745, 410, 775, 440]
+	      ZOrder		      -3
+	      ShowName		      off
+	      LibraryVersion	      "1.441"
+	      SourceBlock	      "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
+	      SourceType	      "Compare To Zero"
+	      SourceProductName	      "Simulink"
+	      SourceProductBaseCode   "SL"
+	      ContentPreviewEnabled   off
+	      relop		      "=="
+	      OutDataTypeStr	      "boolean"
+	      ZeroCross		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Compare\nTo Zero2"
+	      SID		      "16"
+	      Ports		      [1, 1]
+	      Position		      [295, 215, 325, 245]
+	      ZOrder		      -4
+	      ShowName		      off
+	      LibraryVersion	      "1.441"
+	      SourceBlock	      "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
+	      SourceType	      "Compare To Zero"
+	      SourceProductName	      "Simulink"
+	      SourceProductBaseCode   "SL"
+	      ContentPreviewEnabled   off
+	      relop		      "~="
+	      OutDataTypeStr	      "boolean"
+	      ZeroCross		      off
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "EEPROM_Mirror"
+	      SID		      "65"
+	      Ports		      [1]
+	      Position		      [190, 53, 285, 117]
+	      ZOrder		      4
+	      ForegroundColor	      "blue"
+	      HideAutomaticName	      off
+	      CopyFcn		      "%deleted"
+	      LoadFcn		      "try\n%\n%Upgrade Information - standard BEGIN\nnew_color = 'blue';\nnew_ver = '0.21';\nact_ver "
+	      "= get_param(gcb,'tt_iolib_version');\nif not(strcmp(act_ver,new_ver))\n    disp(['Upgrade block: ',gcb,char(10)"
+	      ",'       Version: ',act_ver,' -> ',new_ver]);\n    %switch - case for specific upgrade information e.g. additio"
+	      "nal parameter required \n    %Change appearance and version information\n    set_param(gcb,'ForegroundColor',ne"
+	      "w_color);\n    set_param(gcb,'tt_iolib_version',new_ver);\nend\n%Upgrade Information - standard END\ncatch\n%St"
+	      "andard catch section BEGIN \ndisp(' ');\ndisp('------------------------------------------------------------');\n"
+	      "disp('An error occurred in a callback of the TTC580-BlockLib.');\ndisp(['Please check the parameters in the mas"
+	      "k of ',gcb]);\ndisp('If you do not encounter any violations, then please '); \ndisp('copy the following lines a"
+	      "nd report this to support@ttcontrol.com ');\ndisp('<< begin of error message dump >>');\ndisp(['Version of TTC5"
+	      "80-BlockLib: ', get_param(gcb,'tt_iolib_version')]);\ndisp(get_param(gcb,'ttDescription'));\ndisp(gcb);\nx=last"
+	      "error;disp(x.message);\ndisp(get_param(gcb,'MaskValues'));\ndisp(version);\ndisp(computer);\ndisp('<< end of er"
+	      "ror message dump >>');\ndisp('------------------------------------------------------------');\ndisp(' ');\n%Sta"
+	      "ndard catch section END\nend"
+	      RequestExecContextInheritance off
+	      Object {
+		$PropName		"MaskObject"
+		$ObjectID		33
+		$ClassName		"Simulink.Mask"
+		Type			"EEPROM_Mirror_Code"
+		Description		"Read all data from the EEPROM and mirror this onto RAM.\nThe ErrorCode of IO_EEPROM_Init - block must "
+		"be connected to the input of EEPROM_Mirror.\nAfter calling EEPROM_Mirror the global variable EEPROM_mirror is filled"
+		" and \nthe global variable ErrorCode_EEPROM_mirror contains the returns of IO_EEPROM_Init() and IO_EEPROM_Read()."
+		Help			"web(which('IO_EEPROM.h'))"
+		Initialization		"%\n"
+		Array {
+		  Type			  "Simulink.MaskParameter"
+		  Dimension		  6
+		  Object {
+		    $ObjectID		    34
+		    Type		    "edit"
+		    Name		    "SampleTime"
+		    Prompt		    "SampleTime"
+		    Value		    "-1"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    35
+		    Type		    "edit"
+		    Name		    "ttlib"
+		    Prompt		    "ttlib"
+		    Value		    "IO_Blk_Lib_TTC500"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    36
+		    Type		    "edit"
+		    Name		    "ttDescription"
+		    Prompt		    "ttDescription"
+		    Value		    "EEPROM_Mirror"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    37
+		    Type		    "edit"
+		    Name		    "tt_iolib_version"
+		    Prompt		    "tt_iolib_version"
+		    Value		    "0.21"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    38
+		    Type		    "edit"
+		    Name		    "offset"
+		    Prompt		    "offset"
+		    Value		    "0"
+		    Visible		    "off"
+		    Callback		    "%"
+		  }
+		  Object {
+		    $ObjectID		    39
+		    Type		    "edit"
+		    Name		    "length"
+		    Prompt		    "length"
+		    Value		    "65536"
+		    Visible		    "off"
+		    Callback		    "%"
+		  }
+		  PropName		  "Parameters"
+		}
+	      }
+	      System {
+		Name			"EEPROM_Mirror"
+		Location		[146, 208, 1221, 887]
+		Open			off
+		PortBlocksUseCompactNotation off
+		SetExecutionDomain	off
+		ExecutionDomainType	"Deduce"
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		SimulinkSubDomain	"Simulink"
+		Block {
+		  BlockType		  Inport
+		  Name			  "EC_EEPROM_Init"
+		  SID			  "66"
+		  Position		  [40, 50, 70, 70]
+		  ZOrder		  -1
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  S-Function
+		  Name			  "EEPROM_Mirror_s"
+		  SID			  "67"
+		  Ports			  [1, 1]
+		  Position		  [210, 45, 270, 75]
+		  ZOrder		  -2
+		  FunctionName		  "EEPROM_Mirror_s"
+		  Parameters		  "SampleTime,offset,length"
+		  SFunctionDeploymentMode off
+		  EnableBusSupport	  off
+		  SFcnIsStateOwnerBlock	  off
+		}
+		Block {
+		  BlockType		  Terminator
+		  Name			  "Terminator"
+		  SID			  "68"
+		  Position		  [395, 50, 415, 70]
+		  ZOrder		  -3
+		  ShowName		  off
+		}
+		Line {
+		  ZOrder		  1
+		  SrcBlock		  "EC_EEPROM_Init"
+		  SrcPort		  1
+		  DstBlock		  "EEPROM_Mirror_s"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  2
+		  SrcBlock		  "EEPROM_Mirror_s"
+		  SrcPort		  1
+		  DstBlock		  "Terminator"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "IO_EEPROM_GetStatus"
+	      SID		      "21"
+	      Ports		      [0, 1]
+	      Position		      [415, 393, 510, 457]
+	      ZOrder		      -6
+	      ForegroundColor	      "blue"
+	      HideAutomaticName	      off
+	      CopyFcn		      "%deleted"
+	      LoadFcn		      "try\n%\n%Upgrade Information - standard BEGIN\nnew_color = 'blue';\nnew_ver = '0.19';\nact_ver "
+	      "= get_param(gcb,'tt_iolib_version');\nif not(strcmp(act_ver,new_ver))\n    disp(['Upgrade block: ',gcb,char(10)"
+	      ",'       Version: ',act_ver,' -> ',new_ver]);\n    %switch - case for specific upgrade information e.g. additio"
+	      "nal parameter required \n    %Change appearance and version information\n    set_param(gcb,'ForegroundColor',ne"
+	      "w_color);\n    set_param(gcb,'tt_iolib_version',new_ver);\nend\n%Upgrade Information - standard END\ncatch\n%St"
+	      "andard catch section BEGIN \ndisp(' ');\ndisp('------------------------------------------------------------');\n"
+	      "disp('An error occurred in a callback of the TTC580-BlockLib.');\ndisp('Please copy the following lines and rep"
+	      "ort this to support@tttech.com ');\ndisp('<< begin of error message dump >>');\ndisp(['Version of TTC580-BlockL"
+	      "ib: ', get_param(gcb,'tt_iolib_version')]);\ndisp(get_param(gcb,'ttDescription'));\ndisp(gcb);\nx=lasterror;dis"
+	      "p(x.message);\ndisp(get_param(gcb,'MaskValues'));\ndisp(version);\ndisp(computer);\ndisp('<< end of error messa"
+	      "ge dump >>');\ndisp('------------------------------------------------------------');\ndisp(' ');\n%Standard cat"
+	      "ch section END\nend"
+	      RequestExecContextInheritance off
+	      Object {
+		$PropName		"MaskObject"
+		$ObjectID		40
+		$ClassName		"Simulink.Mask"
+		Type			"IO_EEPROM_GetStatus_Code"
+		Description		" Returns the status of the EEPROM driver."
+		Help			"web(which('IO_EEPROM.h'))"
+		Initialization		"%\n"
+		Array {
+		  Type			  "Simulink.MaskParameter"
+		  Dimension		  4
+		  Object {
+		    $ObjectID		    41
+		    Type		    "edit"
+		    Name		    "SampleTime"
+		    Prompt		    "SampleTime"
+		    Value		    "-1"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    42
+		    Type		    "edit"
+		    Name		    "ttlib"
+		    Prompt		    "ttlib"
+		    Value		    "IO_Blk_Lib_TTC500"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    43
+		    Type		    "edit"
+		    Name		    "ttDescription"
+		    Prompt		    "ttDescription"
+		    Value		    "IO_EEPROM_GetStatus"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    44
+		    Type		    "edit"
+		    Name		    "tt_iolib_version"
+		    Prompt		    "tt_iolib_version"
+		    Value		    "0.19"
+		    Visible		    "off"
+		  }
+		  PropName		  "Parameters"
+		}
+	      }
+	      System {
+		Name			"IO_EEPROM_GetStatus"
+		Location		[271, 292, 860, 750]
+		Open			off
+		PortBlocksUseCompactNotation off
+		SetExecutionDomain	off
+		ExecutionDomainType	"Deduce"
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		SimulinkSubDomain	"Simulink"
+		Block {
+		  BlockType		  S-Function
+		  Name			  "IO_EEPROM_GetStatus_s"
+		  SID			  "22"
+		  Ports			  [0, 1]
+		  Position		  [210, 45, 270, 75]
+		  ZOrder		  -1
+		  FunctionName		  "IO_EEPROM_GetStatus_s"
+		  Parameters		  "SampleTime"
+		  SFunctionDeploymentMode off
+		  EnableBusSupport	  off
+		  SFcnIsStateOwnerBlock	  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "ErrorCode"
+		  SID			  "23"
+		  Position		  [400, 50, 430, 70]
+		  ZOrder		  -2
+		  IconDisplay		  "Port number"
+		  VectorParamsAs1DForOutWhenUnconnected	off
+		}
+		Line {
+		  ZOrder		  1
+		  SrcBlock		  "IO_EEPROM_GetStatus_s"
+		  SrcPort		  1
+		  DstBlock		  "ErrorCode"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "IO_EEPROM_GetStatus2"
+	      SID		      "73"
+	      Ports		      [0, 1]
+	      Position		      [600, 408, 695, 472]
+	      ZOrder		      12
+	      ForegroundColor	      "blue"
+	      HideAutomaticName	      off
+	      CopyFcn		      "%deleted"
+	      LoadFcn		      "try\n%\n%Upgrade Information - standard BEGIN\nnew_color = 'blue';\nnew_ver = '0.19';\nact_ver "
+	      "= get_param(gcb,'tt_iolib_version');\nif not(strcmp(act_ver,new_ver))\n    disp(['Upgrade block: ',gcb,char(10)"
+	      ",'       Version: ',act_ver,' -> ',new_ver]);\n    %switch - case for specific upgrade information e.g. additio"
+	      "nal parameter required \n    %Change appearance and version information\n    set_param(gcb,'ForegroundColor',ne"
+	      "w_color);\n    set_param(gcb,'tt_iolib_version',new_ver);\nend\n%Upgrade Information - standard END\ncatch\n%St"
+	      "andard catch section BEGIN \ndisp(' ');\ndisp('------------------------------------------------------------');\n"
+	      "disp('An error occurred in a callback of the TTC580-BlockLib.');\ndisp('Please copy the following lines and rep"
+	      "ort this to support@tttech.com ');\ndisp('<< begin of error message dump >>');\ndisp(['Version of TTC580-BlockL"
+	      "ib: ', get_param(gcb,'tt_iolib_version')]);\ndisp(get_param(gcb,'ttDescription'));\ndisp(gcb);\nx=lasterror;dis"
+	      "p(x.message);\ndisp(get_param(gcb,'MaskValues'));\ndisp(version);\ndisp(computer);\ndisp('<< end of error messa"
+	      "ge dump >>');\ndisp('------------------------------------------------------------');\ndisp(' ');\n%Standard cat"
+	      "ch section END\nend"
+	      RequestExecContextInheritance off
+	      Object {
+		$PropName		"MaskObject"
+		$ObjectID		45
+		$ClassName		"Simulink.Mask"
+		Type			"IO_EEPROM_GetStatus_Code"
+		Description		" Returns the status of the EEPROM driver."
+		Help			"web(which('IO_EEPROM.h'))"
+		Initialization		"%\n"
+		Array {
+		  Type			  "Simulink.MaskParameter"
+		  Dimension		  4
+		  Object {
+		    $ObjectID		    46
+		    Type		    "edit"
+		    Name		    "SampleTime"
+		    Prompt		    "SampleTime"
+		    Value		    "-1"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    47
+		    Type		    "edit"
+		    Name		    "ttlib"
+		    Prompt		    "ttlib"
+		    Value		    "IO_Blk_Lib_TTC500"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    48
+		    Type		    "edit"
+		    Name		    "ttDescription"
+		    Prompt		    "ttDescription"
+		    Value		    "IO_EEPROM_GetStatus"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    49
+		    Type		    "edit"
+		    Name		    "tt_iolib_version"
+		    Prompt		    "tt_iolib_version"
+		    Value		    "0.19"
+		    Visible		    "off"
+		  }
+		  PropName		  "Parameters"
+		}
+	      }
+	      System {
+		Name			"IO_EEPROM_GetStatus2"
+		Location		[271, 292, 860, 750]
+		Open			off
+		PortBlocksUseCompactNotation off
+		SetExecutionDomain	off
+		ExecutionDomainType	"Deduce"
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		SimulinkSubDomain	"Simulink"
+		Block {
+		  BlockType		  S-Function
+		  Name			  "IO_EEPROM_GetStatus_s"
+		  SID			  "74"
+		  Ports			  [0, 1]
+		  Position		  [210, 45, 270, 75]
+		  ZOrder		  -1
+		  FunctionName		  "IO_EEPROM_GetStatus_s"
+		  Parameters		  "SampleTime"
+		  SFunctionDeploymentMode off
+		  EnableBusSupport	  off
+		  SFcnIsStateOwnerBlock	  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "ErrorCode"
+		  SID			  "75"
+		  Position		  [400, 50, 430, 70]
+		  ZOrder		  -2
+		  IconDisplay		  "Port number"
+		  VectorParamsAs1DForOutWhenUnconnected	off
+		}
+		Line {
+		  ZOrder		  1
+		  SrcBlock		  "IO_EEPROM_GetStatus_s"
+		  SrcPort		  1
+		  DstBlock		  "ErrorCode"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "IO_EEPROM_Init"
+	      SID		      "24"
+	      Ports		      [0, 1]
+	      Position		      [40, 53, 135, 117]
+	      ZOrder		      -7
+	      ForegroundColor	      "blue"
+	      HideAutomaticName	      off
+	      CopyFcn		      "%deleted"
+	      LoadFcn		      "try\n%\n%Upgrade Information - standard BEGIN\nnew_color = 'blue';\nnew_ver = '0.19';\nact_ver "
+	      "= get_param(gcb,'tt_iolib_version');\nif not(strcmp(act_ver,new_ver))\n    disp(['Upgrade block: ',gcb,char(10)"
+	      ",'       Version: ',act_ver,' -> ',new_ver]);\n    %switch - case for specific upgrade information e.g. additio"
+	      "nal parameter required \n    %Change appearance and version information\n    set_param(gcb,'ForegroundColor',ne"
+	      "w_color);\n    set_param(gcb,'tt_iolib_version',new_ver);\nend\n%Upgrade Information - standard END\ncatch\n%St"
+	      "andard catch section BEGIN \ndisp(' ');\ndisp('------------------------------------------------------------');\n"
+	      "disp('An error occurred in a callback of the TTC580-BlockLib.');\ndisp('Please copy the following lines and rep"
+	      "ort this to support@tttech.com ');\ndisp('<< begin of error message dump >>');\ndisp(['Version of TTC580-BlockL"
+	      "ib: ', get_param(gcb,'tt_iolib_version')]);\ndisp(get_param(gcb,'ttDescription'));\ndisp(gcb);\nx=lasterror;dis"
+	      "p(x.message);\ndisp(get_param(gcb,'MaskValues'));\ndisp(version);\ndisp(computer);\ndisp('<< end of error messa"
+	      "ge dump >>');\ndisp('------------------------------------------------------------');\ndisp(' ');\n%Standard cat"
+	      "ch section END\nend"
+	      RequestExecContextInheritance off
+	      Object {
+		$PropName		"MaskObject"
+		$ObjectID		50
+		$ClassName		"Simulink.Mask"
+		Type			"IO_EEPROM_Init_Code"
+		Description		" Initialization of the EEPROM driver."
+		Help			"web(which('IO_EEPROM.h'))"
+		Initialization		"%\n"
+		Array {
+		  Type			  "Simulink.MaskParameter"
+		  Dimension		  4
+		  Object {
+		    $ObjectID		    51
+		    Type		    "edit"
+		    Name		    "SampleTime"
+		    Prompt		    "SampleTime"
+		    Value		    "-1"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    52
+		    Type		    "edit"
+		    Name		    "ttlib"
+		    Prompt		    "ttlib"
+		    Value		    "IO_Blk_Lib_TTC500"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    53
+		    Type		    "edit"
+		    Name		    "ttDescription"
+		    Prompt		    "ttDescription"
+		    Value		    "IO_EEPROM_Init"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    54
+		    Type		    "edit"
+		    Name		    "tt_iolib_version"
+		    Prompt		    "tt_iolib_version"
+		    Value		    "0.19"
+		    Visible		    "off"
+		  }
+		  PropName		  "Parameters"
+		}
+	      }
+	      System {
+		Name			"IO_EEPROM_Init"
+		Location		[271, 292, 860, 750]
+		Open			off
+		PortBlocksUseCompactNotation off
+		SetExecutionDomain	off
+		ExecutionDomainType	"Deduce"
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		SimulinkSubDomain	"Simulink"
+		Block {
+		  BlockType		  S-Function
+		  Name			  "IO_EEPROM_Init_s"
+		  SID			  "25"
+		  Ports			  [0, 1]
+		  Position		  [210, 45, 270, 75]
+		  ZOrder		  -1
+		  FunctionName		  "IO_EEPROM_Init_s"
+		  Parameters		  "SampleTime"
+		  SFunctionDeploymentMode off
+		  EnableBusSupport	  off
+		  SFcnIsStateOwnerBlock	  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "ErrorCode"
+		  SID			  "26"
+		  Position		  [400, 50, 430, 70]
+		  ZOrder		  -2
+		  IconDisplay		  "Port number"
+		  VectorParamsAs1DForOutWhenUnconnected	off
+		}
+		Line {
+		  ZOrder		  1
+		  SrcBlock		  "IO_EEPROM_Init_s"
+		  SrcPort		  1
+		  DstBlock		  "ErrorCode"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "IO_EEPROM_Write_ALL"
+	      SID		      "27"
+	      Ports		      [2, 1]
+	      Position		      [600, 318, 695, 382]
+	      ZOrder		      -8
+	      ForegroundColor	      "blue"
+	      HideAutomaticName	      off
+	      CopyFcn		      "%deleted"
+	      LoadFcn		      "try\n%\n%Upgrade Information - standard BEGIN\nnew_color = 'blue';\nnew_ver = '0.19';\nact_ver "
+	      "= get_param(gcb,'tt_iolib_version');\nif not(strcmp(act_ver,new_ver))\n    disp(['Upgrade block: ',gcb,char(10)"
+	      ",'       Version: ',act_ver,' -> ',new_ver]);\n    %switch - case for specific upgrade information e.g. additio"
+	      "nal parameter required \n    %Change appearance and version information\n    set_param(gcb,'ForegroundColor',ne"
+	      "w_color);\n    set_param(gcb,'tt_iolib_version',new_ver);\nend\n%Upgrade Information - standard END\ncatch\n%St"
+	      "andard catch section BEGIN \ndisp(' ');\ndisp('------------------------------------------------------------');\n"
+	      "disp('An error occurred in a callback of the TTC580-BlockLib.');\ndisp('Please copy the following lines and rep"
+	      "ort this to support@tttech.com ');\ndisp('<< begin of error message dump >>');\ndisp(['Version of TTC580-BlockL"
+	      "ib: ', get_param(gcb,'tt_iolib_version')]);\ndisp(get_param(gcb,'ttDescription'));\ndisp(gcb);\nx=lasterror;dis"
+	      "p(x.message);\ndisp(get_param(gcb,'MaskValues'));\ndisp(version);\ndisp(computer);\ndisp('<< end of error messa"
+	      "ge dump >>');\ndisp('------------------------------------------------------------');\ndisp(' ');\n%Standard cat"
+	      "ch section END\nend"
+	      RequestExecContextInheritance off
+	      Object {
+		$PropName		"MaskObject"
+		$ObjectID		55
+		$ClassName		"Simulink.Mask"
+		Type			"IO_EEPROM_Write_Code"
+		Description		"Copy data from EEPROM_mirror[] to physical EEPROM. Copy activity is triggered by the edge of the input"
+		" \"EC_Write_Mirror\" from IO_E_BUSY to IO_E_OK.\nThe output \"ErrorCode\" is IO_E_BUSY as long as writing to EEPROM "
+		"is pending. During the activities are performed writing to the physical EEPROM, \"ErrorCode\" corresponds to the out"
+		"put of the C-driver IO_EEPROM_Write(). "
+		Help			"web(which('IO_EEPROM.h'))"
+		Initialization		"%\n"
+		Array {
+		  Type			  "Simulink.MaskParameter"
+		  Dimension		  6
+		  Object {
+		    $ObjectID		    56
+		    Type		    "edit"
+		    Name		    "SampleTime"
+		    Prompt		    "SampleTime"
+		    Value		    "-1"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    57
+		    Type		    "edit"
+		    Name		    "ttlib"
+		    Prompt		    "ttlib"
+		    Value		    "IO_Blk_Lib_TTC500"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    58
+		    Type		    "edit"
+		    Name		    "ttDescription"
+		    Prompt		    "ttDescription"
+		    Value		    "IO_EEPROM_Write"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    59
+		    Type		    "edit"
+		    Name		    "tt_iolib_version"
+		    Prompt		    "tt_iolib_version"
+		    Value		    "0.19"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    60
+		    Type		    "edit"
+		    Name		    "offset"
+		    Prompt		    "offset"
+		    Value		    "BasicAddr"
+		    Callback		    "%"
+		  }
+		  Object {
+		    $ObjectID		    61
+		    Type		    "edit"
+		    Name		    "length"
+		    Prompt		    "length"
+		    Value		    "EndAddr-BasicAddr+1+length"
+		    Callback		    "%"
+		  }
+		  PropName		  "Parameters"
+		}
+	      }
+	      System {
+		Name			"IO_EEPROM_Write_ALL"
+		Location		[271, 292, 860, 750]
+		Open			off
+		PortBlocksUseCompactNotation off
+		SetExecutionDomain	off
+		ExecutionDomainType	"Deduce"
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		SimulinkSubDomain	"Simulink"
+		Block {
+		  BlockType		  Inport
+		  Name			  "EC_Write_Mirror"
+		  SID			  "28"
+		  Position		  [40, 50, 70, 70]
+		  ZOrder		  -1
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "GetStatus"
+		  SID			  "29"
+		  Position		  [40, 100, 70, 120]
+		  ZOrder		  -2
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  S-Function
+		  Name			  "IO_EEPROM_Write_s"
+		  SID			  "30"
+		  Ports			  [2, 1]
+		  Position		  [210, 47, 270, 78]
+		  ZOrder		  -3
+		  FunctionName		  "IO_EEPROM_Write_s"
+		  Parameters		  "SampleTime,offset,length"
+		  SFunctionDeploymentMode off
+		  EnableBusSupport	  off
+		  SFcnIsStateOwnerBlock	  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "ErrorCode"
+		  SID			  "31"
+		  Position		  [400, 50, 430, 70]
+		  ZOrder		  -4
+		  IconDisplay		  "Port number"
+		  VectorParamsAs1DForOutWhenUnconnected	off
+		}
+		Line {
+		  ZOrder		  1
+		  SrcBlock		  "EC_Write_Mirror"
+		  SrcPort		  1
+		  DstBlock		  "IO_EEPROM_Write_s"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  2
+		  SrcBlock		  "GetStatus"
+		  SrcPort		  1
+		  DstBlock		  "IO_EEPROM_Write_s"
+		  DstPort		  2
+		}
+		Line {
+		  ZOrder		  3
+		  SrcBlock		  "IO_EEPROM_Write_s"
+		  SrcPort		  1
+		  DstBlock		  "ErrorCode"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator"
+	      SID		      "32"
+	      Ports		      [2, 1]
+	      Position		      [825, 402, 855, 433]
+	      ZOrder		      -9
+	      ShowName		      off
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Memory
+	      Name		      "Memory"
+	      SID		      "33"
+	      Position		      [145, 215, 175, 245]
+	      ZOrder		      -10
+	      LinearizeAsDelay	      on
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator"
+	      SID		      "34"
+	      Position		      [305, 310, 325, 330]
+	      ZOrder		      -11
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Write_Mirror"
+	      SID		      "35"
+	      Ports		      [2, 1]
+	      Position		      [415, 303, 510, 367]
+	      ZOrder		      -12
+	      ForegroundColor	      "blue"
+	      HideAutomaticName	      off
+	      CopyFcn		      "%deleted"
+	      LoadFcn		      "try\n%\n%Upgrade Information - standard BEGIN\nnew_color = 'blue';\nnew_ver = '0.19';\nact_ver "
+	      "= get_param(gcb,'tt_iolib_version');\nif not(strcmp(act_ver,new_ver))\n    disp(['Upgrade block: ',gcb,char(10)"
+	      ",'       Version: ',act_ver,' -> ',new_ver]);\n    %switch - case for specific upgrade information e.g. additio"
+	      "nal parameter required \n    %Change appearance and version information\n    set_param(gcb,'ForegroundColor',ne"
+	      "w_color);\n    set_param(gcb,'tt_iolib_version',new_ver);\nend\n%Upgrade Information - standard END\ncatch\n%St"
+	      "andard catch section BEGIN \ndisp(' ');\ndisp('------------------------------------------------------------');\n"
+	      "disp('An error occurred in a callback of the TTC580-BlockLib.');\ndisp('Please copy the following lines and rep"
+	      "ort this to support@tttech.com ');\ndisp('<< begin of error message dump >>');\ndisp(['Version of TTC580-BlockL"
+	      "ib: ', get_param(gcb,'tt_iolib_version')]);\ndisp(get_param(gcb,'ttDescription'));\ndisp(gcb);\nx=lasterror;dis"
+	      "p(x.message);\ndisp(get_param(gcb,'MaskValues'));\ndisp(version);\ndisp(computer);\ndisp('<< end of error messa"
+	      "ge dump >>');\ndisp('------------------------------------------------------------');\ndisp(' ');\n%Standard cat"
+	      "ch section END\nend"
+	      RequestExecContextInheritance off
+	      Object {
+		$PropName		"MaskObject"
+		$ObjectID		62
+		$ClassName		"Simulink.Mask"
+		Type			"Write_Mirror_Code"
+		Description		"Write data to the mirror of the EEPROM. ErrorCode is set to IO_E_BUSY for one cycle of writing into EE"
+		"PROM_mirror[].\nIn case the given data section exceeds given EEPROM boundaries, IO_E_EEPROM_RANGE ErrorCode is retur"
+		"ned."
+		Help			"web(which('~.h'))"
+		Initialization		"%\n"
+		Array {
+		  Type			  "Simulink.MaskParameter"
+		  Dimension		  6
+		  Object {
+		    $ObjectID		    63
+		    Type		    "edit"
+		    Name		    "SampleTime"
+		    Prompt		    "SampleTime"
+		    Value		    "-1"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    64
+		    Type		    "edit"
+		    Name		    "ttlib"
+		    Prompt		    "ttlib"
+		    Value		    "IO_Blk_Lib_TTC500"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    65
+		    Type		    "edit"
+		    Name		    "ttDescription"
+		    Prompt		    "ttDescription"
+		    Value		    "Write_Mirror"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    66
+		    Type		    "edit"
+		    Name		    "tt_iolib_version"
+		    Prompt		    "tt_iolib_version"
+		    Value		    "0.19"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    67
+		    Type		    "edit"
+		    Name		    "offset"
+		    Prompt		    "offset"
+		    Value		    "offset"
+		    Callback		    "%"
+		  }
+		  Object {
+		    $ObjectID		    68
+		    Type		    "edit"
+		    Name		    "length"
+		    Prompt		    "length"
+		    Value		    "length"
+		    Callback		    "%"
+		  }
+		  PropName		  "Parameters"
+		}
+	      }
+	      System {
+		Name			"Write_Mirror"
+		Location		[271, 292, 860, 750]
+		Open			off
+		PortBlocksUseCompactNotation off
+		SetExecutionDomain	off
+		ExecutionDomainType	"Deduce"
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		SimulinkSubDomain	"Simulink"
+		Block {
+		  BlockType		  Inport
+		  Name			  "b_trigger"
+		  SID			  "36"
+		  Position		  [40, 50, 70, 70]
+		  ZOrder		  -1
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "data"
+		  SID			  "37"
+		  Position		  [40, 100, 70, 120]
+		  ZOrder		  -2
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  S-Function
+		  Name			  "Write_Mirror_s"
+		  SID			  "38"
+		  Ports			  [2, 1]
+		  Position		  [210, 47, 270, 78]
+		  ZOrder		  -3
+		  FunctionName		  "Write_Mirror_s"
+		  Parameters		  "SampleTime,offset,length"
+		  SFunctionDeploymentMode off
+		  EnableBusSupport	  off
+		  SFcnIsStateOwnerBlock	  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "ErrorCode_EEPROM_mirror"
+		  SID			  "39"
+		  Position		  [400, 50, 430, 70]
+		  ZOrder		  -4
+		  IconDisplay		  "Port number"
+		  VectorParamsAs1DForOutWhenUnconnected	off
+		}
+		Line {
+		  ZOrder		  1
+		  SrcBlock		  "b_trigger"
+		  SrcPort		  1
+		  DstBlock		  "Write_Mirror_s"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  2
+		  SrcBlock		  "data"
+		  SrcPort		  1
+		  DstBlock		  "Write_Mirror_s"
+		  DstPort		  2
+		}
+		Line {
+		  ZOrder		  3
+		  SrcBlock		  "Write_Mirror_s"
+		  SrcPort		  1
+		  DstBlock		  "ErrorCode_EEPROM_mirror"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "crc32_calc_intern"
+	      SID		      "40"
+	      Ports		      [0, 2, 0, 1]
+	      Position		      [180, 303, 275, 367]
+	      ZOrder		      -13
+	      ForegroundColor	      "blue"
+	      HideAutomaticName	      off
+	      CopyFcn		      "%deleted"
+	      LoadFcn		      "try\n%\n%Upgrade Information - standard BEGIN\nnew_color = 'blue';\nnew_ver = '0.19';\nact_ver "
+	      "= get_param(gcb,'tt_iolib_version');\nif not(strcmp(act_ver,new_ver))\n    disp(['Upgrade block: ',gcb,char(10)"
+	      ",'       Version: ',act_ver,' -> ',new_ver]);\n    %switch - case for specific upgrade information e.g. additio"
+	      "nal parameter required \n    %Change appearance and version information\n    set_param(gcb,'ForegroundColor',ne"
+	      "w_color);\n    set_param(gcb,'tt_iolib_version',new_ver);\nend\n%Upgrade Information - standard END\ncatch\n%St"
+	      "andard catch section BEGIN \ndisp(' ');\ndisp('------------------------------------------------------------');\n"
+	      "disp('An error occurred in a callback of the TTC580-BlockLib.');\ndisp('Please copy the following lines and rep"
+	      "ort this to support@tttech.com ');\ndisp('<< begin of error message dump >>');\ndisp(['Version of TTC580-BlockL"
+	      "ib: ', get_param(gcb,'tt_iolib_version')]);\ndisp(get_param(gcb,'ttDescription'));\ndisp(gcb);\nx=lasterror;dis"
+	      "p(x.message);\ndisp(get_param(gcb,'MaskValues'));\ndisp(version);\ndisp(computer);\ndisp('<< end of error messa"
+	      "ge dump >>');\ndisp('------------------------------------------------------------');\ndisp(' ');\n%Standard cat"
+	      "ch section END\nend"
+	      RequestExecContextInheritance off
+	      Object {
+		$PropName		"MaskObject"
+		$ObjectID		69
+		$ClassName		"Simulink.Mask"
+		Type			"crc32_calc_intern_Code"
+		Description		"Calculate crc32 for a section out of the EEPROM.\nIn case the given data section exceeds given EEPROM "
+		"boundaries, non zero ErrorCode is returned."
+		Help			"No further help available for this block"
+		Initialization		"%\n"
+		Array {
+		  Type			  "Simulink.MaskParameter"
+		  Dimension		  7
+		  Object {
+		    $ObjectID		    70
+		    Type		    "edit"
+		    Name		    "SampleTime"
+		    Prompt		    "SampleTime"
+		    Value		    "-1"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    71
+		    Type		    "edit"
+		    Name		    "ttlib"
+		    Prompt		    "ttlib"
+		    Value		    "IO_Blk_Lib_TTC500"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    72
+		    Type		    "edit"
+		    Name		    "ttDescription"
+		    Prompt		    "ttDescription"
+		    Value		    "crc32_calc_intern"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    73
+		    Type		    "edit"
+		    Name		    "tt_iolib_version"
+		    Prompt		    "tt_iolib_version"
+		    Value		    "0.19"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    74
+		    Type		    "edit"
+		    Name		    "EEPROM_mirror"
+		    Prompt		    "EEPROM_mirror"
+		    Value		    "EEPROM_mirror"
+		    Evaluate		    "off"
+		    Callback		    "%"
+		  }
+		  Object {
+		    $ObjectID		    75
+		    Type		    "edit"
+		    Name		    "iBasicAddr_intern"
+		    Prompt		    "iBasicAddr_intern"
+		    Value		    "BasicAddr"
+		    Callback		    "%"
+		  }
+		  Object {
+		    $ObjectID		    76
+		    Type		    "edit"
+		    Name		    "iEndAddr_intern"
+		    Prompt		    "iEndAddr_intern"
+		    Value		    "EndAddr"
+		    Callback		    "%"
+		  }
+		  PropName		  "Parameters"
+		}
+	      }
+	      System {
+		Name			"crc32_calc_intern"
+		Location		[39, 542, 628, 1000]
+		Open			off
+		PortBlocksUseCompactNotation off
+		SetExecutionDomain	off
+		ExecutionDomainType	"Deduce"
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		SimulinkSubDomain	"Simulink"
+		Block {
+		  BlockType		  TriggerPort
+		  Name			  "Trigger"
+		  SID			  "41"
+		  Ports			  []
+		  Position		  [60, 45, 80, 65]
+		  ZOrder		  -1
+		  VariantControl	  "(inherit)"
+		  StatesWhenEnabling	  "held"
+		}
+		Block {
+		  BlockType		  S-Function
+		  Name			  "crc32_calc_intern_s"
+		  SID			  "42"
+		  Ports			  [0, 2]
+		  Position		  [210, 47, 270, 78]
+		  ZOrder		  -2
+		  FunctionName		  "crc32_calc_intern_s"
+		  Parameters		  "SampleTime,EEPROM_mirror,iBasicAddr_intern,iEndAddr_intern"
+		  SFunctionDeploymentMode off
+		  EnableBusSupport	  off
+		  SFcnIsStateOwnerBlock	  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "ErrorCode"
+		  SID			  "43"
+		  Position		  [400, 50, 430, 70]
+		  ZOrder		  -3
+		  IconDisplay		  "Port number"
+		  VectorParamsAs1DForOutWhenUnconnected	off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "crc32"
+		  SID			  "44"
+		  Position		  [400, 100, 430, 120]
+		  ZOrder		  -4
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		  VectorParamsAs1DForOutWhenUnconnected	off
+		}
+		Line {
+		  ZOrder		  1
+		  SrcBlock		  "crc32_calc_intern_s"
+		  SrcPort		  2
+		  DstBlock		  "crc32"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  2
+		  SrcBlock		  "crc32_calc_intern_s"
+		  SrcPort		  1
+		  DstBlock		  "ErrorCode"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "b_ready"
+	      SID		      "45"
+	      Position		      [900, 410, 930, 430]
+	      ZOrder		      -14
+	      IconDisplay	      "Port number"
+	      VectorParamsAs1DForOutWhenUnconnected off
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "Compare\nTo Zero1"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "crc32_calc_intern"
+	      SrcPort		      1
+	      DstBlock		      "Terminator"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      3
+	      SrcBlock		      "Logical\nOperator"
+	      SrcPort		      1
+	      DstBlock		      "b_ready"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      4
+	      SrcBlock		      "Compare\nTo Zero"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, 60]
+	      DstBlock		      "Logical\nOperator"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      5
+	      SrcBlock		      "Memory"
+	      SrcPort		      1
+	      Points		      [45, 0]
+	      Branch {
+		ZOrder			6
+		DstBlock		"Compare\nTo Zero2"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			7
+		DstBlock		"crc32_calc_intern"
+		DstPort			trigger
+	      }
+	    }
+	    Line {
+	      ZOrder		      8
+	      SrcBlock		      "Compare\nTo Zero2"
+	      SrcPort		      1
+	      Points		      [40, 0; 0, 90]
+	      DstBlock		      "Write_Mirror"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      9
+	      SrcBlock		      "crc32_calc_intern"
+	      SrcPort		      2
+	      DstBlock		      "Write_Mirror"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      10
+	      SrcBlock		      "IO_EEPROM_GetStatus"
+	      SrcPort		      1
+	      Points		      [40, 0; 0, -60]
+	      DstBlock		      "IO_EEPROM_Write_ALL"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      13
+	      SrcBlock		      "Write_Mirror"
+	      SrcPort		      1
+	      DstBlock		      "IO_EEPROM_Write_ALL"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      14
+	      SrcBlock		      "trigger"
+	      SrcPort		      1
+	      DstBlock		      "Memory"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      15
+	      SrcBlock		      "IO_EEPROM_Write_ALL"
+	      SrcPort		      1
+	      DstBlock		      "Compare\nTo Zero"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      17
+	      SrcBlock		      "IO_EEPROM_Init"
+	      SrcPort		      1
+	      DstBlock		      "EEPROM_Mirror"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      19
+	      SrcBlock		      "IO_EEPROM_GetStatus2"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, -15]
+	      DstBlock		      "Compare\nTo Zero1"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      SID		      "46"
+	      Name		      "Note: different to the EEPROM_Write block\nof the IO-Library the IO_EEPROM_Write Block\nperforms w"
+	      "riting to the complete section [BasicAddr... EndAdrr+CRC]"
+	      Position		      [594, 267, 900, 305]
+	      InternalMargins	      [0, 0, 0, 0]
+	      HorizontalAlignment     "left"
+	      ZOrder		      -1
+	    }
+	    Annotation {
+	      SID		      "72"
+	      Name		      "after IO_EEPROM_Write -> IO_E_BUSY"
+	      Position		      [705, 450, 887, 464]
+	      InternalMargins	      [0, 0, 0, 0]
+	      HorizontalAlignment     "left"
+	      VerticalAlignment	      "top"
+	      ZOrder		      -2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Write_Mirror_prepare_EEPROM"
+	  SID			  "47"
+	  Ports			  [2, 1]
+	  Position		  [225, 158, 320, 222]
+	  ZOrder		  -4
+	  ForegroundColor	  "blue"
+	  HideAutomaticName	  off
+	  CopyFcn		  "%deleted"
+	  LoadFcn		  "try\n%\n%Upgrade Information - standard BEGIN\nnew_color = 'blue';\nnew_ver = '0.16';\nact_ver = get_pa"
+	  "ram(gcb,'tt_iolib_version');\nif not(strcmp(act_ver,new_ver))\n    disp(['Upgrade block: ',gcb,char(10),'       Ver"
+	  "sion: ',act_ver,' -> ',new_ver]);\n    %switch - case for specific upgrade information e.g. additional parameter re"
+	  "quired \n    %Change appearance and version information\n    set_param(gcb,'ForegroundColor',new_color);\n    set_p"
+	  "aram(gcb,'tt_iolib_version',new_ver);\nend\n%Upgrade Information - standard END\ncatch\n%Standard catch section BEG"
+	  "IN \ndisp(' ');\ndisp('------------------------------------------------------------');\ndisp('An error occurred in "
+	  "a callback of the TTC580-BlockLib.');\ndisp(['Please check the parameters in the mask of ',gcb]);\ndisp('If you do "
+	  "not encounter any violations, then please '); \ndisp('copy the following lines and report this to support@ttcontrol"
+	  ".com ');\ndisp('<< begin of error message dump >>');\ndisp(['Version of TTC580-BlockLib: ', get_param(gcb,'tt_iolib"
+	  "_version')]);\ndisp(get_param(gcb,'ttDescription'));\ndisp(gcb);\nx=lasterror;disp(x.message);\ndisp(get_param(gcb,"
+	  "'MaskValues'));\ndisp(version);\ndisp(computer);\ndisp('<< end of error message dump >>');\ndisp('-----------------"
+	  "-------------------------------------------');\ndisp(' ');\n%Standard catch section END\nend"
+	  RequestExecContextInheritance	off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    77
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "Write_Mirror_prepare_EEPROM_Code"
+	    Description		    "Write data to the EEPROM_mirror[] in the context of EEPROM_Importer only.\nNote that offset has"
+	    " to be in the range [0..65535] for TTC580 and [0..32767]for TTC590\nNote further: No physical IO_EEPROM_Write is "
+	    "perfomted here. This is done in CRC32_calc_and_EEPROM_Write_ALL"
+	    Help		    "web(which('~.h'))"
+	    Initialization	    "try\nswitch EEPROM_type \n    case {'uint8'}\n        length = 1; \n    case {'uint16'}; \n  "
+	    "      length = 2; \n    case {'uint32'}\n        length = 4; \n    case {'int8'}\n        length = 1; \n    case "
+	    "{'int16'}; \n        length = 2; \n    case {'int32'}\n        length = 4; \n    case {'single'}\n        length "
+	    "= 4; \n    case {'double'}\n        length = 8; \n    otherwise\n        error('EEPROM_Write: unsupported type');"
+	    "\nend\n\ncatch\n%Standard catch section BEGIN \ndisp(' ');\ndisp('-----------------------------------------------"
+	    "-------------');\ndisp('An error occurred in a callback of the TTC580-BlockLib.');\ndisp(['Please check the param"
+	    "eters in the mask of ',gcb]);\ndisp('If you do not encounter any violations, then please '); \ndisp('copy the fol"
+	    "lowing lines and report this to support@ttcontrol.com ');\ndisp('<< begin of error message dump >>');\ndisp(['Ver"
+	    "sion of TTC580-BlockLib: ', get_param(gcb,'tt_iolib_version')]);\ndisp(get_param(gcb,'ttDescription'));\ndisp(gcb"
+	    ");\nx=lasterror;disp(x.message);\ndisp(get_param(gcb,'MaskValues'));\ndisp(version);\ndisp(computer);\ndisp('<< e"
+	    "nd of error message dump >>');\ndisp('------------------------------------------------------------');\ndisp(' ');"
+	    "\n%Standard catch section END\nend\n"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      6
+	      Object {
+		$ObjectID		78
+		Type			"edit"
+		Name			"SampleTime"
+		Prompt			"SampleTime"
+		Value			"-1"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		79
+		Type			"edit"
+		Name			"ttlib"
+		Prompt			"ttlib"
+		Value			"IO_Blk_Lib_TTC500"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		80
+		Type			"edit"
+		Name			"ttDescription"
+		Prompt			"ttDescription"
+		Value			"Write_Mirror_prepare_EEPROM"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		81
+		Type			"edit"
+		Name			"tt_iolib_version"
+		Prompt			"tt_iolib_version"
+		Value			"0.16"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		82
+		Type			"edit"
+		Name			"offset"
+		Prompt			"offset"
+		Value			"0"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		83
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  3
+		  Cell			  "uint8"
+		  Cell			  "uint16"
+		  Cell			  "uint32"
+		  PropName		  "TypeOptions"
+		}
+		Name			"EEPROM_type"
+		Prompt			"EEPROM_type"
+		Value			"uint8"
+		Evaluate		"off"
+		Callback		"%"
+	      }
+	      PropName		      "Parameters"
+	    }
+	    Array {
+	      Type		      "Simulink.dialog.Group"
+	      Dimension		      2
+	      Object {
+		$ObjectID		84
+		Prompt			"%<MaskType>"
+		Object {
+		  $PropName		  "DialogControls"
+		  $ObjectID		  85
+		  $ClassName		  "Simulink.dialog.Text"
+		  Prompt		  "%<MaskDescription>"
+		  Name			  "DescTextVar"
+		}
+		Name			"DescGroupVar"
+	      }
+	      Object {
+		$ObjectID		86
+		Prompt			"Simulink:studio:ToolBarParametersMenu"
+		Array {
+		  Type			  "Simulink.dialog.parameter.Control"
+		  Dimension		  6
+		  Object {
+		    $ObjectID		    87
+		    $ClassName		    "Simulink.dialog.parameter.Edit"
+		    Name		    "SampleTime"
+		  }
+		  Object {
+		    $ObjectID		    88
+		    $ClassName		    "Simulink.dialog.parameter.Edit"
+		    Name		    "ttlib"
+		  }
+		  Object {
+		    $ObjectID		    89
+		    $ClassName		    "Simulink.dialog.parameter.Edit"
+		    Name		    "ttDescription"
+		  }
+		  Object {
+		    $ObjectID		    90
+		    $ClassName		    "Simulink.dialog.parameter.Edit"
+		    Name		    "tt_iolib_version"
+		  }
+		  Object {
+		    $ObjectID		    91
+		    $ClassName		    "Simulink.dialog.parameter.Edit"
+		    Name		    "offset"
+		  }
+		  Object {
+		    $ObjectID		    92
+		    $ClassName		    "Simulink.dialog.parameter.Popup"
+		    Name		    "EEPROM_type"
+		  }
+		  PropName		  "DialogControls"
+		}
+		Name			"ParameterGroupVar"
+	      }
+	      PropName		      "DialogControls"
+	    }
+	  }
+	  System {
+	    Name		    "Write_Mirror_prepare_EEPROM"
+	    Location		    [-7, -7, 1543, 929]
+	    Open		    off
+	    PortBlocksUseCompactNotation off
+	    SetExecutionDomain	    off
+	    ExecutionDomainType	    "Deduce"
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SimulinkSubDomain	    "Simulink"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "trigger"
+	      SID		      "48"
+	      Position		      [95, 128, 125, 142]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data"
+	      SID		      "49"
+	      Position		      [95, 248, 125, 262]
+	      ZOrder		      -2
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      OutDataTypeStr	      "EEPROM_type"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Compare\nTo Zero"
+	      SID		      "50"
+	      Ports		      [1, 1]
+	      Position		      [775, 225, 805, 255]
+	      ZOrder		      -3
+	      ShowName		      off
+	      LibraryVersion	      "1.441"
+	      SourceBlock	      "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
+	      SourceType	      "Compare To Zero"
+	      SourceProductName	      "Simulink"
+	      SourceProductBaseCode   "SL"
+	      ContentPreviewEnabled   off
+	      relop		      "=="
+	      OutDataTypeStr	      "boolean"
+	      ZeroCross		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Compare\nTo Zero1"
+	      SID		      "51"
+	      Ports		      [1, 1]
+	      Position		      [160, 120, 190, 150]
+	      ZOrder		      -4
+	      ShowName		      off
+	      LibraryVersion	      "1.441"
+	      SourceBlock	      "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
+	      SourceType	      "Compare To Zero"
+	      SourceProductName	      "Simulink"
+	      SourceProductBaseCode   "SL"
+	      ContentPreviewEnabled   off
+	      relop		      "~="
+	      OutDataTypeStr	      "boolean"
+	      ZeroCross		      off
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Write_Mirror"
+	      SID		      "52"
+	      Ports		      [2, 1]
+	      Position		      [250, 208, 345, 272]
+	      ZOrder		      -5
+	      ForegroundColor	      "blue"
+	      HideAutomaticName	      off
+	      CopyFcn		      "%deleted"
+	      LoadFcn		      "try\n%\n%Upgrade Information - standard BEGIN\nnew_color = 'blue';\nnew_ver = '0.19';\nact_ver "
+	      "= get_param(gcb,'tt_iolib_version');\nif not(strcmp(act_ver,new_ver))\n    disp(['Upgrade block: ',gcb,char(10)"
+	      ",'       Version: ',act_ver,' -> ',new_ver]);\n    %switch - case for specific upgrade information e.g. additio"
+	      "nal parameter required \n    %Change appearance and version information\n    set_param(gcb,'ForegroundColor',ne"
+	      "w_color);\n    set_param(gcb,'tt_iolib_version',new_ver);\nend\n%Upgrade Information - standard END\ncatch\n%St"
+	      "andard catch section BEGIN \ndisp(' ');\ndisp('------------------------------------------------------------');\n"
+	      "disp('An error occurred in a callback of the TTC580-BlockLib.');\ndisp('Please copy the following lines and rep"
+	      "ort this to support@tttech.com ');\ndisp('<< begin of error message dump >>');\ndisp(['Version of TTC580-BlockL"
+	      "ib: ', get_param(gcb,'tt_iolib_version')]);\ndisp(get_param(gcb,'ttDescription'));\ndisp(gcb);\nx=lasterror;dis"
+	      "p(x.message);\ndisp(get_param(gcb,'MaskValues'));\ndisp(version);\ndisp(computer);\ndisp('<< end of error messa"
+	      "ge dump >>');\ndisp('------------------------------------------------------------');\ndisp(' ');\n%Standard cat"
+	      "ch section END\nend"
+	      RequestExecContextInheritance off
+	      Object {
+		$PropName		"MaskObject"
+		$ObjectID		93
+		$ClassName		"Simulink.Mask"
+		Type			"Write_Mirror_Code"
+		Description		"Write data to the mirror of the EEPROM. ErrorCode is set to IO_E_BUSY for one cycle of writing into EE"
+		"PROM_mirror[].\nIn case the given data section exceeds given EEPROM boundaries, IO_E_EEPROM_RANGE ErrorCode is retur"
+		"ned."
+		Help			"web(which('~.h'))"
+		Initialization		"%\n"
+		Array {
+		  Type			  "Simulink.MaskParameter"
+		  Dimension		  6
+		  Object {
+		    $ObjectID		    94
+		    Type		    "edit"
+		    Name		    "SampleTime"
+		    Prompt		    "SampleTime"
+		    Value		    "-1"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    95
+		    Type		    "edit"
+		    Name		    "ttlib"
+		    Prompt		    "ttlib"
+		    Value		    "IO_Blk_Lib_TTC500"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    96
+		    Type		    "edit"
+		    Name		    "ttDescription"
+		    Prompt		    "ttDescription"
+		    Value		    "Write_Mirror"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    97
+		    Type		    "edit"
+		    Name		    "tt_iolib_version"
+		    Prompt		    "tt_iolib_version"
+		    Value		    "0.19"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    98
+		    Type		    "edit"
+		    Name		    "offset"
+		    Prompt		    "offset"
+		    Value		    "offset"
+		    Callback		    "%"
+		  }
+		  Object {
+		    $ObjectID		    99
+		    Type		    "edit"
+		    Name		    "length"
+		    Prompt		    "length"
+		    Value		    "length"
+		    Callback		    "%"
+		  }
+		  PropName		  "Parameters"
+		}
+	      }
+	      System {
+		Name			"Write_Mirror"
+		Location		[271, 292, 860, 750]
+		Open			off
+		PortBlocksUseCompactNotation off
+		SetExecutionDomain	off
+		ExecutionDomainType	"Deduce"
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		SimulinkSubDomain	"Simulink"
+		Block {
+		  BlockType		  Inport
+		  Name			  "b_trigger"
+		  SID			  "53"
+		  Position		  [40, 50, 70, 70]
+		  ZOrder		  -1
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "data"
+		  SID			  "54"
+		  Position		  [40, 100, 70, 120]
+		  ZOrder		  -2
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  S-Function
+		  Name			  "Write_Mirror_s"
+		  SID			  "55"
+		  Ports			  [2, 1]
+		  Position		  [210, 47, 270, 78]
+		  ZOrder		  -3
+		  FunctionName		  "Write_Mirror_s"
+		  Parameters		  "SampleTime,offset,length"
+		  SFunctionDeploymentMode off
+		  EnableBusSupport	  off
+		  SFcnIsStateOwnerBlock	  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "ErrorCode_EEPROM_mirror"
+		  SID			  "56"
+		  Position		  [400, 50, 430, 70]
+		  ZOrder		  -4
+		  IconDisplay		  "Port number"
+		  VectorParamsAs1DForOutWhenUnconnected	off
+		}
+		Line {
+		  ZOrder		  1
+		  SrcBlock		  "Write_Mirror_s"
+		  SrcPort		  1
+		  DstBlock		  "ErrorCode_EEPROM_mirror"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  2
+		  SrcBlock		  "data"
+		  SrcPort		  1
+		  DstBlock		  "Write_Mirror_s"
+		  DstPort		  2
+		}
+		Line {
+		  ZOrder		  3
+		  SrcBlock		  "b_trigger"
+		  SrcPort		  1
+		  DstBlock		  "Write_Mirror_s"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "b_ready"
+	      SID		      "57"
+	      Position		      [930, 230, 960, 250]
+	      ZOrder		      -6
+	      IconDisplay	      "Port number"
+	      VectorParamsAs1DForOutWhenUnconnected off
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "Compare\nTo Zero1"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, 90]
+	      DstBlock		      "Write_Mirror"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "Write_Mirror"
+	      SrcPort		      1
+	      DstBlock		      "Compare\nTo Zero"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      3
+	      SrcBlock		      "data"
+	      SrcPort		      1
+	      DstBlock		      "Write_Mirror"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      4
+	      SrcBlock		      "trigger"
+	      SrcPort		      1
+	      DstBlock		      "Compare\nTo Zero1"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      5
+	      Labels		      [1, 0]
+	      SrcBlock		      "Compare\nTo Zero"
+	      SrcPort		      1
+	      DstBlock		      "b_ready"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      SID		      "58"
+	      Name		      "NO IO_EEPROM_Write\nperfomted here. This is\ndone in CRC32_calc_and_EEPROM_Write_ALL"
+	      Position		      [485, 248, 701, 286]
+	      InternalMargins	      [0, 0, 0, 0]
+	      HorizontalAlignment     "left"
+	      ZOrder		      -1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "all_b_ready"
+	  SID			  "59"
+	  Ports			  [1, 1]
+	  Position		  [460, 173, 490, 207]
+	  ZOrder		  -5
+	  Inputs		  "1"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "not"
+	  SID			  "60"
+	  Ports			  [1, 1]
+	  Position		  [515, 174, 545, 206]
+	  ZOrder		  -6
+	  Operator		  "NOT"
+	  Inputs		  "1"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "busy"
+	  SID			  "61"
+	  Position		  [565, 183, 595, 197]
+	  ZOrder		  -7
+	  IconDisplay		  "Port number"
+	  VectorParamsAs1DForOutWhenUnconnected	off
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "all_b_ready"
+	  SrcPort		  1
+	  DstBlock		  "not"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  "not"
+	  SrcPort		  1
+	  DstBlock		  "busy"
+	  DstPort		  1
+	}
+	Annotation {
+	  SID			  "62"
+	  Name			  "Don't change the Names of the Blocks"
+	  Position		  [46, 47, 270, 67]
+	  InternalMargins	  [0, 0, 0, 0]
+	  ZOrder		  -1
+	  FontName		  "Arial Narrow"
+	  FontSize		  16
+	}
+      }
+    }
+    Annotation {
+      SID		      "63"
+      Name		      "Don't change the Names of the Blocks"
+      Position		      [31, 32, 255, 52]
+      InternalMargins	      [0, 0, 0, 0]
+      ZOrder		      -1
+      FontName		      "Arial Narrow"
+      FontSize		      16
+    }
+  }
+}

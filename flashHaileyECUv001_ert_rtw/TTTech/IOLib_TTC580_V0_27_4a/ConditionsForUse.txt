@@ -1,0 +1,39 @@
+Conditions for using the Evaluation License for Simulink IO Library
+
+Admitted users: Developers for Infinity Racing 
+MATLAB License Number(s): 41055773
+License is provided as sponsoring by TTControl GmbH
+
+1) Technical support from TTTech/TTControl is only available for installation 
+and bug-related issues. 
+
+2) The licenses granted hereunder is provided for non-commercial use only and 
+will terminate immediately if the usage is intended for or directed toward 
+commercial advantage or monetary compensation. 
+TTTech/TTControl may terminate this agreement without prior notice if 
+customer breaches this agreement or at the convenience of TTTech/TTControl. 
+Within ten (10) days after termination, customer must de-install the Software and 
+certify in writing that it has been destroyed unless a Permanent License was 
+purchased by the customer.
+
+3) Customer recognizes and agrees that the Software, and all TTTech/TTControl 
+intellectual property and any derivative thereof is the property of 
+TTTech/TTControl and that title and full ownership rights in the Software is 
+reserved to and remains with TTTech/TTControl and no rights other than those 
+expressly granted herein are transferred by this agreement. Customer agrees 
+not to copy, distribute, sell, sublicense or otherwise transfer the Software 
+or any portion thereof or allow access thereof to any third party.
+
+4) This IO-Library is not concepted as a product but is provided as a 
+support service to the user. Therefore this software is provided "as is" 
+and there are no warranties with respect to the software provided 
+hereunder, whether express, implied or statutory, including but not limited
+to, any implied warranty of merchantability, fitness for a particular 
+purpose, title or against infringement, even if TTTech/TTControl have been 
+informed of such purpose, or any warranties that the software provided 
+hereunder is or will be uninterrupted, error-free, or virus-free.  
+In particular TTTech/TTControl do not make any warranty in relation to the 
+interoperability of the Software with other SW products and it is the sole 
+responsibility of customer to ensure such interoperability in cases where 
+it is required due to the nature of the Software’s use by adequate testing 
+and QS procedures.

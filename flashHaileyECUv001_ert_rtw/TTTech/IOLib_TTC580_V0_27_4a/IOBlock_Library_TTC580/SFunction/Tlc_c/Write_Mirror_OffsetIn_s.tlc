@@ -1,0 +1,99 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   Write_Mirror_OffsetIn_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox Write_Mirror_OffsetIn_s block
+%%
+%% Version: 0.25
+%%
+
+%implements "Write_Mirror_OffsetIn_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+	%assign length = rtw_param1  
+
+	%assign offset = LibBlockInputSignal(0, "", "",0)
+    %assign offset_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+	%assign b_trigger = LibBlockInputSignal(1, "", "",0)
+    %assign b_trigger_type = LibBlockInputSignalDataTypeName(1,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin1 = LibBlockInputSignalWidth(1)
+
+	%assign data = LibBlockInputSignalAddr(2, "", "",0)
+    %assign data_type = LibBlockInputSignalDataTypeName(2,"")
+
+	%assign ErrorCode_EEPROM_mirror = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_EEPROM_mirror_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+   
+
+	/* init_function call Write_Mirror_OffsetIn */
+
+
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+	%assign length = rtw_param1  
+
+	%assign offset = LibBlockInputSignal(0, "", "",0)
+    %assign offset_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+	%assign b_trigger = LibBlockInputSignal(1, "", "",0)
+    %assign b_trigger_type = LibBlockInputSignalDataTypeName(1,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin1 = LibBlockInputSignalWidth(1)
+
+	%assign data = LibBlockInputSignalAddr(2, "", "",0)
+    %assign data_type = LibBlockInputSignalDataTypeName(2,"")
+
+	%assign ErrorCode_EEPROM_mirror = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_EEPROM_mirror_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+   
+
+	/* function call of Write_Mirror_OffsetIn */
+
+{
+    static boolean_T b_rising_edge_enable = true;
+
+    /* default ErrorCode */
+    %<ErrorCode_EEPROM_mirror> = IO_E_OK;
+
+    if ((%<offset>+%<length>) <= 0x10000) {
+        if (%<b_trigger> && b_rising_edge_enable){
+            memcpy(&(EEPROM_mirror[%<offset>]), %<data>, %<length>);
+            b_rising_edge_enable = false;
+            %<ErrorCode_EEPROM_mirror> = IO_E_BUSY;
+        }
+    }    
+    else { %<ErrorCode_EEPROM_mirror> = IO_E_EEPROM_RANGE; }
+
+    if (!%<b_trigger>) { b_rising_edge_enable = true;}
+
+}
+
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

@@ -1,0 +1,410 @@
+
+                    *****************************************
+                    IO Block Library for TTC580 release notes
+                    *****************************************
+
+
+
+        -------------------------------------------------------------------
+        This file contains a list of all changes of IO - Library in reverse
+        chronological order (most recent first).  
+        -------------------------------------------------------------------
+
+--------------------------------------
+version 0.27.4 Date: 2021-09-30
+--------------------------------------
+- Updated documenation with a Getting Started Guide
+
+--------------------------------------
+version 0.27.3 Date: 2021-05-26
+--------------------------------------
+- Adaption for compatibility with R2021a
+- Code generation for EEPROM Mirror adapted to work with smaller FRAM as well.
+- Dynamically sized Read/Write_Mirror blocks
+
+--------------------------------------
+version 0.27.2 Date: 2021-02-02
+--------------------------------------
+- Generated EEPROM-importer blocks may be used in user defined libraries
+
+--------------------------------------
+version 0.27.1 Date: 2019-10-29
+--------------------------------------
+- Support of R2019b and R2020a
+- ReadMsg_CAN_derated with debounced functionallity to cope with alternating overflow
+  and old data situation.
+- ADC_Ratiometric_5V added IO_ADC_16..23 (bugfix)
+
+--------------------------------------
+version 0.26.10 Date: 2019-10-29
+--------------------------------------
+- J1939 DM2/DM3 services included by configuration in MainDlg block
+  and integration into the J1939 block set within the IOLib_TTC580
+- Bug fixed for DM1_Application_AllInput. The DM1 handling for FMI=12 corrected.
+
+---------------------------------------
+version 0.26.9 Date: 2019-09-17
+---------------------------------------
+- IO_GetSerialNumber added in system block family together with an example
+- Support of IO-driver 2.14 in make, all examples and default settings of DIAG_Status-block
+- Bug solved in DBC-Imporer
+
+---------------------------------------
+version 0.26.8 Date: 2019-07-12
+---------------------------------------
+- Bug in DM1_Application_AllInput mask initialization removed.
+
+---------------------------------------
+version 0.26.7 Date: 2019-04-05
+---------------------------------------
+- Block and example to configure FPU exception handler added
+
+---------------------------------------
+version 0.26.6 Date: 2019-03-14
+---------------------------------------
+- New UART Blocks for triggered writing and coloured text.
+
+---------------------------------------
+version 0.26.4 Date: 2019-01-18
+---------------------------------------
+- New blocks in the UART block family: UART_Read and UART_Write added to library IOBlock_Library_TTC580
+- Adaption to the Write_RS232 block which now builds upon the functions of IO_UART.h rather than those of IO_DEBUG.h
+
+---------------------------------------
+version 0.26.3 Date: 2018-12-14
+---------------------------------------
+- Preliminary version of IO-Driver 2.15 supported
+
+---------------------------------------
+version 0.26.2 Date: 2018-12-11
+---------------------------------------
+- Workspace variable moved to mask space for MainDlg-block 
+
+---------------------------------------
+version 0.26.1 Date: 2018-12-04
+---------------------------------------
+- New Feature: Verification of block settings over CCP for some blockfamilies
+
+---------------------------------------
+version 0.25.6 Date: 2018-10-25
+---------------------------------------
+- Make skript support derivatives of TTC5XX familiy
+- New Blocks in EEPROM section: EEPROM_Read_OffsetIn, EEPROM_Write_OffsetIn. These blocks provide the offset into EEPROM as input signal.
+
+---------------------------------------
+version 0.25.5 Date: 2018-09-14
+---------------------------------------
+- Bug in ccp.c and ccp_interface.c solved
+
+---------------------------------------
+version 0.25.4 Date: 2018-09-06
+---------------------------------------
+- Bug of CRC32_EEPROM_Write-block in EEPROM block family for b_ready solved, 
+  flags correctly completion of writing CRC32 to EEPROM (issue 134348).
+- On startup ErrorCode of derated CAN-Rx immediately display actual value, 
+  omitting erroneuos IO_E_OK (issue 134400).
+- Baudrate eliminated from argument list of DBC_Import() as this information
+  is not needed for generting a CAN library.
+
+---------------------------------------
+version 0.25.3 Date: 2018-08-08
+---------------------------------------
+- MainDlg block enhanced to support user defined baudrates for CAN0-CAN2
+- Example_IOBlock_Library_CAN.mdl adapted to demonstrate a user defined baudrate
+
+---------------------------------------
+version 0.25.2 Date: 2018-08-03
+---------------------------------------
+- CCP-Driver integrated
+- MainDlg block enhanced to support CRO/DTO
+- new example in order to illustrate parametrization of CCP
+
+---------------------------------------
+version 0.24.10 Date: 2018-06-21
+---------------------------------------
+- New DM1_Application_Allinput block available
+- Activation for DM1 application blocks to send FMI=0 
+
+---------------------------------------
+version 0.24.9 Date: 2018-06-08
+---------------------------------------
+- ADC for K15 added in ADC-Blockfamily
+- make in verbose mode, to detect setup problems easily
+- updates in of how_to_make.txt according to R2018a
+- updates of template models with corrected configuration setup
+
+---------------------------------------
+version 0.24.8 Date: 2018-04-27
+---------------------------------------
+- Support of Matlab R2018a        
+- Workarround for Simulink-bug concerning TMS570 not necessary any more
+        
+---------------------------------------
+version 0.24.7 Date: 2018-04-25
+---------------------------------------
+- Issue 130848 solved: ECU switch of while EEPROM-Writing is pending
+- Support of Write_RS232 blocks within reference models
+
+---------------------------------------
+version 0.24.6 Date: 2018-03-09
+---------------------------------------
+- EEPROM raw blocks added to EEPROM block set
+
+---------------------------------------
+version 0.24.4 Date: 2018-02-28
+---------------------------------------
+- Compare blocks updated in DIAG_Status
+- Enhance Set_DO Block by voltage and current feedback
+
+---------------------------------------
+version 0.24.2 Date: 2018-02-25
+---------------------------------------
+- LIN Blockset added
+
+---------------------------------------
+version 0.23.10 Date: 2018-02-02
+---------------------------------------
+- New TTC500 IO-Driver Library 2.12 supported 
+- Template model generated
+- Automatic path generation for DBC and EEPROM-Importer
+- Adapted for R2017b
+- New target TTControl HY-TTC580 for configuration/Hardware implementation/device type
+
+---------------------------------------
+version 0.23.5 Date: 2017-09-11
+---------------------------------------
+- Make procedure for TTC510
+
+---------------------------------------
+version 0.23 prelim Date: 2017-03-01
+---------------------------------------
+- New make_all_parallel() accelerates the make procedure compared to the skript make_all()
+- New example Simulate_DM1_IOLib.mdl in order to simulate the behavior of the J1939-DM1 blocks without 
+  using I/O.
+
+---------------------------------------
+version 0.22.1 prelim Date: 2016-12-20
+---------------------------------------
+- MainDlg and MainDlg4App new options in mask: Revision Number (below "Show additional information"). This information will be used to fill the APDB
+
+---------------------------------------
+version 0.22 prelim Date: 2016-12-07
+---------------------------------------
+- MainDlg and MainDlg4App new options in mask: Node Number (below "Show additional information") and "Reset by TTC-Downloader"
+- MainDlg4App uses CAN1 for download 
+
+---------------------------------------
+version 0.21.1 prelim Date: 2016-10-20
+---------------------------------------
+- settings.mk changed in for increased code optimization
+- mem_ttc500_bl.lsf changed in order to ommit fragmentation of the flash
+
+---------------------------------------
+version 0.21 prelim Date: 2016-09-26
+---------------------------------------
+- MainDlg4App changed download baud rate to 250kbit/s
+- EEPROM-coding for prelim-version: Bug for storing new application solved
+- DM1 Occurence count issue solved
+
+
+---------------------------------------
+version 0.20.1  prelim Date: 2016-07-06
+---------------------------------------
+- DM1 handler counts up the occurrence count only on the positive edge of the trigger respectively in the moment
+  when an FMI is to be notified.
+NOTE: When a fault occurs as a short glitch (shorter than the DM1 send-period) the occurrence count will be counted 
+up internally, but as the fault has vanished no DM1 will be send out. Consequently, if the corresponding DM1 
+messages shows up later on due to the same but longer lasting fault (longer than the DM1 send-period) the 
+occurrence count will visibly have been counted up by two. This behaviour will be corrected in an upcoming release.
+
+
+-------------------------------------
+version 0.20  prelim Date: 2016-06-06
+-------------------------------------
+- The block MainDlg4App reads out EEPROM (Offset 0x0..0x2) and IO_DI_52..54 in order to extract application coding
+  In case information retrieved from EEPROM does not match with the DI the new application number is written to EEPROM
+  and the default application is called. The start the new application regularily a hard reset (KL30) is necessary.
+NOTE: This release is only ment as a prliminary work around. In future only IO_DI_00..35 may be used for coding information.
+        
+--------------------------------
+version 0.20  Date: 2016-06-02
+--------------------------------
+- Changes in the interpretation of coding pins of MainDlg4App.
+- MainDlg4App confined to use only PWM related digital inputs for coding pins.
+- Adaptions in make_all procedure in order to handle large omount of objects to be linked
+- DM1 realted blocks adapted to be re-useable within referenced models
+
+------------------------------
+version 0.19  Date: 2016-05-12  
+------------------------------
+- Issue of re-initialization of DM1-channel solved.
+- Support of model referencing
+- new target make file ert_TTC580.tmf
+- Extended make utilities: make_all() and make_obj() 
+
+------------------------------
+version 0.18a  Date: 2016-03-04  
+------------------------------
+- J1939 handle ReadCAN-Msg (Std and Ext) on the DM1-channel
+
+------------------------------
+version 0.18  Date: 2015-12-23  
+------------------------------
+- New block MainDlg4App in order to run one out of four applications depending on the setting of coding pins.
+- make modified in order to handle building of MainDlg4App models.
+- PWD_Complex_Volt and PWD_Complex_Current operative (previously only stubs)
+- VOut and PVG blocks operative (perviously only stubs)
+- SetDateAndTime and GetDateAndTime operative with additional trigger input.
+- SensorSupply_Var block removed
+- EEPROM_Importer may handle 64k of EEPROM (issue of 0.16 solved). You need to install TTC-Downloader v4.16 .
+
+------------------------------
+version 0.17  Date: 2015-11-27  
+------------------------------
+- Blocks to support J1939 DM1 services
+- New block ADC_BOARD_TEMP returns the block temperature
+- Version numbers support within MainDlg-block.
+- New block SensorSuppy_Modif allows to change the voltage of sensor supply 2 during runtime.
+- SensorSupply_5V blocks may be used beside ADC_Ratiometric blocks in order to switch sensor supply on/off.
+- SensorSupply_Var is obsolete from 0.17 onward. Use SensorSupply_Modif instead.
+- Additional option for DBC-Importer to configure debouncing for ReadMsg_CAN blocks.
+- DBC-Importer: Bug solved regarding misplacement of output Rx-ErrorCode.
+  
+------------------------------
+version 0.16  Date: 2015-11-09  
+------------------------------
+- Blocks to simply access the EEPROM
+- EEPROM-Importer capable to generate a library based on the given EEPROM layout-file.
+- hex_read and hex_write for reading & writing *.ihex files handled by the TTC-Downloader
+  Note: TTC-Downloder may only handle 32k of EEPROM in IO-Driver version 2.8.0. 
+  Please use in EEPROM-Impoter only EEPROM 0x0000 to 0x7FFF. This will be fixed in next release of IO-Driver.
+- Write_RS232 support for int8, int16, int32 (correct display of negative numbers) 
+- DBC-Importer: debounce semantics changed, with the 2nd consecutive error all errors are displayed regardless
+                whether these are identical or not. This sequence is interrupted by IO_E_OK and resumed by 
+                two successive errors.
+- DBC-Importer: a event message in the dbc-file is mapped to a regular (non-debounced) CAN Message block in order
+                to get an instandly reported ErrorCode.
+- Diag_Status: Resolved link status to block "compare to zero"
+
+
+-----------------------------
+version 0.15  Date: 2015-09-21  
+------------------------------
+- New Version of TTC580 driver library: 2.8.0 included. For the update procedure please read the _readme.txt file!
+- ADC_Current and ADC_UBAT added in library and example
+- DO_ResetProtection and PWM_ResetProtection integrated into Set_DO and Set_PWM blocks.
+- MainDlg outputs additionally the ErrorCode of IO_Driver_Init()
+- MainDlg and compare2error moved MaskInitFcn to LoadFcn
+- DiagStatus checks update of IO-Library to 2.8.0
+
+-----------------------------
+version 0.14  Date: 2015-09-18  
+------------------------------
+- DIAG_Status enhanced output by checks of correct FPGA-version and IODrv-version.
+- Implementation of SensorSupply Blockset, ADC_Resistive and PWD_Inc Block for Quadrature Encoder
+- Mask of Write_RS232 modified (derate not explicit)
+- Code Generation of ADC-Blocks modified in initialize section.
+- PWM_Simple modified LoadFcn callback.
+
+-----------------------------
+version 0.13  Date: 2015-08-31  
+------------------------------
+- Prototype of EEPROM-Importer for generation of EEPROMWrite Block
+
+-----------------------------
+version 0.12  Date: 2015-08-14  
+------------------------------
+- Augmented interface of Get_DI_VarThreshold
+- Implementation of PWM and Voltage ADC-Blocks
+- Triggering bug corrected for ReadMsg_CAN_derated and DBC_Importer
+- make command in Matlab checks the version of the TTC580 libarary before build.
+
+-----------------------------
+version 0.11  Date: 2015-07-17  
+------------------------------
+- Implementation of first DIO blocks
+
+-----------------------------
+version 0.10  Date: 2015-07-15  
+------------------------------
+- ErrorCode of Get_K15 and Get_WakeUp is dynamically sized (1 or 2) depending on Inport of subsequent block
+
+-----------------------------
+version 0.09 Date: 2015-07-07  
+------------------------------
+- Update procedure incorporated for every high level block (color/version)
+
+-----------------------------
+version 0.08  Date: 2015-06-29  
+------------------------------
+- Package for Milestone #1
+
+-----------------------------
+version 0.07  Date: 2015-06-26  
+------------------------------
+- DIAG_Status Block integrated with coding function
+
+-----------------------------
+version 0.06  Date: 2015-06-22  
+------------------------------
+- Stubs for I/O Blocks
+
+-----------------------------
+version 0.05  Date: 2015-06-08  
+------------------------------
+- Integration of Write_RS232
+
+-----------------------------
+version 0.04  Date: 2015-05-18  
+------------------------------
+- Adpation of IOLib500_utils.c in order to handle signed signals, integration of limit checks
+- Derated versions of IO_CAN_ReadMsg, IO_CAN_WriteMsg
+
+------------------------------
+version 0.03  Date: 2015-05-13  
+------------------------------
+- integrated CAN-driver functions IO_CAN_ReadMsg, IO_CAN_WriteMsg, IO_CAN_ConfigMsg
+
+------------------------------
+version 0.02  Date: 2015-05-05  
+------------------------------
+- simple MainDlg Block
+- integrated CAN-driver functions IO_CAN_ReadMsg, IO_CAN_WriteMsg, IO_CAN_ConfigMsg
+- make utility
+
+------------------------------
+version 0.01  Date: 2015-04-02  
+------------------------------
+- initial Version  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

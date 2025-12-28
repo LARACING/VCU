@@ -1,0 +1,90 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   IO_Driver_GetVersionOfFPGA_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox IO_Driver_GetVersionOfFPGA_s block
+%%
+%% Version: 0.19
+%%
+
+%implements "IO_Driver_GetVersionOfFPGA_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+   		%assign ::IO_Driver = "any"
+        %<LibAddToCommonIncludes("IO_Driver.h")>
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+   
+	%assign rev0 = LibBlockOutputSignalAddr(1, "", "",0)
+    %assign rev0_type = LibBlockOutputSignalDataTypeName(1,"")
+	%assign rev1 = LibBlockOutputSignalAddr(2, "", "",0)
+    %assign rev1_type = LibBlockOutputSignalDataTypeName(2,"")
+	%assign rev2 = LibBlockOutputSignalAddr(3, "", "",0)
+    %assign rev2_type = LibBlockOutputSignalDataTypeName(3,"")
+	%assign device = LibBlockOutputSignalAddr(4, "", "",0)
+    %assign device_type = LibBlockOutputSignalDataTypeName(4,"")
+	%assign release = LibBlockOutputSignalAddr(5, "", "",0)
+    %assign release_type = LibBlockOutputSignalDataTypeName(5,"")
+	%assign patchlevel = LibBlockOutputSignalAddr(6, "", "",0)
+    %assign patchlevel_type = LibBlockOutputSignalDataTypeName(6,"")
+
+	/* init_function call IO_Driver_GetVersionOfFPGA */
+
+
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+   
+	%assign rev0 = LibBlockOutputSignalAddr(1, "", "",0)
+    %assign rev0_type = LibBlockOutputSignalDataTypeName(1,"")
+	%assign rev1 = LibBlockOutputSignalAddr(2, "", "",0)
+    %assign rev1_type = LibBlockOutputSignalDataTypeName(2,"")
+	%assign rev2 = LibBlockOutputSignalAddr(3, "", "",0)
+    %assign rev2_type = LibBlockOutputSignalDataTypeName(3,"")
+	%assign device = LibBlockOutputSignalAddr(4, "", "",0)
+    %assign device_type = LibBlockOutputSignalDataTypeName(4,"")
+	%assign release = LibBlockOutputSignalAddr(5, "", "",0)
+    %assign release_type = LibBlockOutputSignalDataTypeName(5,"")
+	%assign patchlevel = LibBlockOutputSignalAddr(6, "", "",0)
+    %assign patchlevel_type = LibBlockOutputSignalDataTypeName(6,"")
+
+	/* function call of IO_Driver_GetVersionOfFPGA */
+
+{
+
+
+%<ErrorCode> = IO_Driver_GetVersionOfFPGA( %<rev0> , %<rev1> , %<rev2> , %<device> , %<release> , %<patchlevel> );
+
+}
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

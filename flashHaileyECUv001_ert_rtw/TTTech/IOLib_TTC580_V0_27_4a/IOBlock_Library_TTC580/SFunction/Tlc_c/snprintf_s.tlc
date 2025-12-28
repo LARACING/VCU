@@ -1,0 +1,90 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   snprintf_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox snprintf_s block
+%%
+%% Version: 0.25
+%%
+
+%implements "snprintf_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+   		%assign ::stdio = "any"
+        %<LibAddToCommonIncludes("stdio.h")>
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+	%assign max_size = rtw_param1  
+	%assign Comment = rtw_param2  
+
+	%assign value = LibBlockInputSignal(0, "", "",0)
+    %assign value_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+
+
+	%assign NumOfChar = LibBlockOutputSignal(0, "", "",0)  
+    %assign NumOfChar_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+   
+	%assign str_out = LibBlockOutputSignalAddr(1, "", "",0)
+    %assign str_out_type = LibBlockOutputSignalDataTypeName(1,"")
+
+	/* init_function call snprintf */
+
+
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+	%assign max_size = rtw_param1  
+	%assign Comment = rtw_param2  
+
+	%assign value = LibBlockInputSignal(0, "", "",0)
+    %assign value_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+
+
+	%assign NumOfChar = LibBlockOutputSignal(0, "", "",0)  
+    %assign NumOfChar_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+   
+	%assign str_out = LibBlockOutputSignalAddr(1, "", "",0)
+    %assign str_out_type = LibBlockOutputSignalDataTypeName(1,"")
+
+%if dimin0 > 1
+	/* function call of snprintf with multidimensional input */
+{
+%<NumOfChar> = snprintf((char *) %<str_out> , %<max_size> , "%<Comment>\r\n"  
+  %foreach loopIdentifier = dimin0
+  ,%<LibBlockInputSignal(0, "", "", loopIdentifier)>
+  %endforeach
+    );
+}
+%else
+  /* function call of sprintf with simple input  */
+{
+%<NumOfChar> = snprintf((char *) %<str_out> , %<max_size> , "%<Comment>\r\n" , %<value> );
+}
+%endif
+
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

@@ -1,0 +1,80 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   CAN_ConfigMsg_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox CAN_ConfigMsg_s block
+%%
+%% Version: 0.19
+%%
+
+%implements "CAN_ConfigMsg_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+   		%assign ::IO_CAN = "any"
+        %<LibAddToCommonIncludes("IO_CAN.h")>
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+	%assign channel = rtw_param1  
+	%assign mode = rtw_param2  
+	%assign id_format = rtw_param3  
+	%assign id = rtw_param4  
+	%assign ac_mask = rtw_param5  
+
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+   
+	%assign handle = LibBlockOutputSignalAddr(1, "", "",0)
+    %assign handle_type = LibBlockOutputSignalDataTypeName(1,"")
+
+	/* init_function call CAN_ConfigMsg */
+
+{
+
+
+%<ErrorCode> = IO_CAN_ConfigMsg( %<handle> , %<channel> , %<mode> , %<id_format> , %<id> , %<ac_mask> );
+
+}
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+	%assign channel = rtw_param1  
+	%assign mode = rtw_param2  
+	%assign id_format = rtw_param3  
+	%assign id = rtw_param4  
+	%assign ac_mask = rtw_param5  
+
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+   
+	%assign handle = LibBlockOutputSignalAddr(1, "", "",0)
+    %assign handle_type = LibBlockOutputSignalDataTypeName(1,"")
+
+	/* function call of CAN_ConfigMsg */
+
+
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

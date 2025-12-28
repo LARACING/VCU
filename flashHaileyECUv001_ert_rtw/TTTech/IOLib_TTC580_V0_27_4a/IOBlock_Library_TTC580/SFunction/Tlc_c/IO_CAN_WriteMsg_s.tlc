@@ -1,0 +1,107 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   IO_CAN_WriteMsg_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox IO_CAN_WriteMsg_s block
+%%
+%% Version: 0.19
+%%
+
+%implements "IO_CAN_WriteMsg_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+   		%assign ::IO_CAN = "any"
+        %<LibAddToCommonIncludes("IO_CAN.h")>
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+
+	%assign handle = LibBlockInputSignal(0, "", "",0)
+    %assign handle_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+	%assign buffer_length = LibBlockInputSignal(2, "", "",0)
+    %assign buffer_length_type = LibBlockInputSignalDataTypeName(2,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin2 = LibBlockInputSignalWidth(2)
+	%assign buffer_id_format = LibBlockInputSignal(3, "", "",0)
+    %assign buffer_id_format_type = LibBlockInputSignalDataTypeName(3,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin3 = LibBlockInputSignalWidth(3)
+	%assign buffer_id = LibBlockInputSignal(4, "", "",0)
+    %assign buffer_id_type = LibBlockInputSignalDataTypeName(4,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin4 = LibBlockInputSignalWidth(4)
+
+	%assign buffer_data = LibBlockInputSignalAddr(1, "", "",0)
+    %assign buffer_data_type = LibBlockInputSignalDataTypeName(1,"")
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+   
+
+	/* init_function call IO_CAN_WriteMsg */
+
+
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+
+	%assign handle = LibBlockInputSignal(0, "", "",0)
+    %assign handle_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+	%assign buffer_length = LibBlockInputSignal(2, "", "",0)
+    %assign buffer_length_type = LibBlockInputSignalDataTypeName(2,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin2 = LibBlockInputSignalWidth(2)
+	%assign buffer_id_format = LibBlockInputSignal(3, "", "",0)
+    %assign buffer_id_format_type = LibBlockInputSignalDataTypeName(3,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin3 = LibBlockInputSignalWidth(3)
+	%assign buffer_id = LibBlockInputSignal(4, "", "",0)
+    %assign buffer_id_type = LibBlockInputSignalDataTypeName(4,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin4 = LibBlockInputSignalWidth(4)
+
+	%assign buffer_data = LibBlockInputSignalAddr(1, "", "",0)
+    %assign buffer_data_type = LibBlockInputSignalDataTypeName(1,"")
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+   
+
+	/* function call of IO_CAN_WriteMsg */
+
+{
+IO_CAN_DATA_FRAME tmp_struct_1={0};
+
+memcpy(tmp_struct_1.data,%<buffer_data>,2*sizeof(uint32_T));
+tmp_struct_1.length = %<buffer_length>;
+tmp_struct_1.id_format = %<buffer_id_format>;
+tmp_struct_1.id = %<buffer_id>;
+
+%<ErrorCode> = IO_CAN_WriteMsg( %<handle> ,&tmp_struct_1);
+
+}
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

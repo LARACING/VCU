@@ -1,0 +1,80 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   bit_unpacking_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox bit_unpacking_s block
+%%
+%% Version: 0.19
+%%
+
+%implements "bit_unpacking_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+   		%assign ::IOLib500_utils = "any"
+        %<LibAddToCommonIncludes("IOLib500_utils.h")>
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+	%assign Endianness = rtw_param1  
+	%assign Format = rtw_param2  
+	%assign Inversion = rtw_param3  
+	%assign Startbit = rtw_param4  
+	%assign Width_bits = rtw_param5  
+	%assign Factor = rtw_param6  
+	%assign Offset = rtw_param7  
+
+
+	%assign Data_in = LibBlockInputSignalAddr(0, "", "",0)
+    %assign Data_in_type = LibBlockInputSignalDataTypeName(0,"")
+
+ 
+	%assign Data_out = LibBlockOutputSignalAddr(0, "", "",0)
+    %assign Data_out_type = LibBlockOutputSignalDataTypeName(0,"")
+
+	/* init_function call bit_unpacking */
+
+
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+	%assign Endianness = rtw_param1  
+	%assign Format = rtw_param2  
+	%assign Inversion = rtw_param3  
+	%assign Startbit = rtw_param4  
+	%assign Width_bits = rtw_param5  
+	%assign Factor = rtw_param6  
+	%assign Offset = rtw_param7  
+
+
+	%assign Data_in = LibBlockInputSignalAddr(0, "", "",0)
+    %assign Data_in_type = LibBlockInputSignalDataTypeName(0,"")
+
+ 
+	%assign Data_out = LibBlockOutputSignalAddr(0, "", "",0)
+    %assign Data_out_type = LibBlockOutputSignalDataTypeName(0,"")
+
+	/* function call of bit_unpacking */
+
+{
+
+
+bit_unpacking( %<Data_in> , %<Data_out> , %<Endianness> , %<Format> , %<Inversion> , %<Startbit> , %<Width_bits> , %<Factor> , %<Offset> );
+
+}
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

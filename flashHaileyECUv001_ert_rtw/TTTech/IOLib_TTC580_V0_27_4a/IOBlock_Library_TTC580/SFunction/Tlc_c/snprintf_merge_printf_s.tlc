@@ -1,0 +1,101 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   snprintf_merge_printf_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox snprintf_merge_printf_s block
+%%
+%% Version: 0.25
+%%
+
+%implements "snprintf_merge_printf_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+   		%assign ::stdio = "any"
+        %<LibAddToCommonIncludes("stdio.h")>
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+	%assign max_size = rtw_param1  
+	%assign Comment = rtw_param2  
+
+	%assign value = LibBlockInputSignal(0, "", "",0)
+    %assign value_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+
+
+	%assign NumOfChar = LibBlockOutputSignal(0, "", "",0)  
+    %assign NumOfChar_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+   
+	%assign str_out = LibBlockOutputSignalAddr(1, "", "",0)
+    %assign str_out_type = LibBlockOutputSignalDataTypeName(1,"")
+
+	/* init_function call snprintf_merge_printf */
+
+
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+	%assign max_size = rtw_param1  
+	%assign Comment = rtw_param2  
+
+	%assign value = LibBlockInputSignal(0, "", "",0)
+    %assign value_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+
+
+	%assign NumOfChar = LibBlockOutputSignal(0, "", "",0)  
+    %assign NumOfChar_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+   
+	%assign str_out = LibBlockOutputSignalAddr(1, "", "",0)
+    %assign str_out_type = LibBlockOutputSignalDataTypeName(1,"")
+
+	/* function call of snprintf_merge_printf */
+	%%check on SS_DOUBLE and SS_SINGLE
+ 	%assign Data_in_type = LibBlockInputSignalDataTypeId(0)
+ 	//Data_in_type = %<Data_in_type>
+{
+   %if !EXISTS(printf_first) && !IsModelReferenceRTWTarget()
+       %%printf("\033[2J\033[;H");   // console_cls        
+       %%printf("\033[0;0H");        // set cursor to position to 0
+	%if (%<Data_in_type> == 0) || (%<Data_in_type> == 1)	
+        %<NumOfChar> = snprintf((char *) %<str_out> , %<max_size>+20U , "\033[2J\033[;H\033[0;0H%<Comment> %f\r\n" , %<value> );
+    %elseif (%<Data_in_type> == 3) || (%<Data_in_type> == 5) || (%<Data_in_type> == 7)
+        %<NumOfChar> = snprintf((char *) %<str_out> , %<max_size>+20U , "\033[2J\033[;H\033[0;0H%<Comment> %u\r\n" , %<value> );
+	%else 
+        %<NumOfChar> = snprintf((char *) %<str_out> , %<max_size>+20U , "\033[2J\033[;H\033[0;0H%<Comment> %d\r\n" , %<value> );
+	%endif
+   	%assign ::printf_first = "any"
+   %else
+	%if (%<Data_in_type> == 0) || (%<Data_in_type> == 1)	
+        %<NumOfChar> = snprintf((char *) %<str_out> , %<max_size> , "%<Comment> %f\r\n" , %<value> );
+    %elseif (%<Data_in_type> == 3) || (%<Data_in_type> == 5) || (%<Data_in_type> == 7)
+        %<NumOfChar> = snprintf((char *) %<str_out> , %<max_size> , "%<Comment> %u\r\n" , %<value> );
+	%else 
+        %<NumOfChar> = snprintf((char *) %<str_out> , %<max_size> , "%<Comment> %d\r\n" , %<value> );
+	%endif
+   %endif
+
+}
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

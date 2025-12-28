@@ -1,0 +1,114 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   IO_RTC_SetDateAndTime_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox IO_RTC_SetDateAndTime_s block
+%%
+%% Version: 0.19
+%%
+
+%implements "IO_RTC_SetDateAndTime_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+   		%assign ::IO_RTC = "any"
+        %<LibAddToCommonIncludes("IO_RTC.h")>
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+
+	%assign seconds = LibBlockInputSignal(0, "", "",0)
+    %assign seconds_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+	%assign minutes = LibBlockInputSignal(1, "", "",0)
+    %assign minutes_type = LibBlockInputSignalDataTypeName(1,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin1 = LibBlockInputSignalWidth(1)
+	%assign hours = LibBlockInputSignal(2, "", "",0)
+    %assign hours_type = LibBlockInputSignalDataTypeName(2,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin2 = LibBlockInputSignalWidth(2)
+	%assign days = LibBlockInputSignal(3, "", "",0)
+    %assign days_type = LibBlockInputSignalDataTypeName(3,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin3 = LibBlockInputSignalWidth(3)
+	%assign months = LibBlockInputSignal(4, "", "",0)
+    %assign months_type = LibBlockInputSignalDataTypeName(4,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin4 = LibBlockInputSignalWidth(4)
+	%assign years = LibBlockInputSignal(5, "", "",0)
+    %assign years_type = LibBlockInputSignalDataTypeName(5,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin5 = LibBlockInputSignalWidth(5)
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+   
+
+	/* init_function call IO_RTC_SetDateAndTime */
+
+
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+
+	%assign seconds = LibBlockInputSignal(0, "", "",0)
+    %assign seconds_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+	%assign minutes = LibBlockInputSignal(1, "", "",0)
+    %assign minutes_type = LibBlockInputSignalDataTypeName(1,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin1 = LibBlockInputSignalWidth(1)
+	%assign hours = LibBlockInputSignal(2, "", "",0)
+    %assign hours_type = LibBlockInputSignalDataTypeName(2,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin2 = LibBlockInputSignalWidth(2)
+	%assign days = LibBlockInputSignal(3, "", "",0)
+    %assign days_type = LibBlockInputSignalDataTypeName(3,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin3 = LibBlockInputSignalWidth(3)
+	%assign months = LibBlockInputSignal(4, "", "",0)
+    %assign months_type = LibBlockInputSignalDataTypeName(4,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin4 = LibBlockInputSignalWidth(4)
+	%assign years = LibBlockInputSignal(5, "", "",0)
+    %assign years_type = LibBlockInputSignalDataTypeName(5,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin5 = LibBlockInputSignalWidth(5)
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+   
+
+	/* function call of IO_RTC_SetDateAndTime */
+
+{
+
+
+%<ErrorCode> = IO_RTC_SetDateAndTime( %<seconds> , %<minutes> , %<hours> , %<days> , %<months> , %<years> );
+
+}
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

@@ -1,0 +1,35 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2019 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   var_XmuxY_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox var_XmuxY_s block
+%%
+%% Version: 0.10
+%%
+
+%implements "var_XmuxY_s" "C"
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+    %%by design of S-function the following condition holds: dimin0 >= dimout0
+
+	/* var_XmuxY InSize=%<dimin0> OutSize=%<dimout0>*/
+    %foreach dimIdx = dimout0
+    	%assign xDyn_0 = LibBlockInputSignal(0, "", "",dimIdx)
+    	%assign yDyn_0 = LibBlockOutputSignal(0, "", "",dimIdx)  
+        %<yDyn_0> = %<xDyn_0>; 
+    %endforeach
+
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

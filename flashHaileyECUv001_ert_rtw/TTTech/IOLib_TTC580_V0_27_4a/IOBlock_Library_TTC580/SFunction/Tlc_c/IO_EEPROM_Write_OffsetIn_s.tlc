@@ -1,0 +1,99 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   IO_EEPROM_Write_OffsetIn_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox IO_EEPROM_Write_OffsetIn_s block
+%%
+%% Version: 0.25
+%% 
+
+%implements "IO_EEPROM_Write_OffsetIn_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+   		%assign ::IO_EEPROM = "any"
+        %<LibAddToCommonIncludes("IO_EEPROM.h")>
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+	%assign length = rtw_param1  
+
+	%assign offset = LibBlockInputSignal(0, "", "",0)
+    %assign offset_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+	%assign EC_Write_Mirror = LibBlockInputSignal(1, "", "",0)
+    %assign EC_Write_Mirror_type = LibBlockInputSignalDataTypeName(1,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin1 = LibBlockInputSignalWidth(1)
+	%assign GetStatus = LibBlockInputSignal(2, "", "",0)
+    %assign GetStatus_type = LibBlockInputSignalDataTypeName(2,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin2 = LibBlockInputSignalWidth(2)
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+   
+
+	/* init_function call IO_EEPROM_Write_OffsetIn */
+
+
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+	%assign length = rtw_param1  
+
+	%assign offset = LibBlockInputSignal(0, "", "",0)
+    %assign offset_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+	%assign EC_Write_Mirror = LibBlockInputSignal(1, "", "",0)
+    %assign EC_Write_Mirror_type = LibBlockInputSignalDataTypeName(1,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin1 = LibBlockInputSignalWidth(1)
+	%assign GetStatus = LibBlockInputSignal(2, "", "",0)
+    %assign GetStatus_type = LibBlockInputSignalDataTypeName(2,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin2 = LibBlockInputSignalWidth(2)
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+   
+
+	/* function call of IO_EEPROM_Write_OffsetIn */
+
+{
+    static boolean_T b_update_pending = false;
+    /* default : line through */
+    %<ErrorCode> = %<EC_Write_Mirror>; 
+    if (%<EC_Write_Mirror> == IO_E_BUSY) {
+        b_update_pending = true;
+    }
+    else if (b_update_pending && (%<GetStatus> == IO_E_OK)){
+        b_update_pending = false;
+        %<ErrorCode> = IO_EEPROM_Write( %<offset> , %<length>, &(EEPROM_mirror[%<offset>]) );
+    }
+}
+
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

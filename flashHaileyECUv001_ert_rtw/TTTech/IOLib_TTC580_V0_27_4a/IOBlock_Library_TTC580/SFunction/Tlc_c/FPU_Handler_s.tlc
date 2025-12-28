@@ -1,0 +1,134 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   FPU_Handler_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox FPU_Handler_s block
+%%
+%% Version: 0.25
+%%
+
+%implements "FPU_Handler_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+   		%assign ::IO_Driver = "any"
+        %<LibAddToCommonIncludes("IO_Driver.h")>
+        %openfile buffer
+        #define FPU_HANDLER_ACTIVE
+        %closefile buffer
+        %<LibCacheDefine(buffer)>
+        %if IsModelReferenceRTWTarget()
+             %%START_ASSERT
+             %assign errTxt = "The block FPU_Handler may not be used in referenced model " ...
+                    "Please place the FPU_Handler block in the top model. "
+          	%<LibBlockReportError(block,errTxt)>
+            %%END_ASSERT
+        %endif
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")&& !IsModelReferenceRTWTarget()
+	%assign division_by_zero = rtw_param1  
+	%assign input_denormal = rtw_param2  
+	%assign invalid_operation = rtw_param3  
+	%assign overflow = rtw_param4  
+	%assign underflow = rtw_param5  
+
+    %assign MdlName = LibGetModelName()
+    %assign cFile = LibCreateSourceFile("Source", "Custom", MdlName+"_FPU_handler_callback")
+    %openfile tmpBuf
+#include "ptypes_tms570.h"
+#include "DIAG_Functions.h"
+
+/* Settings in mask of Block FPU_Handler (%<division_by_zero> , %<input_denormal> , %<invalid_operation> , %<overflow> , %<underflow> ) */
+
+void FPU_Handler_CB(bool division_by_zero,
+                    bool input_denormal,
+                    bool invalid_operation,
+                    bool overflow,
+                    bool underflow)
+{
+    if (division_by_zero != FALSE)
+    {
+%if (division_by_zero)
+        (void)DIAG_EnterSafestate(); 
+%else
+        /* Application specific safety handling: division_by_zero is regarded as non critical error */
+%endif
+    }
+    else
+    {
+        /* Callback called for another reason */
+    }
+
+    if (input_denormal != FALSE)
+    {
+%if (input_denormal)
+        (void)DIAG_EnterSafestate(); 
+%else
+        /* Application specific safety handling: input_denormal is regarded as non critical error, an extremely small value was set to 0, no safe state in this case */
+%endif
+    }
+    else
+    {
+        /* Callback called for another reason */
+    }
+
+    if (invalid_operation != FALSE)
+    {
+%if (invalid_operation)
+        (void)DIAG_EnterSafestate();
+%else
+        /* Application specific safety handling: invalid_operation is regarded as non critical error */
+%endif
+    }
+    else
+    {
+        /* Callback called for another reason */
+    }
+
+    if (overflow != FALSE)
+    {
+%if (overflow)
+        (void)DIAG_EnterSafestate();
+%else
+        /* Application specific safety handling: overflow is regarded as non critical error */
+%endif
+    }
+    else
+    {
+        /* Callback called for another reason */
+    }
+
+    if (underflow != FALSE)
+    {
+%if (underflow)
+        (void)DIAG_EnterSafestate();
+%else
+        /* Application specific safety handling: underflow is regarded as no critical error, small rounding error */
+%endif
+    }
+    else
+    {
+        /* Callback called for another reason */
+    }
+
+    %closefile tmpBuf
+    %<LibSetSourceFileSection(cFile, "Functions", tmpBuf)>
+
+    %openfile tmpBuf_close
+}
+    %closefile tmpBuf_close
+    %<LibSetSourceFileSection(cFile, "UserBottom", tmpBuf_close)>
+
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

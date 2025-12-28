@@ -1,0 +1,78 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   POWER_Get_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox POWER_Get_s block
+%%
+%% Version: 0.19
+%%
+
+%implements "POWER_Get_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+   		%assign ::IO_POWER = "any"
+        %<LibAddToCommonIncludes("IO_POWER.h")>
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+	%assign pin = rtw_param1  
+
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+  	%if dimout0 > 1
+	%assign yDyn_0_1 = LibBlockOutputSignal(0, "", "",1)  
+    %<yDyn_0_1> = (%<ErrorCode_type>)%<rtw_param1>;  // additionally dimension of 1st port assigned to mask parameter
+    %endif 
+	%assign state = LibBlockOutputSignalAddr(1, "", "",0)
+    %assign state_type = LibBlockOutputSignalDataTypeName(1,"")
+
+	/* init_function call POWER_Get */
+
+
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+	%assign pin = rtw_param1  
+
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+  	%if dimout0 > 1
+	%assign yDyn_0_1 = LibBlockOutputSignal(0, "", "",1)  
+    %<yDyn_0_1> = (%<ErrorCode_type>)%<rtw_param1>;  // additionally dimension of 1st port assigned to mask parameter
+    %endif 
+	%assign state = LibBlockOutputSignalAddr(1, "", "",0)
+    %assign state_type = LibBlockOutputSignalDataTypeName(1,"")
+
+	/* function call of POWER_Get */
+
+{
+
+
+%<ErrorCode> = IO_POWER_Get( %<pin> , %<state> );
+
+}
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

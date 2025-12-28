@@ -1,0 +1,113 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   LIN_Read_intern_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox LIN_Read_intern_s block
+%%
+%% Version: 0.24
+%%
+
+%implements "LIN_Read_intern_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+   		%assign ::IO_LIN = "any"
+        %<LibAddToCommonIncludes("IO_LIN.h")>
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+
+	%assign frame_id = LibBlockInputSignal(0, "", "",0)
+    %assign frame_id_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+	%assign frame_length = LibBlockInputSignal(1, "", "",0)
+    %assign frame_length_type = LibBlockInputSignalDataTypeName(1,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin1 = LibBlockInputSignalWidth(1)
+	%assign b_reqst = LibBlockInputSignal(2, "", "",0)
+    %assign b_reqst_type = LibBlockInputSignalDataTypeName(2,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin2 = LibBlockInputSignalWidth(2)
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+  	%if dimout0 > 1
+	%assign yDyn_0_1 = LibBlockOutputSignal(0, "", "",1)  
+    %<yDyn_0_1> = (%<ErrorCode_type>)%<rtw_param1>;  // additionally dimension of 1st port assigned to mask parameter
+    %endif 
+	%assign frame_data = LibBlockOutputSignalAddr(1, "", "",0)
+    %assign frame_data_type = LibBlockOutputSignalDataTypeName(1,"")
+	/* init_function call LIN_Read_intern */
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+
+	%assign frame_id = LibBlockInputSignal(0, "", "",0)
+    %assign frame_id_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+	%assign frame_length = LibBlockInputSignal(1, "", "",0)
+    %assign frame_length_type = LibBlockInputSignalDataTypeName(1,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin1 = LibBlockInputSignalWidth(1)
+	%assign b_reqst = LibBlockInputSignal(2, "", "",0)
+    %assign b_reqst_type = LibBlockInputSignalDataTypeName(2,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin2 = LibBlockInputSignalWidth(2)
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+  	%if dimout0 > 1
+	%assign yDyn_0_1 = LibBlockOutputSignal(0, "", "",1)  
+    %<yDyn_0_1> = (%<ErrorCode_type>)%<rtw_param1>;  // additionally dimension of 1st port assigned to mask parameter
+    %endif 
+	%assign frame_data = LibBlockOutputSignalAddr(1, "", "",0)
+    %assign frame_data_type = LibBlockOutputSignalDataTypeName(1,"")
+    %assign dimout1 = LibBlockOutputSignalWidth(1)
+	/* function call of LIN_Read_intern */
+{
+static IO_LIN_DATA_FRAME tmp_struct_1 = {0};
+static IO_ErrorType ErrorCode_IO_LIN_Read = IO_E_LIN_TIMEOUT;  /* need for polling for new data indication, IC=IO_E_LIN_TIMEOUT */
+
+if (%<b_reqst>!=0) { 
+    tmp_struct_1.id = %<frame_id>;
+    tmp_struct_1.length = %<frame_length>;
+    ErrorCode_IO_LIN_Read = IO_LIN_Read(&tmp_struct_1 );
+}
+
+if (ErrorCode_IO_LIN_Read == IO_E_OK) {
+    %<ErrorCode> = IO_LIN_GetStatus();
+    if (%<ErrorCode> == IO_E_OK) {
+        memcpy(%<frame_data>,tmp_struct_1.data,%<dimout1>*sizeof(uint8_T));
+    }
+}
+else {
+    %<ErrorCode> = ErrorCode_IO_LIN_Read;   // the read request will never be processed -> submit new
+}
+  
+
+
+}
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

@@ -1,0 +1,635 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   MainDlg_basic_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox MainDlg_basic_s block
+%%
+%% rev. 
+%% 2015-06-28   eho Name of generated file is Mdlname + "_main"
+%% 2015-09-21	eho	Output of ErrorCode from IO_Driver_Init()
+%% 2015-09-24	eho	Define EEPROM_Mirror buffer
+%% 2015-11-19   eho MainDlg -> MainDlg_basic because building a compound block 
+%%                  integrating DM1_Init below MainDlg-Block
+%%                  CYCLE_TIME -> CYCLE_TIME_US
+%% 2015-12-02   eho error_callback() permanently introduced
+%%                  <Model>_setup() for individual CAN-Initialisation prepared for 4App
+%% 2016-12-07	eho Power cycle on TTC-Downloader configurabel automatic/maunuall
+%% 2016-12-20	eho revision number in interface
+%% 2018-07-10   eho Prepared for CCP dialog
+%% 2018-08-07   eho user defined baudrate enabled for CAN0-2
+%% 2020-08-19   eho support of FPU exception handler configuration
+%%
+%% Version: 0.25
+%%
+
+%implements "MainDlg_basic_s" "C"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+   		%assign ::IO_CAN = "any"
+        %<LibAddToCommonIncludes("IO_CAN.h")>
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) void %%NOT Output%%
+%if (TargetType == "RT")
+	%assign baudrate_CAN0 = rtw_param1  
+	%assign tseg1_CAN0 = rtw_param2  
+	%assign tseg2_CAN0 = rtw_param3  
+	%assign sjw_CAN0 = rtw_param4  
+	%assign brp_CAN0 = rtw_param5  
+	%assign baudrate_CAN1 = rtw_param6  
+	%assign tseg1_CAN1 = rtw_param7  
+	%assign tseg2_CAN1 = rtw_param8  
+	%assign sjw_CAN1 = rtw_param9  
+	%assign brp_CAN1 = rtw_param10  
+	%assign baudrate_CAN2 = rtw_param11  
+	%assign tseg1_CAN2 = rtw_param12  
+	%assign tseg2_CAN2 = rtw_param13  
+	%assign sjw_CAN2 = rtw_param14  
+	%assign brp_CAN2 = rtw_param15  
+	%assign baudrate_CAN3 = rtw_param16  
+	%assign baudrate_CAN4 = rtw_param17  
+	%assign baudrate_CAN5 = rtw_param18  
+	%assign baudrate_CAN6 = rtw_param19  
+	%assign tseg1 = rtw_param20  
+	%assign tseg2 = rtw_param21  
+	%assign sjw = rtw_param22  
+	%assign Duration_ms = rtw_param23  
+	%assign glitch_filter_time = rtw_param24  
+	%assign watchdog_window_size = rtw_param25  
+	%assign watchdog_reset_behavior = rtw_param26  
+	%assign brp = rtw_param27  
+	%assign Major_Number = rtw_param28  
+	%assign Minor_Number = rtw_param29  
+	%assign Revison_Number = rtw_param30  
+	%assign Node_Number = rtw_param31  
+	%assign Enable_Reset_by_TTCDownloader = rtw_param32  
+	%assign Enable_CCP = rtw_param33  
+	%assign CRO_ID = rtw_param34  
+	%assign DTO_ID = rtw_param35  
+	%assign CCP_Station_Addr = rtw_param36  
+	%assign CCP_Station_ID = rtw_param37  
+	%assign CPP_channel = rtw_param38  
+	%assign CPP_id_format = rtw_param39  
+	%assign bEnable_DAQ0 = rtw_param40  
+	%assign bEnable_DAQ1_2 = rtw_param41  
+	%assign ODT_total = rtw_param42  
+	%assign bEnable_ErrorCBAction = rtw_param43  
+	%assign bDIAG_ERR_DISABLE_SSW0 = rtw_param44  
+	%assign bDIAG_ERR_DISABLE_SSW1 = rtw_param45  
+	%assign bDIAG_ERR_DISABLE_SSW2 = rtw_param46  
+	%assign bFlashOverEthernet = rtw_param47  
+	
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    	%assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    	%% 1-based dimension info used for eventual subsequent dyn-ports
+    	%assign dimout0 = LibBlockOutputSignalWidth(0)
+  	%assign ExecutionTime = LibBlockOutputSignal(1, "", "",0)  
+    	%assign ExecutionTime_type = LibBlockOutputSignalDataTypeName(1,"")
+    	%% 1-based dimension info used for eventual subsequent dyn-ports
+    	%assign dimout1 = LibBlockOutputSignalWidth(1)
+
+
+    %if !EXISTS(MAIN_CONFIG_S)
+
+
+        %assign ::MAIN_CONFIG_S = "any"
+        %% 2015-04-24 BEGIN
+        %assign MdlName = LibGetModelName()
+        %assign cFile = LibCreateSourceFile("Source", "Custom", MdlName+"_main")
+        %% 2015-04-24 END
+
+
+        %openfile tmpBuf
+
+
+/**************************************************************************************************
+ * Includes
+ *************************************************************************************************/
+#include "APDB.h"
+#include "IO_Driver.h"
+#include "IO_RTC.h"
+#include "%<LibGetMdlPubHdrBaseName()>.h"
+#include "%<LibGetMdlPrvHdrBaseName()>.h"
+%if Enable_CCP
+#include "ccp.h"
+#include "ccp_config.h"
+%endif
+%if bFlashOverEthernet 
+#include "IO_DOWNLOAD.h"
+%endif
+
+/**************************************************************************************************
+ * Defines
+ *************************************************************************************************/
+/* modify to adjust application version */
+#define MAJOR_NUMBER            %<Major_Number>
+#define MINOR_NUMBER            %<Minor_Number>
+#define REVISION_NUMBER         %<Revison_Number>
+
+/* modify to adjust application cycle time */
+#define CYCLE_TIME_US              (%<Duration_ms>*1000U)
+
+/* Type of ECU: on HY_TTC590 Read_Mirror/Write_Mirror needs to be adapted*/
+#define HY_TTC580
+/**************************************************************************************************
+ * Static data
+ *************************************************************************************************/
+#ifdef HY_TTC590
+ubyte1 EEPROM_mirror[32768U];
+#else
+ubyte1 EEPROM_mirror[65536U];
+#endif
+IO_ErrorType ErrorCode_EEPROM_mirror = IO_E_OK;
+
+/**************************************************************************************************
+ * Static prototypes
+ *************************************************************************************************/
+extern void %<LibGetMdlPubHdrBaseName()>_setup(void); //CAN_Init
+extern ubyte2 %<MdlName>_APPL_ErrorCb(ubyte1 diag_state,
+                           ubyte1 watchdog_state,
+                           DIAG_ERRORCODE * const error); /* error reactions defined by diag_errorcode_for_CB_intern_s */
+#ifdef FPU_HANDLER_ACTIVE
+extern void FPU_Handler_CB(bool division_by_zero,
+                     bool input_denormal,
+                     bool invalid_operation,
+                     bool overflow,
+                     bool underflow);
+#endif
+
+
+/**************************************************************************************************
+ * Application Database,
+ * needed for TTC-Downloader
+ *************************************************************************************************/
+#pragma SET_DATA_SECTION (".APDB_SEC")
+volatile const BL_APDB Apdb_t =
+{
+    APDB_VERSION,           /* APDB version                                        */
+    {0},                    /* Flash date (provided by TTC-Downloader)             */
+                            /* Build date                                          */
+    {((((RTS_TTC_FLASH_DATE_YEAR)   & 0x0FFF) <<  0) |
+      (((RTS_TTC_FLASH_DATE_MONTH)  & 0x0F  ) << 12) |
+      (((RTS_TTC_FLASH_DATE_DAY)    & 0x1F  ) << 16) |
+      (((RTS_TTC_FLASH_DATE_HOUR)   & 0x1F  ) << 21) |
+      (((RTS_TTC_FLASH_DATE_MINUTE) & 0x3F  ) << 26))},
+    0,                      /* Node type                                           */
+    0,                      /* CRC start address (provided by TTC-Downloader)      */
+    0,                      /* code size (provided by TTC-Downloader)              */
+    0,                      /* Legacy application CRC (provided by TTC-Downloader) */
+    0,                      /* Application CRC (provided by TTC-Downloader)        */
+    %<Node_Number>,                      /* Node number                                         */
+    0,                      /* CRC seed (provided by TTC-Downloader)               */
+    0,                      /* Flags                                               */
+    0,                      /* Hook 1                                              */
+    0,                      /* Hook 2                                              */
+    0,                      /* Hook 3                                              */
+    APPL_START,             /* Main address, i.e., application entry point         */
+    {0, 1},                 /* CAN download ID (standard format, ID 0x1)           */
+    {0, 2},                 /* CAN upload ID (standard format, ID 0x2)             */
+    0,                      /* Legacy header CRC (provided by TTC-Downloader)      */
+                            /* Application version (major.minor.revision)          */
+    ((((ubyte4)REVISION_NUMBER) <<  0) |
+     (((ubyte4)   MINOR_NUMBER) << 16) |
+     (((ubyte4)   MAJOR_NUMBER) << 24)),
+    %<baudrate_CAN0>,       /* CAN baud rate in kbps                               */
+    0,                      /* CAN channel                                         */
+    0,                      /* Password (disable password protection)              */
+    0,                      /* Magic seed                                          */
+    { 10, 100,  30, 200},   /* Target IP address                                   */
+    {255, 255,   0,   0},   /* Subnet mask                                         */
+    {239,   0,   0,   1},   /* Multicast IP address                                */
+    0,                      /* Debug key                                           */
+    0,                      /* Automatic baud rate detection timeout               */
+    0x00,                   /* Manufacturer ID                                     */
+    0x00,                   /* Application ID                                      */
+    {0},                    /* Reserved, must be set to zero                       */
+    0                       /* Header CRC (provided by TTC-Downloader)             */
+};
+
+#pragma SET_DATA_SECTION()
+
+/**************************************************************************************************
+ * Global functions
+ *************************************************************************************************/
+extern IO_ErrorType IO_INT_WD_SoftReset(void);
+
+/* ============================================================================================= */
+/* Function Name:          main                                                                  */
+/* ============================================================================================= */
+
+#pragma TASK( main );
+void main(void)
+{
+    volatile IO_ErrorType io_error = IO_E_OK;
+    ubyte4 timestamp = 0UL;
+    bool request_reset_ttc_downloader = FALSE; 
+%if Enable_Reset_by_TTCDownloader
+    ubyte2 handle_read_downloader = 0U; 
+    IO_CAN_DATA_FRAME frame_read = { 0 }; 
+%endif
+%if Enable_CCP
+  /* ccp specific */
+  ubyte2 handle_ccp_CRO = 0U;
+  IO_CAN_DATA_FRAME frame_ccp_CRO = { 0 };  
+    %if bEnable_DAQ1_2
+        CCP_BYTE alternate_cnt = 0U;  // start with ccpDaq(1)
+    %endif
+%endif
+
+    /* safety configuration */
+    IO_DRIVER_SAFETY_CONF safety_conf;
+    safety_conf.command_period  = CYCLE_TIME_US;                       /* cycle period: 50 ms      */
+    safety_conf.window_size = %<watchdog_window_size>;  		    /* window size       */
+    safety_conf.reset_behavior = %<watchdog_reset_behavior>;       /* resets       */
+    safety_conf.glitch_filter_time = %<glitch_filter_time>;         /* ms deglitch            */
+    safety_conf.error_callback = %<MdlName>_APPL_ErrorCb;       /* error callback        */
+    safety_conf.notify_callback = NULL;                  	    /*no notification callback    */
+
+    /* initialize IO driver with safety configuration */
+    %<ErrorCode> = IO_Driver_Init(&safety_conf);
+#ifdef FPU_HANDLER_ACTIVE
+    io_error = IO_Driver_SetFPUHandler(&FPU_Handler_CB);
+#endif
+
+    %<LibGetMdlPubHdrBaseName()>_setup();           // Basic Setup
+    %<LibGetMdlPubHdrBaseName()>_initialize();      // Initialization
+
+%if Enable_Reset_by_TTCDownloader
+    /* configure CAN to read in possible TTC-Downloader message */
+    frame_read.id_format = IO_CAN_STD_FRAME;
+    frame_read.length = 8;
+    frame_read.id = 0x600 + %<Node_Number>;
+    IO_CAN_ConfigMsg(&handle_read_downloader,
+      IO_CAN_CHANNEL_0, 
+      IO_CAN_MSG_READ, 
+      frame_read.id_format, 
+      frame_read.id,
+      0x7FF); 
+%endif
+%if bFlashOverEthernet
+    // initialize Ethernet interface for handling download requests
+    IO_DOWNLOAD_Init();
+%endif
+%if Enable_CCP
+  /* initialize CCP */
+  frame_ccp_CRO.id_format = CCP_ID_FORMAT;
+  frame_ccp_CRO.length = 8;
+  frame_ccp_CRO.id = CCP_CRO_ID;
+  IO_CAN_ConfigMsg(&handle_ccp_CRO,
+                   CCP_CAN_CHANNEL,
+                   IO_CAN_MSG_READ,
+                   frame_ccp_CRO.id_format,
+                   frame_ccp_CRO.id,
+    %if CPP_id_format == "IO_CAN_STD_FRAME"
+                   0x7FF
+    %else
+                   0x1FFFFFFF
+    %endif
+    );
+  ccpInit();
+  ccpSend(NULL);    // init the local buffers for DTOs
+%endif
+
+    /* start the RTC */
+    IO_RTC_StartTime(&timestamp);
+
+    /* loop forever */
+    while (1)
+    {
+        io_error = IO_Driver_TaskBegin();
+%if Enable_Reset_by_TTCDownloader
+        /* check for correct TTC-Downloader message */
+        if (IO_CAN_MsgStatus(handle_read_downloader) == IO_E_OK) {
+            IO_CAN_ReadMsg(handle_read_downloader,
+                           &frame_read);
+            if ((frame_read.data[0] == 0x2BU) &&
+                (frame_read.data[1] == 0x25U) &&
+                (frame_read.data[2] == 0x10U) &&
+                (frame_read.data[3] == 0x01U) &&
+                (frame_read.data[4] == 0x13U) &&
+                (frame_read.data[5] == 0x03U) &&
+                (frame_read.data[6] == 0x00U) &&
+                (frame_read.data[7] == 0x00U)   ) {
+                request_reset_ttc_downloader = TRUE;
+            }
+        }
+%endif    
+%if bFlashOverEthernet
+    request_reset_ttc_downloader = FALSE;   //avoid multiple reset sources
+    if (IO_DOWNLOAD_CheckRequest() == IO_E_OK)
+    {
+        // launch ECU in download mode
+        IO_DOWNLOAD_Launch();
+    }
+%endif
+        
+        /* check for condition of reset */
+        if (request_reset_ttc_downloader) {
+            (void)IO_INT_WD_SoftReset();
+        }
+        else {
+            /* application code */
+            %<LibGetMdlPubHdrBaseName()>_step();       // Application
+            /* application end */
+        }    
+%if Enable_CCP && (bEnable_DAQ0 || bEnable_DAQ1_2)
+        if (IO_RTC_GetTimeUS(timestamp) < CYCLE_TIME_US) {  // some time left for CRO & DAQ processing
+          io_error = IO_CAN_ReadMsg(handle_ccp_CRO,
+                    &frame_ccp_CRO);
+          if ((io_error == IO_E_OK) ||
+              (io_error == IO_E_CAN_OVERFLOW) )  {          //check if one CRO was read
+                ccpCommand(frame_ccp_CRO.data);             // process the CCP-Request from Master
+          }
+    %if bEnable_DAQ0
+          ccpDaq(0);                                        // process DAQ-List no.0
+    %endif
+    %if bEnable_DAQ1_2
+          if (alternate_cnt == 1U) {
+               alternate_cnt = 2U; 
+          }                                                 
+          else { 
+               alternate_cnt = 1U; 
+          }
+          ccpDaq(alternate_cnt);                            // alternate process DAQ-List no.1 and no.2
+    %endif
+        }
+        io_error = IO_Driver_TaskEnd();
+        %<ExecutionTime> = IO_RTC_GetTimeUS(timestamp);		// save execution time for output of Standalone-block
+        while (IO_RTC_GetTimeUS(timestamp) < CYCLE_TIME_US)  {
+            ccpSendCallBack();}                             // as long as time is left: transmit one CRO-DTO and multiple DAQ-DTO responds 
+
+%elseif Enable_CCP && !bEnable_DAQ0 && !bEnable_DAQ1_2
+        io_error = IO_Driver_TaskEnd();
+        %<ExecutionTime> = IO_RTC_GetTimeUS(timestamp);		// save execution time for output of Standalone-block
+
+        while (IO_RTC_GetTimeUS(timestamp) < CYCLE_TIME_US)
+
+            { /*use the rest of the time to check for CCP-CRO */
+                io_error =IO_CAN_ReadMsg(handle_ccp_CRO,
+                                 &frame_ccp_CRO);
+                if ((io_error == IO_E_OK)           ||
+                    (io_error == IO_E_CAN_OVERFLOW)     )   //overflow should not happen, but anyhow process then
+                {
+                    ccpCommand(frame_ccp_CRO.data);  // process the CCP-Request from Master
+                    ccpSendCallBack();               // transmit DTO
+                }
+            }
+%else
+        io_error = IO_Driver_TaskEnd();
+        %<ExecutionTime> = IO_RTC_GetTimeUS(timestamp);		// save execution time for output of Standalone-block
+        while (IO_RTC_GetTimeUS(timestamp) < CYCLE_TIME_US)
+            ; /* wait until cycle time has passed */
+%endif    
+        timestamp += CYCLE_TIME_US;                          /* increase time stamp by cycle time */
+    }
+    
+    // not executed: %<LibGetMdlPubHdrBaseName()>_terminate();      // Terminate
+   
+    
+} /* END OF main */
+
+          %closefile tmpBuf
+
+          %<LibSetSourceFileSection(cFile, "Functions", tmpBuf)>
+
+    %endif
+
+
+%%%% Section Setup BEGIN %%%%
+    %assign cFile = LibCreateSourceFile("Source", "Custom", MdlName+"_setup")
+    %openfile tmpBuf
+
+/**************************************************************************************************
+ * Includes
+ *************************************************************************************************/
+#include "IO_Driver.h"
+#include "IO_CAN.h"
+#include "%<LibGetMdlPubHdrBaseName()>.h"
+
+void %<LibGetMdlPubHdrBaseName()>_setup(void)
+{
+  
+    /* initialize all CAN channel */
+    IO_CAN_Init( IO_CAN_CHANNEL_0 , %<baudrate_CAN0> , %<tseg1_CAN0> , %<tseg2_CAN0> , %<sjw_CAN0> ,%<brp_CAN0>);		
+    IO_CAN_Init( IO_CAN_CHANNEL_1 , %<baudrate_CAN1> , %<tseg1_CAN1> , %<tseg2_CAN1> , %<sjw_CAN1> ,%<brp_CAN1>);		
+    IO_CAN_Init( IO_CAN_CHANNEL_2 , %<baudrate_CAN2> , %<tseg1_CAN2> , %<tseg2_CAN2> , %<sjw_CAN2> ,%<brp_CAN2>);		
+    IO_CAN_Init( IO_CAN_CHANNEL_3 , %<baudrate_CAN3> , %<tseg1> , %<tseg2> , %<sjw> ,%<brp>);		
+    IO_CAN_Init( IO_CAN_CHANNEL_4 , %<baudrate_CAN4> , %<tseg1> , %<tseg2> , %<sjw> ,%<brp>);		
+    IO_CAN_Init( IO_CAN_CHANNEL_5 , %<baudrate_CAN5> , %<tseg1> , %<tseg2> , %<sjw> ,%<brp>);		
+    IO_CAN_Init( IO_CAN_CHANNEL_6 , %<baudrate_CAN6> , %<tseg1> , %<tseg2> , %<sjw> ,%<brp>);		
+
+    return;
+}
+
+    %closefile tmpBuf
+    %<LibSetSourceFileSection(cFile, "UserBottom", tmpBuf)>
+
+%%%% Section Setup END %%%%
+
+
+%%%%% Section ErrorCallback BEGIN %%%%%
+
+    %assign cFile = LibCreateSourceFile("Source", "Custom", MdlName+"_error_callback")
+    %openfile tmpBuf
+
+/**************************************************************************************************
+ * Includes
+ *************************************************************************************************/
+#include "IO_Driver.h"
+#include "%<LibGetMdlPubHdrBaseName()>.h"
+
+ubyte2 %<MdlName>_APPL_ErrorCb(ubyte1 diag_state,
+  ubyte1 watchdog_state,
+  DIAG_ERRORCODE * const error)
+{
+    ubyte2 action;
+
+   (void)diag_state;    // no decision on this input
+   (void)watchdog_state;// no decision on this input
+   (void)error;         // avoid compiler warning if error is not used
+
+%if bEnable_ErrorCBAction
+    /* initilize */
+    action = 0; //enter the safe state if no other dedicated actions are set (switch off all outputs)
+    %if bDIAG_ERR_DISABLE_SSW0
+    action |= DIAG_ERR_DISABLE_SSW0;
+    %endif
+    %if bDIAG_ERR_DISABLE_SSW1
+    action |= DIAG_ERR_DISABLE_SSW1;
+    %endif
+    %if bDIAG_ERR_DISABLE_SSW2
+    action |= DIAG_ERR_DISABLE_SSW2;
+    %endif
+%else
+    action = DIAG_ERR_NOACTION; 
+%endif
+
+          %closefile tmpBuf
+
+          %<LibSetSourceFileSection(cFile, "Functions", tmpBuf)>
+
+        %openfile tmpBuf_close
+    return action;
+}
+    %closefile tmpBuf_close
+    %<LibSetSourceFileSection(cFile, "UserBottom", tmpBuf_close)>
+
+%%%%% Section ErrorCallback END %%%%%
+
+%%%%% Section ccp_config.h BEGIN %%%%%
+
+%assign hFile = LibCreateSourceFile("Header", "Custom", "ccp_config")
+%openfile tmpBuf
+
+%if Enable_CCP
+
+#ifndef __CCPPAR_H__
+#define __CCPPAR_H__
+
+/*----------------------------------------------------------------------------*/
+/*                      TTC5XX dependent settings                             */
+#include "rtwtypes.h"
+
+#define CCP_ENABLED (%<Enable_CCP>)
+#define CCP_CAN_CHANNEL %<CPP_channel>
+#define CCP_ID_FORMAT   %<CPP_id_format>
+
+/*----------------------------------------------------------------------------*/
+/*                      Platform independant types                            */
+
+#define CCP_MOTOROLA
+//#define CCP_INTEL
+#define CCP_BYTE    uint8_T
+#define CCP_WORD    uint16_T
+#define CCP_DWORD   uint32_T
+#define CCP_BYTEPTR uint8_T*
+#define CCP_ROM		const
+#define CCP_RAM
+#define CCP_DAQBYTEPTR CCP_BYTEPTR
+#define CCP_MTABYTEPTR CCP_BYTEPTR
+
+
+/*----------------------------------------------------------------------------*/
+/*                      Disable/Enable Interrupts                             */
+
+/* Has to be defined if ccpSendCallBack may interrupt ccpDaq */
+#define CCP_DISABLE_INTERRUPT /*DISABLE_INTERRUPTS()*/
+#define CCP_ENABLE_INTERRUPT  /*ENABLE_INTERRUPTS()*/
+
+/*----------------------------------------------------------------------------*/
+/* CCP parameters */
+
+/* CCP Identifiers and Address */
+#define CCP_STATION_ADDR  %<CCP_Station_Addr>                 /* Define CCP_STATION_ADDR in Intel Format */
+                                            /* High/Low byte swapped on motorola machines !!! (0x3900 stands for (ADDR=39) */
+#define CCP_STATION_ID    "%<CCP_Station_ID>"				/* Plug&Play station identification */
+
+#define CCP_CRO_ID        %<CRO_ID>         /* CAN identifier Master -> ECU */
+#define CCP_DTO_ID        %<DTO_ID>         /* CAN identifier ECU -> Master */
+
+/*----------------------------------------------------------------------------*/
+/* CCP Data Acuisition Parameters */
+%if bEnable_DAQ0 && !bEnable_DAQ1_2
+#define CCP_DAQ                   /* Enable synchronous data aquisition in ccpDaq() */
+#define CCP_MAX_ODT %<ODT_total>           /* Number of ODTs in each DAQ lists (maximum size possible in CCP) */
+#define CCP_MAX_DAQ 1             /* Number of DAQ lists */
+%elseif !bEnable_DAQ0 && bEnable_DAQ1_2
+%assign ODT_total_raw = FEVAL("max",ODT_total/2,1)
+%assign ODT_total_new = CAST("Number",ODT_total_raw)
+#define CCP_DAQ                   /* Enable synchronous data aquisition in ccpDaq() */
+#define CCP_MAX_ODT %<ODT_total_new>           /* Number of ODTs in each DAQ lists (maximum size possible with DAQ=2 in CCP) */
+#define CCP_MAX_DAQ 2             /* Number of DAQ lists */
+%elseif bEnable_DAQ0 && bEnable_DAQ1_2
+%assign ODT_total_raw = FEVAL("max",%<ODT_total>/3,1)
+%assign ODT_total_new = CAST("Number",ODT_total_raw)
+#define CCP_DAQ                   /* Enable synchronous data aquisition in ccpDaq() */
+#define CCP_MAX_ODT %<ODT_total_new>            /* Number of ODTs in each DAQ lists (maximum size possible with DAQ=3 in CCP) */
+#define CCP_MAX_DAQ 3             /* Number of DAQ lists */
+%else
+//#define CCP_DAQ                 /* disabled synchronous data aquisition in ccpDaq() */
+%endif
+
+
+/*----------------------------------------------------------------------------*/
+/* CCP Options */
+
+/* Use the transmit queue in CCP.C */
+/* Complete sampling is done in ccpDaq(x) and the messages are written into the queue */
+#define CCP_SEND_QUEUE
+
+/* Indicate queue overruns in the msb of pid */
+/* Will be displayed in CANapes status bar if CANAPE.INI: [asap1a] check_overflow=1 */
+%if ODT_total <= 126
+#define CCP_SEND_QUEUE_OVERRUN_INDICATION
+%else
+/* CCP_SEND_QUEUE_OVERRUN_INDICATION not defined as CCP_MAX_ODT is greater than 126 */
+/*#define CCP_SEND_QUEUE_OVERRUN_INDICATION */
+%endif
+
+/* Transmit only one message in one call to ccpDaq() */
+/* #define CCP_SEND_SINGLE */
+
+/* Allow an ODT entry size >1 */
+/* Not recommended for CANape, this will only need additional RAM space */
+/* #define CCP_ODT_ENTRY_SIZE */
+
+/* Use GET_SEED and UNLOCK */
+/* This is usually user dependant, just a skeleton here */
+/* #define CCP_SEED_KEY*/
+
+/* Implement the flash programming feature in the ECU*/
+/* This is usually user dependant, just a skeleton here */
+/* #define CCP_PROGRAM*/
+
+/* Activate the flash programming kernel download feature */
+/* This is a CCP extension for CANape */
+/* #define CCP_BOOTLOADER_DOWNLOAD */
+
+/* Implement the memory checksum feature */
+/* The checksum will be calculated in ccpBackground() */
+/* This may be implementation specific */
+/* #define CCP_CHECKSUM */
+/* #define CCP_CHECKSUM_TYPE CCP_WORD */
+
+/* Use a 16 bit CRC algorithm */
+/* Note:
+   This will need additional 512 byte of ROM
+   CCP_CHECKSUM_TYPE has to be WORD !
+*/
+/* #define CCP_CHECKSUM_CCITT*/
+
+/* Check for pending CCP commands in ccpBackground() */
+/* #ifdef CCP_CMD_NOT_IN_INTERRUPT */
+
+/* Enable Memory Write Protection */
+/* #define CCP_WRITE_PROTECTION*/
+
+/* Enable EEPROM Read/Write Access */
+/* #define CCP_WRITE_EEPROM */
+/* #define CCP_READ_EEPROM */
+
+#endif
+%else
+//no ccp configured for this model
+#define CCP_ENABLED (0)
+%endif 
+%closefile tmpBuf
+%<LibSetSourceFileSection(hFile, "UserBottom", tmpBuf)>
+
+
+%%%%% Section ccp_config.h END %%%%%
+
+
+
+%endif
+%endfunction
+
+
+%% [EOF] io_block.tlc

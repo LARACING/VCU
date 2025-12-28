@@ -1,0 +1,97 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   EEPROM_Mirror_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox EEPROM_Mirror_s block
+%%
+%% Version: 0.21
+%%
+
+%implements "EEPROM_Mirror_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+        %<LibAddToCommonIncludes("IO_EEPROM.h")>
+%%EXTERN
+        %openfile buffer_extern
+/* entry from EEPROM_Mirror_s begin */
+        extern uint8_T EEPROM_mirror[];
+        extern IO_ErrorType ErrorCode_EEPROM_mirror; 
+/* entry from EEPROM_Mirror_s end */
+        %closefile buffer_extern
+        %<LibCacheExtern(buffer_extern)>
+
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+	%assign offset = rtw_param1  
+	%assign length = rtw_param2  
+
+	%assign EC_EEPROM_Init = LibBlockInputSignal(0, "", "",0)
+    %assign EC_EEPROM_Init_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+
+%if !EXISTS(IO_EEPROM_Init_first)
+    %%START_ASSERT
+    %assign errTxt = ...
+        "The IO-LibTTC580 has detected an inconsistency in your model and aborted the code generateion procedure: " ...
+        "The block EEPROM_Mirror_s has to have IO_EEPROM_Init_s to be called first. Please connect the inport of " ...
+        "EEPROM_Mirror_s with the outport of IO_EEPROM_Init_s and resume the make procedure"
+  	%<LibBlockReportError(block,errTxt)>
+%endif
+
+	/* init_function call EEPROM_Mirror */
+%if !EXISTS(EEPROM_Mirror_first)
+{
+    %<ErrorCode> = IO_EEPROM_Read( %<offset> , %<length>, EEPROM_mirror );
+	if (%<ErrorCode> == IO_E_EEPROM_RANGE) {
+		%<ErrorCode> = IO_EEPROM_Read( %<offset>, (%<length> >> 2), EEPROM_mirror );	//FRAM
+	}
+}
+%assign ::EEPROM_Mirror_first = "any" 
+%endif
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+	%assign offset = rtw_param1  
+	%assign length = rtw_param2  
+
+	%assign EC_EEPROM_Init = LibBlockInputSignal(0, "", "",0)
+    %assign EC_EEPROM_Init_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+   
+
+	/* function call of EEPROM_Mirror */
+
+
+
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

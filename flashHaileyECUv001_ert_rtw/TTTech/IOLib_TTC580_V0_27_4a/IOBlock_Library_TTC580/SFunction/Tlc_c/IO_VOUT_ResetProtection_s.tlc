@@ -1,0 +1,78 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   IO_VOUT_ResetProtection_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox IO_VOUT_ResetProtection_s block
+%%
+%% Version: 0.19
+%%
+
+%implements "IO_VOUT_ResetProtection_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+   		%assign ::IO_VOUT = "any"
+        %<LibAddToCommonIncludes("IO_VOUT.h")>
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+	%assign vout_channel = rtw_param1  
+
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+  	%if dimout0 > 1
+	%assign yDyn_0_1 = LibBlockOutputSignal(0, "", "",1)  
+    %<yDyn_0_1> = (%<ErrorCode_type>)%<rtw_param1>;  // additionally dimension of 1st port assigned to mask parameter
+    %endif 
+	%assign reset_cnt = LibBlockOutputSignalAddr(1, "", "",0)
+    %assign reset_cnt_type = LibBlockOutputSignalDataTypeName(1,"")
+
+	/* init_function call IO_VOUT_ResetProtection */
+
+
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+	%assign vout_channel = rtw_param1  
+
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+  	%if dimout0 > 1
+	%assign yDyn_0_1 = LibBlockOutputSignal(0, "", "",1)  
+    %<yDyn_0_1> = (%<ErrorCode_type>)%<rtw_param1>;  // additionally dimension of 1st port assigned to mask parameter
+    %endif 
+	%assign reset_cnt = LibBlockOutputSignalAddr(1, "", "",0)
+    %assign reset_cnt_type = LibBlockOutputSignalDataTypeName(1,"")
+
+	/* function call of IO_VOUT_ResetProtection */
+
+{
+
+
+%<ErrorCode> = IO_VOUT_ResetProtection( %<vout_channel> , %<reset_cnt> );
+
+}
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

@@ -1,0 +1,81 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   Read_Mirror_OffsetIn_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox Read_Mirror_OffsetIn_s block
+%%
+%% Version: 0.25
+%%
+
+%implements "Read_Mirror_OffsetIn_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+	%assign length = rtw_param1  
+
+	%assign offset = LibBlockInputSignal(0, "", "",0)
+    %assign offset_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+
+
+	%assign ErrorCode_EEPROM_mirror = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_EEPROM_mirror_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+   
+	%assign data = LibBlockOutputSignalAddr(1, "", "",0)
+    %assign data_type = LibBlockOutputSignalDataTypeName(1,"")
+
+	/* init_function call Read_Mirror_OffsetIn */
+
+
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+	%assign length = rtw_param1  
+
+	%assign offset = LibBlockInputSignal(0, "", "",0)
+    %assign offset_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+
+
+	%assign ErrorCode_EEPROM_mirror = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_EEPROM_mirror_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+   
+	%assign data = LibBlockOutputSignalAddr(1, "", "",0)
+    %assign data_type = LibBlockOutputSignalDataTypeName(1,"")
+
+	/* function call of Read_Mirror_OffsetIn */
+{
+if ((%<offset>+%<length>) <= 0x10000) {
+    memcpy((%<data>),&(EEPROM_mirror[%<offset>]),sizeof(%<data_type>));
+    %<ErrorCode_EEPROM_mirror> = ErrorCode_EEPROM_mirror;
+}
+else {
+    *(%<data>) = 0;
+    %<ErrorCode_EEPROM_mirror> = IO_E_EEPROM_RANGE;
+}
+}
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

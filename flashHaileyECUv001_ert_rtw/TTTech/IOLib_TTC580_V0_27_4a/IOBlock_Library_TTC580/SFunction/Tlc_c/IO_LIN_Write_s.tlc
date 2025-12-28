@@ -1,0 +1,94 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   IO_LIN_Write_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox IO_LIN_Write_s block
+%%
+%% Version: 0.24
+%%
+
+%implements "IO_LIN_Write_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+   		%assign ::IO_LIN = "any"
+        %<LibAddToCommonIncludes("IO_LIN.h")>
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+
+	%assign frame_id = LibBlockInputSignal(0, "", "",0)
+    %assign frame_id_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+	%assign frame_length = LibBlockInputSignal(1, "", "",0)
+    %assign frame_length_type = LibBlockInputSignalDataTypeName(1,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin1 = LibBlockInputSignalWidth(1)
+
+	%assign frame_data = LibBlockInputSignalAddr(2, "", "",0)
+    %assign frame_data_type = LibBlockInputSignalDataTypeName(2,"")
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+  	%if dimout0 > 1
+	%assign yDyn_0_1 = LibBlockOutputSignal(0, "", "",1)  
+    %<yDyn_0_1> = (%<ErrorCode_type>)%<rtw_param1>;  // additionally dimension of 1st port assigned to mask parameter
+    %endif 
+	/* init_function call IO_LIN_Write */
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+
+	%assign frame_id = LibBlockInputSignal(0, "", "",0)
+    %assign frame_id_type = LibBlockInputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin0 = LibBlockInputSignalWidth(0)
+	%assign frame_length = LibBlockInputSignal(1, "", "",0)
+    %assign frame_length_type = LibBlockInputSignalDataTypeName(1,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimin1 = LibBlockInputSignalWidth(1)
+
+	%assign frame_data = LibBlockInputSignalAddr(2, "", "",0)
+    %assign frame_data_type = LibBlockInputSignalDataTypeName(2,"")
+    %assign dimin2 = LibBlockInputSignalWidth(2)
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+  	%if dimout0 > 1
+	%assign yDyn_0_1 = LibBlockOutputSignal(0, "", "",1)  
+    %<yDyn_0_1> = (%<ErrorCode_type>)%<rtw_param1>;  // additionally dimension of 1st port assigned to mask parameter
+    %endif 
+
+	/* function call of IO_LIN_Write */
+
+{
+IO_LIN_DATA_FRAME tmp_struct_1={0};
+
+tmp_struct_1.id = %<frame_id>;
+tmp_struct_1.length = %<frame_length>;
+memcpy(tmp_struct_1.data,%<frame_data>,%<dimin2>*sizeof(uint8_T));
+
+%<ErrorCode> = IO_LIN_Write(&tmp_struct_1);
+
+}
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

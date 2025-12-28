@@ -1,0 +1,80 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   printf_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox printf_s block
+%%
+%% rev. 
+%% 2015-09-23	eho	support of unsigned/signed integer values
+%%
+%% Version: 0.19
+
+%implements "printf_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+  	%assign ::stdio = "any"
+        %<LibAddToCommonIncludes("stdio.h")>
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+	%assign Comment = rtw_param1  
+
+	%assign value = LibBlockInputSignal(0, "", "",0)
+
+
+	%assign NumOfChar = LibBlockOutputSignal(0, "", "",0)  
+ 
+
+	/* init_function call printf */
+
+
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+	%assign Comment = rtw_param1  
+
+	%assign value = LibBlockInputSignal(0, "", "",0)
+
+
+	%assign NumOfChar = LibBlockOutputSignal(0, "", "",0)  
+ 
+
+	/* function call of printf */
+
+{
+       %if !EXISTS(printf_first) && !IsModelReferenceRTWTarget()
+            printf("\033[2J\033[;H");   // console_cls        
+            printf("\033[0;0H");        // set cursor to position to 0
+    		%assign ::printf_first = "any"
+    	%endif
+
+	%%check on SS_DOUBLE and SS_SINGLE
+ 	%assign Data_in_type = LibBlockInputSignalDataTypeId(0)
+ 	//Data_in_type = %<Data_in_type>
+	%if (%<Data_in_type> == 0) || (%<Data_in_type> == 1)	
+		%<NumOfChar> = printf( "%<Comment> %f \r\n" , %<value> );
+    %elseif (%<Data_in_type> == 3) || (%<Data_in_type> == 5) || (%<Data_in_type> == 7)
+		%<NumOfChar> = printf( "%<Comment> %u \r\n" , %<value> );
+	%else 
+		%<NumOfChar> = printf( "%<Comment> %d \r\n" , %<value> );
+	%endif
+
+}
+
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

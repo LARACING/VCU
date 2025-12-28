@@ -1,0 +1,84 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   ADC_ChannelInit_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox ADC_ChannelInit_s block
+%%
+%% Version: 0.19
+%%
+
+%implements "ADC_ChannelInit_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+   		%assign ::IO_ADC = "any"
+        %<LibAddToCommonIncludes("IO_ADC.h")>
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+	%assign adc_channel = rtw_param1  
+	%assign adc_type = rtw_param2  
+	%assign range = rtw_param3  
+	%assign pupd = rtw_param4  
+	%assign sensor_supply = rtw_param5  
+	%assign safety_conf = rtw_param6  
+
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+  	%if dimout0 > 1
+	%assign yDyn_0_1 = LibBlockOutputSignal(0, "", "",1)  
+    %<yDyn_0_1> = (%<ErrorCode_type>)%<rtw_param1>;  // additionally dimension of 1st port assigned to mask parameter
+    %endif 
+
+	/* init_function call ADC_ChannelInit */
+
+{
+
+
+%<ErrorCode> = IO_ADC_ChannelInit( %<adc_channel> , %<adc_type> , %<range> , %<pupd> , %<sensor_supply> , %<safety_conf> );
+
+}
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+	%assign adc_channel = rtw_param1  
+	%assign adc_type = rtw_param2  
+	%assign range = rtw_param3  
+	%assign pupd = rtw_param4  
+	%assign sensor_supply = rtw_param5  
+	%assign safety_conf = rtw_param6  
+
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+  	%if dimout0 > 1
+	%assign yDyn_0_1 = LibBlockOutputSignal(0, "", "",1)  
+    %<yDyn_0_1> = (%<ErrorCode_type>)%<rtw_param1>;  // additionally dimension of 1st port assigned to mask parameter
+    %endif 
+
+	/* function call of ADC_ChannelInit */
+
+
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc

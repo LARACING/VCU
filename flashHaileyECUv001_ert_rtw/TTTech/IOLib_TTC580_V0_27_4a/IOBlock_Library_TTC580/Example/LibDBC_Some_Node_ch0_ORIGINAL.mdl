@@ -1,0 +1,5600 @@
+Library {
+  Name			  "LibDBC_Some_Node_ch0_ORIGINAL"
+  Version		  9.1
+  SavedCharacterEncoding  "windows-1252"
+  DiagnosticSuppressor	  "on"
+  SuppressorTable	  "22 serialization::archive 11 0 6 0 0 0 8 0"
+  Notes			  ""
+  NotesPlugin		  "on"
+  LogicAnalyzerGraphicalSettings ""
+  LogicAnalyzerPlugin	  "on"
+  LogicAnalyzerSignalOrdering ""
+  CustomCodeFunctionData  ""
+  SLCCPlugin		  "on"
+  Description		  "10-Mai-2016 10:50:501823"
+  LibraryType		  "BlockLibrary"
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  FPTRunName		  "Run 1"
+  MaxMDLFileLineLength	  120
+  LastSavedArchitecture	  "win64"
+  Object {
+    $PropName		    "BdWindowsInfo"
+    $ObjectID		    1
+    $ClassName		    "Simulink.BDWindowsInfo"
+    Object {
+      $PropName		      "WindowsInfo"
+      $ObjectID		      2
+      $ClassName	      "Simulink.WindowInfo"
+      IsActive		      [1]
+      Location		      [20.0, 100.0, 406.0, 450.0]
+      Object {
+	$PropName		"ModelBrowserInfo"
+	$ObjectID		3
+	$ClassName		"Simulink.ModelBrowserInfo"
+	Visible			[0]
+	DockPosition		"Left"
+	Width			[50]
+	Height			[50]
+	Filter			[9]
+      }
+      Object {
+	$PropName		"ExplorerBarInfo"
+	$ObjectID		4
+	$ClassName		"Simulink.ExplorerBarInfo"
+	Visible			[1]
+      }
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[555.0, 446.0]
+	ZoomFactor		[1.0]
+	Offset			[0.0, 0.0]
+      }
+      Object {
+	$PropName		"DockComponentsInfo"
+	$ObjectID		6
+	$ClassName		"Simulink.DockComponentInfo"
+	Type			"GLUE2:PropertyInspector"
+	ID			"Property Inspector"
+	Visible			[0]
+	CreateCallback		""
+	UserData		""
+	Floating		[0]
+	DockPosition		"Right"
+	Width			[512]
+	Height			[384]
+      }
+      WindowState	      "AAAA/wAAAAD9AAAAAgAAAAAAAAC9AAAB+PwCAAAAA/sAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAA"
+      "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
+      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAAB4AP///wAAAAEAAAAAAAAAAPwCA"
+      "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
+      "QBjAHQAbwByAAAAAAD/////AAAANAD///8AAAHqAAABqwAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
+      "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
+      "////wEAAACR/////wAAAAAAAAAA/////wEAAAEE/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
+      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAFh/////wAAAAAAAAAA/"
+      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA"
+    }
+  }
+  HideAutomaticNames	  on
+  Created		  "Wed Apr 25 15:44:32 2018"
+  Creator		  "hokka"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "hokka"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Apr 27 12:39:31 2018"
+  RTWModifiedTimeStamp	  446571873
+  ModelVersionFormat	  "1.%<AutoIncrement:2>"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "disabled"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  PortDataTypeDisplayFormat "AliasTypeOnly"
+  ShowEditTimeErrors	  on
+  ShowEditTimeWarnings	  on
+  ShowEditTimeAdvisorChecks off
+  ShowPortUnits		  off
+  ShowDesignRanges	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  VariantCondition	  off
+  ShowSubsystemDomainSpec off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ShowVisualizeInsertedRTB on
+  ShowMarkup		  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  BlockVariantConditionDataTip off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  FunctionConnectors	  off
+  BrowserLookUnderMasks	  off
+  MultiThreadCoSim	  on
+  SimulationMode	  "normal"
+  VisualizeLoggedSignalsWhenLoggingToFile off
+  PauseTimes		  "5"
+  NumberOfSteps		  1
+  SnapshotBufferSize	  10
+  SnapshotInterval	  10
+  NumberOfLastSnapshots	  0
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  OrderedModelArguments	  on
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      7
+      Version		      "1.18.0"
+      DisabledProps	      []
+      Description	      ""
+      Array {
+	Type			"Handle"
+	Dimension		9
+	Simulink.SolverCC {
+	  $ObjectID		  8
+	  Version		  "1.18.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  AutoScaleAbsTol	  "on"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  EnableMultiTasking	  off
+	  ConcurrentTasks	  off
+	  Solver		  "VariableStepAuto"
+	  SolverName		  "VariableStepAuto"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverInfoToggleStatus  off
+	  IsAutoAppliedInSIP	  off
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	  SampleTimeProperty	  []
+	  DecoupledContinuousIntegration off
+	  MinimalZcImpactIntegration off
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  9
+	  Version		  "1.18.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  off
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Dataset"
+	  SignalLoggingSaveFormat "Dataset"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  VisualizeSimOutput	  on
+	  StreamToWorkspace	  off
+	  StreamVariableName	  "streamout"
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	  LoggingToFile		  off
+	  DatasetSignalFormat	  "timeseries"
+	  LoggingFileName	  "out.mat"
+	  LoggingIntervals	  "[-inf, inf]"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  10
+	  Version		  "1.18.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    8
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "UseSpecifiedMinMax"
+	    PropName		    "DisabledProps"
+	  }
+	  Description		  ""
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  DefaultParameterBehavior "Tunable"
+	  UseDivisionForNetSlopeComputation "off"
+	  UseFloatMulNetSlope	  off
+	  DefaultUnderspecifiedDataType	"double"
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  CachingGlobalReferences off
+	  GlobalBufferReuse	  on
+	  StrengthReduction	  off
+	  AdvancedOptControl	  ""
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  PassReuseOutputArgsThreshold 12
+	  ExpressionDepthLimit	  128
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  ActiveStateOutputEnumStorageType "Native Integer"
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  LifeSpan		  "auto"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "off"
+	  AccelVerboseBuild	  off
+	  OptimizeBlockOrder	  "off"
+	  OptimizeDataStoreBuffers on
+	  BusAssignmentInplaceUpdate on
+	  DifferentSizesBufferReuse off
+	  OptimizationLevel	  "level2"
+	  OptimizationPriority	  "Balanced"
+	  OptimizationCustomize	  on
+	  UseRowMajorAlgorithm	  off
+	  LabelGuidedReuse	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  11
+	  Version		  "1.18.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "UseOnlyExistingSharedCode"
+	    PropName		    "DisabledProps"
+	  }
+	  Description		  ""
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  StringTruncationChecking "error"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Simplified"
+	  MergeDetectMultiDrivingBlocksExec "error"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  ExportedTasksRateTransMsg "none"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "error"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  UseOnlyExistingSharedCode "error"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "error"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  AllowSymbolicDim	  on
+	  RowMajorDimensionSupport off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "none"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  SimStateOlderReleaseMsg "error"
+	  ChecksumConsistencyForSSReuse	"none"
+	  LibraryContextMissingDiagnostic "none"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "ErrorLevel1"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  SymbolicDimMinMaxWarning "warning"
+	  LossOfSymbolicDimsSimulationWarning "warning"
+	  LossOfSymbolicDimsCodeGenerationWarning "error"
+	  SymbolicDimsDataTypeCodeGenerationDiagnostic "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "error"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "error"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnreachableExecutionPathDiag "warning"
+	  SFUndirectedBroadcastEventsDiag "warning"
+	  SFTransitionActionBeforeConditionDiag	"warning"
+	  SFOutputUsedAsStateInMooreChartDiag "error"
+	  SFTemporalDelaySmallerThanSampleTimeDiag "warning"
+	  SFSelfTransitionDiag	  "warning"
+	  SFExecutionAtInitializationDiag "warning"
+	  SFMachineParentedDataDiag "warning"
+	  IntegerSaturationMsg	  "warning"
+	  AllowedUnitSystems	  "all"
+	  UnitsInconsistencyMsg	  "warning"
+	  AllowAutomaticUnitConversions	on
+	  RCSCRenamedMsg	  "warning"
+	  RCSCObservableMsg	  "warning"
+	  ForceCombineOutputUpdateInSim	off
+	  UnitDatabase		  ""
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  12
+	  Version		  "1.18.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerLongLong	  64
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  64
+	  ProdBitPerSizeT	  64
+	  ProdBitPerPtrDiffT	  64
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "Float"
+	  ProdIntDivRoundTo	  "Zero"
+	  ProdEndianess		  "LittleEndian"
+	  ProdWordSize		  64
+	  ProdShiftRightIntArith  on
+	  ProdLongLongMode	  off
+	  ProdHWDeviceType	  "Intel->x86-64 (Windows64)"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerLongLong	  64
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetBitPerSizeT	  32
+	  TargetBitPerPtrDiffT	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetLongLongMode	  off
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	  UseEmbeddedCoderFeatures on
+	  UseSimulinkCoderFeatures on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  13
+	  Version		  "1.18.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  EnableRefExpFcnMdlSchedulingChecks on
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelDependencies	  ""
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel on
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  14
+	  Version		  "1.18.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  SimCustomSourceCode	  ""
+	  SimCustomHeaderCode	  ""
+	  SimCustomInitializer	  ""
+	  SimCustomTerminator	  ""
+	  SimReservedNameArray	  []
+	  SimUserSources	  ""
+	  SimUserIncludeDirs	  ""
+	  SimUserLibraries	  ""
+	  SimUserDefines	  ""
+	  SimCustomCompilerFlags  ""
+	  SimCustomLinkerFlags	  ""
+	  SFSimEcho		  on
+	  SimCtrlC		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	  SimGenImportedTypeDefs  off
+	  ModelFunctionsGlobalVisibility "on"
+	  CompileTimeRecursionLimit 50
+	  EnableRuntimeRecursion  on
+	  MATLABDynamicMemAlloc	  on
+	  MATLABDynamicMemAllocThreshold 65536
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  15
+	  Version		  "1.18.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    16
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    Cell		    "PortableWordSizes"
+	    Cell		    "GenerateWebview"
+	    Cell		    "GenerateCodeMetricsReport"
+	    Cell		    "GenerateCodeReplacementReport"
+	    Cell		    "GenerateMissedCodeReplacementReport"
+	    Cell		    "GenerateErtSFunction"
+	    Cell		    "CreateSILPILBlock"
+	    Cell		    "CodeExecutionProfiling"
+	    Cell		    "CodeProfilingSaveOptions"
+	    Cell		    "CodeProfilingInstrumentation"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  HardwareBoard		  "None"
+	  TLCOptions		  ""
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  PackageGeneratedCodeAndArtifacts off
+	  PackageName		  ""
+	  TemplateMakefile	  "grt_default_tmf"
+	  PostCodeGenCommand	  ""
+	  Description		  ""
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  RTWBuildHooks		  []
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  CustomSourceCode	  ""
+	  CustomHeaderCode	  ""
+	  CustomInclude		  ""
+	  CustomSource		  ""
+	  CustomLibrary		  ""
+	  CustomDefine		  ""
+	  CustomLAPACKCallback	  ""
+	  CustomFFTCallback	  ""
+	  CustomInitializer	  ""
+	  CustomTerminator	  ""
+	  Toolchain		  "Automatically locate an installed toolchain"
+	  BuildConfiguration	  "Faster Builds"
+	  CustomToolchainOptions  []
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  PortableWordSizes	  off
+	  CreateSILPILBlock	  "None"
+	  CodeExecutionProfiling  off
+	  CodeExecutionProfileVariable "executionProfile"
+	  CodeProfilingSaveOptions "SummaryOnly"
+	  CodeProfilingInstrumentation off
+	  SILDebugging		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateWebview	  off
+	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
+	  GenerateMissedCodeReplacementReport off
+	  RTWCompilerOptimization "off"
+	  ObjectivePriorities	  []
+	  RTWCustomCompilerOptimizations ""
+	  CheckMdlBeforeBuild	  "Off"
+	  SharedConstantsCachingThreshold 1024
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      16
+	      Version		      "1.18.0"
+	      Array {
+		Type			"Cell"
+		Dimension		28
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"InsertPolySpaceComments"
+		Cell			"SFDataObjDesc"
+		Cell			"MATLABFcnDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InternalIdentifier"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrModelFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"CustomSymbolStrUtil"
+		Cell			"CustomSymbolStrEmxType"
+		Cell			"CustomSymbolStrEmxFcn"
+		Cell			"CustomUserTokenString"
+		Cell			"ReqsInCode"
+		Cell			"BlockCommentType"
+		PropName		"DisabledProps"
+	      }
+	      Description	      ""
+	      Comment		      ""
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      CommentStyle	      "Auto"
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      OperatorAnnotations     off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      MangleLength	      1
+	      SharedChecksumLength    8
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M_T"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrModelFcn "$R$N"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      CustomSymbolStrUtil     "$N$C"
+	      CustomSymbolStrEmxType  "emxArray_$M$N"
+	      CustomSymbolStrEmxFcn   "emx$M$N"
+	      CustomUserTokenString   ""
+	      CustomCommentsFcn	      ""
+	      DefineNamingRule	      "None"
+	      DefineNamingFcn	      ""
+	      ParamNamingRule	      "None"
+	      ParamNamingFcn	      ""
+	      SignalNamingRule	      "None"
+	      SignalNamingFcn	      ""
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      BlockCommentType	      "BlockPathComment"
+	      StateflowObjectComments off
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InternalIdentifierFile  ""
+	      InternalIdentifier      "Shortened"
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	      ReservedNameArray	      []
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      17
+	      Version		      "1.18.0"
+	      Array {
+		Type			"Cell"
+		Dimension		15
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"ExistingSharedCode"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"GenerateAllocFcn"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"RemoveDisableFunc"
+		Cell			"RemoveResetFunc"
+		PropName		"DisabledProps"
+	      }
+	      Description	      ""
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "NOT IN USE"
+	      TargetLangStandard      "C99 (ISO)"
+	      CodeReplacementLibrary  "None"
+	      UtilityFuncGeneration   "Auto"
+	      MultiwordTypeDef	      "System defined"
+	      MultiwordLength	      2048
+	      DynamicStringBufferSize 256
+	      GenerateFullHeader      on
+	      InferredTypesCompatibility off
+	      ExistingSharedCode      ""
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Use local settings"
+	      CombineOutputUpdateFcns on
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      CodeInterfacePackaging  "Nonreusable function"
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      RemoveDisableFunc	      off
+	      RemoveResetFunc	      off
+	      SupportVariableSizeSignals off
+	      ParenthesesLevel	      "Nominal"
+	      CastingMode	      "Nominal"
+	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    on
+	      AutosarCompliant	      off
+	      MDXCompliant	      off
+	      GRTInterface	      off
+	      GenerateAllocFcn	      off
+	      UseToolchainInfoCompliant	on
+	      GenerateSharedConstants on
+	      CoderGroups	      []
+	      AccessMethods	      []
+	      LookupTableObjectStructAxisOrder "1,2,3,4,..."
+	      LUTObjectStructOrderExplicitValues "Size,Breakpoints,Table"
+	      LUTObjectStructOrderEvenSpacing "Size,Breakpoints,Table"
+	      ArrayLayout	      "Column-major"
+	      ERTHeaderFileRootName   "$R$E"
+	      ERTSourceFileRootName   "$R$E"
+	      ERTDataFileRootName     "$R_data"
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeMexArgs	      ""
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      GenerateASAP2	      off
+	      MultiInstanceErrorCode  "Error"
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	SlCovCC.ConfigComp {
+	  $ObjectID		  18
+	  Version		  "1.18.0"
+	  DisabledProps		  []
+	  Description		  "Simulink Coverage Configuration Component"
+	  Name			  "Simulink Coverage"
+	  CovEnable		  off
+	  CovScope		  "EntireSystem"
+	  CovIncludeTopModel	  on
+	  RecordCoverage	  off
+	  CovPath		  "/"
+	  CovSaveName		  "covdata"
+	  CovCompData		  ""
+	  CovMetricSettings	  "dwe"
+	  CovFilter		  ""
+	  CovHTMLOptions	  ""
+	  CovNameIncrementing	  off
+	  CovHtmlReporting	  off
+	  CovForceBlockReductionOff on
+	  CovEnableCumulative	  on
+	  CovSaveCumulativeToWorkspaceVar off
+	  CovSaveSingleToWorkspaceVar off
+	  CovCumulativeVarName	  "covCumulativeData"
+	  CovCumulativeReport	  off
+	  CovSaveOutputData	  on
+	  CovOutputDir		  "slcov_output/$ModelName$"
+	  CovDataFileName	  "$ModelName$_cvdata"
+	  CovShowResultsExplorer  on
+	  CovReportOnPause	  on
+	  CovModelRefEnable	  "off"
+	  CovModelRefExcluded	  ""
+	  CovExternalEMLEnable	  on
+	  CovSFcnEnable		  on
+	  CovBoundaryAbsTol	  1e-05
+	  CovBoundaryRelTol	  0.01
+	  CovUseTimeInterval	  off
+	  CovStartTime		  0
+	  CovStopTime		  0
+	  CovMcdcMode		  "Masking"
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      ExtraOptions	      ""
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition    [ 308, 160, 1228, 800 ]
+    }
+    PropName		    "ConfigurationSets"
+  }
+  ExplicitPartitioning	  off
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    HideAutomaticName	    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "left"
+    VerticalAlignment	    "top"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    MarkupType		    "model"
+    UseDisplayTextAsClickCallback off
+    AnnotationType	    "note_annotation"
+    FixedHeight		    off
+    FixedWidth		    off
+    Interpreter		    "off"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  MaskDefaults {
+    SelfModifiable	    "off"
+    IconFrame		    "on"
+    IconOpaque		    "opaque"
+    RunInitForIconRedraw    "analyze"
+    IconRotate		    "none"
+    PortRotate		    "default"
+    IconUnits		    "autoscale"
+  }
+  MaskParameterDefaults {
+    Evaluate		    "on"
+    Tunable		    "on"
+    NeverSave		    "off"
+    Internal		    "off"
+    ReadOnly		    "off"
+    Enabled		    "on"
+    Visible		    "on"
+    ToolTip		    "on"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+      PreserveConstantTs      off
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutputFunctionCall      off
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      Unit		      "inherit"
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      Unit		      "inherit"
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      EnsureOutportIsVirtual  off
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+      MustResolveToSignalObject	off
+      OutputWhenUnConnected   off
+      OutputWhenUnconnectedValue "0"
+      VectorParamsAs1DForOutWhenUnconnected off
+    }
+    Block {
+      BlockType		      S-Function
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+      MultiThreadCoSim	      "auto"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      SystemSampleTime	      "-1"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      FunctionInterfaceSpec   "void_void"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      Opaque		      off
+      MaskHideContents	      off
+      SFBlockType	      "NONE"
+      Variant		      off
+      GeneratePreprocessorConditionals off
+      AllowZeroVariantControls off
+      PropagateVariantConditions off
+      TreatAsGroupedWhenPropagatingVariantConditions on
+      ContentPreviewEnabled   off
+      IsWebBlock	      off
+      IsObserver	      off
+    }
+    Block {
+      BlockType		      Terminator
+    }
+  }
+  System {
+    Name		    "LibDBC_Some_Node_ch0_ORIGINAL"
+    Location		    [20, 100, 426, 550]
+    Open		    on
+    PortBlocksUseCompactNotation off
+    SetDomainSpec	    off
+    DomainSpecType	    "Deduce"
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "128"
+    Block {
+      BlockType		      SubSystem
+      Name		      "Rx_Message_float"
+      SID		      "66"
+      Ports		      [0, 3]
+      Position		      [35, 32, 130, 108]
+      ZOrder		      3
+      ForegroundColor	      "blue"
+      Priority		      "0"
+      RequestExecContextInheritance off
+      System {
+	Name			"Rx_Message_float"
+	Location		[407, 249, 1096, 751]
+	Open			off
+	PortBlocksUseCompactNotation off
+	SetDomainSpec		off
+	DomainSpecType		"Deduce"
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "IO_CAN_ConfigMsg"
+	  SID			  "67"
+	  Ports			  [0, 2]
+	  Position		  [20, 128, 115, 192]
+	  ZOrder		  -1
+	  ForegroundColor	  "blue"
+	  RequestExecContextInheritance	off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    19
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "IO_CAN_ConfigMsg_Code"
+	    Description		    "Configures a message object for the given CAN channel."
+	    Help		    "web(which('IO_CAN.h'))"
+	    Initialization	    "%\n"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      9
+	      Object {
+		$ObjectID		20
+		Type			"edit"
+		Name			"SampleTime"
+		Prompt			"SampleTime"
+		Value			"-1"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		21
+		Type			"edit"
+		Name			"ttlib"
+		Prompt			"ttlib"
+		Value			"IO_Blk_Lib_TTC500"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		22
+		Type			"edit"
+		Name			"ttDescription"
+		Prompt			"ttDescription"
+		Value			"IO_CAN_ConfigMsg"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		23
+		Type			"edit"
+		Name			"tt_iolib_version"
+		Prompt			"tt_iolib_version"
+		Value			"0.19"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		24
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  7
+		  Cell			  "IO_CAN_CHANNEL_0 "
+		  Cell			  "IO_CAN_CHANNEL_1"
+		  Cell			  "IO_CAN_CHANNEL_2"
+		  Cell			  "IO_CAN_CHANNEL_3"
+		  Cell			  "IO_CAN_CHANNEL_4"
+		  Cell			  "IO_CAN_CHANNEL_5"
+		  Cell			  "IO_CAN_CHANNEL_6"
+		  PropName		  "TypeOptions"
+		}
+		Name			"channel"
+		Prompt			"channel"
+		Value			"IO_CAN_CHANNEL_0 "
+		Evaluate		"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		25
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  2
+		  Cell			  "IO_CAN_MSG_READ"
+		  Cell			  "IO_CAN_MSG_WRITE"
+		  PropName		  "TypeOptions"
+		}
+		Name			"mode"
+		Prompt			"mode"
+		Value			"IO_CAN_MSG_READ"
+		Evaluate		"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		26
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  2
+		  Cell			  "IO_CAN_STD_FRAME"
+		  Cell			  "IO_CAN_EXT_FRAME"
+		  PropName		  "TypeOptions"
+		}
+		Name			"id_format"
+		Prompt			"id_format"
+		Value			"IO_CAN_EXT_FRAME"
+		Evaluate		"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		27
+		Type			"edit"
+		Name			"id"
+		Prompt			"id"
+		Value			"0x00001021"
+		Evaluate		"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		28
+		Type			"edit"
+		Name			"ac_mask"
+		Prompt			"ac_mask"
+		Value			"0x1FFFFFFF"
+		Evaluate		"off"
+		Callback		"%"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "IO_CAN_ConfigMsg"
+	    Location		    [271, 292, 860, 750]
+	    Open		    off
+	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      S-Function
+	      Name		      "IO_CAN_ConfigMsg_s"
+	      SID		      "68"
+	      Ports		      [0, 2]
+	      Position		      [210, 47, 270, 78]
+	      ZOrder		      -1
+	      FunctionName	      "IO_CAN_ConfigMsg_s"
+	      Parameters	      "SampleTime,channel,mode,id_format,id,ac_mask"
+	      SFunctionDeploymentMode off
+	      EnableBusSupport	      off
+	      SFcnIsStateOwnerBlock   off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "ErrorCode"
+	      SID		      "69"
+	      Position		      [400, 50, 430, 70]
+	      ZOrder		      -2
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "handle"
+	      SID		      "70"
+	      Position		      [400, 100, 430, 120]
+	      ZOrder		      -3
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "IO_CAN_ConfigMsg_s"
+	      SrcPort		      2
+	      DstBlock		      "handle"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "IO_CAN_ConfigMsg_s"
+	      SrcPort		      1
+	      DstBlock		      "ErrorCode"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "IO_CAN_ReadMsg"
+	  SID			  "71"
+	  Ports			  [1, 5]
+	  Position		  [205, 112, 300, 238]
+	  ZOrder		  -2
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.826"
+	  SourceBlock		  "IOBlock_Library_TTC580/CAN  Blocks\nTTC580 IOlib/ReadMsg_CAN/IO_CAN_ReadMsg"
+	  SourceType		  "IO_CAN_ReadMsg_Code"
+	  SourceProductName	  "I/O Blocklibrary for TTC580"
+	  ContentPreviewEnabled	  off
+	  SampleTime		  -1
+	  ttlib			  IO_Blk_Lib_TTC500
+	  ttDescription		  IO_CAN_ReadMsg
+	  tt_iolib_version	  0.19
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator2"
+	  SID			  "72"
+	  Position		  [165, 139, 180, 151]
+	  ZOrder		  -3
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator6"
+	  SID			  "73"
+	  Position		  [345, 219, 360, 231]
+	  ZOrder		  -4
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator7"
+	  SID			  "74"
+	  Position		  [345, 194, 360, 206]
+	  ZOrder		  -5
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator8"
+	  SID			  "75"
+	  Position		  [345, 169, 360, 181]
+	  ZOrder		  -6
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "bit_unpacking1"
+	  SID			  "80"
+	  Ports			  [1, 1]
+	  Position		  [435, 118, 530, 182]
+	  ZOrder		  1
+	  ForegroundColor	  "blue"
+	  LoadFcn		  "try\n%\n%Upgrade Information - standard BEGIN\nnew_color = 'blue';\nnew_ver = '0.19';\nact_ver = get_pa"
+	  "ram(gcb,'tt_iolib_version');\nif not(strcmp(act_ver,new_ver))\n    disp(['Upgrade block: ',gcb,char(10),'       Ver"
+	  "sion: ',act_ver,' -> ',new_ver]);\n    %switch - case for specific upgrade information e.g. additional parameter re"
+	  "quired \n    %Change appearance and version information\n    set_param(gcb,'ForegroundColor',new_color);\n    set_p"
+	  "aram(gcb,'tt_iolib_version',new_ver);\nend\n%Upgrade Information - standard END\ncatch\n%Standard catch section BEG"
+	  "IN \ndisp(' ');\ndisp('------------------------------------------------------------');\ndisp('An error occurred in "
+	  "a callback of the TTC580-BlockLib.');\ndisp(['Please check the parameters in the mask of ',gcb]);\ndisp('If you do "
+	  "not encounter any violations, then please '); \ndisp('copy the following lines and report this to support@ttcontrol"
+	  ".com ');\ndisp('<< begin of error message dump >>');\ndisp(['Version of TTC580-BlockLib: ', get_param(gcb,'tt_iolib"
+	  "_version')]);\ndisp(get_param(gcb,'ttDescription'));\ndisp(gcb);\nx=lasterror;disp(x.message);\ndisp(get_param(gcb,"
+	  "'MaskValues'));\ndisp(version);\ndisp(computer);\ndisp('<< end of error message dump >>');\ndisp('-----------------"
+	  "-------------------------------------------');\ndisp(' ');\n%Standard catch section END\nend"
+	  RequestExecContextInheritance	off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    29
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "bit_unpacking_Code"
+	    Description		    "Block to read in CAN signal from a specified position within 64bit field.\nFor \"Factor\" and \""
+	    "Offset\" the definition of Vector's CANdb applies:\n[Physical value] = ( [Raw value] * [Factor] ) + [Offset] \nwi"
+	    "th Raw value of a signal being the value as it is transmitted in the CAN-network\n"
+	    Help		    "web(which('IOLib500_utils.h'))"
+	    Initialization	    "%\n"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      11
+	      Object {
+		$ObjectID		30
+		Type			"edit"
+		Name			"SampleTime"
+		Prompt			"SampleTime"
+		Value			"-1"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		31
+		Type			"edit"
+		Name			"ttlib"
+		Prompt			"ttlib"
+		Value			"IO_Blk_Lib_TTC500"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		32
+		Type			"edit"
+		Name			"ttDescription"
+		Prompt			"ttDescription"
+		Value			"bit_unpacking"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		33
+		Type			"edit"
+		Name			"tt_iolib_version"
+		Prompt			"tt_iolib_version"
+		Value			"0.19"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		34
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  2
+		  Cell			  "big"
+		  Cell			  "little"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Endianness"
+		Prompt			"Endianness"
+		Value			"little"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		35
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  3
+		  Cell			  "unsigned"
+		  Cell			  "signed"
+		  Cell			  "real32"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Format"
+		Prompt			"Format"
+		Value			"real32"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		36
+		Type			"checkbox"
+		Name			"Inversion"
+		Prompt			"Inversion"
+		Value			"off"
+		Visible			"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		37
+		Type			"edit"
+		Name			"Startbit"
+		Prompt			"Startbit"
+		Value			"0"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		38
+		Type			"edit"
+		Name			"Width_bits"
+		Prompt			"Width_bits"
+		Value			"32"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		39
+		Type			"edit"
+		Name			"Factor"
+		Prompt			"Factor"
+		Value			"1"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		40
+		Type			"edit"
+		Name			"Offset"
+		Prompt			"Offset"
+		Value			"0"
+		Callback		"%"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "bit_unpacking1"
+	    Location		    [271, 292, 860, 750]
+	    Open		    off
+	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_in"
+	      SID		      "81"
+	      Position		      [40, 50, 70, 70]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      S-Function
+	      Name		      "bit_unpacking_s"
+	      SID		      "82"
+	      Ports		      [1, 1]
+	      Position		      [210, 45, 270, 75]
+	      ZOrder		      -2
+	      FunctionName	      "bit_unpacking_s"
+	      Parameters	      "SampleTime,Endianness,Format,Inversion,Startbit,Width_bits,Factor,Offset"
+	      SFunctionDeploymentMode off
+	      EnableBusSupport	      off
+	      SFcnIsStateOwnerBlock   off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Data_out"
+	      SID		      "83"
+	      Position		      [400, 50, 430, 70]
+	      ZOrder		      -3
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "Data_in"
+	      SrcPort		      1
+	      DstBlock		      "bit_unpacking_s"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "bit_unpacking_s"
+	      SrcPort		      1
+	      DstBlock		      "Data_out"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "bit_unpacking2"
+	  SID			  "85"
+	  Ports			  [1, 1]
+	  Position		  [435, 118, 530, 182]
+	  ZOrder		  3
+	  ForegroundColor	  "blue"
+	  LoadFcn		  "try\n%\n%Upgrade Information - standard BEGIN\nnew_color = 'blue';\nnew_ver = '0.19';\nact_ver = get_pa"
+	  "ram(gcb,'tt_iolib_version');\nif not(strcmp(act_ver,new_ver))\n    disp(['Upgrade block: ',gcb,char(10),'       Ver"
+	  "sion: ',act_ver,' -> ',new_ver]);\n    %switch - case for specific upgrade information e.g. additional parameter re"
+	  "quired \n    %Change appearance and version information\n    set_param(gcb,'ForegroundColor',new_color);\n    set_p"
+	  "aram(gcb,'tt_iolib_version',new_ver);\nend\n%Upgrade Information - standard END\ncatch\n%Standard catch section BEG"
+	  "IN \ndisp(' ');\ndisp('------------------------------------------------------------');\ndisp('An error occurred in "
+	  "a callback of the TTC580-BlockLib.');\ndisp(['Please check the parameters in the mask of ',gcb]);\ndisp('If you do "
+	  "not encounter any violations, then please '); \ndisp('copy the following lines and report this to support@ttcontrol"
+	  ".com ');\ndisp('<< begin of error message dump >>');\ndisp(['Version of TTC580-BlockLib: ', get_param(gcb,'tt_iolib"
+	  "_version')]);\ndisp(get_param(gcb,'ttDescription'));\ndisp(gcb);\nx=lasterror;disp(x.message);\ndisp(get_param(gcb,"
+	  "'MaskValues'));\ndisp(version);\ndisp(computer);\ndisp('<< end of error message dump >>');\ndisp('-----------------"
+	  "-------------------------------------------');\ndisp(' ');\n%Standard catch section END\nend"
+	  RequestExecContextInheritance	off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    41
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "bit_unpacking_Code"
+	    Description		    "Block to read in CAN signal from a specified position within 64bit field.\nFor \"Factor\" and \""
+	    "Offset\" the definition of Vector's CANdb applies:\n[Physical value] = ( [Raw value] * [Factor] ) + [Offset] \nwi"
+	    "th Raw value of a signal being the value as it is transmitted in the CAN-network\n"
+	    Help		    "web(which('IOLib500_utils.h'))"
+	    Initialization	    "%\n"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      11
+	      Object {
+		$ObjectID		42
+		Type			"edit"
+		Name			"SampleTime"
+		Prompt			"SampleTime"
+		Value			"-1"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		43
+		Type			"edit"
+		Name			"ttlib"
+		Prompt			"ttlib"
+		Value			"IO_Blk_Lib_TTC500"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		44
+		Type			"edit"
+		Name			"ttDescription"
+		Prompt			"ttDescription"
+		Value			"bit_unpacking"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		45
+		Type			"edit"
+		Name			"tt_iolib_version"
+		Prompt			"tt_iolib_version"
+		Value			"0.19"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		46
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  2
+		  Cell			  "big"
+		  Cell			  "little"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Endianness"
+		Prompt			"Endianness"
+		Value			"big"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		47
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  3
+		  Cell			  "unsigned"
+		  Cell			  "signed"
+		  Cell			  "real32"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Format"
+		Prompt			"Format"
+		Value			"real32"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		48
+		Type			"checkbox"
+		Name			"Inversion"
+		Prompt			"Inversion"
+		Value			"off"
+		Visible			"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		49
+		Type			"edit"
+		Name			"Startbit"
+		Prompt			"Startbit"
+		Value			"56"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		50
+		Type			"edit"
+		Name			"Width_bits"
+		Prompt			"Width_bits"
+		Value			"32"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		51
+		Type			"edit"
+		Name			"Factor"
+		Prompt			"Factor"
+		Value			"1"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		52
+		Type			"edit"
+		Name			"Offset"
+		Prompt			"Offset"
+		Value			"0"
+		Callback		"%"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "bit_unpacking2"
+	    Location		    [271, 292, 860, 750]
+	    Open		    off
+	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_in"
+	      SID		      "86"
+	      Position		      [40, 50, 70, 70]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      S-Function
+	      Name		      "bit_unpacking_s"
+	      SID		      "87"
+	      Ports		      [1, 1]
+	      Position		      [210, 45, 270, 75]
+	      ZOrder		      -2
+	      FunctionName	      "bit_unpacking_s"
+	      Parameters	      "SampleTime,Endianness,Format,Inversion,Startbit,Width_bits,Factor,Offset"
+	      SFunctionDeploymentMode off
+	      EnableBusSupport	      off
+	      SFcnIsStateOwnerBlock   off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Data_out"
+	      SID		      "88"
+	      Position		      [400, 50, 430, 70]
+	      ZOrder		      -3
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "Data_in"
+	      SrcPort		      1
+	      DstBlock		      "bit_unpacking_s"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "bit_unpacking_s"
+	      SrcPort		      1
+	      DstBlock		      "Data_out"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Rx_f32_little"
+	  SID			  "84"
+	  Position		  [565, 143, 595, 157]
+	  ZOrder		  2
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Rx_f32_big"
+	  SID			  "89"
+	  Position		  [565, 143, 595, 157]
+	  ZOrder		  4
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "ErrorCode"
+	  SID			  "77"
+	  Position		  [460, 48, 490, 62]
+	  ZOrder		  -8
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "IO_CAN_ReadMsg"
+	  SrcPort		  3
+	  DstBlock		  "Terminator8"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  "IO_CAN_ReadMsg"
+	  SrcPort		  4
+	  DstBlock		  "Terminator7"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  3
+	  SrcBlock		  "IO_CAN_ReadMsg"
+	  SrcPort		  5
+	  DstBlock		  "Terminator6"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  "IO_CAN_ConfigMsg"
+	  SrcPort		  2
+	  DstBlock		  "IO_CAN_ReadMsg"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  5
+	  SrcBlock		  "IO_CAN_ConfigMsg"
+	  SrcPort		  1
+	  DstBlock		  "Terminator2"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  6
+	  SrcBlock		  "IO_CAN_ReadMsg"
+	  SrcPort		  1
+	  Points		  [25, 0; 0, -70]
+	  DstBlock		  "ErrorCode"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  9
+	  SrcBlock		  "IO_CAN_ReadMsg"
+	  SrcPort		  2
+	  Points		  [0, 0]
+	  Branch {
+	    ZOrder		    7
+	    DstBlock		    "bit_unpacking1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    10
+	    DstBlock		    "bit_unpacking2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  8
+	  SrcBlock		  "bit_unpacking1"
+	  SrcPort		  1
+	  DstBlock		  "Rx_f32_little"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  11
+	  SrcBlock		  "bit_unpacking2"
+	  SrcPort		  1
+	  DstBlock		  "Rx_f32_big"
+	  DstPort		  1
+	}
+	Annotation {
+	  SID			  "79"
+	  Name			  "Don't change the Names of the Blocks"
+	  Position		  [129, 283, 353, 303]
+	  InternalMargins	  [0, 0, 0, 0]
+	  HorizontalAlignment	  "center"
+	  VerticalAlignment	  "middle"
+	  ZOrder		  -1
+	  FontName		  "Arial Narrow"
+	  FontSize		  16
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Rx_Message_integer"
+      SID		      "90"
+      Ports		      [0, 6]
+      Position		      [35, 127, 130, 203]
+      ZOrder		      4
+      ForegroundColor	      "blue"
+      Priority		      "0"
+      RequestExecContextInheritance off
+      System {
+	Name			"Rx_Message_integer"
+	Location		[407, 249, 1096, 751]
+	Open			off
+	PortBlocksUseCompactNotation off
+	SetDomainSpec		off
+	DomainSpecType		"Deduce"
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "IO_CAN_ConfigMsg"
+	  SID			  "91"
+	  Ports			  [0, 2]
+	  Position		  [20, 128, 115, 192]
+	  ZOrder		  -1
+	  ForegroundColor	  "blue"
+	  RequestExecContextInheritance	off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    53
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "IO_CAN_ConfigMsg_Code"
+	    Description		    "Configures a message object for the given CAN channel."
+	    Help		    "web(which('IO_CAN.h'))"
+	    Initialization	    "%\n"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      9
+	      Object {
+		$ObjectID		54
+		Type			"edit"
+		Name			"SampleTime"
+		Prompt			"SampleTime"
+		Value			"-1"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		55
+		Type			"edit"
+		Name			"ttlib"
+		Prompt			"ttlib"
+		Value			"IO_Blk_Lib_TTC500"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		56
+		Type			"edit"
+		Name			"ttDescription"
+		Prompt			"ttDescription"
+		Value			"IO_CAN_ConfigMsg"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		57
+		Type			"edit"
+		Name			"tt_iolib_version"
+		Prompt			"tt_iolib_version"
+		Value			"0.19"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		58
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  7
+		  Cell			  "IO_CAN_CHANNEL_0 "
+		  Cell			  "IO_CAN_CHANNEL_1"
+		  Cell			  "IO_CAN_CHANNEL_2"
+		  Cell			  "IO_CAN_CHANNEL_3"
+		  Cell			  "IO_CAN_CHANNEL_4"
+		  Cell			  "IO_CAN_CHANNEL_5"
+		  Cell			  "IO_CAN_CHANNEL_6"
+		  PropName		  "TypeOptions"
+		}
+		Name			"channel"
+		Prompt			"channel"
+		Value			"IO_CAN_CHANNEL_0 "
+		Evaluate		"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		59
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  2
+		  Cell			  "IO_CAN_MSG_READ"
+		  Cell			  "IO_CAN_MSG_WRITE"
+		  PropName		  "TypeOptions"
+		}
+		Name			"mode"
+		Prompt			"mode"
+		Value			"IO_CAN_MSG_READ"
+		Evaluate		"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		60
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  2
+		  Cell			  "IO_CAN_STD_FRAME"
+		  Cell			  "IO_CAN_EXT_FRAME"
+		  PropName		  "TypeOptions"
+		}
+		Name			"id_format"
+		Prompt			"id_format"
+		Value			"IO_CAN_STD_FRAME"
+		Evaluate		"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		61
+		Type			"edit"
+		Name			"id"
+		Prompt			"id"
+		Value			"0x020"
+		Evaluate		"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		62
+		Type			"edit"
+		Name			"ac_mask"
+		Prompt			"ac_mask"
+		Value			"0x7FF"
+		Evaluate		"off"
+		Callback		"%"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "IO_CAN_ConfigMsg"
+	    Location		    [271, 292, 860, 750]
+	    Open		    off
+	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      S-Function
+	      Name		      "IO_CAN_ConfigMsg_s"
+	      SID		      "92"
+	      Ports		      [0, 2]
+	      Position		      [210, 47, 270, 78]
+	      ZOrder		      -1
+	      FunctionName	      "IO_CAN_ConfigMsg_s"
+	      Parameters	      "SampleTime,channel,mode,id_format,id,ac_mask"
+	      SFunctionDeploymentMode off
+	      EnableBusSupport	      off
+	      SFcnIsStateOwnerBlock   off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "ErrorCode"
+	      SID		      "93"
+	      Position		      [400, 50, 430, 70]
+	      ZOrder		      -2
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "handle"
+	      SID		      "94"
+	      Position		      [400, 100, 430, 120]
+	      ZOrder		      -3
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "IO_CAN_ConfigMsg_s"
+	      SrcPort		      2
+	      DstBlock		      "handle"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "IO_CAN_ConfigMsg_s"
+	      SrcPort		      1
+	      DstBlock		      "ErrorCode"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "IO_CAN_ReadMsg"
+	  SID			  "95"
+	  Ports			  [1, 5]
+	  Position		  [205, 112, 300, 238]
+	  ZOrder		  -2
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.826"
+	  SourceBlock		  "IOBlock_Library_TTC580/CAN  Blocks\nTTC580 IOlib/ReadMsg_CAN/IO_CAN_ReadMsg"
+	  SourceType		  "IO_CAN_ReadMsg_Code"
+	  SourceProductName	  "I/O Blocklibrary for TTC580"
+	  ContentPreviewEnabled	  off
+	  SampleTime		  -1
+	  ttlib			  IO_Blk_Lib_TTC500
+	  ttDescription		  IO_CAN_ReadMsg
+	  tt_iolib_version	  0.19
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator2"
+	  SID			  "96"
+	  Position		  [165, 139, 180, 151]
+	  ZOrder		  -3
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator6"
+	  SID			  "97"
+	  Position		  [345, 219, 360, 231]
+	  ZOrder		  -4
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator7"
+	  SID			  "98"
+	  Position		  [345, 194, 360, 206]
+	  ZOrder		  -5
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator8"
+	  SID			  "99"
+	  Position		  [345, 169, 360, 181]
+	  ZOrder		  -6
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "bit_unpacking1"
+	  SID			  "104"
+	  Ports			  [1, 1]
+	  Position		  [435, 118, 530, 182]
+	  ZOrder		  1
+	  ForegroundColor	  "blue"
+	  LoadFcn		  "try\n%\n%Upgrade Information - standard BEGIN\nnew_color = 'blue';\nnew_ver = '0.19';\nact_ver = get_pa"
+	  "ram(gcb,'tt_iolib_version');\nif not(strcmp(act_ver,new_ver))\n    disp(['Upgrade block: ',gcb,char(10),'       Ver"
+	  "sion: ',act_ver,' -> ',new_ver]);\n    %switch - case for specific upgrade information e.g. additional parameter re"
+	  "quired \n    %Change appearance and version information\n    set_param(gcb,'ForegroundColor',new_color);\n    set_p"
+	  "aram(gcb,'tt_iolib_version',new_ver);\nend\n%Upgrade Information - standard END\ncatch\n%Standard catch section BEG"
+	  "IN \ndisp(' ');\ndisp('------------------------------------------------------------');\ndisp('An error occurred in "
+	  "a callback of the TTC580-BlockLib.');\ndisp(['Please check the parameters in the mask of ',gcb]);\ndisp('If you do "
+	  "not encounter any violations, then please '); \ndisp('copy the following lines and report this to support@ttcontrol"
+	  ".com ');\ndisp('<< begin of error message dump >>');\ndisp(['Version of TTC580-BlockLib: ', get_param(gcb,'tt_iolib"
+	  "_version')]);\ndisp(get_param(gcb,'ttDescription'));\ndisp(gcb);\nx=lasterror;disp(x.message);\ndisp(get_param(gcb,"
+	  "'MaskValues'));\ndisp(version);\ndisp(computer);\ndisp('<< end of error message dump >>');\ndisp('-----------------"
+	  "-------------------------------------------');\ndisp(' ');\n%Standard catch section END\nend"
+	  RequestExecContextInheritance	off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    63
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "bit_unpacking_Code"
+	    Description		    "Block to read in CAN signal from a specified position within 64bit field.\nFor \"Factor\" and \""
+	    "Offset\" the definition of Vector's CANdb applies:\n[Physical value] = ( [Raw value] * [Factor] ) + [Offset] \nwi"
+	    "th Raw value of a signal being the value as it is transmitted in the CAN-network\n"
+	    Help		    "web(which('IOLib500_utils.h'))"
+	    Initialization	    "%\n"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      11
+	      Object {
+		$ObjectID		64
+		Type			"edit"
+		Name			"SampleTime"
+		Prompt			"SampleTime"
+		Value			"-1"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		65
+		Type			"edit"
+		Name			"ttlib"
+		Prompt			"ttlib"
+		Value			"IO_Blk_Lib_TTC500"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		66
+		Type			"edit"
+		Name			"ttDescription"
+		Prompt			"ttDescription"
+		Value			"bit_unpacking"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		67
+		Type			"edit"
+		Name			"tt_iolib_version"
+		Prompt			"tt_iolib_version"
+		Value			"0.19"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		68
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  2
+		  Cell			  "big"
+		  Cell			  "little"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Endianness"
+		Prompt			"Endianness"
+		Value			"big"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		69
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  3
+		  Cell			  "unsigned"
+		  Cell			  "signed"
+		  Cell			  "real32"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Format"
+		Prompt			"Format"
+		Value			"unsigned"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		70
+		Type			"checkbox"
+		Name			"Inversion"
+		Prompt			"Inversion"
+		Value			"off"
+		Visible			"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		71
+		Type			"edit"
+		Name			"Startbit"
+		Prompt			"Startbit"
+		Value			"0"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		72
+		Type			"edit"
+		Name			"Width_bits"
+		Prompt			"Width_bits"
+		Value			"8"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		73
+		Type			"edit"
+		Name			"Factor"
+		Prompt			"Factor"
+		Value			"1"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		74
+		Type			"edit"
+		Name			"Offset"
+		Prompt			"Offset"
+		Value			"0"
+		Callback		"%"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "bit_unpacking1"
+	    Location		    [271, 292, 860, 750]
+	    Open		    off
+	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_in"
+	      SID		      "105"
+	      Position		      [40, 50, 70, 70]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      S-Function
+	      Name		      "bit_unpacking_s"
+	      SID		      "106"
+	      Ports		      [1, 1]
+	      Position		      [210, 45, 270, 75]
+	      ZOrder		      -2
+	      FunctionName	      "bit_unpacking_s"
+	      Parameters	      "SampleTime,Endianness,Format,Inversion,Startbit,Width_bits,Factor,Offset"
+	      SFunctionDeploymentMode off
+	      EnableBusSupport	      off
+	      SFcnIsStateOwnerBlock   off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Data_out"
+	      SID		      "107"
+	      Position		      [400, 50, 430, 70]
+	      ZOrder		      -3
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "Data_in"
+	      SrcPort		      1
+	      DstBlock		      "bit_unpacking_s"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "bit_unpacking_s"
+	      SrcPort		      1
+	      DstBlock		      "Data_out"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "bit_unpacking2"
+	  SID			  "109"
+	  Ports			  [1, 1]
+	  Position		  [435, 118, 530, 182]
+	  ZOrder		  3
+	  ForegroundColor	  "blue"
+	  LoadFcn		  "try\n%\n%Upgrade Information - standard BEGIN\nnew_color = 'blue';\nnew_ver = '0.19';\nact_ver = get_pa"
+	  "ram(gcb,'tt_iolib_version');\nif not(strcmp(act_ver,new_ver))\n    disp(['Upgrade block: ',gcb,char(10),'       Ver"
+	  "sion: ',act_ver,' -> ',new_ver]);\n    %switch - case for specific upgrade information e.g. additional parameter re"
+	  "quired \n    %Change appearance and version information\n    set_param(gcb,'ForegroundColor',new_color);\n    set_p"
+	  "aram(gcb,'tt_iolib_version',new_ver);\nend\n%Upgrade Information - standard END\ncatch\n%Standard catch section BEG"
+	  "IN \ndisp(' ');\ndisp('------------------------------------------------------------');\ndisp('An error occurred in "
+	  "a callback of the TTC580-BlockLib.');\ndisp(['Please check the parameters in the mask of ',gcb]);\ndisp('If you do "
+	  "not encounter any violations, then please '); \ndisp('copy the following lines and report this to support@ttcontrol"
+	  ".com ');\ndisp('<< begin of error message dump >>');\ndisp(['Version of TTC580-BlockLib: ', get_param(gcb,'tt_iolib"
+	  "_version')]);\ndisp(get_param(gcb,'ttDescription'));\ndisp(gcb);\nx=lasterror;disp(x.message);\ndisp(get_param(gcb,"
+	  "'MaskValues'));\ndisp(version);\ndisp(computer);\ndisp('<< end of error message dump >>');\ndisp('-----------------"
+	  "-------------------------------------------');\ndisp(' ');\n%Standard catch section END\nend"
+	  RequestExecContextInheritance	off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    75
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "bit_unpacking_Code"
+	    Description		    "Block to read in CAN signal from a specified position within 64bit field.\nFor \"Factor\" and \""
+	    "Offset\" the definition of Vector's CANdb applies:\n[Physical value] = ( [Raw value] * [Factor] ) + [Offset] \nwi"
+	    "th Raw value of a signal being the value as it is transmitted in the CAN-network\n"
+	    Help		    "web(which('IOLib500_utils.h'))"
+	    Initialization	    "%\n"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      11
+	      Object {
+		$ObjectID		76
+		Type			"edit"
+		Name			"SampleTime"
+		Prompt			"SampleTime"
+		Value			"-1"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		77
+		Type			"edit"
+		Name			"ttlib"
+		Prompt			"ttlib"
+		Value			"IO_Blk_Lib_TTC500"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		78
+		Type			"edit"
+		Name			"ttDescription"
+		Prompt			"ttDescription"
+		Value			"bit_unpacking"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		79
+		Type			"edit"
+		Name			"tt_iolib_version"
+		Prompt			"tt_iolib_version"
+		Value			"0.19"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		80
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  2
+		  Cell			  "big"
+		  Cell			  "little"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Endianness"
+		Prompt			"Endianness"
+		Value			"big"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		81
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  3
+		  Cell			  "unsigned"
+		  Cell			  "signed"
+		  Cell			  "real32"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Format"
+		Prompt			"Format"
+		Value			"unsigned"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		82
+		Type			"checkbox"
+		Name			"Inversion"
+		Prompt			"Inversion"
+		Value			"off"
+		Visible			"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		83
+		Type			"edit"
+		Name			"Startbit"
+		Prompt			"Startbit"
+		Value			"16"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		84
+		Type			"edit"
+		Name			"Width_bits"
+		Prompt			"Width_bits"
+		Value			"16"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		85
+		Type			"edit"
+		Name			"Factor"
+		Prompt			"Factor"
+		Value			"1"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		86
+		Type			"edit"
+		Name			"Offset"
+		Prompt			"Offset"
+		Value			"0"
+		Callback		"%"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "bit_unpacking2"
+	    Location		    [271, 292, 860, 750]
+	    Open		    off
+	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_in"
+	      SID		      "110"
+	      Position		      [40, 50, 70, 70]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      S-Function
+	      Name		      "bit_unpacking_s"
+	      SID		      "111"
+	      Ports		      [1, 1]
+	      Position		      [210, 45, 270, 75]
+	      ZOrder		      -2
+	      FunctionName	      "bit_unpacking_s"
+	      Parameters	      "SampleTime,Endianness,Format,Inversion,Startbit,Width_bits,Factor,Offset"
+	      SFunctionDeploymentMode off
+	      EnableBusSupport	      off
+	      SFcnIsStateOwnerBlock   off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Data_out"
+	      SID		      "112"
+	      Position		      [400, 50, 430, 70]
+	      ZOrder		      -3
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "Data_in"
+	      SrcPort		      1
+	      DstBlock		      "bit_unpacking_s"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "bit_unpacking_s"
+	      SrcPort		      1
+	      DstBlock		      "Data_out"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "bit_unpacking3"
+	  SID			  "114"
+	  Ports			  [1, 1]
+	  Position		  [435, 118, 530, 182]
+	  ZOrder		  5
+	  ForegroundColor	  "blue"
+	  LoadFcn		  "try\n%\n%Upgrade Information - standard BEGIN\nnew_color = 'blue';\nnew_ver = '0.19';\nact_ver = get_pa"
+	  "ram(gcb,'tt_iolib_version');\nif not(strcmp(act_ver,new_ver))\n    disp(['Upgrade block: ',gcb,char(10),'       Ver"
+	  "sion: ',act_ver,' -> ',new_ver]);\n    %switch - case for specific upgrade information e.g. additional parameter re"
+	  "quired \n    %Change appearance and version information\n    set_param(gcb,'ForegroundColor',new_color);\n    set_p"
+	  "aram(gcb,'tt_iolib_version',new_ver);\nend\n%Upgrade Information - standard END\ncatch\n%Standard catch section BEG"
+	  "IN \ndisp(' ');\ndisp('------------------------------------------------------------');\ndisp('An error occurred in "
+	  "a callback of the TTC580-BlockLib.');\ndisp(['Please check the parameters in the mask of ',gcb]);\ndisp('If you do "
+	  "not encounter any violations, then please '); \ndisp('copy the following lines and report this to support@ttcontrol"
+	  ".com ');\ndisp('<< begin of error message dump >>');\ndisp(['Version of TTC580-BlockLib: ', get_param(gcb,'tt_iolib"
+	  "_version')]);\ndisp(get_param(gcb,'ttDescription'));\ndisp(gcb);\nx=lasterror;disp(x.message);\ndisp(get_param(gcb,"
+	  "'MaskValues'));\ndisp(version);\ndisp(computer);\ndisp('<< end of error message dump >>');\ndisp('-----------------"
+	  "-------------------------------------------');\ndisp(' ');\n%Standard catch section END\nend"
+	  RequestExecContextInheritance	off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    87
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "bit_unpacking_Code"
+	    Description		    "Block to read in CAN signal from a specified position within 64bit field.\nFor \"Factor\" and \""
+	    "Offset\" the definition of Vector's CANdb applies:\n[Physical value] = ( [Raw value] * [Factor] ) + [Offset] \nwi"
+	    "th Raw value of a signal being the value as it is transmitted in the CAN-network\n"
+	    Help		    "web(which('IOLib500_utils.h'))"
+	    Initialization	    "%\n"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      11
+	      Object {
+		$ObjectID		88
+		Type			"edit"
+		Name			"SampleTime"
+		Prompt			"SampleTime"
+		Value			"-1"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		89
+		Type			"edit"
+		Name			"ttlib"
+		Prompt			"ttlib"
+		Value			"IO_Blk_Lib_TTC500"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		90
+		Type			"edit"
+		Name			"ttDescription"
+		Prompt			"ttDescription"
+		Value			"bit_unpacking"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		91
+		Type			"edit"
+		Name			"tt_iolib_version"
+		Prompt			"tt_iolib_version"
+		Value			"0.19"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		92
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  2
+		  Cell			  "big"
+		  Cell			  "little"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Endianness"
+		Prompt			"Endianness"
+		Value			"big"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		93
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  3
+		  Cell			  "unsigned"
+		  Cell			  "signed"
+		  Cell			  "real32"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Format"
+		Prompt			"Format"
+		Value			"signed"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		94
+		Type			"checkbox"
+		Name			"Inversion"
+		Prompt			"Inversion"
+		Value			"off"
+		Visible			"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		95
+		Type			"edit"
+		Name			"Startbit"
+		Prompt			"Startbit"
+		Value			"35"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		96
+		Type			"edit"
+		Name			"Width_bits"
+		Prompt			"Width_bits"
+		Value			"12"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		97
+		Type			"edit"
+		Name			"Factor"
+		Prompt			"Factor"
+		Value			"1"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		98
+		Type			"edit"
+		Name			"Offset"
+		Prompt			"Offset"
+		Value			"0"
+		Callback		"%"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "bit_unpacking3"
+	    Location		    [271, 292, 860, 750]
+	    Open		    off
+	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_in"
+	      SID		      "115"
+	      Position		      [40, 50, 70, 70]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      S-Function
+	      Name		      "bit_unpacking_s"
+	      SID		      "116"
+	      Ports		      [1, 1]
+	      Position		      [210, 45, 270, 75]
+	      ZOrder		      -2
+	      FunctionName	      "bit_unpacking_s"
+	      Parameters	      "SampleTime,Endianness,Format,Inversion,Startbit,Width_bits,Factor,Offset"
+	      SFunctionDeploymentMode off
+	      EnableBusSupport	      off
+	      SFcnIsStateOwnerBlock   off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Data_out"
+	      SID		      "117"
+	      Position		      [400, 50, 430, 70]
+	      ZOrder		      -3
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "Data_in"
+	      SrcPort		      1
+	      DstBlock		      "bit_unpacking_s"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "bit_unpacking_s"
+	      SrcPort		      1
+	      DstBlock		      "Data_out"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "bit_unpacking4"
+	  SID			  "119"
+	  Ports			  [1, 1]
+	  Position		  [435, 118, 530, 182]
+	  ZOrder		  7
+	  ForegroundColor	  "blue"
+	  LoadFcn		  "try\n%\n%Upgrade Information - standard BEGIN\nnew_color = 'blue';\nnew_ver = '0.19';\nact_ver = get_pa"
+	  "ram(gcb,'tt_iolib_version');\nif not(strcmp(act_ver,new_ver))\n    disp(['Upgrade block: ',gcb,char(10),'       Ver"
+	  "sion: ',act_ver,' -> ',new_ver]);\n    %switch - case for specific upgrade information e.g. additional parameter re"
+	  "quired \n    %Change appearance and version information\n    set_param(gcb,'ForegroundColor',new_color);\n    set_p"
+	  "aram(gcb,'tt_iolib_version',new_ver);\nend\n%Upgrade Information - standard END\ncatch\n%Standard catch section BEG"
+	  "IN \ndisp(' ');\ndisp('------------------------------------------------------------');\ndisp('An error occurred in "
+	  "a callback of the TTC580-BlockLib.');\ndisp(['Please check the parameters in the mask of ',gcb]);\ndisp('If you do "
+	  "not encounter any violations, then please '); \ndisp('copy the following lines and report this to support@ttcontrol"
+	  ".com ');\ndisp('<< begin of error message dump >>');\ndisp(['Version of TTC580-BlockLib: ', get_param(gcb,'tt_iolib"
+	  "_version')]);\ndisp(get_param(gcb,'ttDescription'));\ndisp(gcb);\nx=lasterror;disp(x.message);\ndisp(get_param(gcb,"
+	  "'MaskValues'));\ndisp(version);\ndisp(computer);\ndisp('<< end of error message dump >>');\ndisp('-----------------"
+	  "-------------------------------------------');\ndisp(' ');\n%Standard catch section END\nend"
+	  RequestExecContextInheritance	off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    99
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "bit_unpacking_Code"
+	    Description		    "Block to read in CAN signal from a specified position within 64bit field.\nFor \"Factor\" and \""
+	    "Offset\" the definition of Vector's CANdb applies:\n[Physical value] = ( [Raw value] * [Factor] ) + [Offset] \nwi"
+	    "th Raw value of a signal being the value as it is transmitted in the CAN-network\n"
+	    Help		    "web(which('IOLib500_utils.h'))"
+	    Initialization	    "%\n"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      11
+	      Object {
+		$ObjectID		100
+		Type			"edit"
+		Name			"SampleTime"
+		Prompt			"SampleTime"
+		Value			"-1"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		101
+		Type			"edit"
+		Name			"ttlib"
+		Prompt			"ttlib"
+		Value			"IO_Blk_Lib_TTC500"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		102
+		Type			"edit"
+		Name			"ttDescription"
+		Prompt			"ttDescription"
+		Value			"bit_unpacking"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		103
+		Type			"edit"
+		Name			"tt_iolib_version"
+		Prompt			"tt_iolib_version"
+		Value			"0.19"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		104
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  2
+		  Cell			  "big"
+		  Cell			  "little"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Endianness"
+		Prompt			"Endianness"
+		Value			"little"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		105
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  3
+		  Cell			  "unsigned"
+		  Cell			  "signed"
+		  Cell			  "real32"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Format"
+		Prompt			"Format"
+		Value			"unsigned"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		106
+		Type			"checkbox"
+		Name			"Inversion"
+		Prompt			"Inversion"
+		Value			"off"
+		Visible			"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		107
+		Type			"edit"
+		Name			"Startbit"
+		Prompt			"Startbit"
+		Value			"40"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		108
+		Type			"edit"
+		Name			"Width_bits"
+		Prompt			"Width_bits"
+		Value			"8"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		109
+		Type			"edit"
+		Name			"Factor"
+		Prompt			"Factor"
+		Value			"1"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		110
+		Type			"edit"
+		Name			"Offset"
+		Prompt			"Offset"
+		Value			"0"
+		Callback		"%"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "bit_unpacking4"
+	    Location		    [271, 292, 860, 750]
+	    Open		    off
+	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_in"
+	      SID		      "120"
+	      Position		      [40, 50, 70, 70]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      S-Function
+	      Name		      "bit_unpacking_s"
+	      SID		      "121"
+	      Ports		      [1, 1]
+	      Position		      [210, 45, 270, 75]
+	      ZOrder		      -2
+	      FunctionName	      "bit_unpacking_s"
+	      Parameters	      "SampleTime,Endianness,Format,Inversion,Startbit,Width_bits,Factor,Offset"
+	      SFunctionDeploymentMode off
+	      EnableBusSupport	      off
+	      SFcnIsStateOwnerBlock   off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Data_out"
+	      SID		      "122"
+	      Position		      [400, 50, 430, 70]
+	      ZOrder		      -3
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "Data_in"
+	      SrcPort		      1
+	      DstBlock		      "bit_unpacking_s"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "bit_unpacking_s"
+	      SrcPort		      1
+	      DstBlock		      "Data_out"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "bit_unpacking5"
+	  SID			  "124"
+	  Ports			  [1, 1]
+	  Position		  [435, 118, 530, 182]
+	  ZOrder		  9
+	  ForegroundColor	  "blue"
+	  LoadFcn		  "try\n%\n%Upgrade Information - standard BEGIN\nnew_color = 'blue';\nnew_ver = '0.19';\nact_ver = get_pa"
+	  "ram(gcb,'tt_iolib_version');\nif not(strcmp(act_ver,new_ver))\n    disp(['Upgrade block: ',gcb,char(10),'       Ver"
+	  "sion: ',act_ver,' -> ',new_ver]);\n    %switch - case for specific upgrade information e.g. additional parameter re"
+	  "quired \n    %Change appearance and version information\n    set_param(gcb,'ForegroundColor',new_color);\n    set_p"
+	  "aram(gcb,'tt_iolib_version',new_ver);\nend\n%Upgrade Information - standard END\ncatch\n%Standard catch section BEG"
+	  "IN \ndisp(' ');\ndisp('------------------------------------------------------------');\ndisp('An error occurred in "
+	  "a callback of the TTC580-BlockLib.');\ndisp(['Please check the parameters in the mask of ',gcb]);\ndisp('If you do "
+	  "not encounter any violations, then please '); \ndisp('copy the following lines and report this to support@ttcontrol"
+	  ".com ');\ndisp('<< begin of error message dump >>');\ndisp(['Version of TTC580-BlockLib: ', get_param(gcb,'tt_iolib"
+	  "_version')]);\ndisp(get_param(gcb,'ttDescription'));\ndisp(gcb);\nx=lasterror;disp(x.message);\ndisp(get_param(gcb,"
+	  "'MaskValues'));\ndisp(version);\ndisp(computer);\ndisp('<< end of error message dump >>');\ndisp('-----------------"
+	  "-------------------------------------------');\ndisp(' ');\n%Standard catch section END\nend"
+	  RequestExecContextInheritance	off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    111
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "bit_unpacking_Code"
+	    Description		    "Block to read in CAN signal from a specified position within 64bit field.\nFor \"Factor\" and \""
+	    "Offset\" the definition of Vector's CANdb applies:\n[Physical value] = ( [Raw value] * [Factor] ) + [Offset] \nwi"
+	    "th Raw value of a signal being the value as it is transmitted in the CAN-network\n"
+	    Help		    "web(which('IOLib500_utils.h'))"
+	    Initialization	    "%\n"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      11
+	      Object {
+		$ObjectID		112
+		Type			"edit"
+		Name			"SampleTime"
+		Prompt			"SampleTime"
+		Value			"-1"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		113
+		Type			"edit"
+		Name			"ttlib"
+		Prompt			"ttlib"
+		Value			"IO_Blk_Lib_TTC500"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		114
+		Type			"edit"
+		Name			"ttDescription"
+		Prompt			"ttDescription"
+		Value			"bit_unpacking"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		115
+		Type			"edit"
+		Name			"tt_iolib_version"
+		Prompt			"tt_iolib_version"
+		Value			"0.19"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		116
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  2
+		  Cell			  "big"
+		  Cell			  "little"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Endianness"
+		Prompt			"Endianness"
+		Value			"little"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		117
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  3
+		  Cell			  "unsigned"
+		  Cell			  "signed"
+		  Cell			  "real32"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Format"
+		Prompt			"Format"
+		Value			"signed"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		118
+		Type			"checkbox"
+		Name			"Inversion"
+		Prompt			"Inversion"
+		Value			"off"
+		Visible			"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		119
+		Type			"edit"
+		Name			"Startbit"
+		Prompt			"Startbit"
+		Value			"49"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		120
+		Type			"edit"
+		Name			"Width_bits"
+		Prompt			"Width_bits"
+		Value			"12"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		121
+		Type			"edit"
+		Name			"Factor"
+		Prompt			"Factor"
+		Value			"1"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		122
+		Type			"edit"
+		Name			"Offset"
+		Prompt			"Offset"
+		Value			"0"
+		Callback		"%"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "bit_unpacking5"
+	    Location		    [271, 292, 860, 750]
+	    Open		    off
+	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_in"
+	      SID		      "125"
+	      Position		      [40, 50, 70, 70]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      S-Function
+	      Name		      "bit_unpacking_s"
+	      SID		      "126"
+	      Ports		      [1, 1]
+	      Position		      [210, 45, 270, 75]
+	      ZOrder		      -2
+	      FunctionName	      "bit_unpacking_s"
+	      Parameters	      "SampleTime,Endianness,Format,Inversion,Startbit,Width_bits,Factor,Offset"
+	      SFunctionDeploymentMode off
+	      EnableBusSupport	      off
+	      SFcnIsStateOwnerBlock   off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Data_out"
+	      SID		      "127"
+	      Position		      [400, 50, 430, 70]
+	      ZOrder		      -3
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "Data_in"
+	      SrcPort		      1
+	      DstBlock		      "bit_unpacking_s"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "bit_unpacking_s"
+	      SrcPort		      1
+	      DstBlock		      "Data_out"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Rx_u8_big"
+	  SID			  "108"
+	  Position		  [565, 143, 595, 157]
+	  ZOrder		  2
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Rx_u16_big"
+	  SID			  "113"
+	  Position		  [565, 143, 595, 157]
+	  ZOrder		  4
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Rx_i12_big"
+	  SID			  "118"
+	  Position		  [565, 143, 595, 157]
+	  ZOrder		  6
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Rx_u8_little"
+	  SID			  "123"
+	  Position		  [565, 143, 595, 157]
+	  ZOrder		  8
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Rx_i12_little"
+	  SID			  "128"
+	  Position		  [565, 143, 595, 157]
+	  ZOrder		  10
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "ErrorCode"
+	  SID			  "101"
+	  Position		  [460, 48, 490, 62]
+	  ZOrder		  -8
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "IO_CAN_ReadMsg"
+	  SrcPort		  3
+	  DstBlock		  "Terminator8"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  "IO_CAN_ReadMsg"
+	  SrcPort		  4
+	  DstBlock		  "Terminator7"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  3
+	  SrcBlock		  "IO_CAN_ReadMsg"
+	  SrcPort		  5
+	  DstBlock		  "Terminator6"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  "IO_CAN_ConfigMsg"
+	  SrcPort		  2
+	  DstBlock		  "IO_CAN_ReadMsg"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  5
+	  SrcBlock		  "IO_CAN_ConfigMsg"
+	  SrcPort		  1
+	  DstBlock		  "Terminator2"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  6
+	  SrcBlock		  "IO_CAN_ReadMsg"
+	  SrcPort		  1
+	  Points		  [25, 0; 0, -70]
+	  DstBlock		  "ErrorCode"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  9
+	  SrcBlock		  "IO_CAN_ReadMsg"
+	  SrcPort		  2
+	  Points		  [0, 0]
+	  Branch {
+	    ZOrder		    7
+	    DstBlock		    "bit_unpacking1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    10
+	    DstBlock		    "bit_unpacking2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    12
+	    DstBlock		    "bit_unpacking3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    14
+	    DstBlock		    "bit_unpacking4"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    16
+	    DstBlock		    "bit_unpacking5"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  8
+	  SrcBlock		  "bit_unpacking1"
+	  SrcPort		  1
+	  DstBlock		  "Rx_u8_big"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  11
+	  SrcBlock		  "bit_unpacking2"
+	  SrcPort		  1
+	  DstBlock		  "Rx_u16_big"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  13
+	  SrcBlock		  "bit_unpacking3"
+	  SrcPort		  1
+	  DstBlock		  "Rx_i12_big"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  15
+	  SrcBlock		  "bit_unpacking4"
+	  SrcPort		  1
+	  DstBlock		  "Rx_u8_little"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  17
+	  SrcBlock		  "bit_unpacking5"
+	  SrcPort		  1
+	  DstBlock		  "Rx_i12_little"
+	  DstPort		  1
+	}
+	Annotation {
+	  SID			  "103"
+	  Name			  "Don't change the Names of the Blocks"
+	  Position		  [129, 283, 353, 303]
+	  InternalMargins	  [0, 0, 0, 0]
+	  HorizontalAlignment	  "center"
+	  VerticalAlignment	  "middle"
+	  ZOrder		  -1
+	  FontName		  "Arial Narrow"
+	  FontSize		  16
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Test_Message_float"
+      SID		      "1"
+      Ports		      [2, 1]
+      Position		      [150, 30, 245, 110]
+      ZOrder		      1
+      ForegroundColor	      "blue"
+      Priority		      "0"
+      RequestExecContextInheritance off
+      System {
+	Name			"Test_Message_float"
+	Location		[170, 52, 1191, 705]
+	Open			off
+	PortBlocksUseCompactNotation off
+	SetDomainSpec		off
+	DomainSpecType		"Deduce"
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Test_f32_little"
+	  SID			  "16"
+	  Position		  [45, 248, 75, 262]
+	  ZOrder		  1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Test_f32_big"
+	  SID			  "21"
+	  Position		  [45, 248, 75, 262]
+	  ZOrder		  3
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "IO_CAN_ConfigMsg"
+	  SID			  "3"
+	  Ports			  [0, 2]
+	  Position		  [45, 68, 140, 132]
+	  ZOrder		  -2
+	  ForegroundColor	  "blue"
+	  RequestExecContextInheritance	off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    123
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "IO_CAN_ConfigMsg_Code"
+	    Description		    "Configures a message object for the given CAN channel."
+	    Help		    "web(which('IO_CAN.h'))"
+	    Initialization	    "%\n"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      9
+	      Object {
+		$ObjectID		124
+		Type			"edit"
+		Name			"SampleTime"
+		Prompt			"SampleTime"
+		Value			"-1"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		125
+		Type			"edit"
+		Name			"ttlib"
+		Prompt			"ttlib"
+		Value			"IO_Blk_Lib_TTC500"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		126
+		Type			"edit"
+		Name			"ttDescription"
+		Prompt			"ttDescription"
+		Value			"IO_CAN_ConfigMsg"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		127
+		Type			"edit"
+		Name			"tt_iolib_version"
+		Prompt			"tt_iolib_version"
+		Value			"0.19"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		128
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  7
+		  Cell			  "IO_CAN_CHANNEL_0 "
+		  Cell			  "IO_CAN_CHANNEL_1"
+		  Cell			  "IO_CAN_CHANNEL_2"
+		  Cell			  "IO_CAN_CHANNEL_3"
+		  Cell			  "IO_CAN_CHANNEL_4"
+		  Cell			  "IO_CAN_CHANNEL_5"
+		  Cell			  "IO_CAN_CHANNEL_6"
+		  PropName		  "TypeOptions"
+		}
+		Name			"channel"
+		Prompt			"channel"
+		Value			"IO_CAN_CHANNEL_0 "
+		Evaluate		"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		129
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  2
+		  Cell			  "IO_CAN_MSG_READ"
+		  Cell			  "IO_CAN_MSG_WRITE"
+		  PropName		  "TypeOptions"
+		}
+		Name			"mode"
+		Prompt			"mode"
+		Value			"IO_CAN_MSG_WRITE"
+		Evaluate		"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		130
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  2
+		  Cell			  "IO_CAN_STD_FRAME"
+		  Cell			  "IO_CAN_EXT_FRAME"
+		  PropName		  "TypeOptions"
+		}
+		Name			"id_format"
+		Prompt			"id_format"
+		Value			"IO_CAN_STD_FRAME"
+		Evaluate		"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		131
+		Type			"edit"
+		Name			"id"
+		Prompt			"id"
+		Value			"0x011"
+		Evaluate		"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		132
+		Type			"edit"
+		Name			"ac_mask"
+		Prompt			"ac_mask"
+		Value			"0x7FF"
+		Evaluate		"off"
+		Callback		"%"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "IO_CAN_ConfigMsg"
+	    Location		    [271, 292, 860, 750]
+	    Open		    off
+	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      S-Function
+	      Name		      "IO_CAN_ConfigMsg_s"
+	      SID		      "4"
+	      Ports		      [0, 2]
+	      Position		      [210, 47, 270, 78]
+	      ZOrder		      -1
+	      FunctionName	      "IO_CAN_ConfigMsg_s"
+	      Parameters	      "SampleTime,channel,mode,id_format,id,ac_mask"
+	      SFunctionDeploymentMode off
+	      EnableBusSupport	      off
+	      SFcnIsStateOwnerBlock   off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "ErrorCode"
+	      SID		      "5"
+	      Position		      [400, 50, 430, 70]
+	      ZOrder		      -2
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "handle"
+	      SID		      "6"
+	      Position		      [400, 100, 430, 120]
+	      ZOrder		      -3
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "IO_CAN_ConfigMsg_s"
+	      SrcPort		      2
+	      DstBlock		      "handle"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "IO_CAN_ConfigMsg_s"
+	      SrcPort		      1
+	      DstBlock		      "ErrorCode"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "IO_CAN_WriteMsg"
+	  SID			  "7"
+	  Ports			  [5, 1]
+	  Position		  [615, 189, 710, 421]
+	  ZOrder		  -3
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.826"
+	  SourceBlock		  "IOBlock_Library_TTC580/CAN  Blocks\nTTC580 IOlib/WriteMsg_CAN/IO_CAN_WriteMsg"
+	  SourceType		  "IO_CAN_WriteMsg_Code"
+	  SourceProductName	  "I/O Blocklibrary for TTC580"
+	  ContentPreviewEnabled	  off
+	  SampleTime		  -1
+	  ttlib			  IO_Blk_Lib_TTC500
+	  ttDescription		  IO_CAN_WriteMsg
+	  tt_iolib_version	  0.19
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "OR_TX"
+	  SID			  "8"
+	  Ports			  [2, 1]
+	  Position		  [370, 236, 410, 274]
+	  ZOrder		  -4
+	  LibraryVersion	  "1.401"
+	  SourceBlock		  "simulink/Logic and Bit\nOperations/Bitwise\nOperator"
+	  SourceType		  "Bitwise Operator"
+	  SourceProductName	  "Simulink"
+	  SourceProductBaseCode	  "SL"
+	  logicop		  OR
+	  UseBitMask		  off
+	  NumInputPorts		  2
+	  BitMask		  "bin2dec('11011001')"
+	  BitMaskRealWorld	  "Stored Integer"
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator5"
+	  SID			  "9"
+	  Position		  [185, 79, 200, 91]
+	  ZOrder		  -5
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "bit_packing1"
+	  SID			  "17"
+	  Ports			  [1, 1]
+	  Position		  [130, 223, 225, 287]
+	  ZOrder		  2
+	  ForegroundColor	  "blue"
+	  LoadFcn		  "try\n%\n%Upgrade Information - standard BEGIN\nnew_color = 'blue';\nnew_ver = '0.19';\nact_ver = get_pa"
+	  "ram(gcb,'tt_iolib_version');\nif not(strcmp(act_ver,new_ver))\n    disp(['Upgrade block: ',gcb,char(10),'       Ver"
+	  "sion: ',act_ver,' -> ',new_ver]);\n    %switch - case for specific upgrade information e.g. additional parameter re"
+	  "quired \n    %Change appearance and version information\n    set_param(gcb,'ForegroundColor',new_color);\n    set_p"
+	  "aram(gcb,'tt_iolib_version',new_ver);\nend\n%Upgrade Information - standard END\ncatch\n%Standard catch section BEG"
+	  "IN \ndisp(' ');\ndisp('------------------------------------------------------------');\ndisp('An error occurred in "
+	  "a callback of the TTC580-BlockLib.');\ndisp(['Please check the parameters in the mask of ',gcb]);\ndisp('If you do "
+	  "not encounter any violations, then please '); \ndisp('copy the following lines and report this to support@ttcontrol"
+	  ".com ');\ndisp('<< begin of error message dump >>');\ndisp(['Version of TTC580-BlockLib: ', get_param(gcb,'tt_iolib"
+	  "_version')]);\ndisp(get_param(gcb,'ttDescription'));\ndisp(gcb);\nx=lasterror;disp(x.message);\ndisp(get_param(gcb,"
+	  "'MaskValues'));\ndisp(version);\ndisp(computer);\ndisp('<< end of error message dump >>');\ndisp('-----------------"
+	  "-------------------------------------------');\ndisp(' ');\n%Standard catch section END\nend"
+	  RequestExecContextInheritance	off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    133
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "bit_packing_Code"
+	    Description		    "Block to prepare CAN-transmition at specified position within 64bit field.\nFor \"Factor\" and "
+	    "\"Offset\" the definition of Vector's CANdb applies:\n[Physical value] = ( [Raw value] * [Factor] ) + [Offset] \n"
+	    "with Raw value of a signal being the value as it is transmitted in the CAN-network."
+	    Help		    "web(which('IOLib500_utils.h'))"
+	    Initialization	    "%\n"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      11
+	      Object {
+		$ObjectID		134
+		Type			"edit"
+		Name			"SampleTime"
+		Prompt			"SampleTime"
+		Value			"-1"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		135
+		Type			"edit"
+		Name			"ttlib"
+		Prompt			"ttlib"
+		Value			"IO_Blk_Lib_TTC500"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		136
+		Type			"edit"
+		Name			"ttDescription"
+		Prompt			"ttDescription"
+		Value			"bit_packing"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		137
+		Type			"edit"
+		Name			"tt_iolib_version"
+		Prompt			"tt_iolib_version"
+		Value			"0.19"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		138
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  2
+		  Cell			  "big"
+		  Cell			  "little"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Endianness"
+		Prompt			"Endianness"
+		Value			"little"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		139
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  3
+		  Cell			  "unsigned"
+		  Cell			  "signed"
+		  Cell			  "real32"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Format"
+		Prompt			"Format"
+		Value			"real32"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		140
+		Type			"checkbox"
+		Name			"Inversion"
+		Prompt			"Inversion"
+		Value			"off"
+		Visible			"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		141
+		Type			"edit"
+		Name			"Startbit"
+		Prompt			"Startbit"
+		Value			"0"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		142
+		Type			"edit"
+		Name			"Width_bits"
+		Prompt			"Width_bits"
+		Value			"32"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		143
+		Type			"edit"
+		Name			"Factor"
+		Prompt			"Factor"
+		Value			"1"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		144
+		Type			"edit"
+		Name			"Offset"
+		Prompt			"Offset"
+		Value			"0"
+		Callback		"%"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "bit_packing1"
+	    Location		    [271, 292, 860, 750]
+	    Open		    off
+	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_in"
+	      SID		      "18"
+	      Position		      [40, 50, 70, 70]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      S-Function
+	      Name		      "bit_packing_s"
+	      SID		      "19"
+	      Ports		      [1, 1]
+	      Position		      [210, 45, 270, 75]
+	      ZOrder		      -2
+	      FunctionName	      "bit_packing_s"
+	      Parameters	      "SampleTime,Endianness,Format,Inversion,Startbit,Width_bits,Factor,Offset"
+	      SFunctionDeploymentMode off
+	      EnableBusSupport	      off
+	      SFcnIsStateOwnerBlock   off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Data_out"
+	      SID		      "20"
+	      Position		      [400, 50, 430, 70]
+	      ZOrder		      -3
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "Data_in"
+	      SrcPort		      1
+	      DstBlock		      "bit_packing_s"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "bit_packing_s"
+	      SrcPort		      1
+	      DstBlock		      "Data_out"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "bit_packing2"
+	  SID			  "22"
+	  Ports			  [1, 1]
+	  Position		  [130, 223, 225, 287]
+	  ZOrder		  4
+	  ForegroundColor	  "blue"
+	  LoadFcn		  "try\n%\n%Upgrade Information - standard BEGIN\nnew_color = 'blue';\nnew_ver = '0.19';\nact_ver = get_pa"
+	  "ram(gcb,'tt_iolib_version');\nif not(strcmp(act_ver,new_ver))\n    disp(['Upgrade block: ',gcb,char(10),'       Ver"
+	  "sion: ',act_ver,' -> ',new_ver]);\n    %switch - case for specific upgrade information e.g. additional parameter re"
+	  "quired \n    %Change appearance and version information\n    set_param(gcb,'ForegroundColor',new_color);\n    set_p"
+	  "aram(gcb,'tt_iolib_version',new_ver);\nend\n%Upgrade Information - standard END\ncatch\n%Standard catch section BEG"
+	  "IN \ndisp(' ');\ndisp('------------------------------------------------------------');\ndisp('An error occurred in "
+	  "a callback of the TTC580-BlockLib.');\ndisp(['Please check the parameters in the mask of ',gcb]);\ndisp('If you do "
+	  "not encounter any violations, then please '); \ndisp('copy the following lines and report this to support@ttcontrol"
+	  ".com ');\ndisp('<< begin of error message dump >>');\ndisp(['Version of TTC580-BlockLib: ', get_param(gcb,'tt_iolib"
+	  "_version')]);\ndisp(get_param(gcb,'ttDescription'));\ndisp(gcb);\nx=lasterror;disp(x.message);\ndisp(get_param(gcb,"
+	  "'MaskValues'));\ndisp(version);\ndisp(computer);\ndisp('<< end of error message dump >>');\ndisp('-----------------"
+	  "-------------------------------------------');\ndisp(' ');\n%Standard catch section END\nend"
+	  RequestExecContextInheritance	off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    145
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "bit_packing_Code"
+	    Description		    "Block to prepare CAN-transmition at specified position within 64bit field.\nFor \"Factor\" and "
+	    "\"Offset\" the definition of Vector's CANdb applies:\n[Physical value] = ( [Raw value] * [Factor] ) + [Offset] \n"
+	    "with Raw value of a signal being the value as it is transmitted in the CAN-network."
+	    Help		    "web(which('IOLib500_utils.h'))"
+	    Initialization	    "%\n"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      11
+	      Object {
+		$ObjectID		146
+		Type			"edit"
+		Name			"SampleTime"
+		Prompt			"SampleTime"
+		Value			"-1"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		147
+		Type			"edit"
+		Name			"ttlib"
+		Prompt			"ttlib"
+		Value			"IO_Blk_Lib_TTC500"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		148
+		Type			"edit"
+		Name			"ttDescription"
+		Prompt			"ttDescription"
+		Value			"bit_packing"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		149
+		Type			"edit"
+		Name			"tt_iolib_version"
+		Prompt			"tt_iolib_version"
+		Value			"0.19"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		150
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  2
+		  Cell			  "big"
+		  Cell			  "little"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Endianness"
+		Prompt			"Endianness"
+		Value			"big"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		151
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  3
+		  Cell			  "unsigned"
+		  Cell			  "signed"
+		  Cell			  "real32"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Format"
+		Prompt			"Format"
+		Value			"real32"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		152
+		Type			"checkbox"
+		Name			"Inversion"
+		Prompt			"Inversion"
+		Value			"off"
+		Visible			"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		153
+		Type			"edit"
+		Name			"Startbit"
+		Prompt			"Startbit"
+		Value			"56"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		154
+		Type			"edit"
+		Name			"Width_bits"
+		Prompt			"Width_bits"
+		Value			"32"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		155
+		Type			"edit"
+		Name			"Factor"
+		Prompt			"Factor"
+		Value			"1"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		156
+		Type			"edit"
+		Name			"Offset"
+		Prompt			"Offset"
+		Value			"0"
+		Callback		"%"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "bit_packing2"
+	    Location		    [271, 292, 860, 750]
+	    Open		    off
+	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_in"
+	      SID		      "23"
+	      Position		      [40, 50, 70, 70]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      S-Function
+	      Name		      "bit_packing_s"
+	      SID		      "24"
+	      Ports		      [1, 1]
+	      Position		      [210, 45, 270, 75]
+	      ZOrder		      -2
+	      FunctionName	      "bit_packing_s"
+	      Parameters	      "SampleTime,Endianness,Format,Inversion,Startbit,Width_bits,Factor,Offset"
+	      SFunctionDeploymentMode off
+	      EnableBusSupport	      off
+	      SFcnIsStateOwnerBlock   off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Data_out"
+	      SID		      "25"
+	      Position		      [400, 50, 430, 70]
+	      ZOrder		      -3
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "Data_in"
+	      SrcPort		      1
+	      DstBlock		      "bit_packing_s"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "bit_packing_s"
+	      SrcPort		      1
+	      DstBlock		      "Data_out"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "id_TX"
+	  SID			  "11"
+	  Position		  [485, 384, 565, 406]
+	  ZOrder		  -7
+	  Value			  "hex2dec('011')"
+	  OutDataTypeStr	  "uint32"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "id_format_TX"
+	  SID			  "12"
+	  Position		  [485, 340, 565, 360]
+	  ZOrder		  -8
+	  Value			  "0"
+	  OutDataTypeStr	  "Inherit: Inherit via back propagation"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "length_TX"
+	  SID			  "13"
+	  Position		  [485, 294, 565, 316]
+	  ZOrder		  -9
+	  Value			  "8"
+	  OutDataTypeStr	  "Inherit: Inherit via back propagation"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "ErrorCode"
+	  SID			  "14"
+	  Position		  [785, 298, 815, 312]
+	  ZOrder		  -10
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "id_TX"
+	  SrcPort		  1
+	  DstBlock		  "IO_CAN_WriteMsg"
+	  DstPort		  5
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  "id_format_TX"
+	  SrcPort		  1
+	  DstBlock		  "IO_CAN_WriteMsg"
+	  DstPort		  4
+	}
+	Line {
+	  ZOrder		  3
+	  SrcBlock		  "length_TX"
+	  SrcPort		  1
+	  DstBlock		  "IO_CAN_WriteMsg"
+	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  "IO_CAN_ConfigMsg"
+	  SrcPort		  2
+	  Points		  [425, 0; 0, 100]
+	  DstBlock		  "IO_CAN_WriteMsg"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  5
+	  SrcBlock		  "IO_CAN_ConfigMsg"
+	  SrcPort		  1
+	  DstBlock		  "Terminator5"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  6
+	  SrcBlock		  "IO_CAN_WriteMsg"
+	  SrcPort		  1
+	  DstBlock		  "ErrorCode"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  7
+	  SrcBlock		  "Test_f32_little"
+	  SrcPort		  1
+	  DstBlock		  "bit_packing1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  8
+	  SrcBlock		  "bit_packing1"
+	  SrcPort		  1
+	  DstBlock		  "OR_TX"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  9
+	  SrcBlock		  "Test_f32_big"
+	  SrcPort		  1
+	  DstBlock		  "bit_packing2"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  10
+	  SrcBlock		  "bit_packing2"
+	  SrcPort		  1
+	  DstBlock		  "OR_TX"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  11
+	  SrcBlock		  "OR_TX"
+	  SrcPort		  1
+	  DstBlock		  "IO_CAN_WriteMsg"
+	  DstPort		  2
+	}
+	Annotation {
+	  SID			  "15"
+	  Name			  "Don't change the Names of the Blocks"
+	  Position		  [64, 353, 288, 373]
+	  InternalMargins	  [0, 0, 0, 0]
+	  HorizontalAlignment	  "center"
+	  VerticalAlignment	  "middle"
+	  ZOrder		  -1
+	  FontName		  "Arial Narrow"
+	  FontSize		  16
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Test_Message_integer"
+      SID		      "26"
+      Ports		      [5, 1]
+      Position		      [150, 129, 245, 211]
+      ZOrder		      2
+      ForegroundColor	      "blue"
+      Priority		      "0"
+      RequestExecContextInheritance off
+      System {
+	Name			"Test_Message_integer"
+	Location		[170, 52, 1191, 705]
+	Open			off
+	PortBlocksUseCompactNotation off
+	SetDomainSpec		off
+	DomainSpecType		"Deduce"
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Test_u8_big"
+	  SID			  "41"
+	  Position		  [45, 248, 75, 262]
+	  ZOrder		  1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Test_u16_big"
+	  SID			  "46"
+	  Position		  [45, 248, 75, 262]
+	  ZOrder		  3
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Test_i12_big"
+	  SID			  "51"
+	  Position		  [45, 248, 75, 262]
+	  ZOrder		  5
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Test_u8_little"
+	  SID			  "56"
+	  Position		  [45, 248, 75, 262]
+	  ZOrder		  7
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Test_i12_little"
+	  SID			  "61"
+	  Position		  [45, 248, 75, 262]
+	  ZOrder		  9
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "IO_CAN_ConfigMsg"
+	  SID			  "28"
+	  Ports			  [0, 2]
+	  Position		  [45, 68, 140, 132]
+	  ZOrder		  -2
+	  ForegroundColor	  "blue"
+	  RequestExecContextInheritance	off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    157
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "IO_CAN_ConfigMsg_Code"
+	    Description		    "Configures a message object for the given CAN channel."
+	    Help		    "web(which('IO_CAN.h'))"
+	    Initialization	    "%\n"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      9
+	      Object {
+		$ObjectID		158
+		Type			"edit"
+		Name			"SampleTime"
+		Prompt			"SampleTime"
+		Value			"-1"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		159
+		Type			"edit"
+		Name			"ttlib"
+		Prompt			"ttlib"
+		Value			"IO_Blk_Lib_TTC500"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		160
+		Type			"edit"
+		Name			"ttDescription"
+		Prompt			"ttDescription"
+		Value			"IO_CAN_ConfigMsg"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		161
+		Type			"edit"
+		Name			"tt_iolib_version"
+		Prompt			"tt_iolib_version"
+		Value			"0.19"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		162
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  7
+		  Cell			  "IO_CAN_CHANNEL_0 "
+		  Cell			  "IO_CAN_CHANNEL_1"
+		  Cell			  "IO_CAN_CHANNEL_2"
+		  Cell			  "IO_CAN_CHANNEL_3"
+		  Cell			  "IO_CAN_CHANNEL_4"
+		  Cell			  "IO_CAN_CHANNEL_5"
+		  Cell			  "IO_CAN_CHANNEL_6"
+		  PropName		  "TypeOptions"
+		}
+		Name			"channel"
+		Prompt			"channel"
+		Value			"IO_CAN_CHANNEL_0 "
+		Evaluate		"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		163
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  2
+		  Cell			  "IO_CAN_MSG_READ"
+		  Cell			  "IO_CAN_MSG_WRITE"
+		  PropName		  "TypeOptions"
+		}
+		Name			"mode"
+		Prompt			"mode"
+		Value			"IO_CAN_MSG_WRITE"
+		Evaluate		"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		164
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  2
+		  Cell			  "IO_CAN_STD_FRAME"
+		  Cell			  "IO_CAN_EXT_FRAME"
+		  PropName		  "TypeOptions"
+		}
+		Name			"id_format"
+		Prompt			"id_format"
+		Value			"IO_CAN_EXT_FRAME"
+		Evaluate		"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		165
+		Type			"edit"
+		Name			"id"
+		Prompt			"id"
+		Value			"0x00001010"
+		Evaluate		"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		166
+		Type			"edit"
+		Name			"ac_mask"
+		Prompt			"ac_mask"
+		Value			"0x1FFFFFFF"
+		Evaluate		"off"
+		Callback		"%"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "IO_CAN_ConfigMsg"
+	    Location		    [271, 292, 860, 750]
+	    Open		    off
+	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      S-Function
+	      Name		      "IO_CAN_ConfigMsg_s"
+	      SID		      "29"
+	      Ports		      [0, 2]
+	      Position		      [210, 47, 270, 78]
+	      ZOrder		      -1
+	      FunctionName	      "IO_CAN_ConfigMsg_s"
+	      Parameters	      "SampleTime,channel,mode,id_format,id,ac_mask"
+	      SFunctionDeploymentMode off
+	      EnableBusSupport	      off
+	      SFcnIsStateOwnerBlock   off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "ErrorCode"
+	      SID		      "30"
+	      Position		      [400, 50, 430, 70]
+	      ZOrder		      -2
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "handle"
+	      SID		      "31"
+	      Position		      [400, 100, 430, 120]
+	      ZOrder		      -3
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "IO_CAN_ConfigMsg_s"
+	      SrcPort		      2
+	      DstBlock		      "handle"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "IO_CAN_ConfigMsg_s"
+	      SrcPort		      1
+	      DstBlock		      "ErrorCode"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "IO_CAN_WriteMsg"
+	  SID			  "32"
+	  Ports			  [5, 1]
+	  Position		  [615, 189, 710, 421]
+	  ZOrder		  -3
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.826"
+	  SourceBlock		  "IOBlock_Library_TTC580/CAN  Blocks\nTTC580 IOlib/WriteMsg_CAN/IO_CAN_WriteMsg"
+	  SourceType		  "IO_CAN_WriteMsg_Code"
+	  SourceProductName	  "I/O Blocklibrary for TTC580"
+	  ContentPreviewEnabled	  off
+	  SampleTime		  -1
+	  ttlib			  IO_Blk_Lib_TTC500
+	  ttDescription		  IO_CAN_WriteMsg
+	  tt_iolib_version	  0.19
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "OR_TX"
+	  SID			  "33"
+	  Ports			  [5, 1]
+	  Position		  [370, 236, 410, 274]
+	  ZOrder		  -4
+	  LibraryVersion	  "1.401"
+	  SourceBlock		  "simulink/Logic and Bit\nOperations/Bitwise\nOperator"
+	  SourceType		  "Bitwise Operator"
+	  SourceProductName	  "Simulink"
+	  SourceProductBaseCode	  "SL"
+	  logicop		  OR
+	  UseBitMask		  off
+	  NumInputPorts		  5
+	  BitMask		  "bin2dec('11011001')"
+	  BitMaskRealWorld	  "Stored Integer"
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator5"
+	  SID			  "34"
+	  Position		  [185, 79, 200, 91]
+	  ZOrder		  -5
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "bit_packing1"
+	  SID			  "42"
+	  Ports			  [1, 1]
+	  Position		  [130, 223, 225, 287]
+	  ZOrder		  2
+	  ForegroundColor	  "blue"
+	  LoadFcn		  "try\n%\n%Upgrade Information - standard BEGIN\nnew_color = 'blue';\nnew_ver = '0.19';\nact_ver = get_pa"
+	  "ram(gcb,'tt_iolib_version');\nif not(strcmp(act_ver,new_ver))\n    disp(['Upgrade block: ',gcb,char(10),'       Ver"
+	  "sion: ',act_ver,' -> ',new_ver]);\n    %switch - case for specific upgrade information e.g. additional parameter re"
+	  "quired \n    %Change appearance and version information\n    set_param(gcb,'ForegroundColor',new_color);\n    set_p"
+	  "aram(gcb,'tt_iolib_version',new_ver);\nend\n%Upgrade Information - standard END\ncatch\n%Standard catch section BEG"
+	  "IN \ndisp(' ');\ndisp('------------------------------------------------------------');\ndisp('An error occurred in "
+	  "a callback of the TTC580-BlockLib.');\ndisp(['Please check the parameters in the mask of ',gcb]);\ndisp('If you do "
+	  "not encounter any violations, then please '); \ndisp('copy the following lines and report this to support@ttcontrol"
+	  ".com ');\ndisp('<< begin of error message dump >>');\ndisp(['Version of TTC580-BlockLib: ', get_param(gcb,'tt_iolib"
+	  "_version')]);\ndisp(get_param(gcb,'ttDescription'));\ndisp(gcb);\nx=lasterror;disp(x.message);\ndisp(get_param(gcb,"
+	  "'MaskValues'));\ndisp(version);\ndisp(computer);\ndisp('<< end of error message dump >>');\ndisp('-----------------"
+	  "-------------------------------------------');\ndisp(' ');\n%Standard catch section END\nend"
+	  RequestExecContextInheritance	off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    167
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "bit_packing_Code"
+	    Description		    "Block to prepare CAN-transmition at specified position within 64bit field.\nFor \"Factor\" and "
+	    "\"Offset\" the definition of Vector's CANdb applies:\n[Physical value] = ( [Raw value] * [Factor] ) + [Offset] \n"
+	    "with Raw value of a signal being the value as it is transmitted in the CAN-network."
+	    Help		    "web(which('IOLib500_utils.h'))"
+	    Initialization	    "%\n"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      11
+	      Object {
+		$ObjectID		168
+		Type			"edit"
+		Name			"SampleTime"
+		Prompt			"SampleTime"
+		Value			"-1"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		169
+		Type			"edit"
+		Name			"ttlib"
+		Prompt			"ttlib"
+		Value			"IO_Blk_Lib_TTC500"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		170
+		Type			"edit"
+		Name			"ttDescription"
+		Prompt			"ttDescription"
+		Value			"bit_packing"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		171
+		Type			"edit"
+		Name			"tt_iolib_version"
+		Prompt			"tt_iolib_version"
+		Value			"0.19"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		172
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  2
+		  Cell			  "big"
+		  Cell			  "little"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Endianness"
+		Prompt			"Endianness"
+		Value			"big"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		173
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  3
+		  Cell			  "unsigned"
+		  Cell			  "signed"
+		  Cell			  "real32"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Format"
+		Prompt			"Format"
+		Value			"unsigned"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		174
+		Type			"checkbox"
+		Name			"Inversion"
+		Prompt			"Inversion"
+		Value			"off"
+		Visible			"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		175
+		Type			"edit"
+		Name			"Startbit"
+		Prompt			"Startbit"
+		Value			"13"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		176
+		Type			"edit"
+		Name			"Width_bits"
+		Prompt			"Width_bits"
+		Value			"8"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		177
+		Type			"edit"
+		Name			"Factor"
+		Prompt			"Factor"
+		Value			"1"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		178
+		Type			"edit"
+		Name			"Offset"
+		Prompt			"Offset"
+		Value			"0"
+		Callback		"%"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "bit_packing1"
+	    Location		    [271, 292, 860, 750]
+	    Open		    off
+	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_in"
+	      SID		      "43"
+	      Position		      [40, 50, 70, 70]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      S-Function
+	      Name		      "bit_packing_s"
+	      SID		      "44"
+	      Ports		      [1, 1]
+	      Position		      [210, 45, 270, 75]
+	      ZOrder		      -2
+	      FunctionName	      "bit_packing_s"
+	      Parameters	      "SampleTime,Endianness,Format,Inversion,Startbit,Width_bits,Factor,Offset"
+	      SFunctionDeploymentMode off
+	      EnableBusSupport	      off
+	      SFcnIsStateOwnerBlock   off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Data_out"
+	      SID		      "45"
+	      Position		      [400, 50, 430, 70]
+	      ZOrder		      -3
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "Data_in"
+	      SrcPort		      1
+	      DstBlock		      "bit_packing_s"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "bit_packing_s"
+	      SrcPort		      1
+	      DstBlock		      "Data_out"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "bit_packing2"
+	  SID			  "47"
+	  Ports			  [1, 1]
+	  Position		  [130, 223, 225, 287]
+	  ZOrder		  4
+	  ForegroundColor	  "blue"
+	  LoadFcn		  "try\n%\n%Upgrade Information - standard BEGIN\nnew_color = 'blue';\nnew_ver = '0.19';\nact_ver = get_pa"
+	  "ram(gcb,'tt_iolib_version');\nif not(strcmp(act_ver,new_ver))\n    disp(['Upgrade block: ',gcb,char(10),'       Ver"
+	  "sion: ',act_ver,' -> ',new_ver]);\n    %switch - case for specific upgrade information e.g. additional parameter re"
+	  "quired \n    %Change appearance and version information\n    set_param(gcb,'ForegroundColor',new_color);\n    set_p"
+	  "aram(gcb,'tt_iolib_version',new_ver);\nend\n%Upgrade Information - standard END\ncatch\n%Standard catch section BEG"
+	  "IN \ndisp(' ');\ndisp('------------------------------------------------------------');\ndisp('An error occurred in "
+	  "a callback of the TTC580-BlockLib.');\ndisp(['Please check the parameters in the mask of ',gcb]);\ndisp('If you do "
+	  "not encounter any violations, then please '); \ndisp('copy the following lines and report this to support@ttcontrol"
+	  ".com ');\ndisp('<< begin of error message dump >>');\ndisp(['Version of TTC580-BlockLib: ', get_param(gcb,'tt_iolib"
+	  "_version')]);\ndisp(get_param(gcb,'ttDescription'));\ndisp(gcb);\nx=lasterror;disp(x.message);\ndisp(get_param(gcb,"
+	  "'MaskValues'));\ndisp(version);\ndisp(computer);\ndisp('<< end of error message dump >>');\ndisp('-----------------"
+	  "-------------------------------------------');\ndisp(' ');\n%Standard catch section END\nend"
+	  RequestExecContextInheritance	off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    179
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "bit_packing_Code"
+	    Description		    "Block to prepare CAN-transmition at specified position within 64bit field.\nFor \"Factor\" and "
+	    "\"Offset\" the definition of Vector's CANdb applies:\n[Physical value] = ( [Raw value] * [Factor] ) + [Offset] \n"
+	    "with Raw value of a signal being the value as it is transmitted in the CAN-network."
+	    Help		    "web(which('IOLib500_utils.h'))"
+	    Initialization	    "%\n"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      11
+	      Object {
+		$ObjectID		180
+		Type			"edit"
+		Name			"SampleTime"
+		Prompt			"SampleTime"
+		Value			"-1"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		181
+		Type			"edit"
+		Name			"ttlib"
+		Prompt			"ttlib"
+		Value			"IO_Blk_Lib_TTC500"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		182
+		Type			"edit"
+		Name			"ttDescription"
+		Prompt			"ttDescription"
+		Value			"bit_packing"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		183
+		Type			"edit"
+		Name			"tt_iolib_version"
+		Prompt			"tt_iolib_version"
+		Value			"0.19"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		184
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  2
+		  Cell			  "big"
+		  Cell			  "little"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Endianness"
+		Prompt			"Endianness"
+		Value			"big"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		185
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  3
+		  Cell			  "unsigned"
+		  Cell			  "signed"
+		  Cell			  "real32"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Format"
+		Prompt			"Format"
+		Value			"unsigned"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		186
+		Type			"checkbox"
+		Name			"Inversion"
+		Prompt			"Inversion"
+		Value			"off"
+		Visible			"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		187
+		Type			"edit"
+		Name			"Startbit"
+		Prompt			"Startbit"
+		Value			"29"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		188
+		Type			"edit"
+		Name			"Width_bits"
+		Prompt			"Width_bits"
+		Value			"16"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		189
+		Type			"edit"
+		Name			"Factor"
+		Prompt			"Factor"
+		Value			"1"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		190
+		Type			"edit"
+		Name			"Offset"
+		Prompt			"Offset"
+		Value			"0"
+		Callback		"%"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "bit_packing2"
+	    Location		    [271, 292, 860, 750]
+	    Open		    off
+	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_in"
+	      SID		      "48"
+	      Position		      [40, 50, 70, 70]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      S-Function
+	      Name		      "bit_packing_s"
+	      SID		      "49"
+	      Ports		      [1, 1]
+	      Position		      [210, 45, 270, 75]
+	      ZOrder		      -2
+	      FunctionName	      "bit_packing_s"
+	      Parameters	      "SampleTime,Endianness,Format,Inversion,Startbit,Width_bits,Factor,Offset"
+	      SFunctionDeploymentMode off
+	      EnableBusSupport	      off
+	      SFcnIsStateOwnerBlock   off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Data_out"
+	      SID		      "50"
+	      Position		      [400, 50, 430, 70]
+	      ZOrder		      -3
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "Data_in"
+	      SrcPort		      1
+	      DstBlock		      "bit_packing_s"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "bit_packing_s"
+	      SrcPort		      1
+	      DstBlock		      "Data_out"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "bit_packing3"
+	  SID			  "52"
+	  Ports			  [1, 1]
+	  Position		  [130, 223, 225, 287]
+	  ZOrder		  6
+	  ForegroundColor	  "blue"
+	  LoadFcn		  "try\n%\n%Upgrade Information - standard BEGIN\nnew_color = 'blue';\nnew_ver = '0.19';\nact_ver = get_pa"
+	  "ram(gcb,'tt_iolib_version');\nif not(strcmp(act_ver,new_ver))\n    disp(['Upgrade block: ',gcb,char(10),'       Ver"
+	  "sion: ',act_ver,' -> ',new_ver]);\n    %switch - case for specific upgrade information e.g. additional parameter re"
+	  "quired \n    %Change appearance and version information\n    set_param(gcb,'ForegroundColor',new_color);\n    set_p"
+	  "aram(gcb,'tt_iolib_version',new_ver);\nend\n%Upgrade Information - standard END\ncatch\n%Standard catch section BEG"
+	  "IN \ndisp(' ');\ndisp('------------------------------------------------------------');\ndisp('An error occurred in "
+	  "a callback of the TTC580-BlockLib.');\ndisp(['Please check the parameters in the mask of ',gcb]);\ndisp('If you do "
+	  "not encounter any violations, then please '); \ndisp('copy the following lines and report this to support@ttcontrol"
+	  ".com ');\ndisp('<< begin of error message dump >>');\ndisp(['Version of TTC580-BlockLib: ', get_param(gcb,'tt_iolib"
+	  "_version')]);\ndisp(get_param(gcb,'ttDescription'));\ndisp(gcb);\nx=lasterror;disp(x.message);\ndisp(get_param(gcb,"
+	  "'MaskValues'));\ndisp(version);\ndisp(computer);\ndisp('<< end of error message dump >>');\ndisp('-----------------"
+	  "-------------------------------------------');\ndisp(' ');\n%Standard catch section END\nend"
+	  RequestExecContextInheritance	off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    191
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "bit_packing_Code"
+	    Description		    "Block to prepare CAN-transmition at specified position within 64bit field.\nFor \"Factor\" and "
+	    "\"Offset\" the definition of Vector's CANdb applies:\n[Physical value] = ( [Raw value] * [Factor] ) + [Offset] \n"
+	    "with Raw value of a signal being the value as it is transmitted in the CAN-network."
+	    Help		    "web(which('IOLib500_utils.h'))"
+	    Initialization	    "%\n"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      11
+	      Object {
+		$ObjectID		192
+		Type			"edit"
+		Name			"SampleTime"
+		Prompt			"SampleTime"
+		Value			"-1"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		193
+		Type			"edit"
+		Name			"ttlib"
+		Prompt			"ttlib"
+		Value			"IO_Blk_Lib_TTC500"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		194
+		Type			"edit"
+		Name			"ttDescription"
+		Prompt			"ttDescription"
+		Value			"bit_packing"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		195
+		Type			"edit"
+		Name			"tt_iolib_version"
+		Prompt			"tt_iolib_version"
+		Value			"0.19"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		196
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  2
+		  Cell			  "big"
+		  Cell			  "little"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Endianness"
+		Prompt			"Endianness"
+		Value			"big"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		197
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  3
+		  Cell			  "unsigned"
+		  Cell			  "signed"
+		  Cell			  "real32"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Format"
+		Prompt			"Format"
+		Value			"signed"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		198
+		Type			"checkbox"
+		Name			"Inversion"
+		Prompt			"Inversion"
+		Value			"off"
+		Visible			"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		199
+		Type			"edit"
+		Name			"Startbit"
+		Prompt			"Startbit"
+		Value			"33"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		200
+		Type			"edit"
+		Name			"Width_bits"
+		Prompt			"Width_bits"
+		Value			"12"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		201
+		Type			"edit"
+		Name			"Factor"
+		Prompt			"Factor"
+		Value			"1"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		202
+		Type			"edit"
+		Name			"Offset"
+		Prompt			"Offset"
+		Value			"0"
+		Callback		"%"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "bit_packing3"
+	    Location		    [271, 292, 860, 750]
+	    Open		    off
+	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_in"
+	      SID		      "53"
+	      Position		      [40, 50, 70, 70]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      S-Function
+	      Name		      "bit_packing_s"
+	      SID		      "54"
+	      Ports		      [1, 1]
+	      Position		      [210, 45, 270, 75]
+	      ZOrder		      -2
+	      FunctionName	      "bit_packing_s"
+	      Parameters	      "SampleTime,Endianness,Format,Inversion,Startbit,Width_bits,Factor,Offset"
+	      SFunctionDeploymentMode off
+	      EnableBusSupport	      off
+	      SFcnIsStateOwnerBlock   off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Data_out"
+	      SID		      "55"
+	      Position		      [400, 50, 430, 70]
+	      ZOrder		      -3
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "Data_in"
+	      SrcPort		      1
+	      DstBlock		      "bit_packing_s"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "bit_packing_s"
+	      SrcPort		      1
+	      DstBlock		      "Data_out"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "bit_packing4"
+	  SID			  "57"
+	  Ports			  [1, 1]
+	  Position		  [130, 223, 225, 287]
+	  ZOrder		  8
+	  ForegroundColor	  "blue"
+	  LoadFcn		  "try\n%\n%Upgrade Information - standard BEGIN\nnew_color = 'blue';\nnew_ver = '0.19';\nact_ver = get_pa"
+	  "ram(gcb,'tt_iolib_version');\nif not(strcmp(act_ver,new_ver))\n    disp(['Upgrade block: ',gcb,char(10),'       Ver"
+	  "sion: ',act_ver,' -> ',new_ver]);\n    %switch - case for specific upgrade information e.g. additional parameter re"
+	  "quired \n    %Change appearance and version information\n    set_param(gcb,'ForegroundColor',new_color);\n    set_p"
+	  "aram(gcb,'tt_iolib_version',new_ver);\nend\n%Upgrade Information - standard END\ncatch\n%Standard catch section BEG"
+	  "IN \ndisp(' ');\ndisp('------------------------------------------------------------');\ndisp('An error occurred in "
+	  "a callback of the TTC580-BlockLib.');\ndisp(['Please check the parameters in the mask of ',gcb]);\ndisp('If you do "
+	  "not encounter any violations, then please '); \ndisp('copy the following lines and report this to support@ttcontrol"
+	  ".com ');\ndisp('<< begin of error message dump >>');\ndisp(['Version of TTC580-BlockLib: ', get_param(gcb,'tt_iolib"
+	  "_version')]);\ndisp(get_param(gcb,'ttDescription'));\ndisp(gcb);\nx=lasterror;disp(x.message);\ndisp(get_param(gcb,"
+	  "'MaskValues'));\ndisp(version);\ndisp(computer);\ndisp('<< end of error message dump >>');\ndisp('-----------------"
+	  "-------------------------------------------');\ndisp(' ');\n%Standard catch section END\nend"
+	  RequestExecContextInheritance	off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    203
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "bit_packing_Code"
+	    Description		    "Block to prepare CAN-transmition at specified position within 64bit field.\nFor \"Factor\" and "
+	    "\"Offset\" the definition of Vector's CANdb applies:\n[Physical value] = ( [Raw value] * [Factor] ) + [Offset] \n"
+	    "with Raw value of a signal being the value as it is transmitted in the CAN-network."
+	    Help		    "web(which('IOLib500_utils.h'))"
+	    Initialization	    "%\n"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      11
+	      Object {
+		$ObjectID		204
+		Type			"edit"
+		Name			"SampleTime"
+		Prompt			"SampleTime"
+		Value			"-1"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		205
+		Type			"edit"
+		Name			"ttlib"
+		Prompt			"ttlib"
+		Value			"IO_Blk_Lib_TTC500"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		206
+		Type			"edit"
+		Name			"ttDescription"
+		Prompt			"ttDescription"
+		Value			"bit_packing"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		207
+		Type			"edit"
+		Name			"tt_iolib_version"
+		Prompt			"tt_iolib_version"
+		Value			"0.19"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		208
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  2
+		  Cell			  "big"
+		  Cell			  "little"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Endianness"
+		Prompt			"Endianness"
+		Value			"little"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		209
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  3
+		  Cell			  "unsigned"
+		  Cell			  "signed"
+		  Cell			  "real32"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Format"
+		Prompt			"Format"
+		Value			"unsigned"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		210
+		Type			"checkbox"
+		Name			"Inversion"
+		Prompt			"Inversion"
+		Value			"off"
+		Visible			"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		211
+		Type			"edit"
+		Name			"Startbit"
+		Prompt			"Startbit"
+		Value			"42"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		212
+		Type			"edit"
+		Name			"Width_bits"
+		Prompt			"Width_bits"
+		Value			"8"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		213
+		Type			"edit"
+		Name			"Factor"
+		Prompt			"Factor"
+		Value			"1"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		214
+		Type			"edit"
+		Name			"Offset"
+		Prompt			"Offset"
+		Value			"0"
+		Callback		"%"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "bit_packing4"
+	    Location		    [271, 292, 860, 750]
+	    Open		    off
+	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_in"
+	      SID		      "58"
+	      Position		      [40, 50, 70, 70]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      S-Function
+	      Name		      "bit_packing_s"
+	      SID		      "59"
+	      Ports		      [1, 1]
+	      Position		      [210, 45, 270, 75]
+	      ZOrder		      -2
+	      FunctionName	      "bit_packing_s"
+	      Parameters	      "SampleTime,Endianness,Format,Inversion,Startbit,Width_bits,Factor,Offset"
+	      SFunctionDeploymentMode off
+	      EnableBusSupport	      off
+	      SFcnIsStateOwnerBlock   off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Data_out"
+	      SID		      "60"
+	      Position		      [400, 50, 430, 70]
+	      ZOrder		      -3
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "Data_in"
+	      SrcPort		      1
+	      DstBlock		      "bit_packing_s"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "bit_packing_s"
+	      SrcPort		      1
+	      DstBlock		      "Data_out"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "bit_packing5"
+	  SID			  "62"
+	  Ports			  [1, 1]
+	  Position		  [130, 223, 225, 287]
+	  ZOrder		  10
+	  ForegroundColor	  "blue"
+	  LoadFcn		  "try\n%\n%Upgrade Information - standard BEGIN\nnew_color = 'blue';\nnew_ver = '0.19';\nact_ver = get_pa"
+	  "ram(gcb,'tt_iolib_version');\nif not(strcmp(act_ver,new_ver))\n    disp(['Upgrade block: ',gcb,char(10),'       Ver"
+	  "sion: ',act_ver,' -> ',new_ver]);\n    %switch - case for specific upgrade information e.g. additional parameter re"
+	  "quired \n    %Change appearance and version information\n    set_param(gcb,'ForegroundColor',new_color);\n    set_p"
+	  "aram(gcb,'tt_iolib_version',new_ver);\nend\n%Upgrade Information - standard END\ncatch\n%Standard catch section BEG"
+	  "IN \ndisp(' ');\ndisp('------------------------------------------------------------');\ndisp('An error occurred in "
+	  "a callback of the TTC580-BlockLib.');\ndisp(['Please check the parameters in the mask of ',gcb]);\ndisp('If you do "
+	  "not encounter any violations, then please '); \ndisp('copy the following lines and report this to support@ttcontrol"
+	  ".com ');\ndisp('<< begin of error message dump >>');\ndisp(['Version of TTC580-BlockLib: ', get_param(gcb,'tt_iolib"
+	  "_version')]);\ndisp(get_param(gcb,'ttDescription'));\ndisp(gcb);\nx=lasterror;disp(x.message);\ndisp(get_param(gcb,"
+	  "'MaskValues'));\ndisp(version);\ndisp(computer);\ndisp('<< end of error message dump >>');\ndisp('-----------------"
+	  "-------------------------------------------');\ndisp(' ');\n%Standard catch section END\nend"
+	  RequestExecContextInheritance	off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    215
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "bit_packing_Code"
+	    Description		    "Block to prepare CAN-transmition at specified position within 64bit field.\nFor \"Factor\" and "
+	    "\"Offset\" the definition of Vector's CANdb applies:\n[Physical value] = ( [Raw value] * [Factor] ) + [Offset] \n"
+	    "with Raw value of a signal being the value as it is transmitted in the CAN-network."
+	    Help		    "web(which('IOLib500_utils.h'))"
+	    Initialization	    "%\n"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      11
+	      Object {
+		$ObjectID		216
+		Type			"edit"
+		Name			"SampleTime"
+		Prompt			"SampleTime"
+		Value			"-1"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		217
+		Type			"edit"
+		Name			"ttlib"
+		Prompt			"ttlib"
+		Value			"IO_Blk_Lib_TTC500"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		218
+		Type			"edit"
+		Name			"ttDescription"
+		Prompt			"ttDescription"
+		Value			"bit_packing"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		219
+		Type			"edit"
+		Name			"tt_iolib_version"
+		Prompt			"tt_iolib_version"
+		Value			"0.19"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		220
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  2
+		  Cell			  "big"
+		  Cell			  "little"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Endianness"
+		Prompt			"Endianness"
+		Value			"little"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		221
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  3
+		  Cell			  "unsigned"
+		  Cell			  "signed"
+		  Cell			  "real32"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Format"
+		Prompt			"Format"
+		Value			"signed"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		222
+		Type			"checkbox"
+		Name			"Inversion"
+		Prompt			"Inversion"
+		Value			"off"
+		Visible			"off"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		223
+		Type			"edit"
+		Name			"Startbit"
+		Prompt			"Startbit"
+		Value			"50"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		224
+		Type			"edit"
+		Name			"Width_bits"
+		Prompt			"Width_bits"
+		Value			"12"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		225
+		Type			"edit"
+		Name			"Factor"
+		Prompt			"Factor"
+		Value			"1"
+		Callback		"%"
+	      }
+	      Object {
+		$ObjectID		226
+		Type			"edit"
+		Name			"Offset"
+		Prompt			"Offset"
+		Value			"0"
+		Callback		"%"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "bit_packing5"
+	    Location		    [271, 292, 860, 750]
+	    Open		    off
+	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_in"
+	      SID		      "63"
+	      Position		      [40, 50, 70, 70]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      S-Function
+	      Name		      "bit_packing_s"
+	      SID		      "64"
+	      Ports		      [1, 1]
+	      Position		      [210, 45, 270, 75]
+	      ZOrder		      -2
+	      FunctionName	      "bit_packing_s"
+	      Parameters	      "SampleTime,Endianness,Format,Inversion,Startbit,Width_bits,Factor,Offset"
+	      SFunctionDeploymentMode off
+	      EnableBusSupport	      off
+	      SFcnIsStateOwnerBlock   off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Data_out"
+	      SID		      "65"
+	      Position		      [400, 50, 430, 70]
+	      ZOrder		      -3
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "Data_in"
+	      SrcPort		      1
+	      DstBlock		      "bit_packing_s"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "bit_packing_s"
+	      SrcPort		      1
+	      DstBlock		      "Data_out"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "id_TX"
+	  SID			  "36"
+	  Position		  [485, 384, 565, 406]
+	  ZOrder		  -7
+	  Value			  "hex2dec('00001010')"
+	  OutDataTypeStr	  "uint32"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "id_format_TX"
+	  SID			  "37"
+	  Position		  [485, 340, 565, 360]
+	  ZOrder		  -8
+	  OutDataTypeStr	  "Inherit: Inherit via back propagation"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "length_TX"
+	  SID			  "38"
+	  Position		  [485, 294, 565, 316]
+	  ZOrder		  -9
+	  Value			  "8"
+	  OutDataTypeStr	  "Inherit: Inherit via back propagation"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "ErrorCode"
+	  SID			  "39"
+	  Position		  [785, 298, 815, 312]
+	  ZOrder		  -10
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "id_TX"
+	  SrcPort		  1
+	  DstBlock		  "IO_CAN_WriteMsg"
+	  DstPort		  5
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  "id_format_TX"
+	  SrcPort		  1
+	  DstBlock		  "IO_CAN_WriteMsg"
+	  DstPort		  4
+	}
+	Line {
+	  ZOrder		  3
+	  SrcBlock		  "length_TX"
+	  SrcPort		  1
+	  DstBlock		  "IO_CAN_WriteMsg"
+	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  "IO_CAN_ConfigMsg"
+	  SrcPort		  2
+	  Points		  [425, 0; 0, 100]
+	  DstBlock		  "IO_CAN_WriteMsg"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  5
+	  SrcBlock		  "IO_CAN_ConfigMsg"
+	  SrcPort		  1
+	  DstBlock		  "Terminator5"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  6
+	  SrcBlock		  "IO_CAN_WriteMsg"
+	  SrcPort		  1
+	  DstBlock		  "ErrorCode"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  7
+	  SrcBlock		  "Test_u8_big"
+	  SrcPort		  1
+	  DstBlock		  "bit_packing1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  8
+	  SrcBlock		  "bit_packing1"
+	  SrcPort		  1
+	  DstBlock		  "OR_TX"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  9
+	  SrcBlock		  "Test_u16_big"
+	  SrcPort		  1
+	  DstBlock		  "bit_packing2"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  10
+	  SrcBlock		  "bit_packing2"
+	  SrcPort		  1
+	  DstBlock		  "OR_TX"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  11
+	  SrcBlock		  "Test_i12_big"
+	  SrcPort		  1
+	  DstBlock		  "bit_packing3"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  12
+	  SrcBlock		  "bit_packing3"
+	  SrcPort		  1
+	  DstBlock		  "OR_TX"
+	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  13
+	  SrcBlock		  "Test_u8_little"
+	  SrcPort		  1
+	  DstBlock		  "bit_packing4"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  14
+	  SrcBlock		  "bit_packing4"
+	  SrcPort		  1
+	  DstBlock		  "OR_TX"
+	  DstPort		  4
+	}
+	Line {
+	  ZOrder		  15
+	  SrcBlock		  "Test_i12_little"
+	  SrcPort		  1
+	  DstBlock		  "bit_packing5"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  16
+	  SrcBlock		  "bit_packing5"
+	  SrcPort		  1
+	  DstBlock		  "OR_TX"
+	  DstPort		  5
+	}
+	Line {
+	  ZOrder		  17
+	  SrcBlock		  "OR_TX"
+	  SrcPort		  1
+	  DstBlock		  "IO_CAN_WriteMsg"
+	  DstPort		  2
+	}
+	Annotation {
+	  SID			  "40"
+	  Name			  "Don't change the Names of the Blocks"
+	  Position		  [64, 353, 288, 373]
+	  InternalMargins	  [0, 0, 0, 0]
+	  HorizontalAlignment	  "center"
+	  VerticalAlignment	  "middle"
+	  ZOrder		  -1
+	  FontName		  "Arial Narrow"
+	  FontSize		  16
+	}
+      }
+    }
+  }
+}

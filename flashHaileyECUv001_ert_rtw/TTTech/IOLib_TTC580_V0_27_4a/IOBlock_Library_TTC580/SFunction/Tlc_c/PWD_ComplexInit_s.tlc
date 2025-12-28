@@ -1,0 +1,84 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright (C) 2015 TTTech Computertechnik AG. All rights reserved
+%% Schoenbrunnerstrasse 7, A--1040 Wien, Austria. office@tttech.com
+%%
+%% Name: 
+%%   PWD_ComplexInit_s.tlc
+%%
+%% Purpose:
+%%   TLC file for code generation of I/O toolbox PWD_ComplexInit_s block
+%%
+%% Version: 0.19
+%%
+
+%implements "PWD_ComplexInit_s" "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function BlockTypeSetup(block, system) void
+%if (TargetType == "RT")
+   		%assign ::IO_PWD = "any"
+        %<LibAddToCommonIncludes("IO_PWD.h")>
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Start(block, system) Output
+%if (TargetType == "RT")
+	%assign timer_channel = rtw_param1  
+	%assign pulse_mode = rtw_param2  
+	%assign freq_mode = rtw_param3  
+	%assign capture_count = rtw_param4  
+	%assign pupd = rtw_param5  
+	%assign safety_conf = rtw_param6  
+
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+  	%if dimout0 > 1
+	%assign yDyn_0_1 = LibBlockOutputSignal(0, "", "",1)  
+    %<yDyn_0_1> = (%<ErrorCode_type>)%<rtw_param1>;  // additionally dimension of 1st port assigned to mask parameter
+    %endif 
+
+	/* init_function call PWD_ComplexInit */
+
+{
+
+
+%<ErrorCode> = IO_PWD_ComplexInit( %<timer_channel> , %<pulse_mode> , %<freq_mode> , %<capture_count> , %<pupd> , %<safety_conf> );
+
+}
+
+%endif
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function Outputs(block, system) Output
+%if (TargetType == "RT")
+	%assign timer_channel = rtw_param1  
+	%assign pulse_mode = rtw_param2  
+	%assign freq_mode = rtw_param3  
+	%assign capture_count = rtw_param4  
+	%assign pupd = rtw_param5  
+	%assign safety_conf = rtw_param6  
+
+
+
+	%assign ErrorCode = LibBlockOutputSignal(0, "", "",0)  
+    %assign ErrorCode_type = LibBlockOutputSignalDataTypeName(0,"")
+    %% 1-based dimension info used for eventual subsequent dyn-ports
+    %assign dimout0 = LibBlockOutputSignalWidth(0)
+  	%if dimout0 > 1
+	%assign yDyn_0_1 = LibBlockOutputSignal(0, "", "",1)  
+    %<yDyn_0_1> = (%<ErrorCode_type>)%<rtw_param1>;  // additionally dimension of 1st port assigned to mask parameter
+    %endif 
+
+	/* function call of PWD_ComplexInit */
+
+
+%endif
+%endfunction
+
+%% [EOF] io_block.tlc
