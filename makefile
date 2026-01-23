@@ -90,7 +90,10 @@ else
 	@echo "Error: No Doxyfile found in the current directory."
 endif
 
-
+# --- Target Build ---
+build_target:
+	@echo "Building for target..."
+	$(MAKE) -C src/haileyECU -f flashHaileyECUv001.mk
 
 
 
@@ -109,4 +112,4 @@ endif
 clean:
 	rm -rf $(OUT_DIR) $(HTML_DIR) *.gcno *.gcda *.gcov
 
-.PHONY: all clean test coverage docs format
+.PHONY: all clean test coverage docs format build_target
